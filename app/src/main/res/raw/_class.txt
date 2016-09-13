@@ -1,0 +1,90 @@
+Garapati Sai Sindhura	:	IV IT - A
+Mangena Devi Sasirekha	:	IV IT - A
+Pothuri Ramya	:	IV IT - B
+Sanisetty Kishinda Moulika	:	IV IT - B
+D.Nagavalli Suvarchala	:	IV EEE-A
+T.Padma	:	IV EEE-B
+B.Swathi	:	IV CSE-A
+K.Sravani	:	IV CSE-A
+K.Suguna	:	IV CSE-B
+K.Eswari	:	IV CSE-B
+V.Sravya	:	IV CSE-C
+P.Manasa	:	IV CSE-C
+D.Snehanjali	:	IV Civil
+K.Swarna Chandrika	:	IV Civil
+Padmanabhuni Sai Saranya	:	IV MECH
+Ravuri Ravalee Kanthi	:	IV MECH
+G.Sai Pravallika	:	IV ECE-A
+G.V.V.N.Padmini	:	IV ECE-A
+Kotipalli Mounika	:	IV ECE-B
+Manda Sravya	:	IV ECE-B
+S.Saritha	:	IV ECE-C
+P.B.N.S.Rajitha	:	IV ECE-C
+Ch.Sree Swetha	:	III IT - A
+Ch.Haritha	:	III IT - A
+Yalamati Sushma	:	III IT - B
+Yarlagadda Srija	:	III IT - B
+K.Bindu Prasanthi	:	III EEE -A
+P.Rajitha	:	III EEE -B
+A.Sai Sree Yoshitha	:	III CSE - A
+A.Divya	:	III CSE - A
+K.M.Annapurna	:	III CSE - B
+N.Sai Swetha	:	III CSE - B
+P.V.Ramya	:	III CSE - C
+S.Kalyani	:	III CSE - C
+Swetha Sha Jain	:	III Civil
+M.Srilekha	:	III Civil
+Kancharla Maheswari	:	III MECH
+Chamarthi Venkata Sai Swetha	:	III MECH
+B.L.S.Meghana	:	III ECE-A
+G.B.Meghana	:	III ECE-A
+K.Anucharitha	:	III ECE-B
+P.Ranga Prasanna	:	III ECE-B
+S.Sai Sowjanya	:	III ECE-C
+V.Sravika	:	III ECE-C
+Chintapalli Sai Suharika	:	II IT - A
+Gudimetla Naga Monika	:	II IT - A
+S Sai Sreeja	:	II IT - B
+Mulugurthi Pavani	:	II IT - B
+S.Naga Pushpa Latha	:	II EEE-A
+G.Jyothi	:	II EEE-B
+Sk.Nasreen Jaha	:	II CSE - A
+Sk.Neha Chandini	:	II CSE - A
+K.S.L.Supriya	:	II CSE - B
+M.Pratyusha	:	II CSE - B
+K.Nikhila	:	II CSE - C
+V.Sri Nija	:	II CSE - C
+T.Nirmala Devi	:	II Civil
+K.Poorna Anusha	:	II Civil
+Penmatsa Divya	:	II MECH
+Saladi .G.S.S.N.V.Sivani	:	II MECH
+G.Lakshmi Prasanna	:	II ECE-A
+Ch.Pranaya	:	II ECE-A
+M.Kavya Sree	:	II ECE-B
+N.Tejaswi Ramani	:	II ECE-B
+Y.G.S.L.Sowmya	:	II ECE-C
+V.Haritha	:	II ECE-C
+B. Prathyusha	:	SEC : A
+Ch. S.M. Pravallika 	:	SEC : A
+D.Sravya Leela Devi	:	SEC : B
+Ch.Tejaswi	:	SEC : B
+K.Chandana	:	SEC : C
+K.Pujitha	:	SEC : C
+M.Sushma	:	SEC : D
+N.Naga Swetha Devi	:	SEC : D
+P. Akhila Reddy	:	SEC : E
+P. Meghana	:	SEC : E
+Tahera Fatima	:	SEC : F
+T.Sai Vaishnavi	:	SEC : F
+B. Yamini	:	SEC : G
+C.P.Mayura	:	SEC : G
+D.Anjali	:	SEC : H
+D.Geethika	:	SEC : H
+K.Harsha Jyothi	:	SEC : I
+K. Durga Divya 	:	SEC : I
+M.Amrutha	:	SEC : J
+M.Nandhini Devi	:	SEC : J
+R.Deepthi	:	SEC : K
+S.V.N.S.K.Yaswitha	:	SEC : k
+Syed Tabassum Nazeer	:	SEC : L
+Y. Haritha	:	SEC : L

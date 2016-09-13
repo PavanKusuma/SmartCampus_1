@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawerLayout"
+    android:elevation="7dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/tool_bar"
+            layout="@layout/tool_bar_actionbar">
+        </include>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightGray"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#e9ebee">
+
+            <Spinner
+                android:id="@+id/searchBranch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="6dp"
+                android:entries="@array/branchesDirectory"
+                android:layout_margin="8dp"
+                android:prompt="@string/selectBranch"
+                android:spinnerMode="dialog"
+                android:background="@drawable/button_rounded_shape_gray"/>
+
+            <ImageView
+                android:id="@+id/searchContactButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_search"
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/card_background"
+                android:layout_below="@+id/searchBranch"
+                android:layout_alignParentRight="true"/>
+
+
+            <EditText
+                android:id="@+id/searchContact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textVisiblePassword"
+                android:textSize="14sp"
+                android:padding="12dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:hint="@string/searchContact"
+                android:layout_below="@id/searchBranch"
+                android:background="@drawable/button_rounded_shape_gray"
+                android:layout_toLeftOf="@+id/searchContactButton"/>
+
+
+            <!-- <Button
+                 android:id="@+id/searchContactButton"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@+id/searchBranch"
+                 android:text="@string/search"
+                 android:padding="6sp"
+                 android:layout_marginBottom="8dp"
+                 android:layout_marginLeft="8dp"
+                 android:layout_marginRight="8dp"
+                 android:background="@drawable/button_rounded_shape_gray"/>
+ -->
+
+            <ListView
+                android:id="@+id/contactsListView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:dividerHeight="8dp"
+                android:divider="#e9ebee"
+                android:layout_margin="8dp"
+                android:focusable="false"
+                android:background="@drawable/button_rounded_shape_gray"
+                android:layout_below="@+id/searchContact"/>
+
+            <TextView
+                android:id="@+id/emptyContactListText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/noContacts"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:textColor="@color/lightLightGray"
+                android:layout_below="@+id/contactsListView"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>

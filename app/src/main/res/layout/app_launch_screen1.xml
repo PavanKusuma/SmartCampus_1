@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/launchLogo"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:src="@drawable/college_logo"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/launchText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:layout_below="@+id/launchLogo"
+        android:layout_centerHorizontal="true"
+        android:padding="20dp"
+        android:textSize="26dp"/>
+
+    <TextView
+        android:id="@+id/launchText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/collegeText"
+        android:layout_below="@+id/launchText"
+        android:textSize="16dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"/>
+
+
+
+    <Button
+        android:id="@+id/guest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/guest"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/button_clickedstate"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:textColor="@color/blackText"
+        android:textAllCaps="true"/>
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/loginButton"
+        android:layout_above="@+id/guest"
+        android:background="@drawable/button_clickedstate"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:textColor="@color/blackText"
+        android:textAllCaps="true"/>
+
+    <TextView
+        android:id="@+id/loginTextWarning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/loginWaringText"
+        android:layout_above="@+id/login"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textAppearance="@android:style/TextAppearance.Small"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/singleMessageLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="2dp"
+    android:layout_marginRight="60dp"
+    android:layout_marginBottom="10dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true">
+
+                <RelativeLayout
+                    android:id="@+id/messageBody"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:background="@drawable/message_bg_left"
+                    android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/messagesUserName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@android:style/TextAppearance.Small"
+                            android:paddingLeft="8dp"
+                            android:text="@string/app_name"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/messagesMessage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@android:style/TextAppearance.Medium"
+                            android:paddingLeft="8dp"
+                            android:paddingTop="8dp"
+                            android:layout_below="@+id/messagesUserName"
+                            android:text="@string/app_name"
+                            android:textColor="@color/white"/>
+
+
+                        <ImageView
+                            android:id="@+id/messageImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/messagesMessage"
+                            android:contentDescription="@string/app_name"
+                            android:adjustViewBounds="true"
+                            android:paddingTop="8dp"
+                            android:src="@drawable/college"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/messagescreatedAt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12dp"
+                    android:text="@string/app_name"
+                    android:textColor="@color/lightLightGray"
+                    android:layout_below="@+id/messageBody"/>
+
+        </RelativeLayout>
+
+</RelativeLayout>

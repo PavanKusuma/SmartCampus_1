@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "339115249396",
+    "project_id": "firebase-campus"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:339115249396:android:c89a372db7c567fe",
+        "android_client_info": {
+          "package_name": "svecw.svecw"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5lJVpn3SOY9pLbFEXuO_2Lz5_m_n-gL0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

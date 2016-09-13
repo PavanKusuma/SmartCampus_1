@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/card_background">
+
+    <TextView
+        android:id="@+id/selectUser_ObjectId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/userNameLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:id="@+id/selectUser_userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/selectUser"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:textStyle="bold"
+            android:textColor="@color/blackText"
+            android:textAppearance="@android:style/TextAppearance.Medium"/>
+
+        <TextView
+            android:id="@+id/selectUser_branch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/selectUser"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_below="@+id/selectUser_userName"
+            android:textColor="@color/lightLightGray"/>
+
+        <TextView
+            android:id="@+id/selectUser_role"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/selectUser"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_below="@+id/selectUser_branch"
+            />
+
+        <TextView
+            android:id="@+id/selectCollegeId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/collegeId"
+            android:layout_marginTop="2dp"
+            android:layout_below="@+id/selectUser_branch"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+</RelativeLayout>

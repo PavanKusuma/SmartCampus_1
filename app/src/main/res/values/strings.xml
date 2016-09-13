@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Smart Campus</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="emptyString"> </string>
+    <string name="gcm_sender_id">339115249396</string>
+
+    <string name="fontRoboto">fonts/Roboto-Light.ttf</string>
+
+    <string name="futureText">Future notifications and other updates will be shown here</string>
+    <string name="launch_hinttext">Select a category to proceed</string>
+    <string name="resendEmailText">Click above image to resend confirmation email</string>
+    <string name="profileImageHintText">Click below image to update profile photo</string>
+    <string name="updateUserName">Update username</string>
+    <string name="pleaseWaitText">Please wait loading&#8230;</string>
+    <string name="noData">Well you are done! No more to display</string>
+    <string name="emptyListText">No data to display</string>
+    <string name="emptyMessages">No messages received/sent yet</string>
+    <string name="noComments">No comments yet</string>
+    <string name="fetching">Fetching...</string>
+    <string name="noContacts">No contacts to display</string>
+    <string name="searchContact">Type faculty name to search</string>
+    <string name="groupName">Name of the group</string>
+    <string name="create">Create</string>
+    <string name="searchProgress">Search in progress&#8230;</string>
+    <string name="searchBy">Search by</string>
+    <string name="incorrectPassword">Incorrect password</string>
+    <string name="requiredData">Enter required data</string>
+    <string name="noAccount">No account found! Verify college id</string>
+
+    <string name="postDescriptionHint">Description</string>
+    <string name="postKnowledgeDescriptionHint">Description is mandatory</string>
+    <string name="post">Post</string>
+    <string name="verifying">Verifying..</string>
+    <string name="posting">Posting..</string>
+    <string name="postTitle">Title</string>
+    <string name="newPost">New post</string>
+    <string name="link">Paste a link (ex: http://www.google.com/)</string>
+    <string name="menuNewPost">Create post</string>
+    <string name="menuCancelPost">Cancel post</string>
+    <string name="offline">Offline</string>
+    <string name="cancel">Cancel</string>
+    <string name="send">Send</string>
+    <string name="message">Message</string>
+    <string name="newMessage">New Message</string>
+    <string name="newTextMessage">New Text Message</string>
+    <string name="write_message">Write message</string>
+    <string name="write_something">Write your complaint or feedback</string>
+    <string name="goButton">Go</string>
+    <string name="update">Update</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next > </string>
+    <string name="finish">Finish</string>
+    <string name="loginButton">Login</string>
+    <string name="loginWaringText">Only Faculty/Student of SVECW can login!</string>
+    <string name="updatephoneandemail">Update your phone and email</string>
+    <string name="selectUserAdmin">Select user</string>
+    <string name="searchStudent">Search student</string>
+    <string name="selectAction">Select an action to proceed</string>
+    <string name="selectUser">Select a user to assign</string>
+    <string name="selectUserMessage">Select user to send message</string>
+    <string name="selectPrivilege">Select a privilege</string>
+    <string name="messagePrivilege">Send Messages</string>
+    <string name="specificMessagePrivilege">Send Specific Messages</string>
+    <string name="assignPrivilege">Assign/Update privilege</string>
+    <string name="updateStudentBranch">Update student branch</string>
+    <string name="typeUsername">Type username</string>
+    <string name="yourEmail">Your email</string>
+    <string name="yourPhone">Your phone</string>
+
+    <string name="hintModeratePrivilege">Moderate student wall posts and messages sent from faculty to students</string>
+
+    <string name="pendingVerification">We have sent a confirmation link to your email. Confirm your account with SVECW by clicking on that link</string>
+    <string name="emailId">Email id</string>
+    <string name="testEmailId">Email id - example@email.com</string>
+    <string name="password">Password</string>
+    <string name="phoneOptional">Phone number (optional)</string>
+    <string name="emailOptional">Email (optional)</string>
+    <string name="phoneNumber">Phone number</string>
+    <string name="secureCode">Secret code</string>
+    <string name="secretCode">Secret code</string>
+    <string name="guest">Guest</string>
+    <string name="moreAboutCollege">More about college</string>
+    <string name="admin">Admin</string>
+    <string name="moderator">Moderator</string>
+    <string name="company">Company</string>
+    <string name="count">Count</string>
+    <string name="student">Student</string>
+    <string name="college">College</string>
+    <string name="faculty">Faculty</string>
+    <string name="profile">Profile</string>
+    <string name="myProfile">My Profile</string>
+    <string name="notify">Tap here to receive notifications</string>
+    <string name="notify_1">Please wait a moment! we are collecting data from your phone to send notifications</string>
+    <string name="notify_2">Congrats! now you can receive notifications</string>
+    <string name="profileDetails">View/Update profile</string>
+    <string name="adminPanel">Admin panel</string>
+    <string name="learn">Learn</string>
+    <string name="academics">Academics</string>
+    <string name="newAcademicsPost">New Academics Post</string>
+    <string name="notifications">Notifications</string>
+    <string name="knowledgeWall">Knowledge wall</string>
+    <string name="knowledge">Knowledge</string>
+    <string name="globalInfo">Global Info</string>
+    <string name="globalWall">Global Wall</string>
+    <string name="collegeWall">College Wall</string>
+    <string name="studentWall">Student Wall</string>
+    <string name="alumniWall">Alumni Wall</string>
+    <string name="alumni">Alumni</string>
+    <string name="collegeInfo">College Info</string>
+    <string name="collegeMap">College Map</string>
+    <string name="aboutUs">About Us</string>
+    <string name="management">Management</string>
+    <string name="courses">Courses</string>
+    <string name="Placements">Placements</string>
+    <string name="welcome">Welcome</string>
+    <string name="collegeText">Shri Vishnu Engineering College for Women \n(Autonomous)</string>
+    <string name="initiatives">Initiatives &amp; Achievements</string>
+    <string name="achievements">Achievements</string>
+    <string name="highlights">Highlights</string>
+    <string name="contactUs">Contact us</string>
+    <string name="gallery">Gallery</string>
+    <string name="aboutApp">About App</string>
+    <string name="aboutCollege">About College</string>
+    <string name="like">Like</string>
+    <string name="likes">likes</string>
+    <string name="dislike">Dislike</string>
+    <string name="share">Share</string>
+    <string name="comment">Comment</string>
+    <string name="comments">Comments</string>
+    <string name="writeAComment">Write a comment&#8230;</string>
+    <string name="writeAMessage">Write a message&#8230;</string>
+    <string name="messageLimit">Enter not more than 160 characters..</string>
+    <string name="more">More</string>
+    <string name="messages">Messages</string>
+    <string name="inbox">Inbox</string>
+    <string name="groups">Groups</string>
+
+    <string name="goKarting">Vishnu Karting</string>
+    <string name="hods">HOD</string>
+
+    <string name="groupMessages">Group messages</string>
+    <string name="groupDetails">Important groups of college</string>
+    <string name="groupMessagesDetails">Group messages - Details</string>
+    <string name="complaint">Complaint</string>
+    <string name="Feedback">Feedback</string>
+    <string name="assignment">Assignments</string>
+    <string name="complaintOrFeedback">Complaint / Feedback</string>
+    <string name="hashSymbol">\#</string>
+    <string name="exams">Exams</string>
+    <string name="examResult">Exam Result</string>
+    <string name="proceed">Proceed</string>
+    <string name="dean">Dean</string>
+    <string name="ragging">Anti-Ragging</string>
+    <string name="counselors">Counselors</string>
+    <string name="placementCoordinators">Placement Coordinators</string>
+    <string name="ecapCoordinators">ECAP Coordinators</string>
+    <string name="classRepresentatives">CRs</string>
+    <string name="hostelRepresentatives">HRs</string>
+    <string name="studentClub">Student Clubs</string>
+    <string name="attachFile">Attach file</string>
+    <string name="search">Search</string>
+    <string name="name">Name</string>
+    <string name="idselected">collegeId</string>
+    <string name="nameselected">username</string>
+    <string name="id">College id</string>
+    <string name="regd_no">Regd.No</string>
+    <string name="enterUserName">Enter student name and search</string>
+    <string name="enterId">Enter id or name</string>
+    <string name="selectBranch">Select Branch</string>
+    <string name="selectCategory">Select Category</string>
+    <string name="selectType">Select Type</string>
+    <string name="selectModule">Select Module</string>
+    <string name="selectYear">Select Year</string>
+    <string name="selectSemester">Select Semester</string>
+    <string name="refresh">Refresh</string>
+    <string name="fetchUpdatedPrivileges">Fetch my updated privileges</string>
+    <string name="fetchUpdatedPrivilegesNote">*Click here to update privileges to your profile</string>
+    <string name="timeTableView">Time Table</string>
+    <string name="syllabusView">Syllabus</string>
+    <string name="classNotesView">Class Notes</string>
+    <string name="placements">Placements</string>
+    <string name="recruiters">Recruiters list</string>
+    <string name="viewAttachments">View attachments</string>
+    <string name="selectToPost">Select to Post</string>
+    <string name="newGroup">New group</string>
+
+    <string name="from">From</string>
+    <string name="to">To</string>
+
+    <string name="cPlusPlus">C++</string>
+    <string name="java">Java</string>
+    <string name="html">HTML</string>
+    <string name="css">CSS</string>
+    <string name="JavaScript">JavaScript</string>
+    <string name="sql">SQL</string>
+    <string name="android">Android</string>
+    <string name="gre">GRE</string>
+
+    <string name="fetchingInfo">Fetching updated info..</string>
+    <string name="collegeWallPost">New College Wall Post</string>
+    <string name="studentWallPost">New Student Wall Post</string>
+    <string name="knowledgeWallPost">New Knowledge Wall Post</string>
+    <string name="knowledgeWallPostText">Create a knowledge wall post</string>
+    <string name="alumniWallPost">New Alumni Wall Post</string>
+    <string name="alumniWallPostText">Create a alumni wall post</string>
+    <string name="collegeWallPostText">Create a college wall post</string>
+    <string name="studentWallPostText">Create a student wall post</string>
+    <string name="adminPanelText">Manage user data</string>
+    <string name="messagesText">Send/ Receive a message</string>
+    <string name="inboxText">Your messages</string>
+    <string name="learnText">Explore knowledge</string>
+    <string name="complaintOrFeedbackText">Write to us&#8230;</string>
+    <string name="examsText">Compete on the go&#8230;</string>
+    <string name="assignmentsText">Get updated stuff</string>
+    <string name="directoryText">See contacts</string>
+    <string name="collegeDirectoryText">See faculty contacts</string>
+    <string name="studentDirectoryText">See student contacts</string>
+    <string name="aboutUsText">Know more about us</string>
+    <string name="collegeMapText">Our location</string>
+    <string name="academicsText">Get updates</string>
+    <string name="questions">Questions</string>
+    <string name="numberOfQuestions">Number of questions : </string>
+    <string name="correctAnswers">Correct answers : </string>
+    <string name="wrongAnswers">Incorrect answers : </string>
+    <string name="examPercentage">Percentage : </string>
+
+    <string name="loginTryAgain">Please try again in a moment</string>
+    <string name="errorMsg">Oops! something went wrong, try again later</string>
+    <string name="loginErrorMsg">Problem with your network, try again later</string>
+    <string name="loginServerError">Our server is resting for a moment. Please try again in some time!</string>
+
+    <string name="duplicateLogin">Hey, we found that you are logged in to this app with same id from another device. For each collegeId, this app works only on single device.</string>
+
+    <string name="aboutUsContent">Shri Vishnu Engineering College for Women(SVECW) was established in the year 2001 by our Founder Chairman Late Padmabhushan Dr. B. V. Raju, a distinguished industrialist, philanthropist and an eminent educationalist in Vishnupur, Bhimavaram
+        \n\n\u2022Accredited by NAAC with \'A\' grade
+        \n\n\u2022Accredited with NBA
+        \n\n\u2022Permanent affiliation by JNTUK, Kakinada
+        \n\n\u2022SVECW is located in Bhimavaram - the central part of Coastal Andhra.The area generally known for its commercial activities has recently established itself as a Center for Academics
+        \n\n\u2022The campus is located in Vishnupur which is 3 km from Bhimavaram on Tadepalligudem Road
+        \n\n\u2022The campus spreads around 100 acres landscape known for its salubrious climate and presents congenial atmosphere to pursue higher studies
+        \n\n\u2022Our infrastructure is vibrant in nature because of constant attempt to maintain pace with the development available. The infrastructure acts as a facilitator for the effective delivery of our curriculum
+        \n\n\u2022Apart from the common central facilities the colleges has well-equipped laboratories, lecture halls, drawing and seminar halls etc
+        \n\n\u2022The organization provides adequate infrastructural support for all sports activities which provide students physical fitness and personality development inturn cultivate in them sportsman spirit, team spirit, leadership and talent
+    </string>
+
+    <string name="hashCse">\#CSE/IT</string>
+    <string name="hashEce">\#ECE</string>
+    <string name="hashEee">\#EEE</string>
+    <string name="hashIt">\#IT</string>
+    <string name="hashMech">\#Mech</string>
+    <string name="hashCivil">\#Civil</string>
+    <string name="hashBasicScience">\#Basic Science</string>
+    <string name="hashMba">\#MBA</string>
+    <string name="hashMca">\#MCA</string>
+
+
+    <string name="directory">Directory</string>
+    <string name="facultyDirectory">Faculty Directory</string>
+    <string name="collegeDirectory">College Directory</string>
+    <string name="studentDirectory">Student Directory</string>
+    <string name="CSEDirectory">CSE Directory</string>
+    <string name="ITDirectory">IT Directory</string>
+    <string name="ECEDirectory">ECE Directory</string>
+    <string name="EEEDirectory">EEE Directory</string>
+    <string name="MECHDirectory">Mechanical Directory</string>
+    <string name="CIVILDirectory">Civil Directory</string>
+    <string name="MBADirectory">MBA Directory</string>
+    <string name="MCADirectory">MCA Directory</string>
+    <string name="BasicScienceDirectory">Basic Science Directory</string>
+    <string name="CollegeDirectory">College Directory</string>
+
+
+    <string name="sampleLikeText">143 likes</string>
+    <string name="branchHeading">Branch : </string>
+    <string name="departmentHeading">Department : </string>
+    <string name="collegeIdLogin">College id</string>
+    <string name="collegeId">College Id : </string>
+    <string name="yearHeading">Year : </string>
+    <string name="semesterHeading">Semester : </string>
+    <string name="aboutUsHeading">About Me</string>
+    <string name="profileBranchSample">Update your branch</string>
+    <string name="profileAboutMeSample">Update about yourself</string>
+
+    <string name="bTech">B.TECH</string>
+
+    <string name="ECEText">Electronics and Communication Engineering - ECE</string>
+    <string name="eceInTake">Intake - 180</string>
+
+    <string name="CSEText">Computer Science and Engineering - CSE</string>
+    <string name="cseInTake">Intake - 180</string>
+
+    <string name="ITText">Information Technology - IT</string>
+    <string name="itInTake">Intake - 120</string>
+
+    <string name="EEEText">Electrical and Electronics Engineering - EEE</string>
+    <string name="eeeInTake">Intake - 120</string>
+
+    <string name="CivilText">Civil Engineering - CE</string>
+    <string name="civilInTake">Intake - 60</string>
+
+    <string name="MechanicalText">Mechanical Engineering - ME</string>
+    <string name="mechanicalInTake">Intake - 60</string>
+
+    <string name="masterDegree">M.TECH</string>
+
+    <string name="VLSIDesign">M.Tech. VLSI Design</string>
+    <string name="vlsiInTake">Intake - 18</string>
+
+    <string name="powerElectronicsDesign">M.Tech. Power Electronics</string>
+    <string name="powerElectronicsInTake">Intake - 18</string>
+
+    <string name="softwareEngineeringDesign">M.Tech. Software Enggineering</string>
+    <string name="softwareEngineeringInTake">Intake - 18</string>
+
+    <string name="mTechCSEDesign">M.Tech. CSE</string>
+    <string name="mTechCSEInTake">Intake - 18</string>
+
+    <string name="geoInformaticsDesign">M.Tech. Geoinformatics</string>
+    <string name="geoInformaticsInTake">Intake - 18</string>
+
+    <string name="mcaDesign">Master of Computer Applications - MCA</string>
+    <string name="mcaInTake">Intake - 60</string>
+
+    <string name="mbaDesign">Master of Business Administration - MBA</string>
+    <string name="mbaInTake">Intake - 60</string>
+
+    <string name="mba">MBA</string>
+
+    <string-array name="globalInfoCategories">
+        <item>Technology</item>
+
+        <item>Business</item>
+        <item>Startups</item>
+        <item>News and Events</item>
+
+    </string-array>
+
+    <string-array name="branchesDirectory">
+        <item>ALL</item>
+        <item>CSE</item>
+        <item>IT</item>
+        <item>ECE</item>
+        <item>EEE</item>
+        <item>MECHANICAL</item>
+        <item>CIVIL</item>
+        <item>BASIC SCIENCE</item>
+        <item>MBA</item>
+    </string-array>
+
+    <string-array name="branches">
+        <item>Select Department</item>
+        <item>CSE</item>
+        <item>IT</item>
+        <item>ECE</item>
+        <item>EEE</item>
+        <item>ME</item>
+        <item>CIVIL</item>
+        <item>BASIC SCIENCE</item>
+        <item>MBA</item>
+    </string-array>
+
+    <string-array name="years">
+        <item>Select year</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="toYears">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="semesters">
+        <item>Select semester</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="toSemesters">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="academicsModules">
+        <item>Time table</item>
+        <item>Syllabus</item>
+        <item>Class notes</item>
+    </string-array>
+
+    <string name="title_activity_maps">CollegeMap</string>
+
+    <string name="appVersion">App Version : Beta 3.0</string>
+    <string name="appBy">YesWeStartup</string>
+
+    <string name="selectSpinner">Select branch</string>
+
+    <string name="likeBtn">Like</string>
+    <string name="commentBtn">Comment</string>
+    <string name="submit">Submit post</string>
+
+    <string name="submitComplaint">Submit</string>
+    <string name="verifyAnswer">Verify answer</string>
+    <string name="a">A</string>
+    <string name="b">B</string>
+    <string name="c">C</string>
+    <string name="d">D</string>
+
+
+    <declare-styleable name="customFont">
+        <attr name="android:fontFamily" />
+        <attr name="android:textStyle" />
+    </declare-styleable>
+
+    <string name="recruitersList">Recruiters List</string>
+    
+    <string name="p2016">2016</string>
+    <string name="p2015">2015</string>
+    <string name="p2014">2014</string>
+    <string name="p2013">2013</string>
+    <string name="p2012">2012</string>
+    <string name="p2011">2011</string>
+    <string name="p2010">2010</string>
+    <string name="p2009">2009</string>
+    <string name="p2008">2008</string>
+    <string name="p2007">2007</string>
+
+    <string name="founder">Founder</string>
+    <string name="chairmanName">Chairman name</string>
+    <string name="chairman">Chairman</string>
+    <string name="viceChairman">Vice Chairman</string>
+    <string name="principalName">Principal name</string>
+    <string name="principal">Principal</string>
+    <string name="secretary">Secretary</string>
+    <string name="jointSecretary">Joint Secretary</string>
+    <string name="vicePrincipal">Vice Principal</string>
+
+    <string name="founderHeading">Dr.B.V.Raju \n Founder Chairman</string>
+    <string name="founderText">Late Padma Bhushan Dr.B.V.Raju a Septuagenarian coming from a humble agricultural family of Kumudavalli Village near Bhimavaram, W.G.Dist of AP.</string>
+
+    <string name="founderText1"> Education:</string>
+    <string name="founderText2"> Graduation in Chemical Engineering in Benaras Hindu University and Management from Harvard University of U.S.A.</string>
+
+    <string name="founderText3">Awards:</string><string name="founderText4"> In due Recognition of his contribution for the industrial sector in India, he was awarded with "PADMA SHRI" in 1977 and "PADMA BHUSHAN" in 2001 by the Govt. of India., and was awarded "DOCTORATE" by Jawaharlal Nehru Technological University, Hyderabad. \n \nDr.B.V.Raju Served as Managing Director and Chairman of Cement Corporation of India. Founder Chairman of   Raasi Group of Industries, which included Sri Vishnu Cements Ltd., Raasi Refractories Ltd., Raasi Ceramics Ltd., and Raasi Finance and Investments Ltd. \n \nBeing an earnest scholarly man, he knew best the value of education and so he diverted his focus from industrial field to the vast field of education to set up a series of colleges under Dr. B.V. Raju Foundation and Sri Vishnu Educational Society. \n
+</string>
+
+    <string name="chairmanHeading">Mr. K.V. Vishnu Raju \n Chaiman</string>
+    <string name="chairmanText">Sri. K.V. Vishnu Raju is the grandson of the Founder Chairman, Late. Padma Bhushan Dr. B.V. Raju and is his ardent follower and admirer. \n\nWith the demise of the Founder Chairman, he succeeded Dr. B.V. Raju as the Chairman of Dr. B.V. Raju Foundation and Sri Vishnu Educational Society in June 2002.</string>
+
+    <string name="chairmanText1">Education:</string>
+    <string name="chairmanText2"> He had his primary schooling in England. He continued his schooling at Ooty and then at New Delhi. He studied Class X in Little Flower School, Hyderabad and Intermediate in Little Flower Jr. College, Hyd. He completed graduation in Chemical Engineering at REC, Trichy &amp; Post Graduation at Michigan Tech University, U.S.A.</string>
+
+    <string name="chairmanText3">Awards:</string>
+    <string name="chairmanText4"> Sri K V Vishnu Raju, received the Distinguished Alumnus Award in Golden Jubilee Celebrations of NIT, Trichy for Excellence in Service to Society.\n\nHe is now the Chairman and Managing Director of Vennar Ceramics Ltd., Sai Aditya Foods &amp; Retail Pvt. Ltd. and Anjani Projects &amp; Constructions Ltd.\n\nHe was greatly influenced by his grandfather from whom he had imbibed the qualities of simplicity, hard work, will power, patience and kindliness.
+        \n\nAfter the passing away of Dr. B.V. Raju, the twin responsibilities of running the college and the industries devolved on Sri Vishnu Raju\'s young shoulders. But his tenure as a veritable understudy to the Founder Chairman had helped him hone his administrative skills and acumen. He had also inherited the dynamism, diligence, stamina and the perseverance of his grandfather.\n\nHe believes that it is inactivity and not activity that wears down the body and spirit. While Sri. K.V. Vishnu Raju is the personification of equanimity and
+affability, he is a tough taskmaster expecting everyone to perform to his or her potential. Again, while he is large-hearted, always willing to invest whatever it takes for the holistic development of students, especially the economically backward, he discourages wasteful expenditure.\n\nSri. K.V. Vishnu Raju carries the torch of vision of his grandfather. Presently, he is working incessantly and tirelessly towards the starting of a medical college, the up-gradation of all the present colleges and the setting up of research parks to encourage innovation and out-of-the-box thinking.\n\n
+</string>
+
+    <string name="viceChaimanHeading">Sri.Ravichandran Rajagopal \n Vice Chairman</string>
+    <string name="viceChairmanText">Sri.Ravichandran Rajagopal is a graduate in Mechanical Engineering from National Institute of Technology, Tiruchirapalli, and a postgraduate in Management from Indian Institute of Management, Calcutta.\n\nRavichandran started his professional career with the Swiss multinational company Novartis, India where he served in various capacities including Business Development, New Product and Application development, and Vendor Development.</string>
+
+    <string name="secretaryHeading">Sri P. Krishnaganga Raju \n Secretary</string>
+    <string name="secretaryText">Sri P. Krishnaganga Raju is the Secretary of Sri Vishnu Educational Society. He is a post graduation in Commerce. He worked in government and private organizations for several years.\n\nAs a close associate of the chairman, he has played a key role in the establishment of Raasi Group of Industries, Sri Vishnu Educational Society and Dr. B.V. Raju Foundation. His wisdom and elderly guidance go hand-in-hand with dynamism of the Chairman, Sri K.V. Vishnu Raju. He is associated with many social organizations like Care Foundation etc.</string>
+
+    <string name="jointSecretaryHeading">Sri K Aditya Vissam \n Joint Secretary</string>
+    <string name="jointSecretaryText">Sri K Aditya Vissam is the Joint Secretary of Sri Vishnu Educational Society. He pursued his graduation in Industrial engineering from Penn State University, USA.\n\nHe is proficient in Solidworks, Matlab, C++, AutoCAD and WMS. He is passionate engineer always striving to learn and innovate.</string>
+
+
+    <string name="principalHeading">Dr. G. Srinivasa Rao \n Principal</string>
+    <string name="principalText">Dr. G. Srinivasa Rao
+
+        Ph.D. Mechanical Engineering from Visvesvaraya Technological University, Belgaum, Karnataka.
+
+M.Tech. in Manufacturing Technology from NIT-Calicut.
+
+B.Tech. in Mechanical Engg. from S.V. University College of Engineering – Tirupathi.
+
+LME Diploma in Mechanical Engineering from S.V. Govt. Polytechnic, Tirupathi.
+
+\n\nCurrently working as Professor and Principal in Shri Vishnu Engineering College for Women, Bhimavaram, West Godavari Dist., A.P.
+
+\n\nPreviously worked in various levels from Lecturer to Professor in Mechanical Engineering Department of Sir M.Visvesvaraya Institute of Technology, Bangalore.
+
+\n\nHis total teaching experience is around 18 years. Strength of Materials, CAD/CAM, Theory of Elasticity, Theory of Plasticity, Finite Element Methods, Fracture Mechanics &amp; FEM are the subjects being taught by him. Research Interests includes guided two M.Tech. Student in CAD/CAM and more than 60 students at UG level.
+
+\n\nLife Member ISTE, Member SAE, Life Member CSI. Technical Papers Published in 2 International Journal + 2 National Journals + 3 National Conferences.
+
+\n\nAfter starting his carrier as a Lecturer, to upgrade and update his knowledge he did Post Graduate Diploma in Advanced Studies in Software Export Technology.\n\nTo be fit in the quality education system, he  did a course successfully and became the Certified Examiner for Quality Management of Indian Merchants Chambers Quality Award (IMC RBNQA) in the field of Education.</string>
+
+    <string name="vicePrincipalHeading">Dr. P. Srinivasa Raju \n Vice Principal</string>
+    <string name="vicePrincipalText">Dr. P. Srinivasa Raju Ph.D., Mechanical Engineering from Rayalaseema University, Kurnool, A.P.
+
+\nM.Tech., in Machine Design from JNTUK, Kakinada.
+
+\nB.Tech. in Mechanical Engg. from S.R.K.R. Engineering College, Bhimavaram, W.G. Dist., A.P.
+
+\n\nCurrently working as a Professor and Vice-Principal in Shri Vishnu Engineering College for Women, Bhimavaram, West Godavari Dist., A.P.
+
+\n\nHe is associated with this college since its inception i.e. from 2001.
+
+\n\nPreviously worked as Assistant Professor in Mechanical Engineering Department of GIET, Rajahmundry. His total teaching experience is around 13 years. Strength of Materials, FM &amp; HM, Engineering Drawing, Design of Machine Members, Pumps &amp; Prime movers, are the subjects being taught by him.
+
+</string>
+
+
+    <string name="awardsHeading">Awards &amp; Rewards</string>
+    <string name="awardsText">\u2022 Accredited by NAAC with \'A\' Grade\n\n\u2022 Accredited by NBA \n\n\u2022 Permanent Affiliation by JNTUK,Kakinada\n\n\u2022 SVECW is among 25 private unaided technical institutions across India selected for TEQIP– II (Technical Education Quality Improvement Program under subcomponent 1.1 (Strengthening Institutions Learning Outcomes and Employability of Graduates).\n\n\u2022 Winner of the IMC Ramkrishna Bajaj National Quality (RBNQ) Trophy 2011 – Highest Quality Award in Education Sector</string>
+
+    <string name="vishuRDHeading">Vishu R &amp; D</string>
+    <string name="vishuRD">Vishnu R&amp;D Center, a unit of Shri Vishnu Engineering College for Women, has been established to catalyze proactive applied research to help and solving industries\' technical problems and is positioned to address and contribute to the market and society needs.
+
+\n\nThe goals of the research center, in general, are to
+
+\n\u2022 Publish papers in refereed International Journals and Conferences
+        \n\n
+\u2022 File patent applications in market-dependent countries
+        \n\n
+\u2022 Assert relationship with multi-national research labs
+        \n\n
+\u2022 Submit proposals to several funding agencies
+        \n\n
+The research center works in a proactive manner to lay a foundation for work in a particular area and based on this foundational work, submits concrete proposals to corporate R&amp;D labs and government funding agencies.\nThe research center is keen to offer applied research and development services and explicitly demonstrate the value addition.\nThe Research Center focuses on various independent domains and encourages Multidisciplinary Research.</string>
+
+    <string name="missionRDHeading">Mission R &amp; D</string>
+    <string name="missionRD">Mission R&amp;D is an innovative initiative with a vision to "transform intelligent, hardworking, motivated students to realize their full potential" and prepare them for a great R&amp;D career at major global corporations.\nThe key objective of this endeavor is to significantly increase the number of women in R&amp;D roles.
+ 
+Initiated by people who have many years of global product development experience, Mission R&amp;D aims to transform the students through a short duration summer program and put them on a path towards a rewarding R&amp;D career.\nThe program helps the students gain expertise in computer science fundamentals, professional software development tools and latest programming platforms giving them confidence and unleashing their inherent potential to become top R&amp;D engineers.\nSome major multi-national and start-up companies have signed up to interview the students for R&amp;D roles, immediately after they complete the program.</string>
+
+
+    <string name="jkcHeading">IEG-JKC star</string>
+    <string name="jkc">JKC is an initiative of Institute for Electronic Governance (IEG) of the Department of IT&amp;C, Govt. of Andhra Pradesh to promote interaction between industry, institute and government. JKC aims to impart employable skills and industry grade skills to the engineering and MCA students, particularly of rural background and also provides employment opportunities.
+\n\nObjectives:\nTo promote the Industry Education Government interaction. Simultaneously, offering employable skills to students and producing quality workforce to the industry who are job ready.
+To increase the awareness on opportunities available in industry and on skills required to tap those opportunities.\n
+JKC was established at SVECW in Dec 2004. Since inception the institution is ranked as the best JKC among the other JKC colleges in the State and IEG has granted JKC Star status to SVECW.\nThe JKC Star status is given to the best performing JKC Colleges in terms of infrastructure, commitment, placements and assessment. JKC Star status of the college is reviewed regularly based on commitment of the college, infrastructure provided and support given. Every year, about fifty students selected from different organizations are trained for six months in JKC Star colleges.\n
+        SVECW is selected as the \'Best JKC\' for the academic year 2009-10 and our chairman Sri K.V. Vishnu Raju garu received "Outstanding Performance Award" from Honorable Chief Minister Sri K. Rosaiah garu in the function held at Shilpa Kala Vedika, Hyderabad on 28-04-2010.</string>
+
+
+    <string name="radioHeading">Radio Vishnu 90.4</string>
+    <string name="radio">The First Campus Radio in Andhra Pradesh, India
+        \nThe campus is driven by novel ideas of the Chairman.
+\n\nObjectives:\n
+        A non-profitable community radio station was set up with a vision to give voice to voiceless.
+Enabling interaction between community and academia, it enhances inter/intrapersonal skills of the students and instills social responsibility.\n\nStudents develop most of the radio programmes on many relevant social issues keeping in mind all and sundry in the society.
+</string>
+
+
+    <string name="foreignLangHeading">Foreign Languages</string>
+    <string name="foreignLang">Technology has brought everyone on the globe together. Students pursue their higher studies abroad and graduates may get employment anywhere on the earth.
+Keeping this in view SVECW is facilitating certificate courses in various languages such as\n \u2022French\n\u2022German\n\u2022Spanish\n\u2022Japanese\n\u2022Mandarin
+</string>
+
+    <string name="womenTechHeading">Women Technology Park</string>
+    <string name="womenTech">
+        The Project is Sanctioned by Department of Science and Technology (DST)
+        \n\n Objectives :
+        \n\n
+        \u2022 Provide Technology for sustainable utilization of natural resources for livelihood generation and provide opportunities for better utilization of waste\/byproducts for income generation
+        \n\n
+        \u2022 Serve as a common platform for deploying location specific technologies for women and wider dissemination of these technologies and establish inter linkages with R&amp;D institutes for promotion and development of appropriate technologies
+        \n\n
+        \u2022 To develop individual and group entrepreneurship by providing training, backward and forward linkages
+        \n\n
+        \u2022 To create a network of women groups and facilitate income generation programmes
+        \n\n
+        \u2022 To organize discussion\/workshop on Women\’s (Health) Problem
+        \n\n
+        \u2022 Development of Audio-Visual Aids for technology Dissemination
+
+</string>
+
+    <string name="iuceeHeading">IUCEE</string>
+    <string name="iucee">
+        The Indo US Collaboration for Engineering Education (IUCEE), with headquarters at University of Massachusetts Lowell, was conceptualized by over 150 leaders of engineering education and businesses from US and India in 2007.\n\n
+        The vision of IUCEE is to improve the quality and global relevance of engineering education and research in India with a major focus on faculty, student and curriculum development, as well as improved teaching technologies &amp; research.
+        \n\nThe IUCEE process is making progressive strides from the past five years. Each year, international experts from the US travel to India to discuss global best practices in teaching and research in different fields of engineering with Indian faculty from public &amp; private colleges in one-week workshops at Faculty Leadership Institutes (FLI).
+        \n\nIn 2008, Shri Vishnu Engineering College For Women was selected as an IUCEE Provisional Regional Centre. This is one of two regional centres in Andhra Pradesh. These Regional Centres are established throughout India in order to scale up and sustain the impact.
+        \n\nLater, the IUCEE College Consortium was created in 2010 with 22 college members. Gradually it has increased to 77 members by 2013. SVECW has been the member of IUCEE College Consortium since 2010. Through the membership SVECW receives special assistance in establishing collaborations with US experts and MOUs with US colleges as well as opportunities for publicity and branding at various global forums.
+        \n\n\u2022IUCEE Virtual Academy.
+        \n\nThe IUCEE Virtual Academy uses on-line technology, for US experts to conduct live Webinars and MiniCourses to faculty and students all over India.
+</string>
+
+
+    <string name="wifiHeading">Wifi Campus</string>
+    <string name="wifi">SVECW is one of the few Colleges, which can boast of its state-of-the-art computing resources and network across the campus. It has IT Infrastructure that can support 3000+ computer terminals, probably one of the largest wi-fi infrastructure
+    \n\n
+    Features:
+    \n\n
+        \u2022 Completely Wi-Fi Campus with 20+ access point, supported on the technology from RUCKUS
+        \n\n
+        \u2022 86 Mbps of bandwidth for internet with dedicated leased line
+        \n\n
+        \u2022 1000 + workstations supported by Xeon based Rack Servers
+        \n\n
+        \u2022 Powerful servers from IBM for 100% redundancy and efficient data management
+        \n\n
+        \u2022 10 Km fibre backbone for providing 1GB seamless connectivity
+        \n\n
+        \u2022 D-Link 3627G core switch to provide the needed scalability and traffic control
+        \n\n
+        \u2022 Cyberome High end firewall security featured network
+        \n\n
+        \u2022 24hrs Power Back Up -320 KVA of online uninterrupted power supply(UPS)
+        \n\n
+        \u2022 30+ CCTV cameras for 24 hours surveillance to ensure on campus safety and security
+        \n\n
+        \u2022 High end Biometric systems for attendance
+
+    </string>
+    
+
+    <string name="counselingHeading">Counseling Scheme</string>
+    <string name="counseling">
+The main objective of Counseling is to help out each student in taking right decision for their academic and personal growth.
+        \n\nIn addition, counseling will boost up students’ morale and improve their learning abilities.
+        \n\nEvery teacher acts as a counselor in the counseling process.
+        \n\nThe faculty are ever ready to listen to their problems both academics and personal which hinder their learning abilities.
+        \n\nEach counselor is responsible for guiding about 20 students of a class depending on the strength of the class.
+        \n\nIn the counseling session, students raise their difficulties/problems regarding academics/general facilities/hostel facilities with their respective counselors.
+        \n\nThe counseling coordinator examines their problems and discusses with the principal to find a better solution for their grievances
+    </string>
+
+    <string name="teqipHeading">TEQIP</string>
+    <string name="teqip">Shri Vishnu Engineering College for Women is among 25 private unaided technical institutions across India selected for TEQIP – II (Technical Education Quality Improvement Program) under subcomponent 1.1 (Strengthening Institutions Learning Outcomes and Employability of Graduates)
+    \n\nOur honourable Chairman Sri K.V.Vishnu Raju signed an MOU with the Government of Andhra Pradesh on 19th of September 2011.\nUnder TEQIP-II Rupees 4,00,00,000/- was sanctioned with a view to utilizing this fund for the improvement of quality education for a period of three years
+    </string>
+    
+    
+    <string name="mousHeading">MOUs</string>
+    <string name="mous">Every engineering student must have industrial exposure while pursuing his/her graduation.  SVECW has had MOUs with many reputed enterprises and IT companies in order to bridge the gap between institute and industry.  As and when required, these industries provide necessary software/ teaching modules to coach the students for their bright future.
+    \n\n
+        We have MOUS with:
+        \n\n\n
+        \u2022Industry
+        \n\n
+Oracle\n
+IBM\n
+Infosys\n
+IUCEE\n
+Cyber Motions Technologies Ltd.\n
+Efftronics Pvt. Ltd.\n
+Texas Instruments\n
+Winzest\n
+Infotech Enterprises Ltd.\n
+Tata Consultancy Services\n
+Anjani Portland Cement Ltd.\n
+Cyber Motion Technologies Ltd.\n
+Vem Technologies Pvt.Ltd., Hyderabad\n
+Elico Ltd., Hyderabad\n
+Institute of Electronic Governance (IEG), Govt. A.P.\n
+Ensine Consultancy Services, Hyderabad.\n
+Thermopads Pvt.Ltd., Hyderabad.\n
+Hi-Q Electronics Ltd., Hyderabad\n\n
+
+        \u2022Universities\n\n
+
+IUCEE\n
+University of Massachusetts\n
+Purdue University\n\n
+    </string>
+    
+    <string name="studentClubsHeading">Student Clubs</string>
+    <string name="studentClubs">
+\u2022Amateur Astronomy Association (A A A)
+        \n\n\u2022ECO Club
+        \n\n\u2022IDEA Club
+        \n\n\u2022Painting Club
+        \n\n\u2022Music Club
+    </string>
+    
+    
+    <string name="qeeeHeading">QEEE</string>
+    <string name="qeee">Quality Enhancement in Engineering Education (QEEE) Program is sponsored by MHRD, Govt. of India through IIT Madras.\nShri Vishnu Engineering College for Women is selected to participate in the QEEE Pilot program in the first phase of 96 Colleges/Universities across India</string>
+
+
+    
+
+    <string name="atlHeading">ATL</string>
+    <string name="atl">The Assistive Technology Lab (ATL)  is a vision of Shri K. V. Vishnu Raju, the Chairman Educational Society, to utilize the skills of every engineering department of the college for the development of Assistive Technology.\nIt was set up in 2009 and works in collaboration with University of Massachusetts (UMass), Lowell, USA.\n
+        Assistive Technology Lab works for a very unique and a noble cause of designing projects by the students of SVECW to benefit the differently-abled. This is a small but definite step to mainstream people with disabilities into society.
+        \nProfessor Alan Rux , founder of the Assistive Technology Program at the University of Massachusetts, Lowell, USA, visits SVECW every year in the month of July and guides students in developing projects related to Assistive Technology.</string>
+
+
+    <string name="ibmHeading">IBM Mobility Center</string>
+    <string name="ibmText">Smt Malati Srinivasan, Country Manager, Academic Initiative, IBM India Pvt Ltd inaugurated the First IBM Mobility Center of Excellence (Mobility Lab) in the college which is the first of its kind in educational
+institutions across India.\n\nThe association of IBM Academic Initiative and SVECW started with the inauguration of IBM Center of Excellence at Shri Vishnu Engineering College For Women on 19th November 2009.\nThe IBM COE MOU was signed between Shri Vishnu Engineering College For Women and IBM, the relationship was established to give students and faculty the opportunity to work closely with the industry and utilize both the resources in the best possible manner.</string>
+
+    <string name="texasLabHeading">Texas Instruments Lab</string>
+    <string name="texaslabText">Texas Instruments Digital Signal Processing Lab is set up in SVECW in the month of January, 2012. The lab is equipped with TI DSP Starter Kits which include heterogeneous and medical imaging platforms, RFID Evaluation Kits, Bluetooth Transceivers, MSP430F microcontroller boards and also Launch Pads. Some of the Projects Carried Out&#8230;\n\n
+    \u2022Artificial Hand Gripper using Bluetooth Technology \n\n\u2022RFID Based Door Opening and Closing System\n\n
+        \u2022Voice Activated Dental Chair\n\n\u2022Speech Compression and Water Marking of speech using Heterogeneous Platforms
+        \n\n\u2022Implementation of Super Resolution Algorithms for Medical Imaging \n\n\u2022Intelligent home security system \n\n
+        \u2022Pattern identification &amp; calculation training system for students with autism(PICTS) \n\n\u2022System for monitoring drowsiness using eye movement
+
+    </string>
+
+    <string name="knowledgeCenterHeading">Dr. B V Raju Knowledge Center</string>
+    <string name="knowledgeCenterText">This nodal center for excellence in school education was started in December 2006 and inaugurated by Dr. T. Subba Rami Reddy - Union Minister of State for Mines at Dr. B. V. Rajus native village, Kumudavalli, which is 5 kms away
+        from the town of Bhimavaram.\nIn continuance to the legacy of social responsibility the Chairman, Sri. K. V. Vishnu Raju, transformed the ancestral house of the founder Chairman into a Knowledge Centre with an aspiration to provide quality primary education to
+        children from rural schools where infrastructural and laboratory facilities are not available.\nThe Knowledge Centre has the capacity to accommodate 120 students and is equipped with physics, chemistry,
+        biology and computer laboratories to facilitate students from VI to X classes to gain knowledge through first hand
+        experimentation.\nApart from this, the Knowledge centre has a well stocked library, computers with internet facility,
+        LCD Projectors and teaching audio-visual aids, scientific equipment and models, and CDs of related subjects for classes from VI to X standard.
+        \nThe teaching program is planned to cover all the zilla parishad schools located within 15 kms radius from the Knowledge Centre.\nThrough this program, the Centre is providing quality education to these students free of cost.
+        The students from each of these schools attend the Knowledge Centre and get experimental training in their
+        respective subjects.  The Knowledge Centre is providing free transportation to all these children. Every year 10000 students from 24 schools are utilizing this facility.
+
+\n\nSalient Features of the Knowledge Centre at Kumudavalli Village:\n\n
+        \u2022Seminar Hall with audio-visual teaching aids.\n\n\u2022State-of-the-art computer Lab.\n\n
+        \u2022Well equipped Physics, Chemistry and Biological Sciences Laboratories \n\n\u2022Modern Library\n\n
+        \u2022Transport Facility between schools and the centre\n\n
+        Our students are deputed to the Knowledge Centre to give training to the students.
+    </string>
+
+    <string name="talentSprintHeading">Talent Sprint</string>
+    <string name="talentSprintText">The MOU (WISE Programme) was signed between the SVECW and TALENT SPRINT and the relationship was established to empower the students by giving them the latest skills expected by employees in the IT sector.\nThis is also to help the students for enhancing their employment prospects, and creating linkages with the industry.</string>
+
+    <string name="contactInfo">Shri Vishnu Engineering College For Women(Autonomous)\nVishnupur, Bhimavaram - 534202\nWest Godavari District, Andhra Pradesh, India.
+</string>
+
+
+    <string name="contactInfo2">
+    Phone : 08816 - 238687, 250864
+\nFax : 08816 - 250099
+        \n\nEmail : info@svecw.edu.in\nprincipal@svecw.edu.in
+
+    </string>
+
+    <string name="contactInfo3">
+\nEamcet Counseling Code : VISW
+    </string>
+
+
+    <string name="A">A</string>
+    <string name="B">B</string>
+    <string name="C">C</string>
+    <string name="D">D</string>
+    <string name="E">E</string>
+    <string name="F">F</string>
+    <string name="G">G</string>
+    <string name="H">H</string>
+    <string name="I">I</string>
+    <string name="J">J</string>
+    <string name="K">K</string>
+    <string name="L">L</string>
+    <string name="M">M</string>
+    <string name="N">N</string>
+    <string name="O">O</string>
+    <string name="P">P</string>
+    <string name="Q">Q</string>
+    <string name="R">R</string>
+    <string name="S">S</string>
+    <string name="T">T</string>
+    <string name="U">U</string>
+    <string name="V">V</string>
+    <string name="W">W</string>
+    <string name="X">X</string>
+    <string name="Y">Y</string>
+    <string name="Z">Z</string>
+
+    <string name="wordSort">Search a word</string>
+
+    <string name="meaning">Meaning</string>
+    <string name="synonyms">Synonyms</string>
+    <string name="antonyms">Antonyms</string>
+    <string name="usage">Usage</string>
+
+    <string name="startext">* = informal/non-formal usage</string>
+    <string name="title_activity_home2">Home2</string>
+
+
+
+
+    <string name="note_0">Principal created a post on College wall</string>
+    <string name="note_1">Vasu posted image on College wall</string>
+    <string name="note_2">Nagaraju sent a message to II-IT Students</string>
+    <string name="note_3">Pavan posted on Alumni wall</string>
+    <string name="note_4">Knowledge wall is updated with new posts</string>
+    <string name="note_5">Devi posted on Student wall</string>
+    <string name="note_6">Ankur sent a message to IV-CSE Students</string>
+    <string name="note_7">Naina posted on Alumni wall</string>
+    <string name="note_8">Vasu created a poll on College wall</string>
+    <string name="note_9">Learn module updated with new cources</string>
+    <string name="note_10">Exams module has new questionare</string>
+    <string name="note_11">Learn module updated with new cources</string>
+
+
+
+
+</resources>

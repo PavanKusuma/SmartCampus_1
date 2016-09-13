@@ -1,0 +1,90 @@
+Gonuguntla Sowmya	:	IV IT - A
+Chandaluri Uma Lakshmi Asritha	:	IV IT - A
+Vemulapalli Satya Sri	:	IV IT - B
+Thommandru Lakshmi Niharika	:	IV IT - B
+A.Geethika Priya	:	IV EEE-A
+S.Sai Sujana	:	IV EEE-B
+E.Akhila Indu Sai	:	IV CSE-A
+G.Sai Tejaswi	:	IV CSE-A
+L.N.S.Sravani	:	IV CSE-B
+N.L.Gayatri	:	IV CSE-B
+V.Sri Ramya	:	IV CSE-C
+V.Rishitha	:	IV CSE-C
+K. Lakshmi Prasanna	:	IV Civil
+P. Jaya Sri Lalitha	:	IV Civil
+Kaladi Kusumanjali	:	IV MECH
+Yalamati Snehapriya	:	IV MECH
+A.Praveena	:	IVECE-A
+J.Ramyasri	:	IVECE-A
+Kommula Divya Likhita	:	IVECE-B
+Karri Vennela Silpa	:	IVECE-B
+V.Priyanka	:	IVECE-C
+T.Sindhu	:	IVECE-C
+Ch.Lakshmi Kalyani	:	III IT - A
+K.Suguna	:	III IT - A
+Manthena Lakshmi Mounika	:	III IT - B
+Muppidi Vani	:	III IT - B
+Ch.Vimala Krishna	:	III EEE -A
+M.Lekya Sri Ramya	:	III EEE -B
+G.Moushmi	:	III CSE - A
+J.Anvitha	:	III CSE - A
+K.Jemina	:	III CSE - B
+K.Madhu Sri	:	III CSE - B
+P.Sindhu	:	III CSE - C
+S.Manisha	:	III CSE - C
+P.Priyanka	:	III Civil
+M.V.K. E. Srihitha	:	III Civil
+B Venkata Durga Naga Prasanna	:	III MECH
+Kurella Manvitha Venkata Lakshmi	:	III MECH
+B.Vijaya Bhavani	:	III ECE-A
+G.Swapna	:	III ECE-A
+K.Swetha	:	III ECE-B
+K.Manasa Pravallika	:	III ECE-B
+P.Saraswathi	:	III ECE-C
+S.Pranathi	:	III ECE-C
+Achanta Krishna Sowjanya	:	II IT - A
+Kallakuri Harisree	:	II IT - A
+Manchili Satya Sai Srilalitha	:	II IT - B
+Tatipakala Jayasree	:	II IT - B
+Y.Jyoshitha	:	II EEE-A
+N.Mani Tajaswini	:	II EEE-B
+P.Mani Madhuri	:	II CSE - A
+G.Lalitha Devi	:	II CSE - A
+K.N.D.Kamala Devi	:	II CSE - B
+K.Naga Sruthi	:	II CSE - B
+Y.Sravanthi	:	II CSE - C
+K.Madhuri Devi	:	II CSE - C
+P.Amulya Sejal	:	II Civil
+S.Sadyajabeen	:	II Civil
+Surina Vijayasri	:	II MECH
+Pitchukala Vinaya	:	II MECH
+B.Triveni	:	II ECE-A
+G.Pranuthi	:	II ECE-A
+R.Anantha L Devi 	:	II ECE-B
+P.Archana	:	II ECE-B
+T.Uthpreksha	:	II ECE-C
+A.Anusha	:	II ECE-C
+Vasanthi	:	SEC : A
+Kousalya	:	SEC : A
+G.Harika	:	SEC : B
+D.Sarvajna	:	SEC : B
+K.Pavani	:	SEC : C
+K.Sucharitha	:	SEC : C
+M.Akhila	:	SEC : D
+N.Priya	:	SEC : D
+P. Maneesha	:	SEC : E
+S.Mounika	:	SEC : E
+Prameela	:	SEC : F
+Asha	:	SEC : F
+A.Kalyani	:	SEC : G
+B.Deepthi Krishna	:	SEC : G
+G.Naga Mounika	:	SEC : H
+K.Jayasri	:	SEC : H
+K.Hima Harshitha	:	SEC : I
+K.V.R.Sai Lakshmi	:	SEC : I
+M.Anitha	:	SEC : J
+L.Rupa Dhanasri	:	SEC : J
+R.Likhitha	:	SEC : K
+V.Tulasi	:	SEC : k
+Y.Usha Kiranmai	:	SEC : L
+T.Sravani Sai Kiran	:	SEC : L

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/collegeMap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+
+    <!-- Debug SHA1 key -->
+    <!-- E4:20:50:C2:B5:8A:96:1B:5F:26:87:AC:A3:B2:5B:33:EA:02:16:53 -->
+    <!-- Debug API key -->
+    <!-- AIzaSyCYSoAD1MpBj7CCYEw8BNU-nw3emQCuqVw -->
+
+    <!-- Release SHA1 key-->
+    <!-- 55:D2:3E:84:46:E4:98:EC:29:08:EE:F9:16:01:77:A1:F2:D3:2F:35 -->
+    <!-- Debug API key -->
+    <!-- AIzaSyB61Lj2Vog_hq5CaLhbJOPSecp27YlvH6k -->
+
+</LinearLayout>

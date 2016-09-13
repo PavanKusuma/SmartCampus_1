@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="@color/white">
+
+
+    <TextView
+        android:id="@+id/userObjectId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        />
+
+    <TextView
+        android:id="@+id/postObjectId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        />
+
+    <ImageView
+        android:id="@+id/commentUserImage"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_user_profile"
+        android:padding="4sp"/>
+
+    <ImageView
+        android:id="@+id/commentUserImageBG"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/user_image_bg"
+        android:padding="4sp"
+        android:contentDescription="@string/app_name"/>
+
+    <TextView
+        android:id="@+id/commentUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:paddingLeft="6sp"
+        android:layout_toRightOf="@+id/commentUserImage"/>
+
+    <TextView
+        android:id="@+id/commentText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/commentUserName"
+        android:textSize="16sp"
+        android:paddingLeft="6sp"
+        android:layout_toRightOf="@+id/commentUserImage"/>
+
+</RelativeLayout>

@@ -1,0 +1,3690 @@
+--
+immodesty,self-esteem,dignified,exalt
+augment,enlarge,swell,enhance
+Lengthen,elongate,prolong
+--
+truth,sanity
+hinder,obstruct,intercept
+continuance,renewal,revival,operation
+insolence,arrogance,haughtiness,pomposity
+worship,longfor,wish,earn
+--
+acquiscence,admittance,surrender,yielding
+adore,esteem,reverse,idolize
+complete,consummated,effectual,efficient
+likeable,pleasant,pleasing
+approve, establish, fix, institute, legalize, ratify, sanction, support 
+reappear,remain,stay,emerge
+accountable,lenient,docile,submission,gentle,constitutional
+bind,blame,condemn,convict,punish,sentence,incriminate
+pursue,adopt,persist,offer
+actual, concrete, factual, material, objective, physical, real 
+complete, expand, insert, lengthen, strengthen 
+complimentary, kind, respectful 
+--
+infinite 
+condemn, demur, denounce, denounce, deny, protest, refuse 
+decelerate, defer, hinder, impede, postpone, retard, slow down 
+inaccessible, limited, restricted
+principal 
+--
+--
+--
+antagonism, denial, disagreement, dissension, opposition, refusal 
+avoid, dodge, evade, ignore, scorn, shun 
+--
+decrease, deduction, shrinkage 
+decrease, lose
+sugary, sweet
+nadir
+disagree, dissent, object, protest
+blame, censure, conviction, denunciation, doom, sentence 
+delicious, savory, sweet
+--
+--
+impede, stop
+ignorance,inability,ineptness,obtuseness
+--
+--
+flexible, pliant, submissive, yielding 
+--
+--
+--
+detriment, lessening, subtraction 
+denial, disavowal, disclaimer, refusal, retraction, revocation 
+--
+applaud, approve, commend, compliment, extol, flatter, laud, praise 
+damage, deform, hurt, leave plain, mar 
+awkward, clumsy, dense, inept, stupid, unskilled
+abuse, criticism 
+clarify, clean, cleanse, distill, filter, free, purify, refine
+--
+departure, end 
+ally, assistant, backer, friend, helper, helpmate, supporter 
+advantageous, aiding, auspicious, favorable, fortunate, helpful, lucky, propitious 
+aid, encouragement, favor, fortune, good luck, help, prosperity 
+--
+antagonist, assailant, enemy, opposition, protestor 
+--
+complaining, disdainful, grouchy, grumbling
+calm, unmoved, unperturbed, unswayed
+--
+--
+dislike, hatred 
+denial, negation, nullification, veto 
+detach, let go, loosen 
+--
+appeasement, compliment, pleasantry 
+--
+--
+--
+--
+individual, part, particular 
+unsurprised 
+clumsiness, stiffness 
+calm, lull, quiet, soothe, tranquilize 
+believer 
+--
+--
+apathy, aversion, disinclination, dullness
+--
+--
+--
+be friendly, disarm 
+--
+--
+intensify, provoke, stir, worsen 
+contradict, deny, disagree, dissent, object
+--
+aggravate, heighten, increase, intensify, magnify
+--
+--
+--
+--
+reality
+heavenly, immaterial, spiritual, unearthly 
+below, under 
+concerned, friendly, sociable 
+agreement, concord, harmony, peace, union, unity
+selfish, unsacrificing 
+divide, separate
+disburse, disperse, dissipate, divide, dole, scatter, spend 
+--
+--
+--
+clear, definite, explicit, lucid 
+certainty, decisiveness 
+run
+--
+steady, stiff, unchanging 
+worsen
+intractable, nonconforming, uncooperative, unwilling
+blemish, corrupt, debase, depress, harm, impair, injure
+--
+crabby, disagreeable, gloomy, hateful, irritable
+hostile, unfriendly 
+good, right 
+discord, dislike, hatred, hostility 
+--
+--
+--
+chaste, controlled, good, innocent, moral
+cold, cool, frigid, hateful, indifferent, unfriendly
+definite, distinct, distinctive, shaped, shapely
+--
+--
+insufficient, meager, not enough 
+abridge, compress, condense, contract, curtail, decrease
+--
+--
+--
+--
+disagreeing, disparate, dissimilar, unalike, unlike, unrelated 
+disagreement, dissimilarity, unlikeness 
+--
+lawfulness, order, rule 
+--
+love
+--
+necessary, needed 
+--
+--
+analeptic, stimulant 
+comfort, contentment, happiness, joy, joyfulness, solace 
+straight 
+--
+--
+good will,love
+--
+--
+soften, weaken 
+help, preserve, revive, save 
+--
+--
+keep, restore, retain, revalidate, validate 
+--
+--
+conforming, normal, regular, standard, usual 
+conformity, normality, regularity, standard, usual, usualness 
+--
+ally, protagonist, supporter 
+descendant 
+predate 
+age-old, ancient, antiquated, antique, archaic, hoary, obsolete
+--
+--
+--
+climax
+admiration, appreciation, approval, esteem, honor, like
+forward-looking, modern, new, recent 
+contaminated, polluted, unclean, unsanitary, unsterile 
+same
+--
+caring, concerned, interested, responsive 
+care, concern, feeling, interest, passion, sensitivity, sympathy, warmth
+--
+nadir
+--
+articulate, speaking, vocal 
+--
+--
+gaucheness
+--
+authentic, doubtless, real, true
+--
+consciousness 
+adherent, faithful, loyalist 
+--
+--
+--
+comfort, encourage, reassure, satisfy 
+animate, being 
+aggravate, annoy, incite, irritate, provoke
+--
+disjoin, subtract, take away 
+--
+inappropriate 
+--
+be critical, criticize, disparage, disregard, neglect
+lose, not catch 
+at ease, calm, quiet, unafraid, undoubting
+--
+criticism, disapprobation 
+improper, unbecoming, unfitting, unseemly, unsuitable
+--
+inappropriate, irrelevant, unsuitable 
+disinclination, inaptitude, skillessness 
+straight 
+infertile 
+--
+circumspect, rational, reasonable, reasoned, supported 
+let ride 
+--
+--
+common, commonplace, known, normal
+--
+current, modern, new, present, young 
+atypical 
+--
+--
+coldness, coolness, frigidity, indifference 
+easy, facile, motivating 
+--
+--
+damp, humid, moist, wet 
+commoners, plebites, proletariat 
+--
+acrid, bland, unsavory 
+discharge, exonerate, free, let go 
+--
+--
+humility, meekness, servility 
+--
+clear, coherent, comprehensible, definite, distinct, eloquent, expressive, fluent, intelligible, lucid, meaningful, understandable, well-spoken 
+--
+candor, frankness, honesty, honor, ingenuousness, innocence, openness, reality, sincerity, truthfulness
+--
+artful, complicated, contrived, pretentious, sophisticated 
+inferiority, subordination, weakness 
+--
+sensualist
+--
+--
+--
+--
+--
+--
+calmness, happiness, kindness, mildness 
+calmness, happiness, kindness, mildness 
+--
+--
+--
+--
+--
+deny, reject 
+--
+lazy, neglectful, negligent
+misunderstand, reject, unlearn 
+exacerbate, upset 
+doubt, unexpected 
+distrust, doubt 
+--
+sight, sightedness 
+--
+bland, mild 
+insignificant, small 
+asinine, idiotic, ignorant, imbecile, obtuse, shallow, stupid, thick, unintelligent 
+together 
+--
+--
+--
+God-fearing, believing, religious 
+--
+--
+--
+expand, increase, intensify, strengthen
+deny 
+--
+building, strengthening 
+cautious, gentle, humble, meek, mild, modest, reserved, timid, yielding
+--
+decrease, degrade 
+--
+undignified 
+--
+dark, dreary, dull, obscure, somber 
+inauspicious, inopportune, ominous, unfortunate, unhappy, unlucky 
+bland, calm, gentle, meek, mild 
+blandness, calmness, gentility, meekness, mildness
+--
+democratic, liberal 
+democratic 
+--
+--
+dependent, subject 
+--
+body, main 
+generosity, philanthropy 
+caring, liking, loving, sympathetic 
+affection, attachment, care, fondness, kindness, like, liking, love, sympathy 
+aid, help 
+--
+--
+dispassionate, indifferent, unenthusiastic 
+profession, vocation, work 
+censure, condemn, deny, disclaim, disown, dispute, renounce, repudiate 
+--
+calmness, coolness, expectation, familiarity, intimacy, steadiness 
+--
+ok, on course 
+absurdity, ambiguity, foolishness, nonsense, paradox
+--
+quiet, sense, wisdom 
+--
+--
+--
+clear up, enlighten, explain 
+--
+advantageous, auspicious, favorable, good, helping, promising
+--
+--
+cool, inclement, wintery 
+--
+fresh, new, original 
+--
+advantage, blessing, fortune, good luck 
+--
+--
+--
+careful, quiet, shamed 
+plain, unadorned, undecorated 
+--
+--
+--
+cover, hide 
+weak spot, weakness 
+--
+--
+chaste, clean, decent, proper, virginal 
+miserable, sorrowful, unhappy 
+--
+reveal, take off, unclothe, uncover 
+energize, envigorate, refresh 
+clear up, explain 
+--
+--
+--
+--
+ingrateful 
+--
+--
+early, on time, punctual, timely 
+--
+attest, prove 
+build up, exaggerate, praise, value 
+calm, easygoing, pacific, pacifistic, passive, peaceful
+cooperative, helping, kind, nice 
+--
+anathema, execration 
+antagonist, opponent, opposer 
+cold-hearted, maleficent, malicious, misanthropic, uncharitable 
+giver, payer 
+greedy, malevolent, mean, selfish, spiteful, unkind 
+hateful, hostile, hurtful, injurious, malignant, unkind
+anathema, execration 
+straight 
+take 
+compliment, hail, praise 
+--
+full, happy 
+--
+--
+--
+generous, gentle, humane, kind, nice 
+deprive, refuse, take 
+divorce, leave, separate 
+individual, one 
+--
+agree, concede, discuss 
+--
+--
+broad-mindedness, fairness, open-mindedness, tolerance 
+--
+give, give away 
+--
+normal, reasonable, usual 
+be brave 
+--
+bitter, caustic, severe, sharp, zingy 
+enthusiastic, excited
+godly, pious, religious, respectful, reverent 
+inconspicuous, quiet, subtle, unpronounced 
+appealing, bright, comfortable, nice, pleasant, sunny
+aid, bless, guard, help, prosper, protect 
+heavyhearted, morose, sad, sorrowful, unhappy
+deflated, shrunken 
+--
+--
+--
+--
+come clean, reveal, tell truth 
+accuracy, correction, fix, restitution 
+keep quiet 
+--
+authentic, genuine, real 
+calm, quiet, restrained, silent 
+hinder, not support, obstruct, prevent, undermine
+plain speaking 
+disadvantage 
+charming, cultured, exciting, polite, refined, sophisticated 
+--
+insufficient, lacking, meagre, sparse, wanting 
+adventurous, imaginative, inspired, nonconforming, original, untraditional 
+--
+--
+--
+--
+--
+cowardice, fear, fearfulness, modesty, restraint 
+frailness, skinniness, slightness, thinness 
+humble, meek, shamed, shamefaced, shy, timid
+bridge, connection 
+--
+lengthiness, longevity, permanence 
+uncolored, unflecked, unspotted 
+--
+durable, flexible, moveable, resilient, supple 
+not mention 
+--
+--
+--
+--
+boost, coax, compliment, praise 
+courteous, kind, polite, tactful 
+--
+sobriety, tragedy 
+--
+--
+weak point 
+do well, fix, manage, succeed 
+--
+shrink 
+--
+light, slim, small, thin 
+dull, tarnish 
+--
+flat, petite, small 
+--
+--
+--
+flushed, lifelike, lively 
+being 
+--
+bully, force, repel 
+advantage, blessing, boon, comfort, fortune, good fortune, good luck, happiness, joy, profit 
+--
+--
+compassionate, feeling, kind, nice, sensitive, sympathetic, tender
+experienced, initiated, mature, sophisticated
+--
+--
+bad blood, dislike, hate 
+--
+--
+artifice, deception, falsehood, guile, lying 
+--
+--
+foolish, inept, silly 
+easy, good-natured, happy, nice, pleasant
+--
+--
+--
+--
+--
+cramped, small, squeezed, tiny 
+--
+defend, fight
+constancy, constant, dependability, steadfastness 
+constant, dependable, sensible, staid, steadfast, steady
+--
+commendatory, complimentary, encouraging, flattering, laudatory, praising 
+--
+center, inside, interior, middle 
+counterfeit, false, illegitimate, sham, unreal
+--
+inessential, insignificant, minor, negligible, secondary, unimportant
+--
+--
+--
+--
+chaste, clean, intellectual, pure, spiritual 
+vegetarian 
+--
+complimentary, forgiving 
+--
+--
+--
+--
+--
+--
+boon, good fortune, happiness, miracle, wonder 
+block, blockage, preventer, prevention 
+--
+--
+benefit, blessing, favor, good fortune, good luck, happiness, miracle, success, wonder 
+ignorance 
+ambiguous, conditional, equivocal, implied, qualified, questionable, tentative, uncategorical, vague 
+dirtying 
+--
+narrow, narrow-minded, specific 
+--
+loosen, open, unfasten 
+borrowed, hackneyed, old, used, worn 
+calm, mild, soothing 
+--
+--
+humble, reticent, shy 
+--
+defend, fight, gain, guard, take over, win
+slowness, sluggishness 
+earthly, hellish, infernal, mortal
+active, promiscuous 
+complimentary, encouraging, flattering, laudatory, praising 
+allow, approve, endorse, permit, sanction 
+approval, compliment, encouragement, endorsement, praise, ratification, recommendation, sanction 
+--
+--
+centripetal 
+--
+--
+--
+--
+--
+informal, relaxed, unceremonious, unobserved 
+beginning, commencement, start 
+--
+--
+--
+--
+delight, gladness, happiness, joy, pleasure, triumph
+--
+--
+poorest, worst 
+calm, harmonized, normal, ordered, organized, quiet, systematic 
+--
+--
+careless, hasty, heedless, incautious, rash, uncareful, willing 
+escape, retreat 
+closure, junction, juncture 
+--
+aid, animate, assist, boost, cheer, comfort, embolden, encourage, help, honor, uplift 
+corrupt, defiled, dirty, lewd, unchaste, wanton 
+cheer, comfort, compliment, encourage, forgive, inspirit, promote 
+--
+--
+aid, allow, assist, expedite, help, indulge, liberate, permit 
+--
+--
+forthrightness, honesty, truthfulness 
+compliment, laud, praise 
+--
+afraid, cowardly, fearful, frightened, humble, unchivalrous 
+--
+--
+--
+curable, eradicable, intermittent, occasional, temporary 
+gentle, nice, pleasant, polite 
+--
+--
+--
+--
+direct, in line, straight
+conciseness, directness, straightforwardness, terseness 
+free, loose, open 
+audacious, bold, careless, incautious, indiscreet, rash, uncareful, uncircumspect, unheedful 
+aid, allow, assist, help, permit 
+--
+--
+--
+--
+--
+quiet, silence 
+aboveboard, forthright, open, truthful
+quiet 
+--
+--
+--
+--
+join, meld, unite 
+joined, joint, united 
+no mercy 
+coinage, nuance 
+management, ownership 
+--
+--
+--
+--
+--
+--
+--
+divide, separate 
+--
+ignore, turn away 
+--
+disorganize, unsystematize 
+--
+--
+impotent, ineffective, invalid, weak 
+ignore 
+disassociated, dissimilar, unalike, unallied, unconnected, unlike 
+body, physical 
+--
+--
+divide, fall off, separate 
+--
+enemy, opponent 
+--
+--
+--
+disagree, divorce, part 
+--
+chief, direct, main, primary, principal 
+--
+--
+correct, formal, standard, stilted 
+--
+--
+small, teeny, tiny 
+--
+alert, awake, conscious 
+noncombustible, nonexplosive 
+bad-looking, despicable, disagreeable, offensive, repellent, repulsive, revolting, ugly, unattractive 
+--
+--
+discord, dislike, hatred, hostility 
+--
+dishonoring, forgetful, neglectful, neglecting 
+inadequate, inappropriate, incommensurate, unacceptable, unfitting 
+be indifferent, turn away 
+confined, cramped, inconvenient, small, squeezed, uncomfortable 
+individual, personal, private, unshared 
+disagreement 
+loose, slack, uncondensed 
+antagonistic, antipathetic, disagreeable, incompatible, inharmonious, unsuitable, unsuited 
+discretional, elective, optional 
+--
+--
+--
+concerned, discontent, discontented, dissatisfied 
+antagonistic, disagreeable, discontented, dissatisfied, obstinate 
+--
+defiance, denial, disagreement, disobedience, dissension, dissent, fight, nonconformity, refusal, veto 
+recalcitrant 
+ignorance, innocence, noninvolvement, refusal 
+--
+--
+agitation, arousal, discomposure, excitement, perturbedness, upset 
+better, make easy, uncomplicate 
+--
+exclusive, incomprehensive, particular, selective, specific 
+blow up, expand, extend, fill, increase, loosen, stretch, uncompress, uncondense 
+except, exclude, fail, fall short, lack, need, want 
+contest, controversy, difference, disagreement, dispute, dissension, dissent, quarrel 
+defiance, meanness, no remorse 
+conjecture, guess, guesstimate, surmise 
+--
+convex, distended 
+contradict, disacknowledge, disagree, dispute, dissent, fight, refuse, reject, repudiate 
+humility, meekness, modesty, self-consciousness, shyness, timidity, unself-confidence 
+--
+being, concrete 
+disarranged, disordered, disorganized, separate, uncoordinated 
+denial, difference, disagreement, disputation, fighting, protest, refusal, repudiation 
+antagonistic, fighting, refusing, stubborn 
+expansive, lengthy, long, long-winded, redundant, repetitive, wordy 
+--
+inconclusive, indefinite 
+--
+accidental, chance, unrelated 
+discord, disunity 
+--
+argue, differ, disagree, disapprove, dispute, object, oppose, reject 
+rise above 
+--
+--
+--
+censure, condemn, forbid, not allow, prevent 
+adverse, discouraging, hindering, unconducive, unfavorable, unhelpful 
+--
+enemy, foe 
+give, offer 
+--
+--
+difference, fight, noncomformity, refusal 
+clarify, clear up, enlighten, explain, make clear, relate 
+dissolve, liquify, melt, separate, thin 
+disagreeable, ill-suited, incompatible, uncongenial, unfriendly, unsympathetic 
+contracted 
+--
+--
+--
+fact, proof, reality, truth 
+--
+disgust, turn off 
+--
+ignoramus 
+denotation 
+--
+--
+careless, inexact, irresponsible, uncareful, unconscientious, unscrupulous 
+--
+deprecate 
+disagreement 
+inconsequential, insignificant, uneventful, unimportant 
+--
+hold, keep, receive, retain 
+--
+agitate, annoy, antagonize, depress, discourage, dispirit, disturb, hurt, sadden, trouble, upset 
+disagreement, discord, dissonance, incompatibility, incongruence, incongruity, nonconformity 
+antagonist, enemy, foe 
+disagree 
+--
+whole 
+allowance, permission 
+--
+incomplete, unfinished, worst 
+--
+clean, cure, heal, purify, sterilize 
+admiration, affection, approbation, approval, endorsement, love, regard, respect, sanction 
+abandon, desert, give up, leave, retreat 
+--
+--
+agree 
+--
+divided, separated 
+--
+certain, definite, real, sure, truthful, unconditional 
+beauty, smoothness 
+allowed, lawful, legal, permitted 
+agree, aid, allow, approve, assent, assist, concur, consent, endorse, help, permit, uphold 
+hurtful, indifferent, mean, unrepentant 
+--
+agree, forbear, harmonize, make peace, restrain 
+following, obedient, subordinate, tractable, willing 
+--
+--
+adjourn, call off, cancel, disperse, dissemble 
+abnormal, exotic, foreign, irregular, strange, uncommon, unconventional, uncustomary, unusual 
+--
+disperse, diverge, divide, scatter, separate, spread 
+ignorant, inexperienced, quiet, silent 
+complementary, equal, same, similar 
+--
+hold, remain 
+concave, depressed, sinking 
+hold, possession 
+--
+--
+hasten, hurry, push, rush 
+dry, parched 
+dirty, dishevelled, ruffled, rumpled, scruffy, shabby, sloppy, tousled, ungroomed, wrinkled 
+uncolored, unflecked, unspotted 
+--
+afraid, daunted, discouraged, disheartened, fearful, frightened, intimidated, scared, terrified 
+aid, assist, embolden, encourage, hearten, help, incite, inspirit, stimulate, undaunt, urge 
+forward, hasten, hurry, push, rush, speed 
+agreement, breakthrough 
+--
+abundance, excess, plentifulness, plenty, sufficiency 
+boon, miracle, wonder 
+elevate, honor, laud, praise, upgrade, value 
+clean, cleanse, improve, purify, upgrade 
+aid, assist, cure, energize, help, invigorate, mend, strengthen 
+awkward, clumsy, inelegant, uncharming, undebonair
+cleanliness, neatness, purity 
+prove, uphold 
+--
+humility, morality 
+--
+--
+accelerate 
+enduring, ethereal, lasting, lengthy, long-lived, permanent 
+--
+code, encode, scramble 
+--
+--
+combination, development, growth, improvement 
+bad behavior, bad manners, impoliteness, indecency, rudeness 
+--
+--
+applaud, compliment, exalt, laud, praise 
+--
+adorn, beautify, decorate, embellish, fix, mend, ornament, repair 
+approval, commendation, compliment, exaltation, praise 
+advantage, payment, perfection, satisfaction, success 
+--
+joining 
+disobedience, impoliteness, noncompliance 
+clean, clease, hallow, honor, purify, sanctify 
+incomplete, inconclusive, inexact, interim, temporary, unreliable 
+--
+--
+--
+appoint, employ, engage, hire, keep, secure 
+awkward, clumsy, inept, unhandy, unskillful 
+alive, existent, existing, functioning, live, operating, operative, valid, working 
+moral, upright, virtuous 
+--
+hydrate, moisten, wet 
+degrade, dishonor, lower 
+be proud, hold head high 
+aiding, assisting, helpful 
+add, put in 
+chance, indeterminate, unintentional, unmethodical, unsystematic, unwitting 
+--
+balance, calmness, saneness 
+--
+be truthful 
+--
+actuality, certainty, fact, reality, surety, truth 
+actual, certain, factual, honest, real, truthful 
+--
+--
+--
+boost, enhance, improve, upgrade 
+balanced, rational, reasonable, sane, sensible 
+birth 
+--
+building, construction, fixing, production, repair 
+--
+--
+aggressive, bold, extroverted, outgoing, shameless, strong 
+accept, agree, consent, go along 
+boost, cherish, compliment, praise 
+alien, foreigner, immigrant 
+--
+--
+approve, commend, compliment, praise 
+confuse, distort, mix up 
+add, augment, expand, fill, give, increase 
+approve, be happy, delight, praise, rejoice, revel 
+not use, withhold 
+--
+--
+good, honor, justice, morality, nobility, purity, uprightness, virtue 
+approve, build up, commend, compliment, endorse, laud, praise 
+gain value, increase, overrate, raise, rate 
+boon, construction, goodness, miracle, wonder 
+balanced, calm, ok, sane 
+careful, caring 
+commend, compliment, flatter, praise, revere 
+adulation, commendation, compliment, flattery, praise 
+inventive, original, unborrowed, unique 
+--
+appreciative, complimentary, favorable, flattering, praising 
+--
+honor, praise, sanctify 
+moisten, moisturize, wet 
+cultivated, populated, used 
+--
+desirous, honorable, likeable, loveable, respectable, virtuous, worthy 
+admire, appreciate, cherish, like, love 
+build, construct, improve 
+cheerful, elated, happy, hopeful, spirited, up 
+--
+lucky, prosperous, rich, secure, wealthy 
+--
+attached, combined, connected, coupled, linked, merged, united 
+--
+catalyst, encouragement, incentive 
+--
+admiration, adulation, flattery, praise 
+advantageous, assisting, beneficial, helpful, profitable 
+go straight, keep, stay 
+artless, frank, honest, open, straightforward, trustworthy, truthful 
+complete, filled, full 
+--
+adversary, antagonist, enemy 
+insincere, irreligious, unbelieving 
+awkward, clumsy, inept, inexpert, unable, unhandy, unskilled 
+--
+--
+illogical, irrational 
+opaque, thick 
+praise, recommendation 
+--
+--
+--
+be born, begin, live 
+boldness, confidence 
+collection, concentration 
+directness, straightness 
+in good repair, rebuilt 
+compress, constrict, contract, lessen, reduce 
+diligent, eager, enthusiastic, hard-working, ready, zealous 
+miracle, solution, wonder 
+professional 
+inactivity, indifference, laziness, lethargy, neglect 
+concentrate, strengthen, thicken 
+development, enlargement, expansion, growth, increase 
+--
+bright, clean, immaculate, neat, pure, spotless 
+--
+--
+--
+trivial, unimportant 
+--
+--
+contented, happy, pleased 
+--
+arrangement, harmony, order, orderliness, organization 
+affirmation, agreement, approval, avowal, claim, corroboration, vouching 
+--
+deposit, hoard, hold, retain, save, set aside 
+indistinct, invisible, obscured, unnoticeable, unrecognizable 
+disregardful, neglectful, negligent, overlooking, undiscerning, undiscriminating 
+accept, acknowledge, admit, allow, claim, own 
+conceal, hide, secrete, withhold 
+--
+surrender, yield 
+calm, comfort, soothe 
+cheerful, consoled, happy, solaced, soothed 
+agreeable, agreeing, concordant, cooperating, harmonious 
+increase, mark-up, premium, rise 
+attend, pay attention, recognize 
+quiet, silence 
+commend, credit, honor, praise 
+agreement, concordance, concurrence, consistency, harmony, parity 
+attached, combined, joined 
+carelessness, indiscretion, thoughtlessness 
+fairness, tolerance 
+--
+admiration, esteem, favor, like, love, praise, respect 
+embark, get on, leave 
+allow, emancipate, free, let go, liberate 
+attach, bind, connect, engage, fasten, join, unite 
+adorn, beautify, decorate, ornament 
+--
+--
+encourage, hearten, inspirit 
+neat, ordered, orderly, tidy, unwrinkled 
+bent, desire, enthusiasm, incentive, inclination, leaning, willingness 
+frank, honest, ingenuous, naive, sincere 
+biased, concerned, interested, involved, passionate, prejudiced 
+--
+coherent, connected, contiguous, jointed, ordered, united 
+--
+assemble, build, combine, construct, put together, raise 
+join 
+accept, hold, keep, maintain, preserve, welcome 
+approve, commend, compliment, flatter, laud, praise, sanction 
+alike, equal, like, same, similar 
+alikeness, equality, likeness, sameness, similarity 
+biased, emotional, excited, feeling, involved, moved, partial, passionate, prejudiced, subjective 
+retention, slowing 
+accumulate, collect, garner, gather, recall 
+arrange, assemble, collect, garner, gather 
+encouraged, enthused, happy, heartened, inspirited 
+--
+agreeable, calm, peaceful 
+--
+connection, joining, mending, sewing 
+admit, allow 
+collect, gather 
+agreement, approval, authorization, concurrence, endorsement, ratification, sanction 
+--
+agreeing, conforming 
+be honest 
+accumulate, collect, gather, hoard, save 
+combination, connection, solution, unification 
+agreement, concord, harmony 
+incite, persuade, talk into 
+adjacent, close, near, nearby, neighboring 
+cave in, contract, deflate, fall, shrink 
+dirty, pollute 
+beauty, clarity, perfection 
+--
+calm, gladdened, happy, pleased, untroubled 
+at night, nightly, nocturnal 
+--
+agreeing, convergent, similar 
+agree, converge, join, parallel 
+alike, conforming, identical, like, parallel, similar, uniform 
+conforming, staying 
+identicalness, sameness, similarity, uniformity 
+clothe, cover, invest, possess, take 
+--
+conceal, hide, keep, secrete 
+determined, headstrong, inflexible, intractable, obstinate, opinionated, stubborn, uncooperative, unyielding 
+--
+amenable, flexible, manageable, obedient, submissive 
+speech 
+agile, young, youthful 
+--
+indifferent, irresolute, undetermined, yielding 
+--
+amenable, doubting, flexible, indecisive, manageable, obedient, questioning, skeptical, submissive 
+elation, gladness, glee, happiness, joy 
+cheery, happy, hopeful 
+brain, genius 
+--
+follow, submit, surrender, yield 
+--
+active, lively 
+--
+anterior, front 
+--
+childhood, strength, youngness, youth, youthfulness 
+--
+bright, cheerful, cheery, happy 
+dry 
+chic, classy, fashionable, modern 
+cheerful, elated, glad, happy, heartened, satisfied 
+bright, colorful, inspired 
+--
+dramatic, serious, traumatic, unfunny 
+overachiever, workaholic 
+be quiet, silence 
+--
+snap 
+certain, definite, doubtless, positive, reliable, sure, trustworthy, trusty, undoubtful 
+--
+--
+cognizant 
+--
+betraying, disobedient, faithless, irresponsible, undutiful, unfaithful, unrespectful 
+develop, enlarge, expand, extend, grow, increase, save, swell 
+apathetic, boring, dull, inactive, passive, unexciting 
+--
+cultured, elegant, refined, sophisticated 
+flow, incline, increase, rise 
+apathetic, disinterested, unenthusiastic 
+commonality, dullness, normality, regularness, standard, uniformity, usual, usualness 
+boring, common, dull, normal, ordinary, plain, regular, standard, unexciting, usual 
+--
+incomprehensive, narrow, particular, specific, unvaried 
+--
+--
+spending, squandering 
+despair, sorrow, torment, trouble, unhappiness 
+--
+--
+funny, normal, ordinary, silly 
+--
+impotent, incapable, ineffectual, unproductive, unsuccessful, useless, weak 
+manly, masculine 
+--
+capable, tireless 
+failure, inefficacy, inefficiency, unproductiveness, uselessness, weakness 
+being, entity 
+--
+manners, modesty, shame, shyness 
+--
+--
+altruism, selflessness 
+--
+little, minor, secondary, slight 
+entrance 
+--
+--
+depressed, down, sad, sorrowful, unhappy 
+--
+cover, hide, keep, repress, supress 
+--
+--
+--
+dullness, inarticulateness 
+be vague, confuse, distract, make ambiguous, mix up, mystify, obscure 
+attracting, confronting, encountering, enticing, facing, inviting 
+earthly, hellish, infernal, mortal 
+fat, heavy, overnourished, overweight, plump
+take, withdraw 
+hold, imprison, incarcerate 
+--
+disembark, stay 
+dig up 
+deface, disfigure, mar, simplify, spoil, uglify 
+compensation, pay, reimbursement, return 
+exclude, uncomplicate 
+--
+--
+make mistake, worsen 
+--
+disrespected, inferior, undistinguished, unimportant, unnotable 
+--
+--
+--
+apathy, misunderstanding, unfeelingness 
+conjectural, hypothetical, impractical, theoretic, theoretical, unobserved, unproved 
+--
+disliked, hated 
+--
+--
+--
+--
+--
+aid, assist, help 
+--
+--
+censure, disapprove, oppose, protest, reject, repel, unauthorize 
+--
+--
+deactivate, debilitate, sap, tire, weaken, weary 
+activate, animate, empower, energize, invigorate, liven, strengthen 
+enslave
+banish, discharge, dismiss, eject, expel, fire, let go, oust, release 
+destroy, finish, halt, kill, stop 
+forget, ignore, reject, repulse, turn off 
+decrease, fix, lower, minimize, reduce, worsen 
+clear, known, obvious, plain 
+--
+--
+affinity, fellowship, friendship, good will, kindness, love 
+energy, enthusiasm, excitement, liveliness, vigor 
+goodness 
+disgust, displease, offend, repel 
+reveal, take out, uncover, unveil 
+antecede, precede 
+bore, dull, tire, turn off, weary 
+disgust, dissuade, repel, repulse, turn away, turn off 
+abstract, concept, idea 
+--
+exit
+answer, command, demand 
+blackballing, rejection 
+--
+not count
+mispronounce, muffle, mumble 
+--
+--
+--
+enduring, eternal, everlasting, interminable, lasting, long, permanent, perpetual 
+--
+short story 
+--
+foreword, introduction, preface 
+connected, lasting, permanent, regular, unbroken 
+--
+--
+--
+--
+--
+changeable, excitable, fluctuating, irregular, spasmodic, vacillating, variable, varying, wavering
+agitation, alarm, anxiety, discomposure, excitableness, upset, worry 
+--
+imbalance, unevenness 
+--
+--
+--
+biased, disproportionate, partial, prejudiced, unequitable, unfair, unjust, unreasonable 
+bias, inequity, partiality, unfairness, unjustness 
+certain, clear, definite, determined, obvious, plain, sure, unequivocal, unquestionable 
+face, meet, speak on 
+build, construct, fix, rebuild 
+bland, cold, dull, frigid, unerotic 
+correct, righteous 
+certain, consistent, definite, dependable, predictable, regular, reliable, steady, sure, unchanging 
+correct, right, true, valid 
+common, ignorant, uncultured, uneducated 
+--
+embrace, like, love 
+common, familiar, known, obvious, public, unmysterious 
+--
+forsake, reject 
+abuse, dislike, disregard, disrespect, hate, insult, mock, ridicule 
+engage, marry, unite 
+earthly, indelicate, worldly 
+--
+--
+--
+--
+acquired 
+--
+calumny, condemnation, criticism 
+--
+--
+depression, despair, misery, sorrow, unhappiness, woe 
+--
+--
+direct, forthright, honest, ready, straight, straightforward 
+--
+--
+halt, quell, repress, silence, stifle, stop, suppress 
+--
+aid, calm, comfort, help, soothe 
+giving, lending 
+castigate, condemn, criticize, debase, denounce, humiliate 
+calm, comfort, ease, placate, please, soothe 
+insert, whole 
+--
+--
+--
+blame, condemn, sentence 
+nice, pleasant 
+like, love 
+bear, create 
+--
+erring, incorrect, unideal, wrong 
+--
+idleness, laziness 
+--
+bury 
+--
+plenty 
+--
+arrival, entrance 
+accuse, blame, charge, condemn, incarcerate, incriminate, sentence 
+cheap, inexpensive, low, moderate, reasonable, sensible 
+--
+familiar, normal, ordinary, usual 
+--
+--
+inappropriate, inexpedient, unbeneficial, unprofitable, unworthwhile 
+block, cease, check, delay, halt, hinder, slow, stop 
+--
+--
+--
+cloud, complicate, confuse, mystify, obscure, tangle 
+ambiguous, confused, equivocal, implicit, indefinite, obscure, unspecific, vague 
+--
+cherish, esteem, honor, respect, revere, treasure
+--
+--
+concealment, covering, hiding 
+bear, build, construct, create 
+allow, permit 
+dead, extinct, gone 
+deliberate, planned, premeditated, prepared, rehearsed 
+--
+help, leave alone 
+blame, criticize 
+--
+--
+appropriate, basic, essential, integral, necessary, needed, pertinent, relevant 
+--
+entangle, involve 
+essential, integral, interior, intrinsic, necessary 
+introvert 
+--
+depressed, discouraged, lifeless, unenthusiastic, unexcited 
+conceal, hide 
+be sad, grieve, mourn 
+break, demolish, destroy, ruin, wreck 
+character, personality 
+formal, grave, serious, unfunny
+--
+arduous, complicated, confusing, difficult, hard, involved, laborious, profound 
+block, check, delay, detain, hinder, prohibit, stop 
+--
+entirety, total, whole 
+agreeing, cooperating, cooperative, peaceful, united 
+--
+--
+inability, incompetence, ineptness, lack, need 
+correct, real, true, truthful 
+certain, correct, definite, infallible, perfect, reliable, strong, sure, unerring 
+active, cultivated, developed, used 
+continue, endure, maintain, persist, remain, stay 
+disinterest, impartiality, unenthusiasm 
+--
+--
+grave, ordinary, real, serious, sincere, unfanciful, unimaginative, unromantic 
+--
+common, commonplace, conventional, customary, familiar, ordinary, plain, usual 
+sobriety, tragedy 
+indifferent, indiscriminating, uncareful, uncouth, uncritical, undemanding 
+--
+misunderstand, not get 
+aware, bright, intelligent, keen, sensible, smart 
+--
+aloof, cool, disinterested, proud, unfriendly 
+--
+impossible, inconceivable, unfeasible, unlikely, unpractical, unreasonable 
+cold, freezing, frigid 
+competent, effective, effectual, efficient, purposeful, responsible, strong, useful 
+--
+be true 
+truth 
+improper, inappropriate, infelicitous, inopportune, unfitting, unsuitable, untimely 
+--
+build, construct, erect, raise
+police 
+--
+--
+apathetic, cool, dispassionate, dispirited, indifferent, unenthusiastic, unexcited 
+half-hearted 
+apathy, coolness, discouragement 
+dissipate, get better, heal, lessen 
+depressed, gloomy, somber, undecorated 
+--
+aromatic, clean, fragrant, pure, sweet 
+free, let go, loose, loosen, release 
+advantage, benefit, blessing, boon, miracle, success, wonder 
+question, request 
+aware, cognizant, constant, faithful, reliable, stable, steady 
+actual, certain, confirmed, factual, genuine, proven, real, sincere, sure, true, truthful 
+disloyalty, faithlessness, infidelity, lying, treachery 
+reality 
+literal, real, straightforward 
+--
+contribute, give 
+--
+catalyst, impetus, incentive, progression 
+--
+beginning, debut, first act, opening, start 
+ignorance 
+easy, open, uncritical 
+endless, infinite, interminable, unlimited, unrestricted 
+--
+--
+constant, continuous, even, regular, undisturbed, unvarying 
+firm, taut, tight 
+concealed, disguised, hidden, mild, moral, restrained, secret 
+--
+--
+inability, incapacity, ineptitude, ineptness 
+calm, moderate, modest, restrained, tasteful, unflashy 
+conceal, hide, refrain 
+--
+--
+expert, professional 
+give, offer 
+--
+--
+confront, face, meet 
+courtesy, respect, reverence, seriousness 
+--
+--
+--
+inelaborate, natural, plain, undecorated, unornate 
+--
+--
+honor, respect 
+--
+--
+certainty, design, plan 
+calm, calmness, comfort, peace 
+flat, smooth 
+constancy, stability, steadiness 
+--
+strength 
+--
+--
+--
+--
+cease, dampen, discourage, dissuade, stop 
+careful, cautious, discreet, thoughtful 
+--
+abstention, idleness, laziness 
+--
+remain, stay 
+--
+fortune, good omen, luck, providence 
+--
+--
+hindsight, ignorance, thoughtlessness 
+--
+continue, indulge, keep, use 
+informality 
+feeble, friendly, harmless, nice, pleasant, powerless, weak 
+go back, rediscover, return, revert 
+go back to, revert 
+weakness 
+devious, dishonest, secret, untruthful 
+cowardice, helplessness, weakness 
+calculated, deliberate, designed, intentional, planned, unlucky 
+condemn, discourage 
+--
+calm, harmony, peace 
+agreeable, complaisant, happy, nice, patient 
+firmness, strength 
+--
+calm, collected, composed, docile, peaceful, tranquil 
+authentic, genuine, honest, real, valid 
+empty 
+agreement, harmony, peace 
+balanced, calm 
+calm, controlled 
+--
+calm, comfort, soothe
+--
+--
+hot, warm 
+hold, save, store 
+grave, mature, sensible, serious, solemn, thoughtful, wise 
+serious, staid, stiff 
+--
+--
+generosity, lavishness, wastefulness 
+failure, unfulfillment 
+confronting, facing, permanent 
+--
+compliment, defend, flatter, praise, support 
+reasonable, sincere 
+--
+additional, advanced, auxiliary, extra, minor, secondary, subordinate, trivial, unimportant 
+cheerful, happy, joyful, lively, upbeat 
+calm, peace 
+aboveboard, forthright, honest, open, truthful 
+--
+disconnection, division, separation 
+fruitful, hopeful, productive, profitable 
+--
+correction 
+agree, concur, go along 
+--
+--
+--
+modesty, reservations, shyness 
+modesty, reservations, shyness 
+depress, deter, discourage, disparage, dissuade, retard 
+--
+--
+--
+--
+--
+decipher, order, pronounce, represent, translate, unscramble 
+little, miniscule, small, tiny 
+--
+discreet, modest, normal, plain, tasteful 
+disperse, dissipate, divide, separate, spread 
+decrease, divestment, plainness 
+--
+mum, quiet, reserved, silent, still, untalkative 
+--
+elegant, graceful, mannerly, polished, refined, sophisticated, tactful, tasteful 
+calm, drab, dull, modest, plain, refined, simple, sophisticated 
+plump, thick, well-nourished 
+--
+--
+--
+detail, specific, specificity 
+exclusive, individual, particular, specific 
+conclusion, end, finale, finish 
+aloofness, coldness, coolness, irritation, moodiness, unfriendliness, unhappiness 
+--
+boorish, callous, rough, rude, rugged, uncultured, unrefined, unsophisticated 
+coarseness, crudeness, roughness, rusticity 
+--
+--
+improper, inappropriate, irrelevant, unfitting, unrelated, unsuitable 
+dying, shrinking, withering 
+halt, slow, stop, thwart 
+--
+--
+--
+--
+delightful, pleasant, pleasing, wonderful 
+sense 
+commendation, praise 
+calm, careful, level-headed, sensible, serious 
+careless, rash, rough, uncareful, uncautious 
+--
+--
+hot, warm 
+concealed, hidden 
+stripper 
+--
+inarticulate, quiet, stuttering, tongue-tied, uncommunicative 
+dullness 
+be sad, commiserate, sympathize 
+--
+drab, dull, mate, muted 
+dullness 
+grin, smile 
+--
+--
+insufficiency, lack, need, want 
+straight, unbent, uncurled, untwisted 
+--
+deterrent, discouragement, diversion, restraint 
+--
+mild, pleasant, pleasing 
+coarse, thick 
+--
+--
+--
+--
+--
+insignificance, unimportance 
+plain, simple, unadorned, unpretentious 
+calm, moderate, small, unpretentious 
+--
+implicit, unclear, vague 
+let go, release 
+--
+annoy, disappoint, disturb, frustrate, offend, pain, upset 
+costly, expensive 
+costly, expensive 
+--
+weightedness 
+cold, cool, introverted, unfriendly, unhospitable, unsociable 
+compliment, flattery, praise 
+--
+grin, smile 
+nice, pleasing, pretty 
+beautiful, nice, pretty, shapely 
+--
+--
+boast 
+favor, forgive 
+easy, facile 
+--
+beautiful, pleasant, pretty 
+even-tempered, happy, nice, polite 
+--
+artful, clever, crafty, cunning, deceitful, dishonest, guileful, tricky 
+artlessness, frankness, honesty, naivety, openness, sincerity 
+reality 
+astute, discerning, knowledgeable, perceptive, suspicious, unbelieving, untrusting, wise 
+--
+apathy, reluctance, unenthusiasm 
+calm, quiet 
+--
+--
+fresh, new, original, uncommon 
+fresh, healthy, hearty, strong, unworn 
+agree, comply, concur 
+--
+sick, unhealthy, weak 
+desecrated, irreligious, profane, unhallowed, unholy, unsanctified 
+experience, fact, reality, truth 
+flowing, smooth, unhesitating 
+--
+careful, designed, intentional, methodical, organized, planned, straight, systematic, thought-out 
+fortuitous, fortunate, lucky, well-off 
+--
+--
+aid, assist, facilitate, help, support 
+--
+--
+feeble, infirm, invalid, sick, tender, unhealthy, weak 
+--
+--
+aid, assist, help, support 
+--
+humility, meekness 
+certain, guarded, predictable, protected, safe, secure
+clear, sunny, uncloudy, unhazy 
+careful, cautious, thoughtfully, wary 
+calm, docile, moderate, obedient, submissive, tolerant 
+--
+--
+attentive, careful, caring, cautious, concerned, heedful, observant, thoughtful 
+--
+glorious, good, lovely, magnificent, wonderful 
+--
+orthodoxy 
+--
+--
+--
+--
+--
+homogeneous, identical, pure, single, unchanging, uniform 
+--
+low point 
+continuation, continuity 
+hot, summery 
+--
+--
+--
+--
+first, leading 
+advance, aid, assistance, encouragement, expedition, help, promotion, push 
+--
+--
+--
+--
+debt 
+--
+--
+--
+--
+dishonor, disloyalty, disrespect, faithlessness, scorn, treachery 
+--
+--
+--
+different, dissimilar, heterogenous 
+--
+--
+--
+--
+--
+--
+lie, rest, settle 
+calm, order, peace 
+--
+--
+cruel, fierce, inhumane, merciless, uncivilized, uncompassionate, unkind, unsympathetic, violent 
+busy, eventful, exciting, lively, unusual
+arid, dry 
+arrogance, assertiveness, egoism, pretentiousness, pride, self-importance 
+--
+--
+--
+--
+homogeneous, pedigreed, pure, purebred, thoroughbred, unmixed 
+--
+understatement
+--
+--
+actual, authentic, forthright, honest, just, real, reliable, righteous, sincere, truthful, upright
+calculated, confirmed, factual, measured, proved, proven, real, reliable, truthful
+--
+--
+--
+--
+standard
+--
+--
+--
+bad, disagreeble, flawed, imperfect 
+cold, cool, dull, flat, impassive, subdued 
+extinguish, put out 
+dignified, grand, high, honorable, noble, reputable, respectable, worthy
+--
+blessed, good, legal, legitimate, licit, moral, noble, proper, right 
+--
+--
+certainty, event, fact, reality, truth 
+real
+genuine, real 
+--
+--
+abstain 
+agreement, peacemaking 
+drain, take out 
+dirty, filthy, foul, tainted, unclean, unsterile 
+distant, doubtful, far, future, later 
+--
+--
+--
+alterable, changeable, flexible, mutable, variable 
+aid, assist, help 
+--
+believeable, palpable, perceptible, substantial, tangible, understandable 
+agreement, breakthrough 
+emotional, feeling, passionate, responsive, sensitive, susceptible, warm 
+elect
+blemished, corrupt, defective, flawed, imperfect, suspicious, wrong 
+moneyed, rich, wealthy 
+advance, aid, assist, facilitate, forward, help, support 
+aid, assistance, facilitation, furtherance, help, support 
+distant, later, never, remote 
+clear, penetrable, permeable, porous, soft, thin 
+--
+--
+humility, meekness, servility 
+--
+kind, mannered, nice, polite, refined, respectful 
+excitable, irritable, jittery, perturbable, touchy 
+exposed, open, penetrable, responsive, sensitive, vulnerable 
+calm, cautious, circumspect, considerate, reflective, sensible, thoughtful, wise 
+block, check, hindrance 
+--
+avoid, dodge 
+holy, pious, religious 
+kind, merciful, nice, placable 
+believable, likely, plausible, possibly, probably, reasonable 
+--
+--
+explicit, specific 
+answer 
+define, explicate, express, state 
+careful, cautious, discreet, politic, wise 
+--
+relaxed, undemanding, unimportant 
+--
+--
+honesty, reality, truth 
+able, capable, fertile, potent, productive, strong 
+--
+--
+deliberate, designed, planned, premeditated, rehearsed 
+correctness, propriety, suitability, tastefulness 
+careful, miserly, provident, thrifty 
+design, devise, plan, premeditate 
+careful, cautious, discreet, prudent, wise 
+flatter, praise
+--
+imprisonment, incarceration 
+defend, guard, help, protect 
+--
+acquired, alienable, changeable, impermanent, transitory 
+bright, intelligent, smart 
+animate, living 
+articulate, communicative 
+adjourn, close, end, stop, uninstall 
+dark, dim 
+--
+allow, facilitate, mobilize, permit 
+free, let go, release 
+--
+--
+peacemaking 
+--
+block, hindrance, turn-off 
+conclusion, end, ending, finish 
+broken, ceasing, ending, intermittent, interrupted 
+developed, grown, mature 
+--
+basic, essential, fundamental, important, vital 
+developed, grown, mature 
+incompetent, stupid 
+delay, deter, discourage, prohibit 
+clear, mild, nice, sunny 
+--
+--
+exclusive, incomprehensive, narrow 
+known, openly, seen, unhidden 
+coherent, intelligible, understandable 
+--
+compatible, consonant, harmonious, loving, suited, well-matched 
+--
+important, significant 
+congruity, consistency, similarity 
+continent, restrained 
+changeable, controvertible, questionable, uncertain, variable 
+divide, drop, exclude, separate 
+--
+good, manageable, nice, obedient, reformable 
+--
+believing, convinced, credulous 
+decrease, loss 
+--
+--
+--
+--
+retreat 
+--
+fatigued, tired, weary 
+--
+--
+certain, definite, determined, exact, fixed, measurable, sure 
+--
+absolve, acquit, exonerate 
+caring, compassionate, concerned, feeling, interested, involved, sympathetic 
+wealth 
+alien, foreign 
+glee, happiness, joy 
+dignity, esteem, honor, regard, respect 
+chosen, critical, definite, discriminatory, methodical, particular, selective, specific, systematic 
+disputable, doubtful, dubious, indefinite, questionable, refutable, uncertain, unreliable, unsure, vague 
+dissoluble 
+--
+--
+beatable, conquerable, unstable, weak, yielding 
+--
+discourage, halt, hinder, prevent 
+--
+abstaining, moderate, moderating, strict, tempering 
+--
+definable, describable, utterable 
+effective, effectual 
+--
+able, adroit, competent, dexterous, fit, skilled, skillful
+equity 
+--
+activity, animation, life, liveliness, moving 
+avoidable, doubtful, escapable, fortuitous, preventable, uncertain, unlikely, unsure 
+flexible, lenient, merciful, remorseful, yielding 
+erring, fallible, faulty, imperfect 
+dignified, glorious, good, innocent, moral, perfect, principled, pure, respectable, righteous, virtuous 
+mature 
+heavenly, otherworldly 
+misconceive, misunderstand 
+--
+--
+big, huge, large, significant, substantial 
+good health, healthiness, robustness, soundness, strength 
+deflated, shrunken 
+--
+obedience 
+comply, discharge, obey, observe 
+awkward, dumb, ignorant, incompetent, inept, stupid 
+deceitful, dishonest, sly 
+superficial, surface 
+--
+deter, disgust, repel 
+acquired, added, external, extrinsic, incidental, learned 
+aid, allow, approve, assist, free, help 
+friendly, hospitable, kind 
+comparable, indistinctive, matchable 
+--
+close, conclude, end, finish, terminate 
+aiding, assisting, beneficial, constructive, curing, fixing, good, healing, helpful, mending, nice 
+--
+acquired, extrinsic, learned 
+bad, damaging, destructive, harmful, hurtful, injurious 
+custom, habit, old, old hat, rut, tradition 
+evidence, proof 
+appropriate, auspicious, ok, opportune, suitable, timely 
+moderate, ok enough, reasonable, warranted 
+ incurious, indifferent, unconcerned, uninterested 
+--
+--
+fulfilled, full, pleased, satiable, satisfied  
+clear, comprehensible, evident, intelligible, obvious, plain 
+--
+caring 
+fair, honest, open, sincere 
+conceal, hide, withhold 
+exciting, exhilarating, interesting, pleasing 
+humility, modesty, politeness, respect  
+moneyed, rich, solvent, wealthy  
+ sleep  
+ anxious, high-strung, nervous  
+ halt, prevent, stop  
+behaved, compliant, obedient 
+ real, strong, substantial  
+--
+--
+obedient, subordinate 
+ compliance, obedience, subordination  
+definite, obvious, palpable, perceptible, tangible 
+extrinsic, secondary, supplemental, unnecessary 
+divide, separate 
+corruption, disgrace, dishonesty, dishonor 
+ ignorance  
+--
+--
+ continual, permanent  
+--
+ bounded, ending, finite, terminable  
+ constant, continual, continuing, perpetual, regular  
+--
+ erase, remove, subtract  
+continuation, permanence 
+ answer, reply  
+collect, gather 
+ignore, leave alone 
+dig up, exhume 
+cool, formal, incompatible, unfriendly 
+--
+manageable 
+--
+ cowardly, meek, timid  
+ additionally, extra, inessentially  
+--
+extrovert 
+leave, leave alone, withdraw 
+knowledge, reason, reasoning 
+ underwhelm  
+--
+approve, permit, validate 
+ compliment, flattery, praise  
+flatter, praise 
+disenchant, disgust, turn off 
+--
+--
+ short-lived  
+delightful, likeable, lovable 
+beatable, breakable, conquerable, destructible 
+--
+--
+--
+lot 
+cheerful, happy 
+ calm, cheerful, happy, pleased  
+--
+--
+sincere 
+consideration, deference 
+--
+appropriate, necessary, pertinent, related, relevant 
+--
+fixable, mendable, repairable, reparable 
+depressed, despondent, grave, hopeless, serious 
+definite, determined, obstinate, resolute, stubborn, unyielding, willful 
+religious, respectful, reverent 
+alterable, changeable, reversible, revocable 
+--
+--
+permanent, settled 
+--
+fresh, unused 
+standard 
+clean, fresh, unbiased, unprejudiced 
+depressed, lethargic, lifeless 
+--
+protection, safety 
+take in, take on 
+ unbias  
+formal, grave, serious, unfunny 
+serious, solemn 
+sad 
+gloom 
+--
+ sad, unhappy  
+--
+foolish, hasty, idiotic, injudicious, irrational, nonsensical, reckless, senseless, thoughtless, unwise 
+--
+--
+--
+--
+breaking, lawlessness, transgression, violation 
+--
+--
+--
+--
+ extinguish, put out  
+ irrelevant, noncorresponding, unaffiliated 
+--
+--
+--
+ good, goodness, morality, virtue  
+--
+--
+ unknit  
+--
+ simple, uncomplicated, untroublesome  
+ blame, criticism  
+--
+ easy, effortless, facile, simple, trivial  
+--
+--
+--
+ active, careful, caring, energetic, enthusiastic, hard-working  
+ bright, enthusiastic, lively, shining, shiny, spirited 
+long-winded, verbose, wordy  
+--
+--
+--
+ praise, uphold 
+ celebrate, compliment, laud, praise 
+--
+ alert, animated, energetic, lively, spirited, vivacious  
+ flourish, grow, improve, strengthen 
+--
+--
+--
+--
+--
+ chaste, decent, moral 
+--
+ active, apparent, clear, live, manifest, obvious, open, public 
+ centered, central 
+ limitation, restriction 
+bad, blameable  
+ blaming, castigating, critical 
+economical, scanty, scarce, small, spare  
+--
+ hard, rigid, strict, tight 
+--
+--
+--
+ certain, sure, unwary  
+--
+--
+--
+--
+--
+ disrespected, inferior, undistinguished, unimportant, unnotable  
+ beneficial, harmless, helpful, life-giving  
+ active, busy, energetic, lively, vital, vivacious 
+--
+--
+ gravity, seriousness 
+--
+ clean, decent, moral  
+--
+--
+irresponsibility, unaccountability
+--
+ complimentary, praising  
+puritan 
+ clean, decent, moral 
+--
+--
+ chaste, controlled, good, innocent, moral 
+--
+--
+--
+ rigid, stiff, straight, unbending  
+ certainty, certitude, sureness, surety  
+--
+ incomprehensible, muddy, obscure, unintelligible, vague 
+--
+--
+--
+--
+ invest, keep 
+ active, alert, attentive, energetic, lively, untired  
+--
+--
+awkward, fat, stiff, thick  
+--
+--
+blushing, brilliant, flushed, radiant, rosy
+ like, love 
+approving, for, unopposed, willing 
+--
+below, beneath, low
+hurry, leave, rush, vamoose
+ sit up straight  
+--
+--
+ quiet, restrained, silent, subdued 
+--
+above, high, tall
+clouded, obscure, unclear, vague
+ poorly paid, unprofitable  
+--
+logical, reasonable, sensible 
+--
+busyness, continuation, disturbance, energy 
+glide 
+--
+--
+dark, dim, dull, gloomy 
+--
+clean, humble, modest 
+come out 
+nasty, poor, unappetizing, unsavory 
+darkness, dullness, matte 
+dark, dull, matte, unshiny 
+ren, plain, poor 
+common, living, normal 
+--
+--
+--
+--
+clean, clease, hallow, honor, purify, sanctify 
+--
+--
+--
+meanness, selfishness 
+lowly 
+terse 
+insignificance, unimportance 
+aid, cure, heal, help, repair 
+e, capable, skillful 
+good health, healthiness, well being 
+--
+--
+blessing 
+--
+amiable, harmless, kind, liking, loving 
+--
+benevolent, friendly, good, kind, likeable, sympathetic, thoughtful 
+benign, harmless, uncancerous 
+aiding, benign, helpful, nice 
+--
+firm, rigid, stiff 
+aromatic, fragrant, perfumed, savory, sweet 
+--
+little, miniature, small, tiny 
+--
+denial, veto 
+optional, unnecessary, voluntary 
+kempt, neat 
+--
+concealment, cover, hiding, obscurity, vagueness 
+--
+ambiguous, concealed, obscure, unclear, vague 
+one, single, sole 
+leave alone 
+natural, unpretentious 
+--
+divorce 
+--
+--
+ambiguous, obscure, unapparent, unnoticeable, vague 
+aid, heal, help 
+disorganize 
+--
+civil, peaceful 
+--
+--
+--
+--
+spiritualism 
+paternal 
+patriarch 
+calm, matter-of-fact, unimaginative 
+guard, maintain, protect, take care 
+--
+--
+--
+calm, serious, unemotional 
+--
+calm, harmony, peace 
+adequate, large, liberal, plenty, substantial, sufficient
+--
+go direct, stay on path 
+avoiding, dodging, ignorant 
+argue, contend, disagree, fight 
+exceptional, extraordinary, inferior, superior, unusual
+--
+loneness, singularity 
+bold, brave, emboldened, immodest, impertinent, uninhibited 
+altruism, humility, selflessness 
+agreement, peace 
+--
+--
+--
+frank, honest, sincere, truthful 
+--
+elevated, skilled, superior, talented 
+--
+--
+generous, unselfish 
+calm, tranquil, unchangeable, unperturbable, unvarying 
+genuine, real, undecorated, unembellished 
+division, parting, separation 
+disenchant, turn off 
+--
+stagnation 
+plain speech 
+concrete, material, objective, physical, real, solid, substantial 
+slow
+--
+chaotic, disorganized 
+careless, messy, sloppy, undetailed 
+--
+weakness 
+--
+--
+--
+--
+--
+compliant, peaceful, peaceloving, submissive, tolerant 
+--
+--
+--
+--
+--
+extroverted, unaffected, unpretentious 
+--
+huge 
+big, giant, gigantic, huge, large, mighty 
+--
+--
+--
+blues, depression, distress, sadness, unhappiness 
+sing, good fortune, good luck, success, triumph 
+anitarian, philanthropist 
+--
+single
+good fortune 
+discern, get, perceive, understand
+good, moral, nice 
+--
+generous, giving, liberal 
+certainty, confidence, doubtlessness, sureness, trust 
+--
+--
+--
+--
+--
+--
+--
+aggravate, incite, increase, intensify, irritate, worsen 
+--
+fixed, immobile, stable, stationary, unmovable 
+--
+lot 
+old-fashioned, unfashionable, unstylish 
+--
+--
+--
+agitate, depress, exasperate, harass, incite, provoke, trouble, upset, worry 
+--
+--
+--
+immaterial, insignificant, trifling, trivial, unimportant 
+--
+--
+--
+--
+--
+--
+--
+change, color, excitement, liveliness, variability, versatility 
+gnificant, trivial, unimportant, unimposing, unimpressive 
+euphoria, gaiety, gladness, happiness 
+--
+cheerful, happy, healthy, pleased, sound 
+--
+--
+--
+cheerful, friendly, happy, light-hearted, optimistic, uplifted 
+--
+compliment, flatter, praise, satisfy 
+--
+--
+--
+--
+homogenous, like, same, similar, uniform, unmixed, unvaried 
+plain, unflecked 
+--
+enlightenment, order, organization 
+dry 
+--
+homogenous 
+--
+--
+--
+exciting, extraordinary, heavenly, supernatural, wonderful 
+careful, greedy, mean, selfish, stingy 
+--
+ignore, neglect 
+--
+division, separation 
+clean, clear, new, sweet-smelling 
+constant, invariable 
+articulate, speak, voice 
+fix, mend, repair 
+--
+speak clearly 
+far-sighted 
+calculable, limited, measurable 
+--
+experience, leeriness, skepticism, sophistication 
+--
+rambling 
+dying, shrinking, withering 
+--
+--
+please, soothe 
+--
+apparent, definite, obvious, plain 
+--
+good, honorable, respectable, virtuous, worthy 
+allowance, approval, permission 
+--
+important, major, significant 
+--
+time-worn 
+--
+--
+--
+appease, mollify, please 
+--
+--
+--
+generous, giving 
+--
+belief, faith, obedience, optimism 
+--
+--
+ good, just, moral, upright 
+ native, settled 
+--
+ actual, real, true  
+--
+ committal, decisive, definite, judgemental, willing 
+ describable, different, distinguished, illustrative, remarkable, superior, uncommon 
+entity
+ clear up, educate, enlighten, explain 
+--
+--
+--
+--
+ expert, professional 
+ curing, good, healthy, helpful, hygienic, pure, sterile, wholesome 
+--
+divorce
+--
+ affirm, pass, sanctify, validate 
+--
+ divorce  
+ deprivation, ignorance, neglect, starvation  
+--
+ handyman  
+amenable, gentle, submissive, susceptible, yielding
+bad manners, disobedience, disregard, disrespect  
+--
+ emaciated, skinny, underweight  
+--
+ birth announcement  
+ partial, prejudiced, subjective, unfair 
+partial, prejudiced, subjective, unfair
+ nonessential, optional, unrequired, voluntary 
+--
+ build, construct, create  
+awareness, consciousness, understanding
+--
+ agreeable, delightful, kind, likeable, nice, pleasant, soft 
+apparent, clear, explicit, obvious, perceptible, understood
+illuminate, loose, reveal
+ arrogant, assertive, brazen, confident, presumptuous 
+--
+ indifference 
+ white 
+ contemporary, current, in vogue, modern, new, present, up-to-date 
+--
+ agreeable, amenable, cooperative, flexible, helpful, submissive, willing, yielding 
+--
+ modest, shy, unobtrusive 
+ bright, intelligent, quick, smart 
+ allow, help, permit 
+--
+ allow, help, permit 
+ known, natural 
+--
+ agreeable, delightful, great, likeable, loveable, pleasing 
+ approval, honor, regard, respect 
+acrid, bland, unsavory  
+odorless  
+--
+agreeable, kind, nice, pleasing, respectful
+ calculated, careful, considered, deliberate, planned 
+ modest, shy, timid  
+--
+odorless
+democracy
+ auspicious, happy, lucky, promising, propitious  
+ impotent, weak 
+--
+ stupid, unknowing 
+--
+ common, easy, light, trivial 
+--
+ defense  
+ aid, benefit, blessing, help 
+--
+ clear, lucid, translucent, transparent, unclouded  
+--
+ disadvantageous, inauspicious, inopportune, unlucky, unsuitable 
+--
+--
+--
+--
+ least, poorest, worst 
+ compulsory, forced, required 
+--
+--
+--
+--
+--
+ cancel, disallow, retract, void  
+ happiness, pleasure 
+--
+--
+ disorientation, mix-up  
+ disorient  
+--
+ plain, simple 
+--
+heterodox, unconventional, unorthodox, untraditional
+--
+remain, stay
+--
+melt, soften
+improbable, obscure, unlikely, vague
+modest, plain, quiet, reserved
+embrace, welcome
+hold, keep, retain
+common, familiar, normal, ordinary, usual
+current, modern, new, new-fangled, popular, up-to-date
+--
+center, downtown
+cautious, diplomatic, introverted, reserved, retiring, shy, tactful
+--
+silence
+kind, modest, nice, unassertive
+--
+concealed, hidden, private, secret
+modest, unassuming
+calm, collected, cool, rested, unruffled
+--
+--
+--
+agitate, incite, irritate, upset
+--
+careless, easy, half-baked, half-done, thoughtless, unmindful, unthorough
+  bitter, disagreeable, distasteful, sour, unsavory, untasty
+cramped, minor, small, tiny
+--
+--
+--
+--
+accuse, blame, condemn
+--
+brightness, excitement, happiness
+hidden, obscure, unclear, vague
+be still
+important, rich, significant, substantial, wealthy, worthy
+--
+spiritlessness
+--
+calm, peace
+deny, dissatisfy, refuse
+--
+--
+--
+--
+--
+--
+--
+--
+--
+--
+--
+inferior, last, least, less, lesser, lowest, minor, secondary, smallest, trivial
+--
+--
+--
+quotation
+blessing
+damp, moist, wet
+--
+dissimilitude, imbalance, inequality
+--
+--
+broad, liberal, unrestricted
+reality, truth
+--
+--
+deal with, face, meet
+generous, lavish, liberal
+disinterest, fairness, impartiality, justice
+--
+complete, entire, total, whole
+disinterested
+current, fashionable, in, in vogue, modern, new
+active, dynamic, lively
+--
+agitated, bustling, busy, urban
+concealed, hidden, inconspicuous
+cheerful, happy, useful, worthwhile
+--
+  cheer, glee, happiness, joy
+dull, tarnish
+--
+matriarch
+common, lower-class
+be humble, be modest
+abundance, affluence, plenty
+rich, wealthy
+--
+--
+--
+--
+imprecise, informal
+--
+different, exceptional, extraordinary, interesting
+--
+complimentary, positive, praising
+ordered, organized
+--
+--
+dislike, hate, hatred, indifference
+--
+--
+--
+happy, unashamed, unrepentent
+ignorant, shallow
+--
+--
+affluence, wealth
+--
+dense, insensitive, unaware, unobservant
+--
+--
+--
+easy-going, indulgent, laid-back, lax, lenient, mild, moderate
+changing, intermittent, interrupted
+close up
+careful, precise, thoughtful
+--
+--
+center, inside, interior, middle
+fixed, settled
+central, crucial, internal, major
+center
+--
+inpenetrable, unpermeable
+helpful, innocuous, kind, lovable, loving
+foreword, introduction, preface
+abstain
+brief, ephemeral, fleeting, momentary, temporary, transient
+--
+  disagreeable, unfriendly, unsociable
+ignorant, unobservant, unperceptive
+--
+obscure, unclear, vague
+--
+inappropriate, irrelevant, unsuitable
+calm, please, soothe
+dull, humble, lifeless
+--
+light, limited, narrow
+agreeable, compliant, happy, nice, reasonable, willing
+--
+confidence, optimism, trust
+--
+--
+--
+melt, soften
+consequential, important, major, necessary, prominent, significant, useful
+good-natured, happy, pleasant
+--
+--
+faithful
+--
+--
+--
+--
+--
+liking, love
+--
+--
+--
+uncolored, unflecked, unspotted
+impiety, irreverence
+colorlessness
+protect, safeguard
+--
+despise, dislike, hate
+free, loose, loosen, release, set free, unbind, unfasten, untie
+base, bottom, nadir
+atheist, impious, irreligious, sinful, wicked
+bland, dull
+cheer, happiness, joy
+--
+long-winded, verbose, wordy
+generosity, lot, plenty
+inconsequential, unimportant, unsubstantial
+agitate, upset, worry
+--
+agitated, excited
+--
+cheerful, happy
+--
+coinage, nuance
+physical
+blaming, censuring, critical, denouncing, disparaging, insulting, reproachful, unflattering
+implausible, improbable, unbelievable, unlikely, unreasonable
+aristocratic, noble, rich, upper-class, wealthy
+incomplete, limited, part, partial, restricted
+--
+few, lack, little, need, rarity, scarcity, want
+inflexible, rigid, stiff, unadaptable, unbendable, unpliable, unpliant, unyielding
+--
+cowardice, dispiritedness, irresolution
+flat, horizontal, level
+ascend, rise, shoot up
+--
+--
+--
+--
+--
+--
+impolitic, indiscreet, injudicious, tactless, unwise
+--
+--
+--
+--
+airy, buoyant, delicate, light, unburdensome
+--
+--
+impermeable
+--
+--
+skinny, slender, thin
+--
+past
+--
+calculate
+--
+--
+--
+helpless, impossible, lacking, unpromising
+disabled, fragile, helpless, impotent, incapable, ineffective, weak
+--
+ingredient, singular
+--
+impossible, impracticable, unattainable, unreasonable, unworkable
+impossible, impractical, unfeasible, unrealistic, unserviceable, unworkable, useless,worthless
+idealistic, unreasonable
+--
+--
+--
+--
+certain, definite, firm, stable, strong, sure, undoubted
+--
+--
+--
+--
+check, slow, wait
+check, slow, wait
+gradual
+ambiguous, false, imprecise, inaccurate, inexact, questionable
+allow, permit, support
+stupid
+--
+--
+derivative, descendant, successor
+antipathy, disinterest, dislike, hate
+inferior, low, unimportant, unknown
+--
+--
+--
+--
+--
+ending, epilogue, postlude
+--
+fact, reality, truth
+--
+auspicious, happy, lucky, promising, propitious
+inferiority
+reasonable, sensible
+duty, obligation
+--
+--
+--
+humility, lowliness
+--
+humble, modest, unconceited
+common, natural, normal, regular, usual
+reality, truth
+lose, surrender
+isolated, limited, uncommon
+tell truth
+attacker
+--
+last, latest
+mess up, uglify
+informal, rumpled
+--
+--
+known, public, revealed
+--
+deceit, dishonesty, unfairness
+certain, fixable, settled, solvable, sure
+disinclination
+accelerate, advance, complete, do, finish, go ahead, quicken
+--
+careful, thrifty
+little, small, tiny
+--
+--
+clean, moral, sacred
+--
+ignorant, stupid
+--
+--
+parent
+--
+--
+reasonable, unlimited, unrestrictive
+--
+luxurious, rich, superior
+breed, burgeon, engender, escalate, expand, generate, grow rapidly, multiply, mushroom,procreate, propagate, reproduce, run riot, snowball
+barren, fruitless, impotent, unfruitful, unproductive
+--
+abbreviate, shorten
+depressed, inconspicuous, invisible, obscured, sunken
+chaste, cold, cool, frigid
+--
+late, negligent, slow, tardy
+conceal, hide
+sitting, straight, upright
+destroy, kill
+--
+antipathy, disinclination, dislike, hate
+--
+--
+--
+--
+inauspicious, unfavorable, unpromising
+enemy, foe, opponent
+--
+immorality, impropriety, inappropriateness, unsuitableness, wrong
+unforceful, weak, wimpy
+creative, imaginative, interesting, thinking
+back, rear
+admit, allow, include, praise, welcome
+--
+--
+failure, loss, poorness, poverty
+erect, straight, upright, vertical
+--
+bad manners, crudeness, impropriety
+--
+abbreviate, curtail, shorten
+depress, sink
+depression, ingrowth, sinkage
+--
+--
+careless, improvident, spendthrift, wasteful
+citified, liberal, metropolitan, modern
+certain, definite, permanent
+--
+delight, make happy, please
+distance, remoteness
+--
+careless, imprudent, incautious, unwise
+--
+--
+name
+--
+--
+balance, sanity, soundness, wellness
+--
+adult, mature
+--
+easy-going, kind, laid-back, nice
+--
+--
+--
+--
+--
+--
+careless, easy-going, informal, uncaring
+amateur
+--
+beneficial, rewarding
+big, giant, huge, large
+sale, sell
+--
+holding, keeping, maintenance
+--
+--
+--
+proven, real, true
+fresh, perfumed, sweet
+--
+--
+genuine, original, real
+--
+eject
+blessing, solution, success
+--
+common, conventional, regular, usual
+incapable, unable, unproficient, unqualified, unskilled, untalented
+approval, comfort, contentedness
+advantage, certainty, solution
+--
+--
+--
+aid, assist, help, rebuild
+--
+comfortable, healthy, satisfied
+succeed, win
+cheerful, easy-going, happy
+disorganization
+agreement, approval, concurrence
+active
+--
+extra
+--
+--
+--
+quiet, stillness
+--
+certain, understanding
+--
+exciting, unusual
+delighted, happy, pleased
+--
+sophisticate
+compliment, praise
+--
+clean, moral, upright
+--
+cause
+--
+checked, controlled, limited, restrained
+--
+--
+good, nice, repaired, stable
+perfumed, sweet
+kindness, love, respect, sympathy
+definite, methodical, particular, specific, systematic
+delight, make happy, please
+calm, quiet
+--
+coldness, unfriendliness
+commonplace
+--
+deny, disaffirm, disagree, renounce, revoke, veto
+--
+--
+--
+calm, quiet, soft, subdued
+aid, assist, help, protect
+put together, twist
+full, satisfied
+--
+plain
+build, construct
+liberal, progressive, radical
+--
+--
+--
+inclusion, welcome
+known, understanding
+--
+amenable, obedient, passive
+confirm, emphasize, recapitulate
+take back
+unfriendly, unreceptive
+advance, inflation
+--
+donor, giver
+independent, singular
+deny, refuse
+extrovert
+disagree, refuse
+obvious, plain, simple, straightforward
+--
+conceal, repress
+--
+exculpation, praise
+damage, ruin, worsen
+dishonesty, infamy
+--
+decline, deteriorate, fail, worsen
+halted, infrequent, permanent, prevented, stopped
+--
+--
+hurt, injury
+concise, essential, single, singular
+--
+--
+--
+--
+--
+destroy, ruin
+endorse, prove, ratify, sanction, support
+--
+common
+--
+--
+--
+--
+--
+destroy, hurt, ruin
+take
+take back
+--
+destroy, kill, ruin
+healing, progress, strengthening
+assume, hold, keep
+build, increase, rise
+inappropriate, irrelevant, unsuitable
+--
+hold, keep, take
+dislike, hate, hatred
+cancerous, malignant
+--
+accusation, blame
+careful, mindful, scrupulous, thorough, thoughtful
+whole
+--
+good conscience, happiness, remorselessness, satisfaction
+--
+remove, take
+--
+obscurity, vagueness
+--
+obedient, passive, submissive
+--
+allow, approve, condone
+demolish, destroy, ruin
+anonymity, obscurity, unimportance
+purchase
+--
+extortion, penalty, theft
+argument, disagreement, fight
+approval, enactment, passage, sanction, validation
+delightful, lovely
+cause
+--
+--
+deplete, use up, waste
+empty, needy, wanting
+--
+original
+--
+creditable, good, kind, respectable
+allow, let go, permit
+--
+forgiveness, praise, reward
+kindness, sympathy
+--
+approval, honor, praise, respect
+--
+--
+--
+admit, approve
+--
+attraction, liking, love
+disreputable, notorious, unrespected, untrustworthy
+actual, real, true
+--
+nonessential
+dissatisfy, refuse
+allow, approve, permit
+emptiness, nothing
+base, core
+agreement, taking on
+hard, inflexible, rigid, stiff
+compliance, indecision, weakness
+--
+indecision, question, wavering
+faint, quiet
+--
+continuation
+cloudy, dull, gloomy, withering
+--
+dissatisfaction, fee, penalty, taking
+calm, collected, patient, relaxed
+agitation, arousal, wildness
+--
+--
+--
+free, let go, lose, release, spend
+forgive, pardon, sympathize
+impermeable
+communicative, forward, unrestrained
+--
+demonstrative, extroverted, outgoing, self-confident
+question, request
+confirmation, corroboration, reaffirmation
+--
+forgiveness, pardon, sympathy
+give, offer, relinquish
+--
+forward, positive
+--
+mourning, sadness, sobriety
+quieten
+--
+nightmare
+--
+approve, authorize, enforce
+like, liking, love, loving
+--
+conciseness
+chaste, clean, decent
+--
+low, scarce
+closing, closure
+bending, flexible, lenient, limber, pliable, pliant, soft, yielding
+ease, elasticity, flexibility, leniency, pliability
+--
+make happy, please
+--
+--
+flabby, infirm, soft, unhealthy, weak
+--
+--
+--
+--
+--
+--
+--
+--
+--
+--
+--
+--
+pale
+additional, advanced, derivative, developed, extra, nonessential
+--
+--
+ignore, neglect
+order, organize
+normal, unmoving
+--
+allow, keep, welcome
+city, metropolitan, suburban, urban
+compassionate, considerate, gentle, giving, kind, nice, sympathetic
+aide, ally, assistant, confidante, friend, helper
+--
+--
+--
+humane, kind, merciful
+careless, foolish, ignorant, stupid
+--
+--
+--
+inconspicuous, unimportant, unnoticeable
+--
+colorful, dark, flushed, healthy
+insalubrious, unhealthy, unwholesome
+--
+endanger, harm, hurt, injure, lose, waste
+humble, meek, modest
+disapproval, prevention, refusal, veto
+--
+depressed, pessimistic, sad, unhappy
+--
+--
+--
+--
+--
+deprive, dissatisfy, starve
+deprive, dissatisfy, leave wanting
+--
+--
+dehydrate, dry
+--
+--
+run
+--
+bland, displeasing, distasteful, offensive, tasteless, unappetizing
+--
+--
+--
+--
+--
+abundant, ample, plentiful
+--
+rush
+--
+--
+--
+--
+--
+be nice, praise
+--
+advantage, benefit, blessing, boon, delight, happiness
+ignorance, negligence, unconcern
+careless, negligent, unscrupulous
+--
+agreement, peace
+clean, polite, upright
+dawdle, loaf, walk
+sophisticated, superior, upper
+--
+respectable, upright, wholesome
+freeze
+--
+--
+open, public
+lay bare, reveal, tell, uncover
+broad, broad-minded, liberal, nonsectarian
+godly, holy, religious, spiritual
+agitated, excitable, excited, lively, upset
+agitating, excitative, upsetting
+activated, active, energetic, mobile, moving
+--
+--
+luxurious, nice, posh
+inappropriate, unseemly, unsuitable
+pour
+--
+--
+--
+--
+--
+--
+adolescence, childhood, infancy, youth
+abstemious, chaste, mental
+despicable, distasteful
+--
+--
+aiding, antidotal, assisting, curing, healing, helpful
+--
+bring out, make public, reveal, uncover
+--
+agitation, disruption, disturbance, excitement, trouble
+--
+--
+smooth
+aggressive, dominant
+mastery
+--
+kindness, pity, softness
+--
+--
+order, organization
+real, true
+--
+individual, one
+--
+--
+dullness
+do, face, meet
+fine, good, nice
+foolish, frivolous, naive, stupid, unthinking
+--
+aid, help
+accept, face, meet
+--
+--
+--
+--
+--
+--
+--
+--
+--
+be real
+--
+--
+normal, ordinary, regular, usual
+benevolent, kind, nice
+straight, untwisted, unwinding
+believer, devotee, disciple
+--
+spend, use, waste
+--
+--
+calm, collected, easy-going, laid-back, unworried
+--
+--
+tighten
+--
+--
+glorification, nicety, praise
+--
+fine, good, nice, reputable, respectable
+--
+--
+big, great, important, large, significant
+--
+--
+--
+--
+clean, ordered, organized
+--
+active, alert, energetic, fast, lively, spirited
+--
+compliment, flattery, praise
+--
+--
+freeze
+--
+--
+--
+--
+--
+discord, disharmony
+--
+--
+--
+easy-going, laid-back, unafraid, unworried
+disapprove, refuse, reject
+--
+bottom, depth, lowness
+--
+--
+cheerful, happy, joyful
+--
+--
+--
+ingenuousness, naiveté, simplicity
+--
+--
+experienced, expert, knowledgeable, professional
+awake, conscious, exciting, invigorating, stimulating
+good, honorable, reputable, wonderful
+--
+luxurious, opulent
+resting, uninterrupted
+--
+--
+--
+--
+--
+real, true, valid, credible
+--
+--
+miser, saver
+--
+divide, separate, sever
+--
+--
+constant, continuous, dependable
+solemn, staid
+unkempt, unstylish, untidy
+inactive, lethargic, old, unaware, unenergetic
+authentic, genuine, real, true
+embrace, want, welcome
+agreement, concurrence
+clean, good, kept-up, rich
+hoard, save, set aside
+lanky, skinny, slender, tall, thin
+instance
+moving
+adventurous, frivolous, fun, sporting, willing
+headway, progress
+cowardly, meek, weak
+apathy, lack, laziness, lethargy, weakness
+--
+--
+active, changeable, continuous, mobile, moving, variable
+--
+--
+disloyal, unreliable, untrustworthy
+--
+gentle, mild, moderate
+--
+die, end
+root
+--
+--
+encourage, help, persuade
+credit, pride
+--
+--
+--
+--
+--
+imply, wish
+adventurous, exciting, ready, willing
+--
+--
+--
+--
+--
+--
+--
+--
+--
+low, mild, moderate, soft
+flexible, inexact, tolerant
+--
+--
+natural, spontaneous, unintentional, unplanned
+--
+--
+consciousness, sensibility
+white
+aid, assist, encourage, help
+--
+--
+objective, unbiased, unemotional, unprejudiced
+free, liberate
+--
+lowly, poor, second-rate, secondary
+body, physical
+disobedient, fighting, intractable, resistant, unyielding
+--
+--
+anteceent, earlier, former, previous, prior
+controlling, domineering
+grow, increase, rise
+chief, important, necessary
+--
+--
+--
+--
+--
+honesty, openness
+--
+loyal, obedient
+lengthy, long-winded, wordy
+--
+dry, unjuicy
+conquer, create, overcome, win
+--
+--
+--
+cool, dry
+--
+mean, poor, wanting
+--
+dissimilar, individual, single, singular
+--
+humble, modest
+--
+analytical, careful, deep, detailed, genuine, thorough
+important, necessary, needed
+--
+--
+accept, lower, submit
+--
+--
+hard, rigid, stiff, unflexible
+--
+--
+fact, knowledge, proof, reality
+--
+base, core, lack, main, necessity, need, want
+gentle, pleasant
+calculation, knowledge, measurement
+give in, surrender, yield
+fail, fall behind, lose
+aboveboard, authorized, honest, open
+real
+indifference, unobservance
+resistant, resisting, unsusceptible
+discontinue, halt, stop
+extras
+--
+blonde, fair, light, pale
+--
+--
+straighten
+--
+philanthropist
+puritan
+--
+--
+--
+blockage, delay, encumbrance, handicap, hindrance, obstruction, prevention, stoppage
+asymmetry, difference, disproportion, imbalance, irregularity, unevenness
+--
+enlarged, lengthened, unabridged
+--
+genuine, natural, real
+communicative, fluent, talkative, wordy
+explicit, express
+--
+clean, fresh, pure
+--
+--
+--
+abstract, conceptual, imperceptible, intangible, unreal
+--
+disenchant, repulse, turn off
+different, opposite, polar, reverse
+calm, contentment, peace
+go up, increase, rise
+--
+carry on, complete, finish, go
+--
+droopy, flabby, loose, slack
+nice, sophisticated, tasteful
+--
+diversion, entertainment, excitement
+care, caution, cowardice, forethought, hesitation
+--
+immoderate, stormy, violent
+--
+mental, otherworldly, spiritual
+--
+--
+surrendering, weak, yielding
+indifference, irresolution, slackness, weakness
+--
+hard, rough, tough
+--
+brittle, inflexible, resistant, rigid, stiff, unbendable, unpliable, unyielding
+certain, decisive, definite, final, sure
+healthy, significant, stable, strong, substantial, thick
+--
+cold, hot
+begin, initiate, open, start
+--
+--
+cosmic, heavenly, otherworldly
+lengthy, long-winded, prolix, wordy
+--
+--
+--
+happy, pleasant
+--
+--
+--
+certain, definite, factual, proven, real
+damaging, harmful, hurtful, injurious, untherapeutic
+--
+--
+mastery
+extravagant, spendthrift, uneconomical, wasteful
+decline, fail, languish, lose
+--
+--
+free, release
+aid, assist, encourage, forward, help
+--
+--
+pitch, volume
+--
+bold, brave, daring, extroverted, fearless
+bold, brazen, forthcoming
+--
+calm, harmony, peace
+--
+--
+disenchant, repulse, turn off
+--
+--
+--
+--
+--
+entertainment, fun, pastime
+--
+--
+--
+--
+--
+--
+drip
+mind, soul, spirit
+direct, straight, untwisted
+--
+calm, easygoing, laid-back, unflappable
+conceal, hide
+harmless, nonpoisonous
+intractable, obstinate, stubborn, uncontrollable, unmanageable, unruly
+--
+--
+--
+--
+fail, lose
+--
+behavior, good manners, obedience, right
+enduring, lasting, permanent
+beginning, conclusion, end, finish, introduction, sameness, stagnation, start
+lengthiness, longevity, permanence
+blocked, cloudy, opaque
+--
+blocked, cloudy, dark, opaque
+--
+idle, remain, stay
+--
+calming, comforting, pleasing
+--
+--
+seriousness, solemnity
+--
+--
+stillness
+stable, steady, unwavering
+frivolous, gentle, impotent, kind, nice, weak
+calm, contentment, happiness
+calm, comfort, happiness, peace
+--
+accusation, blame, criticism
+--
+block, check, halt, stop
+--
+--
+desirable, important, impressive, original, pertinent, relevant, uncommon
+generality, importance, significance, weight
+--
+--
+--
+--
+elongate, expand, lengthen, stretch
+--
+shrunken
+calmness, order, peace
+--
+clear
+calmness, peace
+--
+plain, simple
+calm, harmony, order, peace
+--
+--
+--
+--
+pauper
+democracy
+--
+rare, scarce
+expressed, known, overt, public
+beginning, first, introductory, opening
+--
+happiness, like, love, pleasure
+--
+contented, fulfilled, gratified, happy, pleased, satisfied
+bold, brave, confident, presumptuous
+--
+common, earthly, natural, usual
+decent, good, moral, principled
+agile, couth, cultivated, polished, refined, sophisticated
+--
+--
+let down, let go, release
+strengthen
+--
+--
+earthly, natural, physical
+bury
+ambiguous, equivocal, indefinite, obscured, uncertain, unsure, vague
+inaccurately, inexactly
+faltering, unsettled, unstable, unsteady
+insincere, pretended
+fettered, restricted
+experienced, initiated, mature, sophisticated
+--
+agile, coordinated, graceful
+--
+changeableness, variation
+bilateral, many-sided, multilateral
+blamable, blameful, blameworthy, culpable, impeachable, reproachable
+careful, inhibited, modest, shy
+--
+common, commonplace, normal, usual
+discord, disharmony
+confined, local, partial, particular
+kempt, neat, tidy, trim
+flaunting, noticeable, obtrusive
+known, unexceptional, unremarkable, usual
+attractive, beautiful, lovely, pleasing
+--
+--
+compliant, obedient, yielding
+appetizing, attractive, savory
+harmed, hurt, injured
+appropriate, due, fitting, proper, seemly, suited
+beautiful, nice, pleasing, pretty, sightly
+sullied, tarnished
+--
+auspicious, happy, lucky
+called-for, justifiable, reasonable, warranted
+convenient, handy
+conscious, intentional, realizing, witting
+--
+--
+solemn, unfunny
+cause, origin, source
+uncivilized, uncouth, unsophisticated
+--
+--
+give in, relinquish, surrender
+--
+hell
+--
+remain, stay
+aware, filled, full, intelligent
+inhabiting, settled
+--
+--
+--
+--
+welcoming
+refuse, reject, veto
+invalid, unacceptable, unreal, unsound, wrong
+cowardice
+angel, god
+followers, rear
+--
+lively, pungent, sharp, spicy, strong
+--
+--
+--
+go direct, stay
+activate, carry out, do
+apathetic, indifferent, unpassionate
+--
+--
+--
+customer
+reality
+unrespected
+--
+--
+--
+--
+audience, fan
+afraid, cowardly
+--
+closure, door
+--
+false, untrue
+falsehood, falsity
+--
+different
+conciseness
+concise, succinct
+dying
+--
+middle
+falseness, impossibility
+falseness
+--
+autumnal
+inflexible, limited, unadjustable
+bottom, nadir
+--
+--
+--
+aid, assist, help, please, soothe
+impossible, unachievable, unpractical, unreasonable
+beverage, drink
+--
+stability, stagnation
+--
+--
+carelessness, impulsiveness, indiscretion, negligence
+--
+enervation, idleness, inactivity, lethargy, weakness
+compliment, praise
+accuse, blame, convict, punish, sentence
+forgiving, helpful, kind, nice
+--
+--
+effeminate, impotent, unmanly
+actual, authentic, real
+dishonor, evil, immorality, vice
+amateur, greenhorn, rookie
+harmless, healthy, nonpoisonous
+--
+--
+--
+--
+allow, forward
+--
+practical, real, realistic, unromantic
+inessential, insignficant, trivial, unimportant
+schedule, set up
+--
+kind, pleasant
+--
+boring, dispirited, dull, unattractive, unhappy
+connection, joining, mending, sewing
+--
+quiet, silent
+--
+calm, firm, stable, steadfast
+--
+--
+little, slight, small, tiny
+flat, underdeveloped
+quenched, satisfied
+--
+refuse, withhold
+--
+closed, guarded, protected, safe, secure
+--
+--
+--
+--
+--
+claim
+--
+grow, increase, raise, rise
+--
+clean, decent, moral, righteous
+colorful, flushed, strong
+--
+breach, break
+breach, break
+--
+careless, foolish, heedless
+--
+shrink
+allow, forward
+--
+--
+--
+--
+--
+--
+--
+blunt, dull
+--
+--
+--
+build, increase
+lot
+--
+flexible, willing, yielding
+--
+--
+--
+--
+--
+--
+uncaring
+extroverted, friendly, outgoing, sociable
+bloom, grow
+--
+--
+--
+moist, smooth, unwrinkled
+--
+immaterial, otherworldly, religious
+agreement, peace
+happiness, love
+--
+--
+--
+be still
+--
+straight, straightforward
+fairness, justice, regard
+dislike, hate, hatred
+--
+--
+deny, oppose, prevent, refuse, reject
+--
+--
+future, present
+serious
+moderate
+apathy, indifference, lethargy
+bottom, nadir
+--

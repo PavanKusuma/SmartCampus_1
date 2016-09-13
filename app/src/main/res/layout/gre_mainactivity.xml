@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawerLayout"
+    android:elevation="7dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/tool_bar"
+            layout="@layout/tool_bar_actionbar">
+        </include>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightGray"/>
+
+
+        <ScrollView
+            android:id="@+id/sv1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:layout_below="@+id/imageView6">
+
+            <TableLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:shrinkColumns="*"  android:stretchColumns="*" android:background="#ffffff"
+                android:padding="10sp" >
+                <!-- Row 1 with single column -->
+
+
+                <!-- Row 2 with 3 columns -->
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" >
+                    <TextView
+                        android:id="@+id/TextView01" android:text="@string/A"
+                        android:layout_weight="1" android:background="#dcdcdc"
+                        android:textColor="#000000" android:textSize="40sp"
+                        android:padding="20dip" android:gravity="center" android:height="120dp" />
+                    <TextView
+                        android:id="@+id/TextView02" android:text="@string/B"
+                        android:layout_weight="1" android:background="#d3d3d3"
+                        android:textColor="#000000" android:textSize="40sp" android:clickable="true"
+                        android:padding="20dip" android:gravity="center" android:height="120dp"/>
+                    <TextView
+                        android:id="@+id/TextView03" android:text="@string/C"
+                        android:layout_weight="1" android:background="#cac9c9"
+                        android:textColor="#000000" android:textSize="40sp"
+                        android:padding="20dip" android:gravity="center" android:height="120dp"/>
+                </TableRow>
+
+                <!-- Row 3 with 2 columns -->
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:gravity="center_horizontal">
+                    <TextView
+                        android:id="@+id/TextView04" android:text="@string/D"
+                        android:layout_weight="1" android:background="#d3d3d3"
+                        android:textColor="#000000" android:textSize="40sp"
+                        android:padding="20dip" android:gravity="center" android:height="120dp"/>
+
+                    <TextView
+                        android:id="@+id/TextView05" android:text="@string/E"
+                        android:layout_weight="1" android:background="#cac9c9"
+                        android:textColor="#000000" android:textSize="40sp"
+                        android:padding="20dip" android:gravity="center" android:height="120dp"/>
+                    <TextView
+                        android:id="@+id/TextView06" android:text="@string/F"
+                        android:layout_weight="1" android:background="#dcdcdc"
+                        android:textColor="#000000"  android:textSize="40sp"
+                        android:padding="20dip" android:gravity="center" android:height="120dp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+                    <TextView
+                        android:id="@+id/TextView07" android:text="@string/G"
+                        android:layout_weight="1" android:background="#dcdcdc"
+                        android:textColor="#000000" android:textSize="40sp"
+                        android:padding="20dip" android:gravity="center" android:height="120dp"/>
+                    <TextView
+                        android:id="@+id/TextView08" android:text="@string/H"
+                        android:layout_weight="1" android:background="#d3d3d3"
+                        android:textColor="#000000" android:textSize="40sp"
+                        android:padding="20dip" android:gravity="center" android:height="120dp"/>
+                    <TextView
+                        android:id="@+id/TextView09" android:text="@string/I"
+                        android:layout_weight="1" android:background="#cac9c9"
+                        android:textColor="#000000" android:textSize="40sp"
+                        android:padding="20dip" android:gravity="center" android:height="120dp"/>
+
+                </TableRow>
+
+                <!-- Row 3 with 2 columns -->
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/TextView10" android:text="@string/J"
+                        android:layout_weight="1" android:background="#d3d3d3"
+                        android:textColor="#000000" android:textSize="40sp"
+                        android:padding="20dip" android:gravity="center" android:height="120dp"/>
+                    <TextView
+                        android:id="@+id/TextView11" android:text="@string/K"
+                        android:layout_weight="1" android:background="#cac9c9"
+                        android:textColor="#000000"  android:textSize="40sp"
+                        android:padding="20dip" android:gravity="center" android:height="120dp" />
+                    <TextView
+                        android:id="@+id/TextView12" android:text="@string/L"
+                        android:layout_weight="1" android:background="#dcdcdc"
+                        android:textColor="#000000" android:textSize="40sp"
+                        android:padding="20dip" android:gravity="center" android:height="120dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+                    <TextView
+                        android:id="@+id/TextView13" android:text="@string/M"
+                        android:layout_weight="1" android:background="#dcdcdc"
+                        android:textColor="#000000" android:textSize="40sp"
+                        android:padding="20dip" android:gravity="center" android:height="120dp"/>
+                    <TextView
+                        android:id="@+id/TextView14" android:text="@string/N"
+                        android:layout_weight="1" android:background="#d3d3d3"
+                        android:textColor="#000000" android:textSize="40sp"
+                        android:padding="20dip" android:gravity="center" android:height="120dp"/>
+
+                    <TextView
+                        android:id="@+id/TextView15" android:text="@string/O"
+                        android:layout_weight="1" android:background="#cac9c9"
+                        android:textColor="#000000" android:textSize="40sp"
+                        android:padding="20dip" android:gravity="center" android:height="120dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+                    <TextView
+                        android:id="@+id/TextView16" android:text="@string/P"
+                        android:layout_weight="1" android:background="#d3d3d3"
+                        android:textColor="#000000"  android:textSize="40sp"
+                        android:padding="20dip" android:gravity="center" android:height="120dp" />
+                    <TextView
+                        android:id="@+id/TextView17" android:text="@string/Q"
+                        android:layout_weight="1" android:background="#cac9c9"
+                        android:textColor="#000000" android:textSize="40sp"
+                        android:padding="20dip" android:gravity="center" android:height="120dp"/>
+                    <TextView
+                        android:id="@+id/TextView18" android:text="@string/R"
+                        android:layout_weight="1" android:background="#dcdcdc"
+                        android:textColor="#000000" android:textSize="40sp"
+                        android:padding="20dip" android:gravity="center" android:height="120dp"/>
+                </TableRow>
+
+                <!-- Row 3 with 2 columns -->
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:gravity="center_horizontal">
+                    <TextView
+                        android:id="@+id/TextView19" android:text="@string/S"
+                        android:layout_weight="1" android:background="#dcdcdc"
+                        android:textColor="#000000" android:textSize="40sp"
+                        android:padding="20dip" android:gravity="center" android:height="120dp"/>
+
+                    <TextView
+                        android:id="@+id/TextView20" android:text="@string/T"
+                        android:layout_weight="1" android:background="#d3d3d3"
+                        android:textColor="#000000" android:textSize="40sp"
+                        android:padding="20dip" android:gravity="center" android:height="120dp"/>
+                    <TextView
+                        android:id="@+id/TextView21" android:text="@string/U"
+                        android:layout_weight="1" android:background="#cac9c9"
+                        android:textColor="#000000"  android:textSize="40sp"
+                        android:padding="20dip" android:gravity="center" android:height="120dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+                    <TextView
+                        android:id="@+id/TextView22" android:text="@string/V"
+                        android:layout_weight="1" android:background="#d3d3d3"
+                        android:textColor="#000000" android:textSize="40sp"
+                        android:padding="20dip" android:gravity="center" android:height="120dp"/>
+                    <TextView
+                        android:id="@+id/TextView23" android:text="@string/W"
+                        android:layout_weight="1" android:background="#cac9c9"
+                        android:textColor="#000000" android:textSize="40sp"
+                        android:padding="20dip" android:gravity="center" android:height="120dp"/>
+                    <TextView
+                        android:id="@+id/TextView24" android:text="@string/X"
+                        android:layout_weight="1" android:background="#dcdcdc"
+                        android:textColor="#000000"  android:textSize="40sp"
+                        android:padding="20dip" android:gravity="center" android:height="120dp" />
+                </TableRow>
+
+                <!-- Row 3 with 2 columns -->
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:gravity="center_horizontal">
+                    <TextView
+                        android:id="@+id/TextView25" android:text="@string/Y"
+                        android:layout_weight="1" android:background="#dcdcdc"
+                        android:textColor="#000000" android:textSize="40sp"
+                        android:padding="20dip" android:gravity="center" android:height="120dp"/>
+                    <TextView
+                        android:id="@+id/TextView26" android:text="@string/Z"
+                        android:layout_weight="1" android:background="#d3d3d3"
+                        android:textColor="#000000" android:textSize="40sp"
+                        android:padding="20dip" android:gravity="center" android:height="120dp"/>
+                </TableRow>
+
+
+
+            </TableLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>

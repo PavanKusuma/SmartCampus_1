@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawerLayout"
+    android:elevation="7dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/tool_bar"
+            layout="@layout/tool_bar_actionbar">
+        </include>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightGray"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ListView
+                android:id="@+id/collegeWallListView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:dividerHeight="3dp"
+                android:divider="@android:color/transparent"
+                android:padding="6sp"
+                android:focusable="false"/>
+
+
+            <TextView
+                android:id="@+id/emptyElement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/noData"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:textColor="@color/lightLightGray"
+                android:layout_below="@+id/collegeWallListView"/>
+
+            <ProgressBar
+                android:id="@+id/progressBarCollegeWall"
+                style="?android:attr/progressBarStyleSmallTitle"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerHorizontal="true"
+                android:indeterminate="false"
+                android:max="100"
+                android:layout_below="@+id/emptyElement"/>
+
+        </RelativeLayout>
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fullImageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+    <ImageView
+        android:id="@+id/fullImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/load_img"
+        android:background="@color/black"/>
+
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>

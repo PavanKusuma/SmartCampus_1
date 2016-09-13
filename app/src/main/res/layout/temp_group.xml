@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawerLayout"
+    android:elevation="7dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/tool_bar"
+            layout="@layout/tool_bar_actionbar">
+        </include>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightGray"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--<RelativeLayout
+                    android:id="@+id/goKartingView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:background="@drawable/button_rounded_shape_gray">
+
+                    <ImageView
+                        android:id="@+id/groupsIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:padding="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_msg_grps"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_toRightOf="@+id/groupsIcon"
+                        android:padding="15dp">
+                        <TextView
+                            android:id="@+id/groupsTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/goKarting"
+                            android:textAppearance="@android:style/TextAppearance.Medium"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/groupDetails"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:padding="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_right"/>
+
+                </RelativeLayout>
+
+-->
+
+
+
+                <RelativeLayout
+                    android:id="@+id/hodsView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:background="@drawable/button_rounded_shape_gray">
+
+                    <ImageView
+                        android:id="@+id/deanIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:padding="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_msg_grps"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_toRightOf="@+id/deanIcon"
+                        android:padding="15dp">
+                        <TextView
+                            android:id="@+id/deanTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/hods"
+                            android:textAppearance="@android:style/TextAppearance.Medium"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/groupDetails"
+                            android:textSize="12sp"
+                            android:visibility="gone"/>
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:padding="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_right"/>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/deanView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:background="@drawable/button_rounded_shape_gray"
+                    android:layout_below="@+id/hodsView">
+
+                    <ImageView
+                        android:id="@+id/groupsIcon1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:padding="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_msg_grps"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_toRightOf="@+id/groupsIcon1"
+                        android:padding="15dp">
+                        <TextView
+                            android:id="@+id/hodGroupTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dean"
+                            android:textAppearance="@android:style/TextAppearance.Medium"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/groupDetails"
+                            android:textSize="12sp"
+                            android:visibility="gone"/>
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:padding="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_right"/>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/raggingView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:background="@drawable/button_rounded_shape_gray"
+                    android:layout_below="@+id/deanView">
+
+                    <ImageView
+                        android:id="@+id/raggingIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:padding="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_msg_grps"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_toRightOf="@+id/raggingIcon"
+                        android:padding="15dp">
+                        <TextView
+                            android:id="@+id/raggingTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ragging"
+                            android:textAppearance="@android:style/TextAppearance.Medium"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/groupDetails"
+                            android:textSize="12sp"
+                            android:visibility="gone"/>
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:padding="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_right"/>
+
+                </RelativeLayout>
+
+
+
+                <RelativeLayout
+                    android:id="@+id/counselorsView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:background="@drawable/button_rounded_shape_gray"
+                    android:layout_below="@+id/raggingView">
+
+                    <ImageView
+                        android:id="@+id/counselorsIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:padding="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_msg_grps"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_toRightOf="@+id/counselorsIcon"
+                        android:padding="15dp">
+                        <TextView
+                            android:id="@+id/counselorsTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/counselors"
+                            android:textAppearance="@android:style/TextAppearance.Medium"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/groupDetails"
+                            android:textSize="12sp"
+                            android:visibility="gone"/>
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:padding="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_right"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/placementCoordinatorsView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:background="@drawable/button_rounded_shape_gray"
+                    android:layout_below="@+id/counselorsView">
+
+                    <ImageView
+                        android:id="@+id/placementCoordinatorsIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:padding="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_msg_grps"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_toRightOf="@+id/placementCoordinatorsIcon"
+                        android:padding="15dp">
+                        <TextView
+                            android:id="@+id/placementCoordinatorsTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/placementCoordinators"
+                            android:textAppearance="@android:style/TextAppearance.Medium"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/groupDetails"
+                            android:textSize="12sp"
+                            android:visibility="gone"/>
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:padding="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_right"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/ecapView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:background="@drawable/button_rounded_shape_gray"
+                    android:layout_below="@+id/placementCoordinatorsView">
+
+                    <ImageView
+                        android:id="@+id/ecapIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:padding="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_msg_grps"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_toRightOf="@+id/ecapIcon"
+                        android:padding="15dp">
+                        <TextView
+                            android:id="@+id/ecapTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ecapCoordinators"
+                            android:textAppearance="@android:style/TextAppearance.Medium"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/groupDetails"
+                            android:textSize="12sp"
+                            android:visibility="gone"/>
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:padding="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_right"/>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/classView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:background="@drawable/button_rounded_shape_gray"
+                    android:layout_below="@+id/ecapView">
+
+                    <ImageView
+                        android:id="@+id/classIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:padding="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_msg_grps"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_toRightOf="@+id/classIcon"
+                        android:padding="15dp">
+                        <TextView
+                            android:id="@+id/classTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/classRepresentatives"
+                            android:textAppearance="@android:style/TextAppearance.Medium"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/groupDetails"
+                            android:textSize="12sp"
+                            android:visibility="gone"/>
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:padding="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_right"/>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/hostelView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:background="@drawable/button_rounded_shape_gray"
+                    android:layout_below="@+id/classView">
+
+                    <ImageView
+                        android:id="@+id/hostelIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:padding="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_msg_grps"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_toRightOf="@+id/hostelIcon"
+                        android:padding="15dp">
+                        <TextView
+                            android:id="@+id/hostelTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/hostelRepresentatives"
+                            android:textAppearance="@android:style/TextAppearance.Medium"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/groupDetails"
+                            android:textSize="12sp"
+                            android:visibility="gone"/>
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:padding="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_right"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/clubsView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:background="@drawable/button_rounded_shape_gray"
+                    android:layout_below="@+id/hostelView">
+
+                    <ImageView
+                        android:id="@+id/clubsIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:padding="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_msg_grps"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_toRightOf="@+id/clubsIcon"
+                        android:padding="15dp">
+                        <TextView
+                            android:id="@+id/clubsTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/studentClub"
+                            android:textAppearance="@android:style/TextAppearance.Medium"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/groupDetails"
+                            android:textSize="12sp"
+                            android:visibility="gone"/>
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:padding="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_right"/>
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>

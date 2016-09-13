@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        svecw_keypath {
+        }
+        svecw_release {
+            keyAlias 'svecwalias'
+            keyPassword 'android'
+            storeFile file('D:/Projects/Launches/SmartCampus/smartcampus.jks')
+            storePassword 'android'
+        }
+    }
+    compileSdkVersion 23
+    buildToolsVersion '22.0.1'
+    defaultConfig {
+        applicationId 'svecw.smartcampus'
+        minSdkVersion 11
+        targetSdkVersion 23
+        versionCode 5
+        versionName "1.0.4"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(dir: 'libs', include: ['bolts-android-1.2.0.jar'])
+    compile fileTree(dir: 'libs', include: ['Parse-*.jar'])
+    compile files('libs/commons-io-2.4.jar')
+    compile 'com.android.support:recyclerview-v7:23.1.1'
+    compile 'com.android.support:design:23.1.1'
+    compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'com.android.support:support-v4:23.1.1'
+    compile files('libs/ksoap2-android-assembly-3.1.1-jar-with-dependencies.jar')
+    compile 'com.roughike:bottom-bar:1.2.1'
+    compile 'me.biubiubiu.justifytext:library:1.1'
+    compile 'com.google.android.gms:play-services-gcm:8.3.0'
+    compile 'com.google.android.gms:play-services:9.4.0'
+    compile files('libs/picasso-2.5.2.jar')
+    compile files('libs/poi-3.14-20160307.jar')
+    compile files('libs/poi-ooxml-3.14-20160307.jar')
+}

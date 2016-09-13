@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawerLayout"
+    android:elevation="7dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/tool_bar"
+            layout="@layout/tool_bar_actionbar">
+        </include>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightGray"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <ScrollView
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:scrollbarStyle="insideOverlay">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:id="@+id/awards"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/card_background"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/awardsHeading"
+                            android:layout_margin="10dp"
+                            android:id="@+id/awardsText"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/awardsText"
+                            android:layout_margin="10dp"
+                            android:id="@+id/awardsTextView"
+                            android:layout_below="@+id/awardsText"/>
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/achievement1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/card_background"
+                        android:layout_below="@+id/awards"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/vishuRDHeading"
+                            android:layout_margin="10dp"
+                            android:id="@+id/vishurdText"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/principalImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="220dp"
+                            android:src="@drawable/vishu_rd"
+                            android:scaleType="centerCrop"
+                            android:layout_below="@+id/vishurdText"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/vishuRD"
+                            android:layout_margin="10dp"
+                            android:id="@+id/principalTextView"
+                            android:layout_below="@+id/principalImage"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/achievement2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_below="@+id/achievement1"
+                        android:background="@drawable/card_background"
+                        android:visibility="gone">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/missionRDHeading"
+                            android:layout_margin="10dp"
+                            android:id="@+id/missionrdText"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/collegeImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="220dp"
+                            android:src="@drawable/mission_rd"
+                            android:scaleType="centerCrop"
+                            android:layout_below="@+id/missionrdText"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/missionRD"
+                            android:layout_margin="10dp"
+                            android:id="@+id/aboutUsTextView"
+                            android:layout_below="@+id/collegeImage"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/achievement3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_below="@+id/achievement2"
+                        android:background="@drawable/card_background"
+                        android:visibility="gone">
+
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/jkcHeading"
+                            android:layout_margin="10dp"
+                            android:id="@+id/jkcText"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/collegeImage2"
+                            android:layout_width="match_parent"
+                            android:layout_height="220dp"
+                            android:src="@drawable/jkc"
+                            android:scaleType="centerCrop"
+                            android:layout_below="@+id/jkcText"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/jkc"
+                            android:layout_margin="10dp"
+                            android:layout_below="@+id/collegeImage2"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/achievement4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_below="@+id/achievement3"
+                        android:background="@drawable/card_background"
+                        android:visibility="gone">
+
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/atlHeading"
+                            android:layout_margin="10dp"
+                            android:id="@+id/atlText"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/collegeImage3"
+                            android:layout_width="match_parent"
+                            android:layout_height="220dp"
+                            android:src="@drawable/atl"
+                            android:scaleType="centerCrop"
+                            android:layout_below="@+id/atlText"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/atl"
+                            android:layout_margin="10dp"
+                            android:layout_below="@+id/collegeImage3"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/achievement5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_below="@+id/achievement4"
+                        android:background="@drawable/card_background"
+                        android:visibility="gone">
+
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/ibmHeading"
+                            android:layout_margin="10dp"
+                            android:id="@+id/atlText1"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/collegeImage31"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ibm"
+                            android:scaleType="center"
+                            android:layout_below="@+id/atlText1"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/ibmText"
+                            android:layout_margin="10dp"
+                            android:layout_below="@+id/collegeImage31"/>
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/achievement6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_below="@+id/achievement5"
+                        android:background="@drawable/card_background"
+                        android:visibility="gone">
+
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/texasLabHeading"
+                            android:layout_margin="10dp"
+                            android:id="@+id/atlText2"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/collegeImage32"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/texaslab"
+                            android:scaleType="center"
+                            android:layout_below="@+id/atlText2"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/texaslabText"
+                            android:layout_margin="10dp"
+                            android:layout_below="@+id/collegeImage32"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/achievement7"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_below="@+id/achievement6"
+                        android:background="@drawable/card_background"
+                        android:visibility="gone">
+
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/talentSprintHeading"
+                            android:layout_margin="10dp"
+                            android:id="@+id/atlText3"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/collegeImage33"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/talentsprint"
+                            android:scaleType="center"
+                            android:layout_below="@+id/atlText3"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/talentSprintText"
+                            android:layout_margin="10dp"
+                            android:layout_below="@+id/collegeImage33"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/achievement8"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_below="@+id/achievement7"
+                        android:background="@drawable/card_background"
+                        android:visibility="gone">
+
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/knowledgeCenterHeading"
+                            android:layout_margin="10dp"
+                            android:id="@+id/atlText4"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/collegeImage34"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/kcenter"
+                            android:scaleType="center"
+                            android:layout_below="@+id/atlText4"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/knowledgeCenterText"
+                            android:layout_margin="10dp"
+                            android:layout_below="@+id/collegeImage34"/>
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/achievement9"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_below="@+id/achievement8"
+                        android:background="@drawable/card_background"
+                        android:visibility="gone">
+
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/radioHeading"
+                            android:layout_margin="10dp"
+                            android:id="@+id/radioText"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/collegeImage35"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/radiovishnunew"
+                            android:scaleType="center"
+                            android:layout_below="@+id/radioText"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/radio"
+                            android:layout_margin="10dp"
+                            android:layout_below="@+id/collegeImage35"/>
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/achievement10"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_below="@+id/achievement9"
+                        android:background="@drawable/card_background"
+                        android:visibility="gone">
+
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/foreignLangHeading"
+                            android:layout_margin="10dp"
+                            android:id="@+id/foreignText"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/collegeImage36"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/radiovishnunew"
+                            android:scaleType="center"
+                            android:layout_below="@+id/foreignText"
+                            android:visibility="gone"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/foreignLang"
+                            android:layout_margin="10dp"
+                            android:layout_below="@+id/collegeImage36"/>
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/achievement11"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_below="@+id/achievement10"
+                        android:background="@drawable/card_background"
+                        android:visibility="gone">
+
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/womenTechHeading"
+                            android:layout_margin="10dp"
+                            android:id="@+id/womenTechText"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/collegeImage39"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/radiovishnunew"
+                            android:scaleType="center"
+                            android:layout_below="@+id/womenTechText"
+                            android:visibility="gone"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/womenTech"
+                            android:layout_margin="10dp"
+                            android:layout_below="@+id/collegeImage39"/>
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/achievement12"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_below="@+id/achievement11"
+                        android:background="@drawable/card_background"
+                        android:visibility="gone">
+
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/iuceeHeading"
+                            android:layout_margin="10dp"
+                            android:id="@+id/iuceeText"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/collegeImage38"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/radiovishnunew"
+                            android:scaleType="center"
+                            android:layout_below="@+id/iuceeText"
+                            android:visibility="gone"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/iucee"
+                            android:layout_margin="10dp"
+                            android:layout_below="@+id/collegeImage38"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/achievement13"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_below="@+id/achievement12"
+                        android:background="@drawable/card_background"
+                        android:visibility="gone">
+
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/wifiHeading"
+                            android:layout_margin="10dp"
+                            android:id="@+id/wifiText"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/collegeImage37"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/radiovishnunew"
+                            android:scaleType="center"
+                            android:layout_below="@+id/wifiText"
+                            android:visibility="gone"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/wifi"
+                            android:layout_margin="10dp"
+                            android:layout_below="@+id/collegeImage37"/>
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/achievement14"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_below="@+id/achievement13"
+                        android:background="@drawable/card_background"
+                        android:visibility="gone">
+
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/counselingHeading"
+                            android:layout_margin="10dp"
+                            android:id="@+id/counselingText"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/collegeImage40"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/radiovishnunew"
+                            android:scaleType="center"
+                            android:layout_below="@+id/counselingText"
+                            android:visibility="gone"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/counseling"
+                            android:layout_margin="10dp"
+                            android:layout_below="@+id/collegeImage40"/>
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/achievement15"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_below="@+id/achievement14"
+                        android:background="@drawable/card_background"
+                        android:visibility="gone">
+
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/teqipHeading"
+                            android:layout_margin="10dp"
+                            android:id="@+id/teqipText"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/collegeImage41"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/radiovishnunew"
+                            android:scaleType="center"
+                            android:layout_below="@+id/teqipText"
+                            android:visibility="gone"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/teqip"
+                            android:layout_margin="10dp"
+                            android:layout_below="@+id/collegeImage41"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/achievement16"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_below="@+id/achievement15"
+                        android:background="@drawable/card_background"
+                        android:visibility="gone">
+
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/mousHeading"
+                            android:layout_margin="10dp"
+                            android:id="@+id/mouText"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/collegeImage42"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/radiovishnunew"
+                            android:scaleType="center"
+                            android:layout_below="@+id/mouText"
+                            android:visibility="gone"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/mous"
+                            android:layout_margin="10dp"
+                            android:layout_below="@+id/collegeImage42"/>
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/achievement17"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_below="@+id/achievement16"
+                        android:background="@drawable/card_background"
+                        android:visibility="gone">
+
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/studentClubsHeading"
+                            android:layout_margin="10dp"
+                            android:id="@+id/clubText"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/collegeImage43"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/radiovishnunew"
+                            android:scaleType="center"
+                            android:layout_below="@+id/clubText"
+                            android:visibility="gone"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/studentClubs"
+                            android:layout_margin="10dp"
+                            android:layout_below="@+id/collegeImage43"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/achievement18"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_below="@+id/achievement17"
+                        android:background="@drawable/card_background"
+                        android:visibility="gone">
+
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/qeeeHeading"
+                            android:layout_margin="10dp"
+                            android:id="@+id/qeeeText"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/collegeImage44"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/radiovishnunew"
+                            android:scaleType="center"
+                            android:layout_below="@+id/qeeeText"
+                            android:visibility="gone"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/qeee"
+                            android:layout_margin="10dp"
+                            android:layout_below="@+id/collegeImage44"/>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </ScrollView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>

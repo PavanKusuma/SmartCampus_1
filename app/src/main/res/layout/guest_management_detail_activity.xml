@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawerLayout"
+    android:elevation="7dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/tool_bar"
+            layout="@layout/tool_bar_actionbar">
+        </include>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightGray"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <ScrollView
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:scrollbarStyle="insideOverlay">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:id="@+id/management1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/card_background"
+                        android:visibility="gone">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/founderHeading"
+                            android:layout_margin="10dp"
+                            android:id="@+id/founderText"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/principalImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="220dp"
+                            android:src="@drawable/ic_founder"
+                            android:scaleType="fitCenter"
+                            android:background="@color/grayBg"
+                            android:layout_below="@+id/founderText"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/founderText"
+                            android:layout_margin="10dp"
+                            android:id="@+id/founderTextView"
+                            android:layout_below="@+id/principalImage"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/founderText1"
+                            android:layout_margin="10dp"
+                            android:textColor="@color/collegeRedColor"
+                            android:id="@+id/founderTextView1"
+                            android:layout_below="@+id/founderTextView"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/founderText2"
+                            android:layout_margin="10dp"
+                            android:id="@+id/founderTextView2"
+                            android:layout_below="@+id/founderTextView1"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/founderText3"
+                            android:layout_margin="10dp"
+                            android:textColor="@color/collegeRedColor"
+                            android:id="@+id/founderTextView3"
+                            android:layout_below="@+id/founderTextView2"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/founderText4"
+                            android:layout_margin="10dp"
+                            android:id="@+id/founderTextView4"
+                            android:layout_below="@+id/founderTextView3"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/management2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_below="@+id/management1"
+                        android:background="@drawable/card_background"
+                        android:visibility="gone">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/chairmanHeading"
+                            android:layout_margin="10dp"
+                            android:id="@+id/aboutUsText"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/collegeImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="280dp"
+                            android:src="@drawable/ic_chairman"
+                            android:scaleType="fitCenter"
+                            android:background="@color/grayBg"
+                            android:layout_below="@+id/aboutUsText"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/chairmanText"
+                            android:layout_margin="10dp"
+                            android:id="@+id/aboutUsTextView"
+                            android:layout_below="@+id/collegeImage"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/chairmanText1"
+                            android:layout_margin="10dp"
+                            android:id="@+id/aboutUsTextView1"
+                            android:textColor="@color/collegeRedColor"
+                            android:layout_below="@+id/aboutUsTextView"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/chairmanText2"
+                            android:layout_margin="10dp"
+                            android:id="@+id/aboutUsTextView2"
+                            android:layout_below="@+id/aboutUsTextView1"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/chairmanText3"
+                            android:layout_margin="10dp"
+                            android:id="@+id/aboutUsTextView3"
+                            android:textColor="@color/collegeRedColor"
+                            android:layout_below="@+id/aboutUsTextView2"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/chairmanText4"
+                            android:layout_margin="10dp"
+                            android:id="@+id/aboutUsTextView4"
+                            android:layout_below="@+id/aboutUsTextView3"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/management3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_below="@+id/management2"
+                        android:background="@drawable/card_background"
+                        android:visibility="gone">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/viceChaimanHeading"
+                            android:layout_margin="10dp"
+                            android:id="@+id/viceChairmanText"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/collegeImage1"
+                            android:layout_width="match_parent"
+                            android:layout_height="280dp"
+                            android:src="@drawable/vc"
+                            android:scaleType="fitCenter"
+                            android:background="@color/grayBg"
+                            android:layout_below="@+id/viceChairmanText"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/viceChairmanText"
+                            android:layout_margin="10dp"
+                            android:layout_below="@+id/collegeImage1"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/management4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_below="@+id/management3"
+                        android:background="@drawable/card_background"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/jointSecretaryHeading"
+                            android:layout_margin="10dp"
+                            android:id="@+id/jointSecretaryText"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/collegeImage22"
+                            android:layout_width="match_parent"
+                            android:layout_height="280dp"
+                            android:src="@drawable/jsc"
+                            android:scaleType="fitCenter"
+                            android:background="@color/grayBg"
+                            android:layout_below="@+id/jointSecretaryText"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/jointSecretaryText"
+                            android:layout_margin="10dp"
+                            android:layout_below="@+id/collegeImage22"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/management5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_below="@+id/management4"
+                        android:background="@drawable/card_background"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/secretaryHeading"
+                            android:layout_margin="10dp"
+                            android:id="@+id/secretaryText"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/collegeImage2"
+                            android:layout_width="match_parent"
+                            android:layout_height="280dp"
+                            android:src="@drawable/sc"
+                            android:scaleType="fitCenter"
+                            android:background="@color/grayBg"
+                            android:layout_below="@+id/secretaryText"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/secretaryText"
+                            android:layout_margin="10dp"
+                            android:layout_below="@+id/collegeImage2"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/management6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_below="@+id/management5"
+                        android:background="@drawable/card_background"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/principalHeading"
+                            android:layout_margin="10dp"
+                            android:id="@+id/principalText"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/collegeImage3"
+                            android:layout_width="match_parent"
+                            android:layout_height="280dp"
+                            android:src="@drawable/ic_principal"
+                            android:scaleType="fitCenter"
+                            android:background="@color/grayBg"
+                            android:layout_below="@+id/principalText"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/principalText"
+                            android:layout_margin="10dp"
+                            android:layout_below="@+id/collegeImage3"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/management7"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_below="@+id/management6"
+                        android:background="@drawable/card_background"
+                        android:visibility="gone">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/vicePrincipalHeading"
+                            android:layout_margin="10dp"
+                            android:id="@+id/viceprincipalText"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/collegeImage4"
+                            android:layout_width="match_parent"
+                            android:layout_height="280dp"
+                            android:src="@drawable/viceprincipal"
+                            android:scaleType="fitCenter"
+                            android:background="@color/grayBg"
+                            android:layout_below="@+id/viceprincipalText"/>
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/vicePrincipalText"
+                            android:layout_margin="10dp"
+                            android:layout_below="@+id/collegeImage4"/>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </ScrollView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>

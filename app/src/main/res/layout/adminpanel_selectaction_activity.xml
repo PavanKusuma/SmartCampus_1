@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawerLayout"
+    android:elevation="7dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/tool_bar"
+            layout="@layout/tool_bar_actionbar">
+        </include>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightGray"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/selectRoleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/selectAction"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:textAppearance="@android:style/TextAppearance.Medium"/>
+
+                <TextView
+                    android:id="@+id/assignPrivilege"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="@string/assignPrivilege"
+                    android:gravity="center"
+                    android:textColor="@color/gray"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/button_clickedstate"
+                    android:layout_below="@+id/selectRoleTextView"/>
+
+                <TextView
+                    android:id="@+id/updateStudentBranch"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="@string/updateStudentBranch"
+                    android:gravity="center"
+                    android:textColor="@color/gray"
+                    android:background="@drawable/button_clickedstate"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_below="@+id/assignPrivilege"/>
+
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>

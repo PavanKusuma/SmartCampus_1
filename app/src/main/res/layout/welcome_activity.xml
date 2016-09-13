@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawerLayout"
+    android:elevation="7dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/launchLogoWelcome"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:src="@drawable/college_logo"
+                android:layout_marginTop="60dp"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/launchTextWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:layout_below="@+id/launchLogoWelcome"
+                android:layout_centerHorizontal="true"
+                android:padding="20dp"
+                android:textSize="26dp"/>
+
+            <TextView
+                android:id="@+id/launchText2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/collegeText"
+                android:layout_below="@+id/launchTextWelcome"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/welcomeUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome"
+                android:padding="8dp"
+                android:layout_below="@+id/launchText2"
+                android:textSize="16dp"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:textColor="@color/lightBlue"/>
+
+            <RelativeLayout
+                android:id="@+id/userImageLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/welcomeUsername"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/userImage"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/f1201"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@string/app_name"
+                    android:layout_centerHorizontal="true" />
+
+                <ImageView
+                    android:id="@+id/collegeWallUserImageBG"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/user_image_bg1"
+                    android:contentDescription="@string/app_name"
+                    android:layout_centerHorizontal="true" />
+
+            </RelativeLayout>
+
+
+
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/goBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_enter"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="40dp"
+                app:backgroundTint="@color/lightBlue"
+                app:rippleColor="@color/white"
+                app:pressedTranslationZ="12dp">
+
+            </android.support.design.widget.FloatingActionButton>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>

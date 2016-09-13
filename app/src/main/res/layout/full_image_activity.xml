@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+
+<!--    <svecw.svecw.FullScreenImageView
+        android:id="@+id/fullImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+-->
+
+    <svecw.smartcampus.FullScreenImageView
+        android:id="@+id/largeImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/college"/>
+
+    <ProgressBar
+        android:id="@+id/progressBarImage"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:indeterminate="false"
+        android:max="100"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/close"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_clear"
+        android:layout_margin="10dp"/>
+
+
+
+
+</RelativeLayout>

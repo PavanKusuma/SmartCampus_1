@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/roundedcorners">
+
+        <RelativeLayout
+            android:id="@+id/votesLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/likeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"/>
+
+<!--
+            <TextView
+                android:id="@+id/disLikeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/likeTextView"
+                android:padding="5dp"/>
+-->
+
+            <TextView
+                android:id="@+id/commentTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/likeTextView"
+                android:padding="5dp"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/emptyListText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/fetching"
+            android:textAppearance="@android:style/TextAppearance.Small"
+            android:textColor="@color/lightLightGray"
+            android:layout_below="@+id/votesLayout"/>
+
+        <ProgressBar
+            android:id="@+id/commentsProgressBar"
+            style="?android:attr/progressBarStyleSmallTitle"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerHorizontal="true"
+            android:indeterminate="false"
+            android:max="100"
+            android:visibility="gone"
+            android:layout_below="@id/emptyListText"/>
+
+        <LinearLayout
+            android:id="@+id/newCommentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:weightSum="1"
+            android:padding="6dp"
+            android:background="@drawable/roundedcorners">
+
+
+            <EditText
+                android:id="@+id/newComment1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:inputType="text"
+                android:hint="@string/writeAComment"
+                android:padding="12dp"
+                android:layout_margin="6dp"
+                android:textColor="@color/blackText"
+                android:background="@drawable/button_rounded_shape_gray">
+
+            </EditText>
+
+            <ImageView
+                android:id="@+id/postComment"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:src="@drawable/ic_send"
+                android:layout_weight="0.2"
+                android:layout_gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/commentsListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dividerHeight="0.2dp"
+            android:divider="@drawable/list_divider_style"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="10sp"
+            android:focusable="false"
+            android:layout_below="@+id/commentsProgressBar"
+            android:layout_above="@+id/newCommentLayout"/>
+
+        <!-- Here you will have previous comments list -->
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
