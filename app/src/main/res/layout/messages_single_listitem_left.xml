@@ -50,7 +50,8 @@
                             android:contentDescription="@string/app_name"
                             android:adjustViewBounds="true"
                             android:paddingTop="8dp"
-                            android:src="@drawable/college"/>
+                            android:src="@drawable/college"
+                            android:visibility="gone"/>
 
                 </RelativeLayout>
 

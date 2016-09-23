@@ -1,6 +1,7 @@
 package svecw.smartcampus;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -37,9 +38,11 @@ public class MoreActivity extends AppCompatActivity{
         // get the toolbar for the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
         title.setText(getResources().getString(R.string.more));
+        title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar
         setSupportActionBar(toolbar);
@@ -59,7 +62,7 @@ public class MoreActivity extends AppCompatActivity{
         groupsView = (RelativeLayout) findViewById(R.id.groupsView);
         adminPanelView = (RelativeLayout) findViewById(R.id.adminPanelView);
         messagesView = (RelativeLayout) findViewById(R.id.messagesView);
-        messagesTextView = (TextView) findViewById(R.id.messagesTextView);
+        messagesTextView = (TextView) findViewById(R.id.messagesTextView); messagesTextView.setTypeface(sansFont);
         learnView = (RelativeLayout) findViewById(R.id.learnView);
         academicsView = (RelativeLayout) findViewById(R.id.acadamicsView);
         examsView = (RelativeLayout) findViewById(R.id.examsView);

@@ -1,6 +1,7 @@
 package svecw.smartcampus;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
+
+import utils.Constants;
 
 /**
  * Created by Pavan on 5/20/15.
@@ -31,9 +34,11 @@ public class AdminPanel_SelectAction extends AppCompatActivity {
         // get the toolbar for the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
         title.setText(getResources().getString(R.string.adminPanel));
+        title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar
         setSupportActionBar(toolbar);
@@ -49,8 +54,8 @@ public class AdminPanel_SelectAction extends AppCompatActivity {
         layoutInflater = LayoutInflater.from(this);
 
         // get views from activity
-        assignPrivilege = (TextView) findViewById(R.id.assignPrivilege);
-        updateStudentBranch = (TextView) findViewById(R.id.updateStudentBranch);
+        assignPrivilege = (TextView) findViewById(R.id.assignPrivilege); assignPrivilege.setTypeface(sansFont);
+        updateStudentBranch = (TextView) findViewById(R.id.updateStudentBranch); updateStudentBranch.setTypeface(sansFont);
 
         assignPrivilege.setOnClickListener(new View.OnClickListener() {
             @Override

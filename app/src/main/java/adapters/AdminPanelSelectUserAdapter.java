@@ -1,6 +1,7 @@
 package adapters;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import java.util.List;
 
 import model.AdminPanelSelectedUserList;
 import svecw.smartcampus.R;
+import utils.Constants;
 
 /**
  * Created by Pavan on 5/21/15.
@@ -73,14 +75,16 @@ public class AdminPanelSelectUserAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
+        Typeface sansFont = Typeface.createFromAsset(context.getResources().getAssets(), Constants.fontName);
+
         if(usernamesList.size()>0) {
 
             AdminPanelSelectedUserList adminPanelSelectedUserList = usernamesList.get(position);
-            holder.objectId.setText(adminPanelSelectedUserList.getObjectId());
-            holder.userName.setText(adminPanelSelectedUserList.getUserName());
-            holder.branch.setText(adminPanelSelectedUserList.getBranch());
-            holder.role.setText(adminPanelSelectedUserList.getRole());
-            holder.collegeId.setText(adminPanelSelectedUserList.getCollegeId());
+            holder.objectId.setText(adminPanelSelectedUserList.getObjectId()); holder.objectId.setTypeface(sansFont);
+            holder.userName.setText(adminPanelSelectedUserList.getUserName()); holder.userName.setTypeface(sansFont);
+            holder.branch.setText(adminPanelSelectedUserList.getBranch()); holder.branch.setTypeface(sansFont);
+            holder.role.setText(adminPanelSelectedUserList.getRole()); holder.role.setTypeface(sansFont);
+            holder.collegeId.setText(adminPanelSelectedUserList.getCollegeId()); holder.collegeId.setTypeface(sansFont);
         }
 
         return itemView;

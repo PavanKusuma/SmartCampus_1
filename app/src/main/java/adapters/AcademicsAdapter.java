@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.util.LruCache;
 import android.util.Log;
@@ -106,6 +107,8 @@ public class AcademicsAdapter extends BaseAdapter {
             itemView = (RelativeLayout) convertView;
         }
 
+        Typeface sansFont = Typeface.createFromAsset(context.getResources().getAssets(), Constants.fontName);
+
         // date format for displaying created date
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMM dd, yyyy, hh:mm");
 
@@ -116,9 +119,9 @@ public class AcademicsAdapter extends BaseAdapter {
         TextView createdAt = (TextView) itemView.findViewById(R.id.academicsCreatedAt);
 
         // set the username of the user
-        post.setText(academicsPostsList.get(position).getDescription());
-        userName.setText(academicsPostsList.get(position).getUserName());
-        createdAt.setText(simpleDateFormat.format(academicsPostsList.get(position).getCreatedAt()));
+        post.setText(academicsPostsList.get(position).getDescription()); post.setTypeface(sansFont);
+        userName.setText(academicsPostsList.get(position).getUserName()); userName.setTypeface(sansFont);
+        createdAt.setText(simpleDateFormat.format(academicsPostsList.get(position).getCreatedAt())); createdAt.setTypeface(sansFont);
 
         // set user image
         if(academicsPostsList.get(position).getMediaFile() != null)

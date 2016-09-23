@@ -1,6 +1,7 @@
 package svecw.smartcampus;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -16,7 +17,7 @@ import utils.Constants;
  */
 public class TemporaryGroup extends AppCompatActivity {
 
-    RelativeLayout goKartingView, hodsView, deanView, hodView, raggingView, counselorsView, placementCoordinatorsView,
+    RelativeLayout vemcFacView, vemcStuView, hodsView, deanView, hodView, raggingView, counselorsView, placementCoordinatorsView,
     ecapView, classView, hostelView, clubView;
 
     @Override
@@ -27,9 +28,11 @@ public class TemporaryGroup extends AppCompatActivity {
         // get the toolbar for the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
         title.setText(getResources().getString(R.string.groups));
+        title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar
         setSupportActionBar(toolbar);
@@ -42,7 +45,8 @@ public class TemporaryGroup extends AppCompatActivity {
         actionBar.setWindowTitle(""); // hide the main title
 
 
-        //goKartingView = (RelativeLayout) findViewById(R.id.goKartingView);
+        vemcFacView = (RelativeLayout) findViewById(R.id.vemcFacView);
+        vemcStuView = (RelativeLayout) findViewById(R.id.vemcStuView);
         hodsView = (RelativeLayout) findViewById(R.id.hodsView);
         deanView = (RelativeLayout) findViewById(R.id.deanView);
         raggingView = (RelativeLayout) findViewById(R.id.raggingView);
@@ -52,6 +56,29 @@ public class TemporaryGroup extends AppCompatActivity {
         classView = (RelativeLayout) findViewById(R.id.classView);
         hostelView = (RelativeLayout) findViewById(R.id.hostelView);
         clubView = (RelativeLayout) findViewById(R.id.clubsView);
+
+        vemcFacView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                Intent tempIntent = new Intent(getApplicationContext(), TemporaryGroup_Details.class);
+                tempIntent.putExtra(Constants.groupName, "VEMC-16 Faculty");
+                startActivity(tempIntent);
+            }
+        });
+
+        vemcStuView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                Intent tempIntent = new Intent(getApplicationContext(), TemporaryGroup_Details.class);
+                tempIntent.putExtra(Constants.groupName, "VEMC-16 Student");
+                startActivity(tempIntent);
+            }
+        });
+
 
         hodsView.setOnClickListener(new View.OnClickListener() {
             @Override

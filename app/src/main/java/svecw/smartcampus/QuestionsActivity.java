@@ -1,6 +1,7 @@
 package svecw.smartcampus;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -66,9 +67,11 @@ public class QuestionsActivity extends AppCompatActivity {
         // get the toolbar for the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
         title.setText(getResources().getString(R.string.questions));
+        title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar
         setSupportActionBar(toolbar);
@@ -85,16 +88,16 @@ public class QuestionsActivity extends AppCompatActivity {
 
 
         // get views from activity
-        loadingText = (TextView) findViewById(R.id.loadingMessage);
+        loadingText = (TextView) findViewById(R.id.loadingMessage); loadingText.setTypeface(sansFont);
         questionImage = (ImageView) findViewById(R.id.questionImage);
-        questionText = (TextView) findViewById(R.id.questionText);
-        answer1Text = (TextView) findViewById(R.id.answer1Text);
-        answer2Text = (TextView) findViewById(R.id.answer2Text);
-        answer3Text = (TextView) findViewById(R.id.answer3Text);
-        answer4Text = (TextView) findViewById(R.id.answer4Text);
-        nextQuestion = (TextView) findViewById(R.id.nextQuestion);
+        questionText = (TextView) findViewById(R.id.questionText); questionText.setTypeface(sansFont);
+        answer1Text = (TextView) findViewById(R.id.answer1Text); answer1Text.setTypeface(sansFont);
+        answer2Text = (TextView) findViewById(R.id.answer2Text); answer2Text.setTypeface(sansFont);
+        answer3Text = (TextView) findViewById(R.id.answer3Text); answer3Text.setTypeface(sansFont);
+        answer4Text = (TextView) findViewById(R.id.answer4Text); answer4Text.setTypeface(sansFont);
+        nextQuestion = (TextView) findViewById(R.id.nextQuestion); nextQuestion.setTypeface(sansFont);
         verifyAnswer = (LinearLayout) findViewById(R.id.verifyAnswer);
-        questionNumber = (TextView) findViewById(R.id.questionNumber);
+        questionNumber = (TextView) findViewById(R.id.questionNumber); questionNumber.setTypeface(sansFont);
 
         // object for list of questions
         questions = new ArrayList<Questions>();

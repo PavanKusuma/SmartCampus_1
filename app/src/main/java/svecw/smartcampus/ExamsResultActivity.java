@@ -1,5 +1,6 @@
 package svecw.smartcampus;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -34,9 +35,11 @@ public class ExamsResultActivity extends AppCompatActivity {
         // get the toolbar for the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
         title.setText(getResources().getString(R.string.examResult));
+        title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar
         setSupportActionBar(toolbar);
@@ -54,19 +57,19 @@ public class ExamsResultActivity extends AppCompatActivity {
         // get views from activity
         resultImage = (ImageView) findViewById(R.id.resultImage);
         resultsText = (TextView) findViewById(R.id.resultText);
-        questionsCount = (TextView) findViewById(R.id.questionsCount);
-        correctAnswersCount = (TextView) findViewById(R.id.correctAnswersCount);
-        wrongAnswersCount = (TextView) findViewById(R.id.wrongAnswersCount);
-        examPercentage = (TextView) findViewById(R.id.percentageTextResult);
+        questionsCount = (TextView) findViewById(R.id.questionsCount); questionsCount.setTypeface(sansFont);
+        correctAnswersCount = (TextView) findViewById(R.id.correctAnswersCount); correctAnswersCount.setTypeface(sansFont);
+        wrongAnswersCount = (TextView) findViewById(R.id.wrongAnswersCount); wrongAnswersCount.setTypeface(sansFont);
+        examPercentage = (TextView) findViewById(R.id.percentageTextResult); examPercentage.setTypeface(sansFont);
 
         // get intent values
         questionCount = getIntent().getIntExtra(Constants.questionsCount, 0);
         correctAnswers = getIntent().getIntExtra(Constants.correctAnswers, 0);
         wrongAnswers = getIntent().getIntExtra(Constants.wrongAnswers, 0);
 
-        questionsCount.setText(String.valueOf(questionCount));
-        correctAnswersCount.setText(String.valueOf(correctAnswers));
-        wrongAnswersCount.setText(String.valueOf(wrongAnswers));
+        questionsCount.setText(String.valueOf(questionCount)); questionsCount.setTypeface(sansFont);
+        correctAnswersCount.setText(String.valueOf(correctAnswers)); correctAnswersCount.setTypeface(sansFont);
+        wrongAnswersCount.setText(String.valueOf(wrongAnswers)); wrongAnswersCount.setTypeface(sansFont);
 
         // calculate the percentage
         percentage = (100 * (float) correctAnswers / (float) questionCount);

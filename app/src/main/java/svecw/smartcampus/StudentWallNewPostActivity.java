@@ -11,6 +11,7 @@ import android.content.res.Configuration;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -125,8 +126,10 @@ public class StudentWallNewPostActivity extends AppCompatActivity {
         // get the toolbar for the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
+        title.setTypeface(sansFont);
 
         // set the activity title based on post type
         if(alumniPost) {
@@ -152,10 +155,10 @@ public class StudentWallNewPostActivity extends AppCompatActivity {
 
 
         // get views from activity
-        studentWallNewPostDescription = (EditText) findViewById(R.id.studentWallNewPostDescription);
+        studentWallNewPostDescription = (EditText) findViewById(R.id.studentWallNewPostDescription); studentWallNewPostDescription.setTypeface(sansFont);
         studentWallSelectImage = (ImageView) findViewById(R.id.studentWallSelectImage);
-        cancelPost = (TextView) findViewById(R.id.cancelPost);
-        sendPost = (TextView) findViewById(R.id.sendPost);
+        cancelPost = (TextView) findViewById(R.id.cancelPost); cancelPost.setTypeface(sansFont);
+        sendPost = (TextView) findViewById(R.id.sendPost); sendPost.setTypeface(sansFont);
         progressBar = (ProgressBar) findViewById(R.id.postingProgress);
 
         studentWallSelectImage.setOnClickListener(new View.OnClickListener() {

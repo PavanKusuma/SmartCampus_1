@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="svecw.smartcampus">
+    package="svecw.smartcampus"
+    android:installLocation="preferExternal">
 
     <!-- Permissions to access internet -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -22,13 +23,15 @@
     <permission android:name="svecw.smartcampus.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
     <uses-permission android:name="svecw.svecw.permission.C2D_MESSAGE" />
+<!--<uses-feature android:name="android.hardware.location.gps"/>-->
 
     <application
         android:name="application.App"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:largeHeap="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        >
         <activity
             android:name="svecw.smartcampus.AppLaunchScreen"
             android:label="@string/app_name"
@@ -167,6 +170,10 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name="svecw.smartcampus.CollegeWallNewPostActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".NewPost"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
@@ -373,7 +380,9 @@
 
 
 
-
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
 
         <!--
             GCM Receiver

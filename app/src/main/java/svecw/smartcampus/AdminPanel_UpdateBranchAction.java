@@ -1,5 +1,6 @@
 package svecw.smartcampus;
 
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -49,9 +50,11 @@ public class AdminPanel_UpdateBranchAction extends AppCompatActivity {
         // get the toolbar for the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
         title.setText(getResources().getString(R.string.updateStudentBranch));
+        title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar
         setSupportActionBar(toolbar);
@@ -73,7 +76,7 @@ public class AdminPanel_UpdateBranchAction extends AppCompatActivity {
         toYear = (Spinner) findViewById(R.id.toYear);
         toBranch = (Spinner) findViewById(R.id.toBranch);
         toSemester = (Spinner) findViewById(R.id.toSemester);
-        finishBtn = (TextView) findViewById(R.id.branchUpdateFinish);
+        finishBtn = (TextView) findViewById(R.id.branchUpdateFinish); finishBtn.setTypeface(sansFont);
 
         toBranch.setEnabled(false);
 

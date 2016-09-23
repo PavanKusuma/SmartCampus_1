@@ -8,7 +8,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/white">
 
         <include
             android:id="@+id/tool_bar"
@@ -19,19 +20,24 @@
             android:layout_height="1dp"
             android:background="@color/lightGray"/>
 
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white">
+            android:layout_height="match_parent">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="48dp"
+                android:textAppearance="@android:style/TextAppearance.Large"
                 android:text="@string/app_name"
                 android:id="@+id/appName"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="120dp"/>
+                android:layout_margin="20dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -44,17 +50,27 @@
                 android:paddingBottom="40dp"/>
 
 
-
-
             <ImageView
+                android:id="@+id/companyLogo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/yeswestartuplogo"
-                android:layout_below="@+id/appVersion"
+                android:src="@drawable/company_logo"
                 android:layout_centerHorizontal="true"
+                android:layout_below="@+id/appVersion"
                 android:paddingTop="20dp"/>
+
+            <me.biubiubiu.justifytext.library.JustifyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/appInfo"
+                android:id="@+id/appInfo"
+                android:layout_below="@+id/companyLogo"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="20dp"/>
+
         </RelativeLayout>
 
-
+        </ScrollView>
     </LinearLayout>
     </android.support.v4.widget.DrawerLayout>

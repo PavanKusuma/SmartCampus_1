@@ -66,10 +66,12 @@ public class EditProfileActivity extends AppCompatActivity {
         str_emailId = getIntent().getStringExtra(Constants.email);
         str_phone = getIntent().getStringExtra(Constants.phoneNumber);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
+
         // get views from activity
         emailId = (EditText) findViewById(R.id.emailId);
         phone = (EditText) findViewById(R.id.phone);
-        goBtn = (Button) findViewById(R.id.goBtn);
+        goBtn = (Button) findViewById(R.id.goBtn); goBtn.setTypeface(sansFont);
 
         // set the current values
         if(!str_emailId.contentEquals("-"))
@@ -78,7 +80,7 @@ public class EditProfileActivity extends AppCompatActivity {
         if(!str_emailId.contentEquals("-"))
             phone.setText(str_phone);
 
-        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Regular.ttf");
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/sans.ttf");
         emailId.setTypeface(typeface);
         phone.setTypeface(typeface);
         goBtn.setTypeface(typeface);

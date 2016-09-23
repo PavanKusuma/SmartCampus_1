@@ -1,9 +1,11 @@
 package svecw.smartcampus;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.multidex.MultiDex;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -11,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import internaldb.SmartCampusDB;
+import utils.Constants;
 
 /**
  * Created by Pavan_Kusuma on 4/26/2015.
@@ -26,21 +29,21 @@ public class AppLaunchScreen extends AppCompatActivity {
 
 
     @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+
+        MultiDex.install(this);
+    }
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.app_launch_screen1);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // get views from layout
-        launchText = (TextView) findViewById(R.id.launchText);
-        login = (Button) findViewById(R.id.login);
-        guest = (Button) findViewById(R.id.guest);
-
-        Typeface typefaceRegular = Typeface.createFromAsset(this.getResources().getAssets(), "fonts/Roboto-Regular.ttf");
-        Typeface typefaceLight = Typeface.createFromAsset(this.getResources().getAssets(), "fonts/Roboto-Light.ttf");
-        launchText.setTypeface(typefaceLight);
-        login.setTypeface(typefaceRegular);
-        guest.setTypeface(typefaceRegular);
-
+        launchText = (TextView) findViewById(R.id.launchText); launchText.setTypeface(sansFont);
+        login = (Button) findViewById(R.id.login); login.setTypeface(sansFont);
+        guest = (Button) findViewById(R.id.guest); guest.setTypeface(sansFont);
 
 
 /*

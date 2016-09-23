@@ -3,6 +3,7 @@ package adapters;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -146,10 +147,12 @@ public class CommentsAdapter extends BaseAdapter {
                     }
                 }
 
-                holder.commentUserName.setText(comment.getUsername());
-                holder.commentId.setText(comment.getCommentId());
-                holder.commentText.setText(comment.getComment());
-                holder.userObjectId.setText(comment.getUserObjectId());
+                Typeface sansFont = Typeface.createFromAsset(context.getResources().getAssets(), Constants.fontName);
+
+                holder.commentUserName.setText(comment.getUsername()); holder.commentUserName.setTypeface(sansFont);
+                holder.commentId.setText(comment.getCommentId()); holder.commentId.setTypeface(sansFont);
+                holder.commentText.setText(comment.getComment()); holder.commentText.setTypeface(sansFont);
+                holder.userObjectId.setText(comment.getUserObjectId()); holder.userObjectId.setTypeface(sansFont);
             }
         }
         catch (Exception e){

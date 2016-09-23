@@ -131,9 +131,11 @@ public class NewMessageActivity extends AppCompatActivity {
         // get the toolbar for the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
         title.setText(getResources().getString(R.string.newMessage));
+        title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar
         setSupportActionBar(toolbar);
@@ -150,23 +152,17 @@ public class NewMessageActivity extends AppCompatActivity {
 
         backIntent = getIntent();
 
-        selectBranch = (TextView) findViewById(R.id.selectBranch);
-        newMessage = (EditText) findViewById(R.id.writeMessage);
-        cancel = (TextView) findViewById(R.id.cancelMessage);
-        send = (TextView) findViewById(R.id.sendMessage);
+        selectBranch = (TextView) findViewById(R.id.selectBranch); selectBranch.setTypeface(sansFont);
+        newMessage = (EditText) findViewById(R.id.writeMessage); newMessage.setTypeface(sansFont);
+        cancel = (TextView) findViewById(R.id.cancelMessage); cancel.setTypeface(sansFont);
+        send = (TextView) findViewById(R.id.sendMessage); send.setTypeface(sansFont);
         newMessageSelectImage = (ImageView) findViewById(R.id.newMessageSelectImage);
         messageBranch = (Spinner) findViewById(R.id.messageBranch);
         messageYear = (Spinner) findViewById(R.id.messageYear);
         messageSemester = (Spinner) findViewById(R.id.messageSemester);
-        sendStudent = (TextView) findViewById(R.id.sendStudent);
-        sendFaculty = (TextView) findViewById(R.id.sendFaculty);
+        sendStudent = (TextView) findViewById(R.id.sendStudent); sendStudent.setTypeface(sansFont);
+        sendFaculty = (TextView) findViewById(R.id.sendFaculty); sendFaculty.setTypeface(sansFont);
         branchLayout = (LinearLayout) findViewById(R.id.branchLayout);
-
-        Typeface typeface = Typeface.createFromAsset(getAssets(), Constants.FONTNAME);
-        selectBranch.setTypeface(typeface);
-        newMessage.setTypeface(typeface);
-        send.setTypeface(typeface);
-        cancel.setTypeface(typeface);
 
         // set the focusable to true programmatically
         newMessage.setOnTouchListener(new View.OnTouchListener() {

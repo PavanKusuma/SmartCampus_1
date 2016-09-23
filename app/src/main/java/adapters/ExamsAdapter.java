@@ -2,6 +2,7 @@ package adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -96,11 +97,12 @@ public class ExamsAdapter extends BaseAdapter {
         TextView examNumberOfQuestions = (TextView) itemView.findViewById(R.id.examNumberOfQuestions);
 
         // set the username of the user
+        Typeface sansFont = Typeface.createFromAsset(context.getResources().getAssets(), Constants.fontName);
 
-        name.setText(examsList.get(position).getName());
-        expiryDate.setText(examsList.get(position).getExpiryDate());
-        examId.setText(examsList.get(position).getObjectId());
-        examNumberOfQuestions.setText(String.valueOf(examsList.get(position).getNumberOfQuestions()));
+        name.setText(examsList.get(position).getName()); name.setTypeface(sansFont);
+        expiryDate.setText(examsList.get(position).getExpiryDate()); expiryDate.setTypeface(sansFont);
+        examId.setText(examsList.get(position).getObjectId()); examId.setTypeface(sansFont);
+        examNumberOfQuestions.setText(String.valueOf(examsList.get(position).getNumberOfQuestions())); examNumberOfQuestions.setTypeface(sansFont);
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override

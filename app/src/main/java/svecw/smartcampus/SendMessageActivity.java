@@ -2,6 +2,7 @@ package svecw.smartcampus;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -66,9 +67,11 @@ public class SendMessageActivity extends AppCompatActivity{
         // get the toolbar for the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
         title.setText(getResources().getString(R.string.newTextMessage));
+        title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar
         setSupportActionBar(toolbar);
@@ -90,8 +93,8 @@ public class SendMessageActivity extends AppCompatActivity{
         Log.i(Constants.appName, "Phonenumber : "+ phoneNumber);
 
         // get views from activity
-        messageText = (EditText) findViewById(R.id.messageText);
-        sendBtn = (Button) findViewById(R.id.sendBtn);
+        messageText = (EditText) findViewById(R.id.messageText); messageText.setTypeface(sansFont);
+        sendBtn = (Button) findViewById(R.id.sendBtn); sendBtn.setTypeface(sansFont);
 
         // send message
         sendBtn.setOnClickListener(new View.OnClickListener() {

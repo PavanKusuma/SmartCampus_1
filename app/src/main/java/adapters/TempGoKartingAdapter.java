@@ -2,6 +2,7 @@ package adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,10 +52,12 @@ public class TempGoKartingAdapter extends BaseAdapter {
             itemView = (RelativeLayout) convertView;
         }
 
+        Typeface sansFont = Typeface.createFromAsset(context.getResources().getAssets(), Constants.fontName);
+
         ImageView facultyUserImageView = (ImageView) itemView.findViewById(R.id.facultyUserImageView);
-        TextView userNameTextView = (TextView) itemView.findViewById(R.id.userName);
-        TextView designationTextView = (TextView) itemView.findViewById(R.id.designation);
-        TextView departmentTextView = (TextView) itemView.findViewById(R.id.department);
+        TextView userNameTextView = (TextView) itemView.findViewById(R.id.userName); userNameTextView.setTypeface(sansFont);
+        TextView designationTextView = (TextView) itemView.findViewById(R.id.designation); designationTextView.setTypeface(sansFont);
+        TextView departmentTextView = (TextView) itemView.findViewById(R.id.department); departmentTextView.setTypeface(sansFont);
         final ImageView callView = (ImageView) itemView.findViewById(R.id.ic_call);
         final ImageView msgView = (ImageView) itemView.findViewById(R.id.ic_msg);
 

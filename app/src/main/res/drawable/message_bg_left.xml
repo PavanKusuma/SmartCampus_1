@@ -6,8 +6,8 @@
 
             <corners android:radius="4dp"/>
 
-            <solid android:color="#39ACE6" />
-            <!--#79C2EA-->
+            <solid android:color="#4885ed" />
+            <!--#79C2EA 39ACE6-->
         </shape>
     </item>
 
@@ -20,7 +20,7 @@
 
             <corners android:radius="4dp" />
 
-            <solid android:color="#39ACE6" />
+            <solid android:color="#4885ed" />
 
         </shape>
     </item>

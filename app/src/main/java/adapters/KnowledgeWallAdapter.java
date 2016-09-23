@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.support.v4.util.LruCache;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -120,6 +121,12 @@ public class KnowledgeWallAdapter extends BaseAdapter {
             // get the date format and convert it into required format to display
             java.util.Date date = simpleDateFormat.parse(knowledgePostsList.get(position).getCreatedAt());
             simpleDateFormat = new SimpleDateFormat("MMM dd, yyyy, hh:mm aa");
+
+            Typeface sansFont = Typeface.createFromAsset(context.getResources().getAssets(), Constants.fontName);
+            globalWallPostTitle.setTypeface(sansFont);
+            globalWallPostCreatedAt.setTypeface(sansFont);
+            globalWallPostDescription.setTypeface(sansFont);
+
 
             // set title and created At
             globalWallPostTitle.setText(knowledgePostsList.get(position).getTitle());

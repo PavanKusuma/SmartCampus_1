@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -46,8 +47,9 @@ public class WelcomeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.welcome_activity);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // display the welcome username from db
-        welcomeUsername = (TextView) findViewById(R.id.welcomeUsername);
+        welcomeUsername = (TextView) findViewById(R.id.welcomeUsername); welcomeUsername.setTypeface(sansFont);
         userImageLayout = (RelativeLayout) findViewById(R.id.userImageLayout);
         userImage = (ImageView) findViewById(R.id.userImage);
 

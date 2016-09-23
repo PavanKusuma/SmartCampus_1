@@ -3,6 +3,7 @@ package svecw.smartcampus;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -102,9 +103,11 @@ public class CollegeWallActivity extends AppCompatActivity {
         // get the toolbar for the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
         title.setText(getResources().getString(R.string.college));
+        title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar
         setSupportActionBar(toolbar);
@@ -145,7 +148,7 @@ public class CollegeWallActivity extends AppCompatActivity {
         session = new SmartSessionManager(CollegeWallActivity.this);
 
         // set emptyTextView for listView
-        noData = (TextView) findViewById(R.id.emptyElement);
+        noData = (TextView) findViewById(R.id.emptyElement); noData.setTypeface(sansFont);
 
         // list for storing college wall posts
         collegeWallPostsList = new ArrayList<Wall>();

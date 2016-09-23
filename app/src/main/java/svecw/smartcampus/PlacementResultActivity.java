@@ -1,5 +1,6 @@
 package svecw.smartcampus;
 
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -18,6 +19,10 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -42,7 +47,7 @@ public class PlacementResultActivity extends AppCompatActivity {
 
     ListView placementsListView;
 
-    String year;
+    int year;
 
     ProgressBar placementsProgressBar;
 
@@ -66,9 +71,11 @@ public class PlacementResultActivity extends AppCompatActivity {
         // get the toolbar for the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
         title.setText(getResources().getString(R.string.placements));
+        title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar
         setSupportActionBar(toolbar);
@@ -85,7 +92,7 @@ public class PlacementResultActivity extends AppCompatActivity {
 
         placementsListView = (ListView) findViewById(R.id.placementsListView);
         placementsProgressBar = (ProgressBar) findViewById(R.id.progressBarPlacements);
-        placementYear = (TextView) findViewById(R.id.placementYear);
+        placementYear = (TextView) findViewById(R.id.placementYear); placementYear.setTypeface(sansFont);
 
         placementsAdapter = new PlacementsAdapter(PlacementResultActivity.this);
         placementsListView.setAdapter(placementsAdapter);
@@ -93,8 +100,8 @@ public class PlacementResultActivity extends AppCompatActivity {
         placementsList = new ArrayList<Placements>();
 
         // get the placement year
-        year = getIntent().getStringExtra(Constants.year);
-        placementYear.setText(year);
+        year = getIntent().getIntExtra(Constants.year, 0);
+        placementYear.setText(String.valueOf(year));
         //new GetPlacementsList().execute(year);
 
         InputStream is_07;
@@ -104,7 +111,7 @@ public class PlacementResultActivity extends AppCompatActivity {
         BufferedReader reader_count_07 = null;
 
 
-        if(year == "list") {
+        /*if(year == "list") {
 
             // get the raw files
             is_07 = getResources().openRawResource(R.raw.recruiterslist);
@@ -115,9 +122,9 @@ public class PlacementResultActivity extends AppCompatActivity {
             //reader_count_07 = new BufferedReader(new InputStreamReader(is_count_07));
         }
         else {
-
-            //new GetPlacementsList().execute(year);
-        }
+*/
+            new GetPlacementsList().execute(year);
+  //      }
 /*
             // get the raw files
             is_07 = getResources().openRawResource(R.raw.company7);
@@ -254,9 +261,8 @@ public class PlacementResultActivity extends AppCompatActivity {
         placementsAdapter.notifyDataSetChanged();*/
 
     }
-/*
 
-    class GetPlacementsList extends AsyncTask<String, Float, String> {
+    class GetPlacementsList extends AsyncTask<Integer, Float, String> {
         @Override
         protected void onProgressUpdate(Float... values) {
             super.onProgressUpdate(values);
@@ -270,18 +276,18 @@ public class PlacementResultActivity extends AppCompatActivity {
         }
 
         @Override
-        protected String doInBackground(String... params) {
+        protected String doInBackground(Integer... params) {
 
             try {
 
                 // get the inputStream of the data file
-                InputStream is = getResources().openRawResource(R.raw.data);
+                InputStream is = getResources().openRawResource(R.raw.offline_1);
 
                 // get xlsx workbook from inputStream
-                Workbook workbook = new XSSFWorkbook(is);
+                HSSFWorkbook workbook = new HSSFWorkbook(is);
 
                 // get the sheet with "learn" name
-                Sheet sheet = workbook.getSheet("placement");
+                HSSFSheet sheet = workbook.getSheet("placement");
 
                 // iterate through sheet and get the data
                 Iterator rowIterator = sheet.iterator();
@@ -293,41 +299,52 @@ public class PlacementResultActivity extends AppCompatActivity {
                     Placements placements = new Placements();
 
                     // get each row from iterator
-                    Row row = (Row) rowIterator.next();
+                    HSSFRow row = (HSSFRow) rowIterator.next();
                     // get iterator of each cell
                     Iterator cellIterator = row.cellIterator();
 
                     // iterating over each cell (column wise) in a particular row
                     while (cellIterator.hasNext()) {
 
-                        Cell cell = (Cell) cellIterator.next();
+                        HSSFCell cell = (HSSFCell) cellIterator.next();
 
-                        if (cell.getColumnIndex() == 0 && cell.getStringCellValue() == params[0]) {
+                        //Log.v(Constants.appName, "sys" + (int)cell.getNumericCellValue() + " syo" + params[0]);
+                        if (cell.getColumnIndex() == 0 && (int)cell.getNumericCellValue() == params[0]) {
 
-                            placements.setYear(params[0]);
+                            placements.setYear(String.valueOf(params[0]));
 
+                            cell = (HSSFCell) cellIterator.next();
                             if (cell.getColumnIndex() == 1) {
 
                                 placements.setCompany(cell.getStringCellValue());
+
                             }
+
+                            cell = (HSSFCell) cellIterator.next();
                             if (cell.getColumnIndex() == 2) {
 
-                                placements.setCount(Integer.valueOf(cell.getStringCellValue()));
+                                placements.setCount((int)cell.getNumericCellValue());
+
                             }
+
+                            placementsList.add(placements);
                         }
 
-                        placementsList.add(placements);
+                        break;
                     }
+
+
                     // end iterating a row, add the object values to list
-                    placementsAdapter.updateItems(placementsList);
-                    placementsAdapter.notifyDataSetChanged();
+                    //placementsAdapter.updateItems(placementsList);
+                    //placementsAdapter.notifyDataSetChanged();
 
 
                 }
             }
             // all parse data not found exceptions are caught
             catch(Exception e){
-                finish();
+                //finish();
+                Log.v(Constants.appName, "Here is the exception" +e.getMessage());
             }
 
             return null;
@@ -341,14 +358,9 @@ public class PlacementResultActivity extends AppCompatActivity {
             runOnUiThread(new Runnable() {
                 public void run() {
 
-                    */
-/**
-                     * Updating parsed JSON data into ListView
-                     * *//*
-
 
                     // notify the adapter
-                    //placementsAdapter.updateItems(placementsList);
+                    placementsAdapter.updateItems(placementsList);
                     placementsAdapter.notifyDataSetChanged();
 
                     // save the data to shared preferences
@@ -358,5 +370,4 @@ public class PlacementResultActivity extends AppCompatActivity {
             });
         }
     }
-*/
 }

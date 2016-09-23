@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -185,6 +186,15 @@ public class CollegeWallAdapter extends BaseAdapter {
         }
 
         try {
+
+            Typeface sansFont = Typeface.createFromAsset(context.getResources().getAssets(), Constants.fontName);
+            holder.post.setTypeface(sansFont);
+            holder.userName.setTypeface(sansFont);
+            holder.likeTextView.setTypeface(sansFont);
+            holder.likeView.setTypeface(sansFont);
+            holder.shareView.setTypeface(sansFont);
+            holder.createdAt.setTypeface(sansFont);
+
             // date format for displaying created date
             // provide date format present in server
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");

@@ -1,6 +1,7 @@
 package adapters;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import java.util.List;
 
 import model.Placements;
 import svecw.smartcampus.R;
+import utils.Constants;
 
 /**
  * Created by Pavan on 7/3/15.
@@ -68,9 +70,11 @@ public class PlacementsAdapter extends BaseAdapter {
             itemView = (RelativeLayout) convertView;
         }
 
+        Typeface sansFont = Typeface.createFromAsset(context.getResources().getAssets(), Constants.fontName);
+
         // get all views of single shouts list item
-        TextView company = (TextView) itemView.findViewById(R.id.company);
-        TextView count = (TextView) itemView.findViewById(R.id.count);
+        TextView company = (TextView) itemView.findViewById(R.id.company); company.setTypeface(sansFont);
+        TextView count = (TextView) itemView.findViewById(R.id.count); count.setTypeface(sansFont);
 
         // set the username of the user
         company.setText(placementsList.get(position).getCompany());

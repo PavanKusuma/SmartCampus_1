@@ -1,6 +1,7 @@
 package adapters;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import svecw.smartcampus.R;
+import utils.Constants;
 
 /**
  * Created by Pavan_Kusuma on 4/18/2015.
@@ -54,9 +56,11 @@ public class DirectorySearchAdapter extends BaseAdapter {
         TextView facultyIdTextView = (TextView) itemView.findViewById(R.id.facultyId);
         ImageView callView = (ImageView) itemView.findViewById(R.id.ic_call);
 
-                userNameTextView.setText(usernamesList.get(position));
-                departmentTextView.setText(departmentsList.get(position));
-                facultyIdTextView.setText(collegeIdsList.get(position));
+        Typeface sansFont = Typeface.createFromAsset(context.getResources().getAssets(), Constants.fontName);
+
+                userNameTextView.setText(usernamesList.get(position)); userNameTextView.setTypeface(sansFont);
+                departmentTextView.setText(departmentsList.get(position)); departmentTextView.setTypeface(sansFont);
+                facultyIdTextView.setText(collegeIdsList.get(position)); facultyIdTextView.setTypeface(sansFont);
                 callView.setTag(contactsList.get(position));
 
 

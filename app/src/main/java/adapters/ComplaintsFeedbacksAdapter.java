@@ -3,6 +3,7 @@ package adapters;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.util.Base64;
 import android.view.LayoutInflater;
@@ -126,21 +127,23 @@ public class ComplaintsFeedbacksAdapter extends BaseAdapter {
 
         try {
 
+            Typeface sansFont = Typeface.createFromAsset(context.getResources().getAssets(), Constants.fontName);
+
             // date format for displaying created date
             // provide date format present in server
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
             // set the username of the user
-            holder.description.setText(complaintsOrFeedbacksList.get(position).getDescription());
-            holder.userName.setText(complaintsOrFeedbacksList.get(position).getUserName());
-            holder.collegeId.setText(complaintsOrFeedbacksList.get(position).getCollegeId());
+            holder.description.setText(complaintsOrFeedbacksList.get(position).getDescription()); holder.description.setTypeface(sansFont);
+            holder.userName.setText(complaintsOrFeedbacksList.get(position).getUserName()); holder.userName.setTypeface(sansFont);
+            holder.collegeId.setText(complaintsOrFeedbacksList.get(position).getCollegeId()); holder.collegeId.setTypeface(sansFont);
 
             // get the date format and convert it into required format to display
             java.util.Date date = simpleDateFormat.parse(complaintsOrFeedbacksList.get(position).getCreatedAt());
             simpleDateFormat = new SimpleDateFormat("MMM dd, yyyy, hh:mm aa");
 
             //type.setText(String.valueOf(complaintsOrFeedbacksList.get(position).getType()));
-            holder.createdAt.setText(simpleDateFormat.format(date));
+            holder.createdAt.setText(simpleDateFormat.format(date)); holder.createdAt.setTypeface(sansFont);
 
 
             // userImage

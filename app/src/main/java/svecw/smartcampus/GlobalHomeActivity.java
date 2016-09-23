@@ -84,15 +84,15 @@ public class GlobalHomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.global_home_activity);
 
-        Typeface typefaceAbsara = Typeface.createFromAsset(this.getResources().getAssets(), "fonts/beo_regular.otf");
-        Typeface typefaceOpenSans = Typeface.createFromAsset(this.getResources().getAssets(), "OpenSans-Regular.ttf");
 
         // get the tool bar and set the support ActionBar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         //toolbar.setTitle(R.string.knowledgeWall);
         toolbar.setTitleTextColor(getResources().getColor(R.color.title_color));
+
 
 
         pager = (ViewPager) findViewById(R.id.viewPager);
@@ -137,10 +137,10 @@ public class GlobalHomeActivity extends AppCompatActivity {
         alumniWallView = (LinearLayout) findViewById(R.id.alumniWallView);
         moreView = (LinearLayout) findViewById(R.id.moreView);
 
-        collegeWallViewText = (TextView) findViewById(R.id.collegeWallViewText);
-        studentWallViewText = (TextView) findViewById(R.id.studentWallViewText);
-        alumniWallViewText = (TextView) findViewById(R.id.alumniWallViewText);
-        moreViewText = (TextView) findViewById(R.id.moreViewText);
+        collegeWallViewText = (TextView) findViewById(R.id.collegeWallViewText); collegeWallViewText.setTypeface(sansFont);
+        studentWallViewText = (TextView) findViewById(R.id.studentWallViewText); studentWallViewText.setTypeface(sansFont);
+        alumniWallViewText = (TextView) findViewById(R.id.alumniWallViewText); alumniWallViewText.setTypeface(sansFont);
+        moreViewText = (TextView) findViewById(R.id.moreViewText); moreViewText.setTypeface(sansFont);
 
         //collegeWallViewText.setTypeface(typefaceOpenSans);
         //studentWallViewText.setTypeface(typefaceOpenSans);

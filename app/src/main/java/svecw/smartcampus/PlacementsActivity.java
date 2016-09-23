@@ -1,6 +1,7 @@
 package svecw.smartcampus;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -29,9 +30,11 @@ public class PlacementsActivity extends AppCompatActivity {
         // get the toolbar for the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
         title.setText(getResources().getString(R.string.placements));
+        title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar
         setSupportActionBar(toolbar);
@@ -75,7 +78,7 @@ public class PlacementsActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent placementIntent = new Intent(getApplicationContext(), PlacementResultActivity.class);
-                placementIntent.putExtra(Constants.year, "2016");
+                placementIntent.putExtra(Constants.year, 2016);
                 startActivity(placementIntent);
             }
         });
@@ -85,7 +88,7 @@ public class PlacementsActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent placementIntent = new Intent(getApplicationContext(), PlacementResultActivity.class);
-                placementIntent.putExtra(Constants.year, "2015");
+                placementIntent.putExtra(Constants.year, 2015);
                 startActivity(placementIntent);
             }
         });
@@ -95,7 +98,7 @@ public class PlacementsActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent placementIntent = new Intent(getApplicationContext(), PlacementResultActivity.class);
-                placementIntent.putExtra(Constants.year, "2014");
+                placementIntent.putExtra(Constants.year, 2014);
                 startActivity(placementIntent);
             }
         });
@@ -105,7 +108,7 @@ public class PlacementsActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent placementIntent = new Intent(getApplicationContext(), PlacementResultActivity.class);
-                placementIntent.putExtra(Constants.year, "2013");
+                placementIntent.putExtra(Constants.year, 2013);
                 startActivity(placementIntent);
             }
         });
@@ -115,7 +118,7 @@ public class PlacementsActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent placementIntent = new Intent(getApplicationContext(), PlacementResultActivity.class);
-                placementIntent.putExtra(Constants.year, "2012");
+                placementIntent.putExtra(Constants.year, 2012);
                 startActivity(placementIntent);
             }
         });
@@ -125,7 +128,7 @@ public class PlacementsActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent placementIntent = new Intent(getApplicationContext(), PlacementResultActivity.class);
-                placementIntent.putExtra(Constants.year, "2011");
+                placementIntent.putExtra(Constants.year, 2011);
                 startActivity(placementIntent);
             }
         });
@@ -135,7 +138,7 @@ public class PlacementsActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent placementIntent = new Intent(getApplicationContext(), PlacementResultActivity.class);
-                placementIntent.putExtra(Constants.year, "2010");
+                placementIntent.putExtra(Constants.year, 2010);
                 startActivity(placementIntent);
             }
         });
@@ -145,7 +148,7 @@ public class PlacementsActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent placementIntent = new Intent(getApplicationContext(), PlacementResultActivity.class);
-                placementIntent.putExtra(Constants.year, "2009");
+                placementIntent.putExtra(Constants.year, 2009);
                 startActivity(placementIntent);
             }
         });
@@ -155,7 +158,7 @@ public class PlacementsActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent placementIntent = new Intent(getApplicationContext(), PlacementResultActivity.class);
-                placementIntent.putExtra(Constants.year, "2008");
+                placementIntent.putExtra(Constants.year, 2008);
                 startActivity(placementIntent);
             }
         });
@@ -165,7 +168,7 @@ public class PlacementsActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent placementIntent = new Intent(getApplicationContext(), PlacementResultActivity.class);
-                placementIntent.putExtra(Constants.year, "2007");
+                placementIntent.putExtra(Constants.year, 2007);
                 startActivity(placementIntent);
             }
         });

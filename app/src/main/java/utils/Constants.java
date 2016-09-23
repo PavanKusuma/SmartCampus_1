@@ -15,6 +15,8 @@ public class Constants {
     public static final String appName = "SVECW";
     public static final String app_SharedPreferences = "Smart_SharedPreference";
 
+    public static final String fontName = "fonts/sans.ttf";
+
     public static final String role = "role";
     public static final String student = "Student";
     public static final String faculty = "Faculty";
@@ -183,6 +185,9 @@ public class Constants {
     public static final String HTML = "HTML";
     public static final String JavaScript = "JAVASCRIPT";
     public static final String Android = "ANDROID";
+    public static final String dbms = "DBMS";
+    public static final String os = "OS";
+    public static final String unix = "UNIX";
 
 
     public static final String category = "category";
@@ -203,7 +208,7 @@ public class Constants {
 
     public static final String null_indicator = "-";
 
-    public static final String FONTNAME = "fonts/Roboto-Regular.ttf";
+    public static final String FONTNAME = "fonts/sans.ttf";
 
     public static final String ALL = "All";
     public static final String MANAGEMENT = "MANAGEMENT";

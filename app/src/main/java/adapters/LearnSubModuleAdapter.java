@@ -11,6 +11,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import svecw.smartcampus.R;
+import utils.Constants;
 
 /**
  * Created by Pavan on 6/25/15.
@@ -49,9 +50,11 @@ public class LearnSubModuleAdapter extends BaseExpandableListAdapter {
             convertView = infalInflater.inflate(R.layout.list_item, null);
         }
 
+        Typeface sansFont = Typeface.createFromAsset(context.getResources().getAssets(), Constants.fontName);
+
         TextView txtListChild = (TextView) convertView.findViewById(R.id.listItem);
 
-        txtListChild.setText(childText);
+        txtListChild.setText(childText); txtListChild.setTypeface(sansFont);
         return convertView;
     }
 
@@ -84,9 +87,11 @@ public class LearnSubModuleAdapter extends BaseExpandableListAdapter {
             convertView = infalInflater.inflate(R.layout.list_group, null);
         }
 
+        Typeface sansFont = Typeface.createFromAsset(context.getResources().getAssets(), Constants.fontName);
+
         TextView lblListHeader = (TextView) convertView.findViewById(R.id.listHeader);
-        lblListHeader.setTypeface(null, Typeface.BOLD);
-        lblListHeader.setText(headerTitle);
+        //lblListHeader.setTypeface(null, Typeface.BOLD);
+        lblListHeader.setText(headerTitle); lblListHeader.setTypeface(sansFont);
 
         return convertView;
     }

@@ -368,14 +368,16 @@ public class GlobalLoginActivity extends AppCompatActivity {
     // this method will fetch views from layout
     public void getViews(){
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
+
         // get views from activity
         collegeId = (EditText) findViewById(R.id.collegeId);
         secretCode = (EditText) findViewById(R.id.secretCode);
-        nextButton = (Button) findViewById(R.id.nextButton);
-        errorText = (TextView) findViewById(R.id.errorText);
+        nextButton = (Button) findViewById(R.id.nextButton); nextButton.setTypeface(sansFont);
+        errorText = (TextView) findViewById(R.id.errorText); errorText.setTypeface(sansFont);
         progressBar = (ProgressBar) findViewById(R.id.progressBarLogin);
 
-        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Regular.ttf");
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/sans.ttf");
         collegeId.setTypeface(typeface);
         secretCode.setTypeface(typeface);
         nextButton.setTypeface(typeface);

@@ -105,6 +105,8 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_activity);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
+
         profileUserName = (TextView) findViewById(R.id.profileUserName);
         profileEmail = (TextView) findViewById(R.id.profileEmail);
         profilePhone = (TextView) findViewById(R.id.profilePhone);
@@ -118,15 +120,14 @@ public class ProfileActivity extends AppCompatActivity {
         editProfileDetails = (ImageView) findViewById(R.id.editProfileDetails);
         refreshView = (TextView) findViewById(R.id.refreshView);
 
-        Typeface typefaceLight = Typeface.createFromAsset(this.getResources().getAssets(), "fonts/Roboto-Regular.ttf");
-        profileUserName.setTypeface(typefaceLight);
-        profileEmail.setTypeface(typefaceLight);
-        profilePhone.setTypeface(typefaceLight);
-        profileCollegeId.setTypeface(typefaceLight);
-        profileYear.setTypeface(typefaceLight);
-        profileBranch.setTypeface(typefaceLight);
-        profileSemester.setTypeface(typefaceLight);
-        refreshView.setTypeface(typefaceLight);
+        profileUserName.setTypeface(sansFont);
+        profileEmail.setTypeface(sansFont);
+        profilePhone.setTypeface(sansFont);
+        profileCollegeId.setTypeface(sansFont);
+        profileYear.setTypeface(sansFont);
+        profileBranch.setTypeface(sansFont);
+        profileSemester.setTypeface(sansFont);
+        refreshView.setTypeface(sansFont);
 
         session = new SmartSessionManager(getApplicationContext());
 

@@ -10,6 +10,7 @@ import android.content.res.Configuration;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -98,9 +99,11 @@ public class AcademicsNewActivity extends AppCompatActivity{
         // get the toolbar for the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
         title.setText(getResources().getString(R.string.newAcademicsPost));
+        title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar
         setSupportActionBar(toolbar);
@@ -117,8 +120,8 @@ public class AcademicsNewActivity extends AppCompatActivity{
 
         // get views from layout
         writeAcademics = (EditText) findViewById(R.id.writeAcademics);
-        cancelPost = (TextView) findViewById(R.id.cancelAcademics);
-        sendPost = (TextView) findViewById(R.id.sendAcademics);
+        cancelPost = (TextView) findViewById(R.id.cancelAcademics); cancelPost.setTypeface(sansFont);
+        sendPost = (TextView) findViewById(R.id.sendAcademics); sendPost.setTypeface(sansFont);
         academicsBranch = (Spinner) findViewById(R.id.academicsBranch);
         academicsYear = (Spinner) findViewById(R.id.academicsYear);
         academicsSemester = (Spinner) findViewById(R.id.academicsSemester);

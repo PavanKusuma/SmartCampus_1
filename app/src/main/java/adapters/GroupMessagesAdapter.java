@@ -2,6 +2,7 @@ package adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -75,10 +76,12 @@ public class GroupMessagesAdapter extends BaseAdapter {
         TextView message = (TextView) itemView.findViewById(R.id.messagesMessage);
         TextView createdAt = (TextView) itemView.findViewById(R.id.messagescreatedAt);
 
+        Typeface sansFont = Typeface.createFromAsset(context.getResources().getAssets(), Constants.fontName);
+
         // set the username of the user
-        userName.setText(messagesList.get(position).getGroupName());
+        userName.setText(messagesList.get(position).getGroupName()); userName.setTypeface(sansFont);
         //message.setText(messagesList.get(position).getMessage());
-        createdAt.setText(messagesList.get(position).getUpdatedAt());
+        createdAt.setText(messagesList.get(position).getUpdatedAt()); createdAt.setTypeface(sansFont);
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override

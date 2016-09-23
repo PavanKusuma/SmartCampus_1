@@ -1,6 +1,7 @@
 package svecw.smartcampus;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -19,7 +20,7 @@ import utils.Constants;
 public class LearnActivity extends AppCompatActivity {
 
     // views from activity
-    RelativeLayout greView, cView, cPlusPlusView, javaView, htmlView, javaScriptView, androidView;
+    RelativeLayout greView, cView, cPlusPlusView, javaView, htmlView, javaScriptView, androidView, dbmsView, osView, unixView;
 
     // object for internal db
     SmartCampusDB smartCampusDB = new SmartCampusDB(this);
@@ -34,9 +35,11 @@ public class LearnActivity extends AppCompatActivity {
         // get the toolbar for the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
         title.setText(getResources().getString(R.string.learn));
+        title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar
         setSupportActionBar(toolbar);
@@ -59,6 +62,9 @@ public class LearnActivity extends AppCompatActivity {
         htmlView = (RelativeLayout) findViewById(R.id.htmlView);
         javaScriptView = (RelativeLayout) findViewById(R.id.javaScriptView);
         androidView = (RelativeLayout) findViewById(R.id.androidView);
+        dbmsView = (RelativeLayout) findViewById(R.id.dbmsView);
+        osView = (RelativeLayout) findViewById(R.id.osView);
+        unixView = (RelativeLayout) findViewById(R.id.unixView);
 
         // navigate to gre module
         greView.setOnClickListener(new View.OnClickListener() {
@@ -131,5 +137,37 @@ public class LearnActivity extends AppCompatActivity {
                 startActivity(javaintent);
             }
         });
+
+        dbmsView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent javaintent = new Intent(getApplicationContext(), LearnSubModuleActivity.class);
+                javaintent.putExtra(Constants.topic, Constants.dbms);
+                startActivity(javaintent);
+            }
+        });
+
+        osView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent javaintent = new Intent(getApplicationContext(), LearnSubModuleActivity.class);
+                javaintent.putExtra(Constants.topic, Constants.os);
+                startActivity(javaintent);
+            }
+        });
+
+        unixView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent javaintent = new Intent(getApplicationContext(), LearnSubModuleActivity.class);
+                javaintent.putExtra(Constants.topic, Constants.unix);
+                startActivity(javaintent);
+            }
+        });
+
+
     }
 }

@@ -1,5 +1,6 @@
 package svecw.smartcampus;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -80,9 +81,11 @@ public class TemporaryGroup_Details extends AppCompatActivity {
         // get the toolbar for the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
         title.setText(groupName);
+        title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar
         setSupportActionBar(toolbar);
@@ -96,7 +99,18 @@ public class TemporaryGroup_Details extends AppCompatActivity {
 
         // check the group name
         // get the raw files matching to the group name
-        if(groupName.contentEquals("HOD")) {
+
+        if(groupName.contentEquals("VEMC-16 Faculty")) {
+
+            names_is = getResources().openRawResource(R.raw.vemc_fac);
+            contacts_is = getResources().openRawResource(R.raw.vemc_fac_contacts);
+        }
+        else if(groupName.contentEquals("VEMC-16 Student")) {
+
+            names_is = getResources().openRawResource(R.raw.vemc_stu);
+            contacts_is = getResources().openRawResource(R.raw.vemc_stu_contacts);
+        }
+        else if(groupName.contentEquals("HOD")) {
 
             names_is = getResources().openRawResource(R.raw.hods);
             contacts_is = getResources().openRawResource(R.raw.hodcontacts);

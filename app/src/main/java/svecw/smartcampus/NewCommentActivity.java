@@ -2,6 +2,7 @@ package svecw.smartcampus;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -71,16 +72,17 @@ public class NewCommentActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_comment_layout);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // get views from activity
-        emptyListText = (TextView) findViewById(R.id.emptyListText);
-        newComment = (EditText) findViewById(R.id.newComment1);
+        emptyListText = (TextView) findViewById(R.id.emptyListText); emptyListText.setTypeface(sansFont);
+        newComment = (EditText) findViewById(R.id.newComment1); newComment.setTypeface(sansFont);
         postComment = (ImageView) findViewById(R.id.postComment);
         commentsListView = (ListView) findViewById(R.id.commentsListView);
         commentsProgressBar = (ProgressBar) findViewById(R.id.commentsProgressBar);
 
-        likesView = (TextView) findViewById(R.id.likeTextView);
+        likesView = (TextView) findViewById(R.id.likeTextView); likesView.setTypeface(sansFont);
         //disLikesView = (TextView) findViewById(R.id.disLikeTextView);
-        commentsView = (TextView) findViewById(R.id.commentTextView);
+        commentsView = (TextView) findViewById(R.id.commentTextView); commentsView.setTypeface(sansFont);
 
         // list of comments
         commentsList = new ArrayList<Comment>();

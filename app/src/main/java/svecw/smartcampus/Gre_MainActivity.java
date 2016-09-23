@@ -1,6 +1,7 @@
 package svecw.smartcampus;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -25,9 +26,11 @@ public class Gre_MainActivity extends AppCompatActivity implements View.OnClickL
         // get the toolbar for the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
         title.setText("GRE");
+        title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar
         setSupportActionBar(toolbar);
@@ -66,6 +69,33 @@ public class Gre_MainActivity extends AppCompatActivity implements View.OnClickL
         TextView t24=(TextView)findViewById(R.id.TextView24);
         TextView t25=(TextView)findViewById(R.id.TextView25);
         TextView t26=(TextView)findViewById(R.id.TextView26);
+
+        t1.setTypeface(sansFont);
+        t2.setTypeface(sansFont);
+        t3.setTypeface(sansFont);
+        t4.setTypeface(sansFont);
+        t5.setTypeface(sansFont);
+        t6.setTypeface(sansFont);
+        t7.setTypeface(sansFont);
+        t8.setTypeface(sansFont);
+        t9.setTypeface(sansFont);
+        t10.setTypeface(sansFont);
+        t11.setTypeface(sansFont);
+        t12.setTypeface(sansFont);
+        t13.setTypeface(sansFont);
+        t14.setTypeface(sansFont);
+        t15.setTypeface(sansFont);
+        t16.setTypeface(sansFont);
+        t17.setTypeface(sansFont);
+        t18.setTypeface(sansFont);
+        t19.setTypeface(sansFont);
+        t20.setTypeface(sansFont);
+        t21.setTypeface(sansFont);
+        t22.setTypeface(sansFont);
+        t23.setTypeface(sansFont);
+        t24.setTypeface(sansFont);
+        t25.setTypeface(sansFont);
+        t26.setTypeface(sansFont);
 
         t1.setOnClickListener(this);
         t2.setOnClickListener(this);

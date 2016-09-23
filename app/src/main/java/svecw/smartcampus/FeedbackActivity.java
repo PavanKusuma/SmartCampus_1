@@ -1,5 +1,6 @@
 package svecw.smartcampus;
 
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -66,9 +67,11 @@ public class FeedbackActivity extends AppCompatActivity {
         // get the toolbar for the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
         title.setText(getResources().getString(R.string.complaintOrFeedback));
+        title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar
         setSupportActionBar(toolbar);
@@ -86,7 +89,7 @@ public class FeedbackActivity extends AppCompatActivity {
         // get views from activity
         complaintsOrFeedbacksListView = (ListView) findViewById(R.id.complaintsORFeebacksListView);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        emptyElementView = (TextView) findViewById(R.id.emptyElement);
+        emptyElementView = (TextView) findViewById(R.id.emptyElement); emptyElementView.setTypeface(sansFont);
 
         // list of complaints and feedback
         complaintsFeedbacksList = new ArrayList<ComplaintAndFeedback>();

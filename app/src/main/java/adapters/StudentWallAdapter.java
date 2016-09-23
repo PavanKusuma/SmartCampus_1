@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
@@ -189,6 +190,9 @@ public class StudentWallAdapter extends BaseAdapter {
         }
 
         try {
+
+            Typeface sansFont = Typeface.createFromAsset(context.getResources().getAssets(), Constants.fontName);
+
             // date format for displaying created date
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
@@ -216,13 +220,13 @@ public class StudentWallAdapter extends BaseAdapter {
             simpleDateFormat = new SimpleDateFormat("MMM dd, yyyy, hh:mm aa");
 
             // set the username of the user
-            holder.post.setText(collegeWallPostsList.get(position).getPostDescription());
-            holder.userName.setText(collegeWallPostsList.get(position).getUserName());
-            holder.collegeId.setText(collegeWallPostsList.get(position).getCollegeId());
-            holder.likeTextView.setText(String.valueOf(collegeWallPostsList.get(position).getLikes()) + " likes");
+            holder.post.setText(collegeWallPostsList.get(position).getPostDescription()); holder.post.setTypeface(sansFont);
+            holder.userName.setText(collegeWallPostsList.get(position).getUserName()); holder.userName.setTypeface(sansFont);
+            holder.collegeId.setText(collegeWallPostsList.get(position).getCollegeId()); holder.collegeId.setTypeface(sansFont);
+            holder.likeTextView.setText(String.valueOf(collegeWallPostsList.get(position).getLikes()) + " likes"); holder.likeTextView.setTypeface(sansFont);
             //disLikeTextView.setText(String.valueOf(collegeWallPostsList.get(position).getDislikes()) + " dislikes");
-            holder.commentTextView.setText(String.valueOf(collegeWallPostsList.get(position).getComments()) + " comments");
-            holder.createdAt.setText(simpleDateFormat.format(date));
+            holder.commentTextView.setText(String.valueOf(collegeWallPostsList.get(position).getComments()) + " comments"); holder.commentTextView.setTypeface(sansFont);
+            holder.createdAt.setText(simpleDateFormat.format(date)); holder.createdAt.setTypeface(sansFont);
 
             // media
             // check the media count for the post

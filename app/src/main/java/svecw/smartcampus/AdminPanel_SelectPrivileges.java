@@ -2,6 +2,7 @@ package svecw.smartcampus;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -103,9 +104,11 @@ public class AdminPanel_SelectPrivileges extends AppCompatActivity {
         // get the toolbar for the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
         title.setText(getResources().getString(R.string.selectPrivilege));
+        title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar
         setSupportActionBar(toolbar);
@@ -191,7 +194,7 @@ public class AdminPanel_SelectPrivileges extends AppCompatActivity {
         basicScienceDirectoryCheckBox = (CheckBox) findViewById(R.id.basicScienceDirectoryCheckBox);
 
 
-        finishBtn = (TextView) findViewById(R.id.finishBtn);
+        finishBtn = (TextView) findViewById(R.id.finishBtn); finishBtn.setTypeface(sansFont);
 
         existingPrivileges = new ArrayList<String>();
         assigningPrivileges = new ArrayList<String>();

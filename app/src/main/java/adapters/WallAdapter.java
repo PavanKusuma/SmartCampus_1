@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -143,20 +144,22 @@ public class WallAdapter extends BaseAdapter {
         if (convertView == null) {
             itemView = (RelativeLayout) layoutInflater.inflate(R.layout.college_wallpost_single_listitem, parent, false);
 
+            Typeface sansFont = Typeface.createFromAsset(context.getResources().getAssets(), Constants.fontName);
+
             // object for viewHolder
             holder = new ViewHolder();
 
             // get all views of single shouts list item
-            holder.post = (TextView) itemView.findViewById(R.id.collegeWallPostDescription);
-            holder.userName = (TextView) itemView.findViewById(R.id.collegeWallUserName);
+            holder.post = (TextView) itemView.findViewById(R.id.collegeWallPostDescription); holder.post.setTypeface(sansFont);
+            holder.userName = (TextView) itemView.findViewById(R.id.collegeWallUserName); holder.userName.setTypeface(sansFont);
             holder.userImage = (ImageView) itemView.findViewById(R.id.collegeWallUserImage);
             holder.postImage = (ImageView) itemView.findViewById(R.id.collegeWallPostImage);
-            holder.likeTextView = (TextView) itemView.findViewById(R.id.likeTextView);
+            holder.likeTextView = (TextView) itemView.findViewById(R.id.likeTextView); holder.likeTextView.setTypeface(sansFont);
             //final TextView disLikeTextView = (TextView) itemView.findViewById(R.id.disLikeTextView);
             //final TextView commentTextView = (TextView) itemView.findViewById(R.id.commentTextView);
-            holder.likeView = (TextView) itemView.findViewById(R.id.likeView);
+            holder.likeView = (TextView) itemView.findViewById(R.id.likeView); holder.likeView.setTypeface(sansFont);
             //final TextView disLikeView = (TextView) itemView.findViewById(R.id.disLikeView);
-            holder.shareView = (TextView) itemView.findViewById(R.id.shareView);
+            holder.shareView = (TextView) itemView.findViewById(R.id.shareView); holder.shareView.setTypeface(sansFont);
 
             holder.likeViewLayout = (LinearLayout) itemView.findViewById(R.id.voteLayout_1);
             holder.shareViewLayout = (LinearLayout) itemView.findViewById(R.id.voteLayout_3);

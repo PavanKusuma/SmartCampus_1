@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.util.Base64;
 import android.util.Log;
@@ -16,6 +17,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import java.io.InputStream;
 import java.net.URL;
@@ -78,12 +81,14 @@ public class StudentDirectoryAdapter extends BaseAdapter {
             // inflate single list item for each row
             itemView = (RelativeLayout) layoutInflater.inflate(R.layout.directory_single_listitem_student, parent, false);
 
+            Typeface sansFont = Typeface.createFromAsset(context.getResources().getAssets(), Constants.fontName);
+
             // view holder object to contain xml file elements
             holder = new ViewHolder();
             holder.studentUserImageView = (ImageView) itemView.findViewById(R.id.studentUserImageView);
-            holder.userName = (TextView) itemView.findViewById(R.id.studentUserName);
-            holder.branch = (TextView) itemView.findViewById(R.id.studentBranch);
-            holder.collegeId = (TextView) itemView.findViewById(R.id.studentCollegeId);
+            holder.userName = (TextView) itemView.findViewById(R.id.studentUserName); holder.userName.setTypeface(sansFont);
+            holder.branch = (TextView) itemView.findViewById(R.id.studentBranch); holder.branch.setTypeface(sansFont);
+            holder.collegeId = (TextView) itemView.findViewById(R.id.studentCollegeId); holder.collegeId.setTypeface(sansFont);
             //holder.phoneNumber = (TextView) itemView.findViewById(R.id.studentPhoneNumber);
 
             holder.call = (ImageView) itemView.findViewById(R.id.ic_studentCall);
@@ -189,7 +194,7 @@ Log.v(Constants.appName, "image : " +usernamesList.get(position).getMedia());
                     if (usernamesList.get(position).getMedia().contains(".")) {
 
                         // get the connection url for the media
-                        URL url = new URL(Routes.getMedia + usernamesList.get(position).getMedia());
+                        /*URL url = new URL(Routes.getMedia + usernamesList.get(position).getMedia());
                         URLConnection urlConnection = url.openConnection();
                         urlConnection.setDoInput(true);
                         urlConnection.connect();
@@ -201,7 +206,7 @@ Log.v(Constants.appName, "image : " +usernamesList.get(position).getMedia());
 
                             // bitmap options
                             BitmapFactory.Options options = new BitmapFactory.Options();
-/*
+*//*
                         //Bitmap bitmap = BitmapFactory.decodeStream(is, null, options);
                         options.inJustDecodeBounds = true;
                         //BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);
@@ -212,7 +217,7 @@ Log.v(Constants.appName, "image : " +usernamesList.get(position).getMedia());
 
                         // Decode bitmap with inSampleSize set
                         options.inJustDecodeBounds = false;
-                        //return BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);*/
+                        //return BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);*//*
                             Bitmap bitmap = BitmapFactory.decodeStream(is);
 
                             holder.studentUserImageView.setImageBitmap(bitmap);
@@ -221,7 +226,10 @@ Log.v(Constants.appName, "image : " +usernamesList.get(position).getMedia());
 
                             // hide user image layout
                             holder.studentUserImageView.setImageResource(R.drawable.ic_user_profile);
-                        }
+                        }*/
+
+                        Picasso.with(context).load(Routes.getMedia+usernamesList.get(position).getMedia()).placeholder(R.drawable.ic_user_profile).into(holder.studentUserImageView);
+
                     } else {
 
 

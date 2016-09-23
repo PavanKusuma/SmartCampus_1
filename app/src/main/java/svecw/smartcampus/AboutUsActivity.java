@@ -32,9 +32,11 @@ public class AboutUsActivity extends AppCompatActivity {
         // get the toolbar for the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
         title.setText(getResources().getString(R.string.aboutCollege));
+        title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar
         setSupportActionBar(toolbar);
@@ -51,8 +53,8 @@ public class AboutUsActivity extends AppCompatActivity {
 
         aboutUsTextView = (TextView) findViewById(R.id.aboutUsTextView);
 
-        Typeface typeface = Typeface.createFromAsset(getAssets(), Constants.FONTNAME);
-        aboutUsTextView.setTypeface(typeface);
+
+        aboutUsTextView.setTypeface(sansFont);
 
         /*// get the Action bar
         actionBar = getSupportActionBar();

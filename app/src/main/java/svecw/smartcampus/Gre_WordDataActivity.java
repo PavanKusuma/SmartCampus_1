@@ -1,6 +1,7 @@
 package svecw.smartcampus;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.ActionBar;
@@ -16,6 +17,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Locale;
+
+import utils.Constants;
 
 /**
  * Created by Pavan on 7/5/15.
@@ -63,9 +66,11 @@ public class Gre_WordDataActivity extends AppCompatActivity implements TextToSpe
         // get the toolbar for the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
         title.setText("GRE");
+        title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar
         setSupportActionBar(toolbar);
@@ -78,12 +83,12 @@ public class Gre_WordDataActivity extends AppCompatActivity implements TextToSpe
         actionBar.setWindowTitle(""); // hide the main title
 
         //map the variables with the activity elements
-        txtword=(TextView)findViewById(R.id.textView1);
-        txtpos=(TextView)findViewById(R.id.textView2);
-        txtmeaning=(TextView)findViewById(R.id.textView4);
-        txtsynonyms=(TextView)findViewById(R.id.textView6);
-        txtantonyms=(TextView)findViewById(R.id.textView8);
-        txtusage=(TextView)findViewById(R.id.textView10);
+        txtword=(TextView)findViewById(R.id.textView1); txtword.setTypeface(sansFont);
+        txtpos=(TextView)findViewById(R.id.textView2); txtpos.setTypeface(sansFont);
+        txtmeaning=(TextView)findViewById(R.id.textView4); txtmeaning.setTypeface(sansFont);
+        txtsynonyms=(TextView)findViewById(R.id.textView6); txtsynonyms.setTypeface(sansFont);
+        txtantonyms=(TextView)findViewById(R.id.textView8); txtantonyms.setTypeface(sansFont);
+        txtusage=(TextView)findViewById(R.id.textView10); txtusage.setTypeface(sansFont);
 
         //get the values from the previous activity and assign them to the variables
         Intent i = getIntent();

@@ -1,5 +1,6 @@
 package svecw.smartcampus;
 
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -67,9 +68,11 @@ public class LearnSubModuleActivity extends AppCompatActivity {
         // get the toolbar for the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
         title.setText(selectedTopic);
+        title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar
         setSupportActionBar(toolbar);
@@ -96,7 +99,7 @@ public class LearnSubModuleActivity extends AppCompatActivity {
 
         // get the list of the topic
         //new GetLearnModuleList().execute(selectedTopic);
-        new GetOfflineLearnInfo().execute("C");
+        new GetOfflineLearnInfo().execute(selectedTopic);
 
 
      /*   try {
@@ -265,7 +268,7 @@ public class LearnSubModuleActivity extends AppCompatActivity {
 
         @Override
         protected void onPreExecute() {
-            //progressBar.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.VISIBLE);
         }
 
         @Override
@@ -276,56 +279,54 @@ public class LearnSubModuleActivity extends AppCompatActivity {
                 public void run() {
 
                     try {
-                        Log.v(Constants.appName, "1");
+
                 // get the inputStream of the data file
                 //InputStream is=getResources().openRawResource(R.raw.learn_data);
-                InputStream inputStream = getResources().openRawResource(R.raw.data);
-                        Log.v(Constants.appName, "2");
+                InputStream inputStream = getResources().openRawResource(R.raw.offline_1);
+
                 // get xlsx workbook from inputStream
                 HSSFWorkbook workbook = new HSSFWorkbook(inputStream);
-                        Log.v(Constants.appName, "3");
+
                 // get the sheet with "learn" name
                 HSSFSheet sheet = workbook.getSheetAt(0);
-                        Log.v(Constants.appName, "4");
+
                 // iterate through sheet and get the data
                 Iterator rowIterator = sheet.iterator();
-                        Log.v(Constants.appName, "5");
+
                 // iterating over each row
                 while(rowIterator.hasNext()){
-                    Log.v(Constants.appName, "6");
+
                     // get each row from iterator
-                    HSSFRow row = (HSSFRow) rowIterator.next();Log.v(Constants.appName, "7");
+                    HSSFRow row = (HSSFRow) rowIterator.next();
                     // get iterator of each cell
                     Iterator cellIterator = row.cellIterator();
-                    Log.v(Constants.appName, "8");
+
                     // iterating over each cell (column wise) in a particular row
                     while (cellIterator.hasNext()){
-                        Log.v(Constants.appName, "9");
+
                         HSSFCell cell = (HSSFCell) cellIterator.next();
-                        Log.v(Constants.appName, "10");
 
                         if(cell.getColumnIndex() == 0 && cell.getStringCellValue().contentEquals(params[0])) {
-                            Log.v(Constants.appName, "11"+cell.getStringCellValue());
 
                             cell = (HSSFCell) cellIterator.next();
 
                             if (cell.getColumnIndex() == 1) {
-                                Log.v(Constants.appName, "12");
-                                listDataHeader.add(cell.getStringCellValue());
-                                Log.v(Constants.appName, "13");
-                                Log.v(Constants.appName, cell.getStringCellValue());
+
+                                listDataHeader.add(cell.getStringCellValue().trim());
+
                             }
 
                             cell = (HSSFCell) cellIterator.next();
 
                             if (cell.getColumnIndex() == 2) {
-                                Log.v(Constants.appName, "14");
+
                                 listDataItem.add(cell.getStringCellValue());
-                                Log.v(Constants.appName, "15");
-                                Log.v(Constants.appName, cell.getStringCellValue());
+
                             }
                         }
                     }
+
+                    progressBar.setVisibility(View.GONE);
                     // end iterating a row, add the object values to list
                     learnSubModuleAdapter.notifyDataSetChanged();
 
@@ -350,8 +351,7 @@ public class LearnSubModuleActivity extends AppCompatActivity {
                 public void run() {
 
 
-
-                   // progressBar.setVisibility(View.GONE);
+                    progressBar.setVisibility(View.GONE);
 
                     // notify the adapter
                     learnSubModuleAdapter.notifyDataSetChanged();

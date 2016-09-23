@@ -1,5 +1,6 @@
 package svecw.smartcampus;
 
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -58,9 +59,11 @@ public class ExamsListActivity extends AppCompatActivity {
         // get the toolbar for the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
         title.setText(getResources().getString(R.string.exams));
+        title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar
         setSupportActionBar(toolbar);
@@ -77,7 +80,7 @@ public class ExamsListActivity extends AppCompatActivity {
 
         // get views from activity
         examsListView = (ListView) findViewById(R.id.examsListView);
-        emptyElementExams = (TextView) findViewById(R.id.emptyElementExams);
+        emptyElementExams = (TextView) findViewById(R.id.emptyElementExams); emptyElementExams.setTypeface(sansFont);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         // list of exams

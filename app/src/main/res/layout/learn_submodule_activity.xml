@@ -30,8 +30,7 @@
                 android:layout_height="32dp"
                 android:layout_centerHorizontal="true"
                 android:indeterminate="false"
-                android:max="100"
-                android:visibility="gone"/>
+                android:max="100"/>
 
             <ExpandableListView
                 android:id="@+id/learnListView"

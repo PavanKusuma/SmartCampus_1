@@ -2,6 +2,7 @@ package adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -78,9 +79,11 @@ public class MsgGroupDetailsAdapter extends BaseAdapter {
         final ImageView callView = (ImageView) itemView.findViewById(R.id.ic_call);
         final ImageView msgView = (ImageView) itemView.findViewById(R.id.ic_msg);
 
+        Typeface sansFont = Typeface.createFromAsset(context.getResources().getAssets(), Constants.fontName);
+
         // set the details of the user
-        userNameTextView.setText(messagesList.get(position).getUsername());
-        designationTextView.setText(messagesList.get(position).getRole());
+        userNameTextView.setText(messagesList.get(position).getUsername()); userNameTextView.setTypeface(sansFont);
+        designationTextView.setText(messagesList.get(position).getRole()); designationTextView.setTypeface(sansFont);
         designationTextView.setVisibility(View.GONE);
         departmentTextView.setVisibility(View.GONE);
         callView.setTag(messagesList.get(position).getPhoneNumber());

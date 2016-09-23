@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ProgressBar
+        android:id="@+id/linkProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchLayout"
+        style="@android:style/Widget.ProgressBar.Small"
+        android:layout_alignParentRight="true"
+        android:visibility="gone"
+        android:padding="10dp"/>
+
+    <TextView
+        android:id="@+id/newLinkName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/newLinkName"/>
+
+    <EditText
+        android:id="@+id/new_link_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@+id/newLinkName"
+        android:hint="@string/newLinkHint"
+        android:inputType="textMultiLine"
+        android:gravity="top"
+        android:background="#F9F9F9"/>
+
+</RelativeLayout>

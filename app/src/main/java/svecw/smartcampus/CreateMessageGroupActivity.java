@@ -1,6 +1,7 @@
 package svecw.smartcampus;
 
 import android.app.ProgressDialog;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -90,9 +91,11 @@ public class CreateMessageGroupActivity extends AppCompatActivity {
         // get the toolbar for the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
         title.setText(getResources().getString(R.string.newGroup));
+        title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar
         setSupportActionBar(toolbar);
@@ -114,7 +117,7 @@ public class CreateMessageGroupActivity extends AppCompatActivity {
         searchListView = (ListView) findViewById(R.id.searchListView);
         selectedListView = (ListView) findViewById(R.id.selectedListView);
         searchNameBtn = (ImageView) findViewById(R.id.searchNameBtn);
-        searchProgressText = (TextView) findViewById(R.id.searchProgressText);
+        searchProgressText = (TextView) findViewById(R.id.searchProgressText); searchProgressText.setTypeface(sansFont);
 
         // get the instance of adapter
         //directorySearchAdapter = new DirectorySearchAdapter(CreateMessageGroupActivity.this);

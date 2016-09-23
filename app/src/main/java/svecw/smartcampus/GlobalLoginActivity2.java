@@ -55,6 +55,7 @@ public class GlobalLoginActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity2);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // get the objectId
         currentObjectId = getIntent().getStringExtra(Constants.userObjectId);
         collegeId = getIntent().getStringExtra(Constants.collegeId);
@@ -62,16 +63,16 @@ public class GlobalLoginActivity2 extends AppCompatActivity {
         email = getIntent().getStringExtra(Constants.email);
 
         // get views from activity
-        emailId = (EditText) findViewById(R.id.emailId);
-        phone = (EditText) findViewById(R.id.phone);
-        goBtn = (Button) findViewById(R.id.goBtn);
-        skipBtn = (Button) findViewById(R.id.skipBtn);
+        emailId = (EditText) findViewById(R.id.emailId); emailId.setTypeface(sansFont);
+        phone = (EditText) findViewById(R.id.phone); phone.setTypeface(sansFont);
+        goBtn = (Button) findViewById(R.id.goBtn); goBtn.setTypeface(sansFont);
+        skipBtn = (Button) findViewById(R.id.skipBtn); skipBtn.setTypeface(sansFont);
 
         // pre fill the values
         emailId.setText(email);
         phone.setText(phoneNumber);
 
-        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Regular.ttf");
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/sans.ttf");
         emailId.setTypeface(typeface);
         phone.setTypeface(typeface);
         goBtn.setTypeface(typeface);

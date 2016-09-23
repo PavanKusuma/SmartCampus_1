@@ -9,6 +9,7 @@ import android.content.res.Configuration;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -121,9 +122,11 @@ public class KnowledgeWallNewPostActivity extends AppCompatActivity {
         // get the toolbar for the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
         title.setText(getResources().getString(R.string.knowledgeWallPost));
+        title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar
         setSupportActionBar(toolbar);
@@ -146,8 +149,8 @@ public class KnowledgeWallNewPostActivity extends AppCompatActivity {
         globalWallPostDescription = (EditText) findViewById(R.id.globalWallNewPostDescription);
         globalWallPostLink = (EditText) findViewById(R.id.globalWallNewPostLink);
         //globalWallPostImage = (ImageView) findViewById(R.id.globalWallSelectImage);
-        cancelPost = (TextView) findViewById(R.id.cancelPost);
-        createPost = (TextView) findViewById(R.id.sendPost);
+        cancelPost = (TextView) findViewById(R.id.cancelPost); cancelPost.setTypeface(sansFont);
+        createPost = (TextView) findViewById(R.id.sendPost); createPost.setTypeface(sansFont);
         globalWallCategory = (Spinner) findViewById(R.id.globalWallCategory);
 
         userObjectId = (String) smartCampusDB.getUser().get(Constants.objectId);

@@ -3,6 +3,7 @@ package adapters;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,6 +78,8 @@ public class CommentAdapter extends BaseAdapter {
 
         try {
 
+            Typeface sansFont = Typeface.createFromAsset(context.getResources().getAssets(), Constants.fontName);
+
             // inflate single list item for each row
             itemView = (RelativeLayout) layoutInflater.inflate(R.layout.comment_single_layout, parent, false);
 
@@ -88,10 +91,10 @@ public class CommentAdapter extends BaseAdapter {
             TextView commentText = (TextView) itemView.findViewById(R.id.commentText);
 
 
-            commentUserName.setText(commentsList.get(position).getUsername());
-            commentId.setText(commentsList.get(position).getCommentId());
-            commentText.setText(commentsList.get(position).getComment());
-            userObjectId.setText(commentsList.get(position).getUserObjectId());
+            commentUserName.setText(commentsList.get(position).getUsername()); commentUserName.setTypeface(sansFont);
+            commentId.setText(commentsList.get(position).getCommentId()); commentId.setTypeface(sansFont);
+            commentText.setText(commentsList.get(position).getComment()); commentText.setTypeface(sansFont);
+            userObjectId.setText(commentsList.get(position).getUserObjectId()); userObjectId.setTypeface(sansFont);
 
             // set user image
             if (commentsList.get(position).getUserImage().contentEquals(Constants.null_indicator)) {

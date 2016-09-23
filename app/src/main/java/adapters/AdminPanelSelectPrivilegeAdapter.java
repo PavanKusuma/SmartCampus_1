@@ -1,6 +1,7 @@
 package adapters;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import java.util.List;
 
 import model.SelectPrivilege;
 import svecw.smartcampus.R;
+import utils.Constants;
 
 /**
  * Created by Pavan on 5/21/15.
@@ -68,9 +70,11 @@ public class AdminPanelSelectPrivilegeAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
+        Typeface sansFont = Typeface.createFromAsset(context.getResources().getAssets(), Constants.fontName);
+
         if(selectPrivilegesList.size()>0) {
 
-            holder.privilegeName.setText(selectPrivilegesList.get(position).getPrivilege());
+            holder.privilegeName.setText(selectPrivilegesList.get(position).getPrivilege()); holder.privilegeName.setTypeface(sansFont);
             holder.privilegeCheckBox.setChecked(selectPrivilegesList.get(position).getSelected());
         }
 

@@ -11,6 +11,7 @@ import android.content.res.Configuration;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -118,9 +119,11 @@ public class CollegeWallNewPostActivity extends AppCompatActivity {
         // get the toolbar for the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
 
+        Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
         title.setText(getResources().getString(R.string.collegeWallPost));
+        title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar
         setSupportActionBar(toolbar);
@@ -143,8 +146,8 @@ public class CollegeWallNewPostActivity extends AppCompatActivity {
         // get views from activity
         collegeWallNewPostDescription = (EditText) findViewById(R.id.collegeWallPostDescription);
         collegeWallSelectImage = (ImageView) findViewById(R.id.collegeWallSelectImage);
-        cancelPost = (TextView) findViewById(R.id.cancelPost);
-        sendPost = (TextView) findViewById(R.id.sendPost);
+        cancelPost = (TextView) findViewById(R.id.cancelPost); cancelPost.setTypeface(sansFont);
+        sendPost = (TextView) findViewById(R.id.sendPost); sendPost.setTypeface(sansFont);
         progressBar = (ProgressBar) findViewById(R.id.postingProgress);
         postingProgress = (ProgressBar) findViewById(R.id.postingProgress);
 
@@ -577,7 +580,7 @@ public class CollegeWallNewPostActivity extends AppCompatActivity {
         ByteArrayOutputStream BOAS = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, BOAS); //bm is the bitmap object
         b = BOAS.toByteArray();
-
+Log.v(Constants.appName, "Byte length : " + b.length);
         // check the image if it is greater than the buffer size
         // if so, scale the image to the buffer size
         if(b.length > (1024*1024)){
@@ -1271,12 +1274,12 @@ public class CollegeWallNewPostActivity extends AppCompatActivity {
                 bytesRead = is.read(b, 0, b.length);
                 //Log.v(Constants.appName, "Size of bytes : " + b.length);
                 dos.write(b, 0, b.length);
+
                 while (bytesRead > 0) {
                     dos.write(b, 0, b.length);
                     bytesAvailable = is.available();
                     bufferSize = Math.min(bytesAvailable, maxBufferSize);
                     bytesRead = is.read(buffer, 0, bufferSize);
-
 
                     Log.v(Constants.appName, "check 1");
                 }

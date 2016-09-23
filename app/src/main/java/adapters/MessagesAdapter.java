@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -80,7 +81,7 @@ public class MessagesAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
 
-        RelativeLayout itemView;
+        RelativeLayout itemView = null;
         if (convertView == null) {
 
             // show the in/out message variation in the single message layout by aligning it
@@ -97,7 +98,7 @@ public class MessagesAdapter extends BaseAdapter {
                // params.setMargins(50, 0, 0, 0);
                 itemView.setLayoutParams(params);
                 //itemView1.setLayoutParams(params);
-            }else{
+            }else if(!messagesList.get(position).getFromUserObjectId().contentEquals(smartCampusDB.getUser().get(Constants.userObjectId).toString())) {
                 Log.v(Constants.appName, "received message");
                 itemView = (RelativeLayout) layoutInflater.inflate(R.layout.messages_single_listitem_left, parent, false);
 
@@ -115,6 +116,8 @@ public class MessagesAdapter extends BaseAdapter {
 
         try {
 
+            Typeface sansFont = Typeface.createFromAsset(context.getResources().getAssets(), Constants.fontName);
+
             // date format for displaying created date
             // provide date format present in server
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
@@ -125,6 +128,9 @@ public class MessagesAdapter extends BaseAdapter {
             TextView createdAt = (TextView) itemView.findViewById(R.id.messagescreatedAt);
             final ImageView messageImage = (ImageView) itemView.findViewById(R.id.messageImage);
 
+            userName.setTypeface(sansFont);
+            message.setTypeface(sansFont);
+            createdAt.setTypeface(sansFont);
             // as messages are displayed accordingly to the userType
             // when the user is "student" then display the messages with reference to the user who sent it
             // when the user is other than "student" like "faculty or admin" then display the messages with reference to the year, branch, semester
@@ -155,6 +161,10 @@ public class MessagesAdapter extends BaseAdapter {
 
             // check the media count for the message for displaying image
             if(messagesList.get(position).getMediaCount() > 0) {
+
+                // make image visible at first place
+                messageImage.setVisibility(View.VISIBLE);
+
                 // if media exists for the post
                 // fetch the names String of media
                 String mediaName = messagesList.get(position).getMedia();

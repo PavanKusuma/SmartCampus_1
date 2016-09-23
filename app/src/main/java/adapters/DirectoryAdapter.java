@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.view.LayoutInflater;
@@ -63,9 +64,11 @@ public class DirectoryAdapter extends BaseAdapter {
         final ImageView callView = (ImageView) itemView.findViewById(R.id.ic_call);
         final ImageView msgView = (ImageView) itemView.findViewById(R.id.ic_msg);
 
-                userNameTextView.setText(usernamesList.get(position));
-                designationTextView.setText(designationsList.get(position));
-                departmentTextView.setText(departmentsList.get(position));
+        Typeface sansFont = Typeface.createFromAsset(context.getResources().getAssets(), Constants.fontName);
+
+                userNameTextView.setText(usernamesList.get(position)); userNameTextView.setTypeface(sansFont);
+                designationTextView.setText(designationsList.get(position)); designationTextView.setTypeface(sansFont);
+                departmentTextView.setText(departmentsList.get(position)); departmentTextView.setTypeface(sansFont);
                 callView.setTag(contactsList.get(position));
                 msgView.setTag(contactsList.get(position));
 

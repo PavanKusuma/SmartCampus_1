@@ -31,6 +31,9 @@
     <string name="noAccount">No account found! Verify college id</string>
 
     <string name="postDescriptionHint">Description</string>
+    <string name="newPostHint">Whats on your mind?</string>
+    <string name="newLinkName">Copy link below</string>
+    <string name="newLinkHint">ex: http://www.infinitynext.com</string>
     <string name="postKnowledgeDescriptionHint">Description is mandatory</string>
     <string name="post">Post</string>
     <string name="verifying">Verifying..</string>
@@ -140,6 +143,8 @@
 
     <string name="goKarting">Vishnu Karting</string>
     <string name="hods">HOD</string>
+    <string name="vemcFac">VEMC-16 - Faculty</string>
+    <string name="vemcStu">VEMC-16 - Student</string>
 
     <string name="groupMessages">Group messages</string>
     <string name="groupDetails">Important groups of college</string>
@@ -198,6 +203,9 @@
     <string name="sql">SQL</string>
     <string name="android">Android</string>
     <string name="gre">GRE</string>
+    <string name="dbms">DBMS</string>
+    <string name="os">OS</string>
+    <string name="unix">UNIX</string>
 
     <string name="fetchingInfo">Fetching updated info..</string>
     <string name="collegeWallPost">New College Wall Post</string>
@@ -244,6 +252,10 @@
         \n\n\u2022Our infrastructure is vibrant in nature because of constant attempt to maintain pace with the development available. The infrastructure acts as a facilitator for the effective delivery of our curriculum
         \n\n\u2022Apart from the common central facilities the colleges has well-equipped laboratories, lecture halls, drawing and seminar halls etc
         \n\n\u2022The organization provides adequate infrastructural support for all sports activities which provide students physical fitness and personality development inturn cultivate in them sportsman spirit, team spirit, leadership and talent
+    </string>
+
+    <string name="appInfo">
+        We digitize your campus and put all your campus information at fingertips. Smart Campus App makes implementing new initiatives in your campus easy and enables collection of real time insights efficient. \n\n Provide your students with the most advanced tools to connect with campus through digital and social boards, organization directories, tutorials, online exams and class schedules. We make complete student to student and student to management experience more meaningful on the go.
     </string>
 
     <string name="hashCse">\#CSE/IT</string>
@@ -398,8 +410,8 @@
 
     <string name="title_activity_maps">CollegeMap</string>
 
-    <string name="appVersion">App Version : Beta 3.0</string>
-    <string name="appBy">YesWeStartup</string>
+    <string name="appVersion">App Version : 5.0</string>
+    <string name="appBy">Infinity Next</string>
 
     <string name="selectSpinner">Select branch</string>
 
