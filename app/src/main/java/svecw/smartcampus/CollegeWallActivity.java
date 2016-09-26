@@ -313,7 +313,7 @@ public class CollegeWallActivity extends AppCompatActivity {
         if (id == R.id.createNewWallPost) {
 
             // navigate to selectNewPostActivity to show posting options based on privileges
-            Intent newPostIntent = new Intent(getApplicationContext(), CollegeWallNewPostActivity.class);
+            Intent newPostIntent = new Intent(getApplicationContext(), NewPost.class);
             //startActivity(newPostIntent);
 
             // start activity to get back result

@@ -19,4 +19,5 @@
         android:textSize="16dip"
         android:padding="16dp"
         android:layout_alignParentRight="true"/>
+
 </RelativeLayout>

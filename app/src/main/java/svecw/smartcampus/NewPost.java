@@ -223,6 +223,8 @@ public class NewPost extends AppCompatActivity {
 
                         PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
                         startActivityForResult(builder.build(NewPost.this), PLACE_PICKER_REQUEST);
+
+                        placeIcon.setImageResource(R.drawable.ic_place);
                     } catch (Exception e) {
 
                         Log.v("App Locate", e.getMessage());
@@ -231,6 +233,7 @@ public class NewPost extends AppCompatActivity {
                 }
                 else {
 
+                    placeIcon.setImageResource(R.drawable.ic_place_disable);
                     placeTextView.setVisibility(View.GONE);
                 }
             }
@@ -274,14 +277,18 @@ public class NewPost extends AppCompatActivity {
                                                     Document document = Jsoup.connect(userInputLink.getText().toString()).get();
                                                     String title = document.title(); // get the title of the link
 
-                                                    postDescription.setText(userInputLink.getText());
+                                                    postDescription.append(title);
 
+                                                }
+                                                else{
+
+                                                    Toast.makeText(NewPost.this, "Invalid link", Toast.LENGTH_SHORT).show();
                                                 }
 
                                             }
                                             catch (Exception e){
 
-                                                Toast.makeText(NewPost.this, R.string.loginServerError, Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(NewPost.this, R.string.loginTryAgain, Toast.LENGTH_SHORT).show();
                                             }
 
                                         }
@@ -1094,7 +1101,6 @@ public class NewPost extends AppCompatActivity {
                     bytesAvailable = fileInputStream.available();
                     bufferSize = Math.min(bytesAvailable, maxBufferSize);
                     bytesRead = fileInputStream.read(buffer, 0, bufferSize);
-
 
                     Log.v(Constants.appName, "check 1");
                 }

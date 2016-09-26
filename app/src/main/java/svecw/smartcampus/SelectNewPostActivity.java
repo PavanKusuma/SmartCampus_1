@@ -64,7 +64,7 @@ public class SelectNewPostActivity extends AppCompatActivity {
         // based on user privilege
         // show the layouts that user can access
         // user is allowed to create a wall post
-        if(smartCampusDB.getUser().get(Constants.collegeWall)==0){
+        /*if(smartCampusDB.getUser().get(Constants.collegeWall)==0){
             collegeWallPostView.setVisibility(View.GONE);
         }
         if(smartCampusDB.getUser().get(Constants.studentWall)==0){
@@ -72,7 +72,7 @@ public class SelectNewPostActivity extends AppCompatActivity {
         }
         if(smartCampusDB.getUser().get(Constants.knowledgeWall)==0){
             knowledgeWallPostView.setVisibility(View.GONE);
-        }
+        }*/
         // alumni wall is by default visible to everyone
         // everyone can write to alumni wall
 
