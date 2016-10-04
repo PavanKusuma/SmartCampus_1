@@ -85,7 +85,7 @@
                     android:hint="@string/write_something"
                     android:textColorHint="@color/blackText"
                     android:padding="12dp"
-                    android:gravity="center_vertical"
+                    android:gravity="bottom"
                     android:textColor="@color/blackText">
 
                 </EditText>
@@ -93,24 +93,7 @@
 
             </android.support.design.widget.TextInputLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:background="@color/appBlue">
 
-                <TextView
-                    android:id="@+id/complaintSubmit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/submitComplaint"
-                    android:textStyle="bold"
-                    android:layout_alignParentRight="true"
-                    android:padding="14dp"
-                    android:textColor="@color/white"
-                    android:textAppearance="@android:style/TextAppearance.Medium"/>
-
-            </RelativeLayout>
 
         </RelativeLayout>
 

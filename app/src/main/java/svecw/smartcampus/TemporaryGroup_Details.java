@@ -100,7 +100,7 @@ public class TemporaryGroup_Details extends AppCompatActivity {
         // check the group name
         // get the raw files matching to the group name
 
-        if(groupName.contentEquals("VEMC-16 Faculty")) {
+        /*if(groupName.contentEquals("VEMC-16 Faculty")) {
 
             names_is = getResources().openRawResource(R.raw.vemc_fac);
             contacts_is = getResources().openRawResource(R.raw.vemc_fac_contacts);
@@ -110,7 +110,7 @@ public class TemporaryGroup_Details extends AppCompatActivity {
             names_is = getResources().openRawResource(R.raw.vemc_stu);
             contacts_is = getResources().openRawResource(R.raw.vemc_stu_contacts);
         }
-        else if(groupName.contentEquals("HOD")) {
+        else*/ if(groupName.contentEquals("HOD")) {
 
             names_is = getResources().openRawResource(R.raw.hods);
             contacts_is = getResources().openRawResource(R.raw.hodcontacts);

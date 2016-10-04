@@ -25,6 +25,12 @@ public class Wall {
 
     private String collegeId;
 
+    private String linkUrl;
+    private String linkTitle;
+    private String linkCaption;
+    private String location;
+    private String feeling;
+
     public int getIsActive() {
         return isActive;
     }
@@ -143,5 +149,45 @@ public class Wall {
 
     public void setCollegeId(String collegeId) {
         this.collegeId = collegeId;
+    }
+
+    public String getLinkUrl() {
+        return linkUrl;
+    }
+
+    public void setLinkUrl(String linkUrl) {
+        this.linkUrl = linkUrl;
+    }
+
+    public String getLinkTitle() {
+        return linkTitle;
+    }
+
+    public void setLinkTitle(String linkTitle) {
+        this.linkTitle = linkTitle;
+    }
+
+    public String getLinkCaption() {
+        return linkCaption;
+    }
+
+    public void setLinkCaption(String linkCaption) {
+        this.linkCaption = linkCaption;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getFeeling() {
+        return feeling;
+    }
+
+    public void setFeeling(String feeling) {
+        this.feeling = feeling;
     }
 }

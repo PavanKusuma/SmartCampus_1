@@ -54,7 +54,7 @@
                 android:textSize="16dp"
                 android:layout_centerHorizontal="true"
                 android:gravity="center"
-                android:textColor="@color/lightBlue"/>
+                android:textColor="@color/globalThemeColor"/>
 
             <RelativeLayout
                 android:id="@+id/userImageLayout"
@@ -93,7 +93,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_margin="40dp"
-                app:backgroundTint="@color/lightBlue"
+                app:backgroundTint="@color/globalThemeColor"
                 app:rippleColor="@color/white"
                 app:pressedTranslationZ="12dp">
 

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_empty="true">
+        <layer-list>
+            <item
+                android:left="0dp"
+                android:right="-30dp"
+                android:top="20dp"
+                android:bottom="10dp"
+                android:drawable="@drawable/ic_expand_list">
+            </item>
+        </layer-list>
+    </item>
+
+    <item android:state_expanded="true">
+        <layer-list>
+            <item
+                android:left="0dp"
+                android:right="-30dp"
+                android:top="20dp"
+                android:bottom="10dp"
+                android:drawable="@drawable/ic_collapse_list"
+                >
+            </item>
+        </layer-list>
+    </item>
+</selector>

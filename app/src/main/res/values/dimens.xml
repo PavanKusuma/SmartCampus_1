@@ -8,6 +8,19 @@
     <color name="black">#000000</color>
     <color name="blackText">#3a3a40</color>
 
+
+
+    <color name="globalThemeColor">#25B375</color>
+    <color name="globalThemeSecondaryColor">#A8DDC3</color>
+    <color name="globalThemeSecondaryLightColor">#D0F0E1</color>
+
+    <color name="globalTextColor">#676b69</color>
+    <color name="globalTextSecondaryColor">#A3A4A3</color>
+    <color name="globalTextSecondaryLightColor">#D2D2D2</color>
+    <color name="globalTextSecondaryLighterColor">#F8F8F8</color>
+
+
+
     <color name="bg">#f9f9f9</color>
     <color name="lightGray">#dddddd</color>
     <color name="wallBg">#cccccc</color>
@@ -31,7 +44,8 @@
     <color name="grayBg">#f5f5f5</color>
     <color name="title_color">#6f6f6f</color>
 
-    <color name="appBlue">#0084ff</color>
+    <color name="appBlue">#70b6e4</color>
+    <color name="appBlue1">#0084ff</color>
 
     <color name="appThemeRedColor">#4683ea</color>
 

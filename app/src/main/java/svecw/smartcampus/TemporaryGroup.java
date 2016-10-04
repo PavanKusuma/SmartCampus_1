@@ -45,8 +45,8 @@ public class TemporaryGroup extends AppCompatActivity {
         actionBar.setWindowTitle(""); // hide the main title
 
 
-        vemcFacView = (RelativeLayout) findViewById(R.id.vemcFacView);
-        vemcStuView = (RelativeLayout) findViewById(R.id.vemcStuView);
+        //vemcFacView = (RelativeLayout) findViewById(R.id.vemcFacView);
+        //vemcStuView = (RelativeLayout) findViewById(R.id.vemcStuView);
         hodsView = (RelativeLayout) findViewById(R.id.hodsView);
         deanView = (RelativeLayout) findViewById(R.id.deanView);
         raggingView = (RelativeLayout) findViewById(R.id.raggingView);
@@ -57,7 +57,7 @@ public class TemporaryGroup extends AppCompatActivity {
         hostelView = (RelativeLayout) findViewById(R.id.hostelView);
         clubView = (RelativeLayout) findViewById(R.id.clubsView);
 
-        vemcFacView.setOnClickListener(new View.OnClickListener() {
+        /*vemcFacView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -77,7 +77,7 @@ public class TemporaryGroup extends AppCompatActivity {
                 tempIntent.putExtra(Constants.groupName, "VEMC-16 Student");
                 startActivity(tempIntent);
             }
-        });
+        });*/
 
 
         hodsView.setOnClickListener(new View.OnClickListener() {

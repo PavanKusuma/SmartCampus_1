@@ -272,6 +272,11 @@ public class StudentActivity extends AppCompatActivity {
                 wall.setIsActive(data.getIntExtra(Constants.isActive, 0));
                 wall.setUserName(data.getStringExtra(Constants.userName));
                 wall.setMedia(data.getStringExtra(Constants.media));
+                wall.setLinkUrl(data.getStringExtra(Constants.linkUrl));
+                wall.setLinkTitle(data.getStringExtra(Constants.linkTitle));
+                wall.setLinkCaption(data.getStringExtra(Constants.linkCaption));
+                wall.setLocation(data.getStringExtra(Constants.location));
+                wall.setFeeling(data.getStringExtra(Constants.feeling));
                 wall.setUserImage(session.getProfilePhoto());
 
                 // add the object to list at top and notify adapter
@@ -293,7 +298,7 @@ public class StudentActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        if(smartCampusDB.getUser().get(Constants.role).toString().contains(Constants.student))
+        if(smartCampusDB.getUser().get(Constants.role).toString().contains(Constants.student) || smartCampusDB.getUser().get(Constants.role).toString().contains(Constants.admin))
             getMenuInflater().inflate(R.menu.wall_menu, menu);
 
         return true;
@@ -308,7 +313,7 @@ public class StudentActivity extends AppCompatActivity {
         if (id == R.id.createNewWallPost) {
 
             // navigate to selectNewPostActivity to show posting options based on privileges
-            Intent newPostIntent = new Intent(getApplicationContext(), StudentWallNewPostActivity.class);
+            Intent newPostIntent = new Intent(getApplicationContext(), StudentNewPost.class);
             newPostIntent.putExtra(Constants.alumniPost, false);
             startActivityForResult(newPostIntent, 200);
 
@@ -770,6 +775,12 @@ System.out.println("ok1");
                                             wall.setMedia(jsonObject.getString(Constants.media));
                                             wall.setIsActive(jsonObject.getInt(Constants.isActive));
                                             wall.setUserName(jsonObject.getString(Constants.userName));
+                                            wall.setLinkUrl(jsonObject.getString(Constants.linkUrl));
+                                            wall.setLinkTitle(jsonObject.getString(Constants.linkTitle));
+                                            wall.setLinkCaption(jsonObject.getString(Constants.linkCaption));
+                                            wall.setLocation(jsonObject.getString(Constants.location));
+                                            wall.setFeeling(jsonObject.getString(Constants.feeling));
+
 
                                             //Log.v(Constants.appName, "Comment count:" +jsonObject.getInt(Constants.comments));
 

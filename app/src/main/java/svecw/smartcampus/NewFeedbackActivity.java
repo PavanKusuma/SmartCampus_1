@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -35,7 +37,6 @@ public class NewFeedbackActivity extends AppCompatActivity {
 
     // views of activity
     EditText feedbackText;
-    TextView submitBtn;
 
     // default Type
     String selectionType = Constants.Complaint;
@@ -78,8 +79,7 @@ public class NewFeedbackActivity extends AppCompatActivity {
         layoutInflater = LayoutInflater.from(this);
 
         // get views from activity
-        feedbackText = (EditText) findViewById(R.id.newFeedbackText);
-        submitBtn = (TextView) findViewById(R.id.complaintSubmit); submitBtn.setTypeface(sansFont);
+        feedbackText = (EditText) findViewById(R.id.newFeedbackText); feedbackText.setTypeface(sansFont);
 
         /*complaintType.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,38 +115,62 @@ public class NewFeedbackActivity extends AppCompatActivity {
             }
         });
 */
-        submitBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                // check if text is provided in given edit text
-                if(feedbackText.getText().length()>0){
-
-                    // get the description
-                    description = feedbackText.getText().toString();
-
-                    // get url
-                    String feedbackURL = Routes.createFeedback + Constants.key + "/" + smartCampusDB.getUser().get(Constants.userObjectId) + "/" +
-                            Snippets.getUniqueFeedbackId() + "/" + Snippets.escapeURIPathParam(description);
-
-                    // create feedback
-                    new CreateFeedback().execute(Routes.createFeedback, smartCampusDB.getUser().get(Constants.userObjectId).toString(), Snippets.getUniqueFeedbackId(), Snippets.escapeURIPathParam(description));
-
-
-                } else {
-
-                    Toast.makeText(getApplicationContext(), "Write something", Toast.LENGTH_SHORT).show();
-
-                }
-
-            }
-        });
 
     }
 
-    /**
-     * This background task will create feedback provided by the respective user
-     */
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.post_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.post) {
+
+            // create new post
+            createNewFeedback();
+
+            return true;
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    // this method will fetch the user inputs and call out request
+    public void createNewFeedback() {
+
+        // check if text is provided in given edit text
+        if(feedbackText.getText().length()>0){
+
+            // get the description
+            description = feedbackText.getText().toString();
+
+            // get url
+            String feedbackURL = Routes.createFeedback + Constants.key + "/" + smartCampusDB.getUser().get(Constants.userObjectId) + "/" +
+                    Snippets.getUniqueFeedbackId() + "/" + Snippets.escapeURIPathParam(description);
+
+            // create feedback
+            new CreateFeedback().execute(Routes.createFeedback, smartCampusDB.getUser().get(Constants.userObjectId).toString(), Snippets.getUniqueFeedbackId(), Snippets.escapeURIPathParam(description));
+
+
+        } else {
+
+            Toast.makeText(getApplicationContext(), "Write something", Toast.LENGTH_SHORT).show();
+
+        }
+    }
+
+        /**
+         * This background task will create feedback provided by the respective user
+         */
     private class CreateFeedback extends AsyncTask<String, Void, Void> {
 
         private String Content = "";

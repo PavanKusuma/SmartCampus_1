@@ -57,6 +57,7 @@ import java.util.List;
 import internaldb.SmartCampusDB;
 import model.Wall;
 import svecw.smartcampus.FullImageActivity;
+import svecw.smartcampus.KnowledgeWallWebView;
 import svecw.smartcampus.NewCommentActivity;
 import svecw.smartcampus.R;
 import utils.Constants;
@@ -144,7 +145,7 @@ public class StudentWallAdapter extends BaseAdapter {
 
     public class ViewHolder {
 
-        TextView post, userName, collegeId, likeTextView, commentTextView, likeView, shareView, commentView, createdAt;
+        TextView post, link, userName, collegeId, likeTextView, commentTextView, likeView, shareView, commentView, createdAt;
         ImageView userImage, postImage, deleteView;
         RelativeLayout votesLayout;
         LinearLayout likeViewLayout, shareViewLayout;
@@ -162,6 +163,7 @@ public class StudentWallAdapter extends BaseAdapter {
 
             // get all views of single shouts list item
             holder.post = (TextView) itemView.findViewById(R.id.collegeWallPostDescription);
+            holder.link = (TextView) itemView.findViewById(R.id.collegeWallPostLink);
             holder.userName = (TextView) itemView.findViewById(R.id.collegeWallUserName);
             holder.collegeId = (TextView) itemView.findViewById(R.id.collegeIdOfUser);
             holder.userImage = (ImageView) itemView.findViewById(R.id.collegeWallUserImage);
@@ -220,7 +222,24 @@ public class StudentWallAdapter extends BaseAdapter {
             simpleDateFormat = new SimpleDateFormat("MMM dd, yyyy, hh:mm aa");
 
             // set the username of the user
-            holder.post.setText(collegeWallPostsList.get(position).getPostDescription()); holder.post.setTypeface(sansFont);
+            // build the description string
+            String description = collegeWallPostsList.get(position).getPostDescription();
+            if(!collegeWallPostsList.get(position).getFeeling().contentEquals(Constants.null_indicator)){
+                description = description + " - feeling " + collegeWallPostsList.get(position).getFeeling();
+            }
+            if(!collegeWallPostsList.get(position).getLocation().contentEquals(Constants.null_indicator)){
+                description = description + " - at " + collegeWallPostsList.get(position).getLocation();
+            }
+            holder.post.setText(description); holder.post.setTypeface(sansFont);
+            // check if any link is available for the current post
+            if(!collegeWallPostsList.get(position).getLinkUrl().contentEquals(Constants.null_indicator)){
+                holder.link.setVisibility(View.VISIBLE);
+                holder.link.setText(collegeWallPostsList.get(position).getLinkTitle());
+            }
+            else {
+                holder.link.setVisibility(View.GONE);
+            }
+            holder.link.setTypeface(sansFont);
             holder.userName.setText(collegeWallPostsList.get(position).getUserName()); holder.userName.setTypeface(sansFont);
             holder.collegeId.setText(collegeWallPostsList.get(position).getCollegeId()); holder.collegeId.setTypeface(sansFont);
             holder.likeTextView.setText(String.valueOf(collegeWallPostsList.get(position).getLikes()) + " likes"); holder.likeTextView.setTypeface(sansFont);
@@ -731,6 +750,23 @@ public class StudentWallAdapter extends BaseAdapter {
                     // confirm the hide operation from user
                     confirmationMessage(Routes.hideWallPost, collegeWallPostsList.get(position).getWallId(), position);
 
+                }
+            });
+
+
+
+            // open the link in the webView activity
+            holder.link.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    // pass the bundle for the the webView activity
+                    Intent webViewIntent = new Intent(context, KnowledgeWallWebView.class);
+                    webViewIntent.putExtra(Constants.title, collegeWallPostsList.get(position).getLinkTitle());
+                    webViewIntent.putExtra(Constants.description, collegeWallPostsList.get(position).getLinkTitle());
+                    webViewIntent.putExtra(Constants.link, collegeWallPostsList.get(position).getLinkUrl());
+                    webViewIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(webViewIntent);
                 }
             });
 

@@ -7,7 +7,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
@@ -52,7 +51,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -60,7 +58,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
-import java.nio.ByteBuffer;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
@@ -88,11 +85,16 @@ public class NewPost extends AppCompatActivity {
 
     // views from layout
     EditText postDescription;
-    TextView placeTextView;
-    LinearLayout uploadType;
+    TextView linkTitle, linkCaption, locationTextView;
+    LinearLayout uploadType, linkPreview;
     RelativeLayout imageLayout;
-    ImageView selectedImage, imageIcon, placeIcon, cancelIcon, linkIcon;
+    ImageView selectedImage, imageIcon, placeIcon, cancelIcon, linkIcon, feelingIcon;
     ProgressBar progressBar, postingProgress;
+    String linkURL = Constants.null_indicator;
+    String linkTitleText = Constants.null_indicator;
+    String linkCaptionText = Constants.null_indicator;
+    String location = Constants.null_indicator;
+    String feeling = Constants.null_indicator;
 
     // progress indicator
     ProgressDialog progressDialog;
@@ -132,6 +134,8 @@ public class NewPost extends AppCompatActivity {
     int PLACE_PICKER_REQUEST = 10;
     File image, compressedImage;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -167,14 +171,18 @@ public class NewPost extends AppCompatActivity {
 
         // get views from activity
         postDescription = (EditText) findViewById(R.id.description); postDescription.setTypeface(sansFont);
-        placeTextView = (TextView) findViewById(R.id.place); placeTextView.setTypeface(sansFont);
+        linkTitle = (TextView) findViewById(R.id.linkTitle); linkTitle.setTypeface(sansFont);
+        linkCaption = (TextView) findViewById(R.id.linkDescription); linkCaption.setTypeface(sansFont);
+        locationTextView = (TextView) findViewById(R.id.location); locationTextView.setTypeface(sansFont);
+        linkPreview = (LinearLayout) findViewById(R.id.linkPreview);
         imageIcon = (ImageView) findViewById(R.id.imageIcon);
         placeIcon = (ImageView) findViewById(R.id.placeIcon);
         linkIcon = (ImageView) findViewById(R.id.linkIcon);
+        feelingIcon = (ImageView) findViewById(R.id.feelingIcon);
         uploadType = (LinearLayout) findViewById(R.id.uploadType);
         imageLayout = (RelativeLayout) findViewById(R.id.imageLayout);
         selectedImage = (ImageView) findViewById(R.id.selectedImage);
-        cancelIcon = (ImageView) findViewById(R.id.cancelIcon);
+        //cancelIcon = (ImageView) findViewById(R.id.cancelIcon);
         progressBar = (ProgressBar) findViewById(R.id.postingProgress);
         postingProgress = (ProgressBar) findViewById(R.id.postingProgress);
 
@@ -182,33 +190,45 @@ public class NewPost extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                // show the dialog to choose camera or gallery
-                // custom dialog
-                final AlertDialog.Builder menuAlert = new AlertDialog.Builder(NewPost.this);
-                final String[] menuList = { "Camera", "Gallery" };
-                menuAlert.setTitle("Select from");
-                menuAlert.setItems(menuList, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int item) {
-                        switch (item) {
-                            // camera selected
-                            case 0:
-                                // posting from camera
-                                postingFromCamera();
-                                break;
+                // check if img is present
+                if(Arrays.equals(b, Constants.null_indicator.getBytes())){
 
-                            // gallery selected
-                            case 1:
+                    // show the dialog to choose camera or gallery
+                    // custom dialog
+                    final AlertDialog.Builder menuAlert = new AlertDialog.Builder(NewPost.this);
+                    final String[] menuList = { "Camera", "Gallery" };
+                    menuAlert.setTitle("Select from");
+                    menuAlert.setItems(menuList, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int item) {
+                            switch (item) {
+                                // camera selected
+                                case 0:
+                                    // posting from camera
+                                    postingFromCamera();
+                                    break;
 
-                                // posting from gallery
-                                postingFromGallery();
-                                break;
+                                // gallery selected
+                                case 1:
+
+                                    // posting from gallery
+                                    postingFromGallery();
+                                    break;
+                            }
                         }
-                    }
 
 
-                });
-                AlertDialog menuDrop = menuAlert.create();
-                menuDrop.show();
+                    });
+                    AlertDialog menuDrop = menuAlert.create();
+                    menuDrop.show();
+                }
+                else {
+
+                    imageIcon.setImageResource(R.drawable.ic_camera_disable);
+                    imageLayout.setVisibility(View.GONE);
+                    b = Constants.null_indicator.getBytes(); // clear the bytes of previous selection
+                }
+
+
             }
         });
 
@@ -217,14 +237,13 @@ public class NewPost extends AppCompatActivity {
             public void onClick(View v) {
 
                 // clear the place if it is displayed previously
-                if(placeTextView.getVisibility() == View.GONE) {
+                if(locationTextView.getVisibility() == View.GONE) {
 
                     try {
 
                         PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
                         startActivityForResult(builder.build(NewPost.this), PLACE_PICKER_REQUEST);
 
-                        placeIcon.setImageResource(R.drawable.ic_place);
                     } catch (Exception e) {
 
                         Log.v("App Locate", e.getMessage());
@@ -234,27 +253,141 @@ public class NewPost extends AppCompatActivity {
                 else {
 
                     placeIcon.setImageResource(R.drawable.ic_place_disable);
-                    placeTextView.setVisibility(View.GONE);
+                    locationTextView.setText(Constants.null_indicator);
+                    locationTextView.setVisibility(View.GONE);
                 }
             }
         });
 
+        // link icon will act as a toggle
+        // on click of it, verify for the presence of the link
+        // act as toggle to display and hide the link
         linkIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                // check if link is set by user, if so toggle for the display
+                if(linkPreview.getVisibility() == View.GONE){
+
+                    // get new_link.xml view
+                    LayoutInflater li = LayoutInflater.from(NewPost.this);
+                    View linkView = li.inflate(R.layout.new_link, null);
+
+                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(NewPost.this);
+
+                    // set prompts.xml to alert dialog builder
+                    alertDialogBuilder.setView(linkView);
+
+                    // get the new link address
+                    final EditText userInputLink = (EditText) linkView.findViewById(R.id.new_link_address);
+                    final ProgressBar linkProgress = (ProgressBar) linkView.findViewById(R.id.linkProgress);
+
+                    // set dialog message
+                    alertDialogBuilder
+                            .setCancelable(false)
+                            .setPositiveButton("Ok",
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog,int id) {
+                                            // show the progress while fetching the title from the provided link
+                                            linkProgress.setVisibility(View.VISIBLE);
+
+                                            // verify if the url is provided
+                                            if(userInputLink.getText().toString().length()>0){
+
+                                                try {
+
+                                                    // validate if the provided url is correct
+                                                    if(URLUtil.isValidUrl(userInputLink.getText().toString())) {
+
+                                                        // get the link address
+                                                        Document document = Jsoup.connect(userInputLink.getText().toString()).get();
+                                                        String title = document.title(); // get the title of the link
+
+                                                        String caption = title;
+                                                        // get the description of the link
+                                                        /*Element content = document.getElementById("content");
+
+                                                        if(!document.select("meta[name=description]").first().attr("content").isEmpty()){
+
+                                                            description = document.select("meta[name=description]").get(0).attr("content");
+                                                        }*/
+
+                                                        // this is the title of the link provided
+                                                        linkPreview.setVisibility(View.VISIBLE);
+                                                            // get the link details
+                                                            linkTitle.setText(title); linkTitleText = title;
+                                                            linkCaption.setText(caption); linkCaptionText = title;
+                                                            linkURL = userInputLink.getText().toString();
+                                                        linkIcon.setImageResource(R.drawable.ic_link);
+
+                                                    }
+                                                    else{
+
+                                                        Toast.makeText(NewPost.this, "Invalid link", Toast.LENGTH_SHORT).show();
+                                                    }
+
+                                                }
+                                                catch (Exception e){
+
+                                                    Toast.makeText(NewPost.this, R.string.loginTryAgain, Toast.LENGTH_SHORT).show();
+                                                    Log.v(Constants.appName, e.getMessage());
+                                                }
+
+                                            }
+                                            else {
+
+                                                Toast.makeText(NewPost.this, "Invalid link", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    })
+                            .setNegativeButton("Cancel",
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog,int id) {
+                                            dialog.cancel();
+                                        }
+                                    });
+
+                    // create alert dialog
+                    AlertDialog alertDialog = alertDialogBuilder.create();
+
+                    // show it
+                    alertDialog.show();
+                }
+                else {
+
+                    linkIcon.setImageResource(R.drawable.ic_link_disable);
+                        // clear the link details
+                        linkTitle.setText(Constants.null_indicator); linkTitleText = Constants.null_indicator;
+                        linkCaption.setText(Constants.null_indicator); linkCaptionText = Constants.null_indicator;
+                        linkURL = Constants.null_indicator;
+                    linkPreview.setVisibility(View.GONE);
+                }
+
+
+            }
+        });
+
+
+
+        feelingIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
                 // get new_link.xml view
                 LayoutInflater li = LayoutInflater.from(NewPost.this);
-                View linkView = li.inflate(R.layout.new_link, null);
+                View linkView = li.inflate(R.layout.feelings_list, null);
 
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(NewPost.this);
 
                 // set prompts.xml to alert dialog builder
                 alertDialogBuilder.setView(linkView);
 
+                int unicode = 0x1F60A;
+
                 // get the new link address
-                final EditText userInputLink = (EditText) linkView.findViewById(R.id.new_link_address);
-                final ProgressBar linkProgress = (ProgressBar) linkView.findViewById(R.id.linkProgress);
+                final TextView feeling1 = (TextView) linkView.findViewById(R.id.feeling1);
+                feeling1.setText(new String(Character.toChars(unicode)) + " Hello");
 
                 // set dialog message
                 alertDialogBuilder
@@ -263,39 +396,9 @@ public class NewPost extends AppCompatActivity {
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog,int id) {
                                         // show the progress while fetching the title from the provided link
-                                        linkProgress.setVisibility(View.VISIBLE);
 
-                                        // verify if the url is provided
-                                        if(userInputLink.getText().toString().length()>0){
 
-                                            try {
 
-                                                // validate if the provided url is correct
-                                                if(URLUtil.isValidUrl(userInputLink.getText().toString())) {
-
-                                                    // get the link address
-                                                    Document document = Jsoup.connect(userInputLink.getText().toString()).get();
-                                                    String title = document.title(); // get the title of the link
-
-                                                    postDescription.append(title);
-
-                                                }
-                                                else{
-
-                                                    Toast.makeText(NewPost.this, "Invalid link", Toast.LENGTH_SHORT).show();
-                                                }
-
-                                            }
-                                            catch (Exception e){
-
-                                                Toast.makeText(NewPost.this, R.string.loginTryAgain, Toast.LENGTH_SHORT).show();
-                                            }
-
-                                        }
-                                        else {
-
-                                            Toast.makeText(NewPost.this, "Invalid link", Toast.LENGTH_SHORT).show();
-                                        }
                                     }
                                 })
                         .setNegativeButton("Cancel",
@@ -351,11 +454,6 @@ public class NewPost extends AppCompatActivity {
         // get the description
         description = postDescription.getText().toString();
 
-        // check if place is provided
-        if(placeTextView.getVisibility() == View.VISIBLE){
-            description = description + placeTextView.getText().toString();
-        }
-
         // check if the input is provided
         if(description.length()>0) {
 
@@ -373,7 +471,8 @@ public class NewPost extends AppCompatActivity {
 
                 // url for the request
                 url = Routes.createWallPost + Constants.key + "/" + smartCampusDB.getUser().get(Constants.userObjectId) + "/" + wallId
-                        + "/" + Constants.COLLEGE + "/" + Snippets.escapeURIPathParam(description) + "/" + mediaCount;
+                        + "/" + Constants.COLLEGE + "/" + Snippets.escapeURIPathParam(description) + "/" + mediaCount + "/" + linkURL
+                        + "/" + linkTitleText + "/" + linkCaptionText + "/" + location + "/" + feeling;
 
                 // show the status of posting
                 //sendPost.setText(R.string.posting);
@@ -386,7 +485,8 @@ public class NewPost extends AppCompatActivity {
                 progressBar.setProgress(10);
 
                 // execute the code
-                new CreateWallPost().execute(Routes.createWallPost, smartCampusDB.getUser().get(Constants.userObjectId).toString(), wallId, Constants.COLLEGE, Snippets.escapeURIPathParam(description));
+                new CreateWallPost().execute(Routes.createWallPost, smartCampusDB.getUser().get(Constants.userObjectId).toString(), wallId, Constants.COLLEGE, Snippets.escapeURIPathParam(description),
+                        linkURL, Snippets.escapeURIPathParam(linkTitleText), Snippets.escapeURIPathParam(linkCaptionText), Snippets.escapeURIPathParam(location), Snippets.escapeURIPathParam(feeling));
 
             }
             catch(Exception e){
@@ -418,11 +518,25 @@ public class NewPost extends AppCompatActivity {
         if (requestCode == PLACE_PICKER_REQUEST) {
             if (resultCode == RESULT_OK) {
                 Place place = PlacePicker.getPlace(data, this);
-                String placeText = " - " + String.format("Place: %s", place.getName());
+                String placeText = place.getAddress().toString();
                 //Toast.makeText(this, toastMsg, Toast.LENGTH_LONG).show();
 
-                placeTextView.setVisibility(View.VISIBLE);
-                placeTextView.setText(placeText);
+                // exclude the remaining pincode and country
+                String[] placeTexts = placeText.split(",");
+                String placeName = "";
+                for(int i=0; i<placeTexts.length-2; i++)
+                    placeName = placeName + placeTexts[i];
+
+                placeName = placeName + placeTexts[placeTexts.length-1]; // add country
+
+                placeIcon.setImageResource(R.drawable.ic_place);
+                locationTextView.setVisibility(View.VISIBLE);
+                locationTextView.setText("- " + placeName); location = placeName;
+            }
+            else {
+
+                locationTextView.setVisibility(View.GONE);
+                placeIcon.setImageResource(R.drawable.ic_place_disable);
             }
         }
 
@@ -547,21 +661,24 @@ public class NewPost extends AppCompatActivity {
         // fetch the compressed bitmap
         bitmap = BitmapFactory.decodeFile(compressedImage1.getAbsolutePath());
         ByteArrayOutputStream buffer = new ByteArrayOutputStream(bitmap.getWidth() * bitmap.getHeight());
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, buffer);
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, buffer);
         b = buffer.toByteArray();
         Log.v(Constants.appName, "Here is the length " + b.length + " _ " + bitmap.getByteCount());
 
         imageLayout.setVisibility(View.VISIBLE);
+        imageIcon.setImageResource(R.drawable.ic_camera);
         // here we will display the compressed image
         selectedImage.setImageBitmap(bitmap);
 
         selectedImage.setAdjustViewBounds(true);
 
+/*
         int bytes = bitmap.getByteCount();
         ByteBuffer buffer1 = ByteBuffer.allocate(bytes); //Create a new buffer
 
         b = buffer1.array();
         Log.v(Constants.appName, "Here is the length " + b.length + " _ " + bitmap.getByteCount());
+*/
 
         // prepare the inputStream
         is = new ByteArrayInputStream(b);
@@ -1243,6 +1360,11 @@ public class NewPost extends AppCompatActivity {
                         + "&" + URLEncoder.encode(Constants.wallId, "UTF-8") + "=" + (urls[2])
                         + "&" + URLEncoder.encode(Constants.wallType, "UTF-8") + "=" + (urls[3])
                         + "&" + URLEncoder.encode(Constants.postDescription, "UTF-8") + "=" + (urls[4])
+                        + "&" + URLEncoder.encode(Constants.linkUrl, "UTF-8") + "=" + (urls[5])
+                        + "&" + URLEncoder.encode(Constants.linkTitle, "UTF-8") + "=" + (urls[6])
+                        + "&" + URLEncoder.encode(Constants.linkCaption, "UTF-8") + "=" + (urls[7])
+                        + "&" + URLEncoder.encode(Constants.location, "UTF-8") + "=" + (urls[8])
+                        + "&" + URLEncoder.encode(Constants.feeling, "UTF-8") + "=" + (urls[9])
                         + "&" + URLEncoder.encode(Constants.mediaCount, "UTF-8") + "=" + mediaCount;
 
 
@@ -1395,6 +1517,11 @@ public class NewPost extends AppCompatActivity {
                                                     wall.setMediaCount(jsonObject.getInt(Constants.mediaCount));
                                                     wall.setMedia(jsonObject.getString(Constants.media));
                                                     wall.setIsActive(jsonObject.getInt(Constants.isActive));
+                                                    wall.setLinkUrl(jsonObject.getString(Constants.linkUrl));
+                                                    wall.setLinkTitle(jsonObject.getString(Constants.linkTitle));
+                                                    wall.setLinkCaption(jsonObject.getString(Constants.linkCaption));
+                                                    wall.setLocation(jsonObject.getString(Constants.location));
+                                                    wall.setFeeling(jsonObject.getString(Constants.feeling));
                                                     wall.setUserName(smartCampusDB.getUser().get(Constants.userName).toString());
                                                     wall.setUserImage(smartCampusDB.getUser().get(Constants.media).toString());
                                                 }
@@ -1426,6 +1553,11 @@ public class NewPost extends AppCompatActivity {
                                                 backIntent.putExtra(Constants.mediaCount, jsonObject.getInt(Constants.mediaCount));
                                                 backIntent.putExtra(Constants.media, jsonObject.getString(Constants.media));
                                                 backIntent.putExtra(Constants.isActive, jsonObject.getInt(Constants.isActive));
+                                                backIntent.putExtra(Constants.linkUrl, jsonObject.getString(Constants.linkUrl));
+                                                backIntent.putExtra(Constants.linkTitle, jsonObject.getString(Constants.linkTitle));
+                                                backIntent.putExtra(Constants.linkCaption, jsonObject.getString(Constants.linkCaption));
+                                                backIntent.putExtra(Constants.location, jsonObject.getString(Constants.location));
+                                                backIntent.putExtra(Constants.feeling, jsonObject.getString(Constants.feeling));
                                                 backIntent.putExtra(Constants.userName, smartCampusDB.getUser().get(Constants.userName).toString());
                                                 backIntent.putExtra(Constants.userImage, smartCampusDB.getUser().get(Constants.media).toString());
 
@@ -1453,6 +1585,7 @@ public class NewPost extends AppCompatActivity {
                                     }
                                     catch(JSONException e){
 
+                                        e.printStackTrace();
                                         Log.e(Constants.appName, e.getMessage());
                                         Toast.makeText(getApplicationContext(), "Oops! something went wrong, try again later", Toast.LENGTH_SHORT).show();
                                         // send 0 as no post is created
@@ -1601,12 +1734,12 @@ public class NewPost extends AppCompatActivity {
                 bytesRead = is.read(b, 0, b.length);
                 //Log.v(Constants.appName, "Size of bytes : " + b.length);
                 dos.write(b, 0, b.length);
+
                 while (bytesRead > 0) {
                     dos.write(b, 0, b.length);
                     bytesAvailable = is.available();
                     bufferSize = Math.min(bytesAvailable, maxBufferSize);
                     bytesRead = is.read(buffer, 0, bufferSize);
-
 
                     Log.v(Constants.appName, "check 1");
                 }
@@ -1723,6 +1856,11 @@ public class NewPost extends AppCompatActivity {
                             backIntent.putExtra(Constants.isActive, wall.getIsActive());
                             backIntent.putExtra(Constants.userName, smartCampusDB.getUser().get(Constants.userName).toString());
                             backIntent.putExtra(Constants.userImage, smartCampusDB.getUser().get(Constants.media).toString());
+                            backIntent.putExtra(Constants.linkUrl, wall.getLinkUrl());
+                            backIntent.putExtra(Constants.linkTitle, wall.getLinkTitle());
+                            backIntent.putExtra(Constants.linkCaption, wall.getLinkCaption());
+                            backIntent.putExtra(Constants.location, wall.getLocation());
+                            backIntent.putExtra(Constants.feeling, wall.getFeeling());
 
                             //backIntent.putExtra(Constants.wallId,)
 

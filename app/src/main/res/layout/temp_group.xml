@@ -76,7 +76,7 @@
 
 -->
 
-                <RelativeLayout
+                <!--<RelativeLayout
                     android:id="@+id/vemcFacView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -169,15 +169,14 @@
                         android:layout_centerVertical="true"
                         android:src="@drawable/ic_right"/>
 
-                </RelativeLayout>
+                </RelativeLayout>-->
 
                 <RelativeLayout
                     android:id="@+id/hodsView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="4dp"
-                    android:background="@drawable/button_rounded_shape_gray"
-                    android:layout_below="@+id/vemcStuView">
+                    android:background="@drawable/button_rounded_shape_gray">
 
                     <ImageView
                         android:id="@+id/deanIcon"

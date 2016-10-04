@@ -40,7 +40,7 @@
             android:paddingLeft="8dp"
             android:paddingTop="4dp"
             android:text="@string/app_name"
-            android:textColor="@color/lightBlue"
+            android:textColor="@color/globalThemeColor"
             android:layout_toRightOf="@+id/collegeWallUserImage"
             android:layout_toLeftOf="@+id/deleteView"/>
 
@@ -87,12 +87,27 @@
         android:layout_below="@+id/collegeWallPostLayout"
         android:text="@string/app_name"/>
 
+        <TextView
+            android:id="@+id/collegeWallPostLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.Small"
+            android:padding="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_below="@+id/collegeWallPostDescription"
+            android:text="@string/app_name"
+            android:background="@drawable/button_rounded_shape_gray"
+            android:textColor="@color/appBlue"
+            android:visibility="gone"/>
+
 
     <ImageView
         android:id="@+id/collegeWallPostImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/collegeWallPostDescription"
+        android:layout_below="@+id/collegeWallPostLink"
         android:contentDescription="@string/app_name"
         android:adjustViewBounds="true"
         android:src="@drawable/load_img"/>

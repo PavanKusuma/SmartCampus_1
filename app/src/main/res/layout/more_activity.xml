@@ -617,13 +617,65 @@
 
                 </RelativeLayout>
 
+
+
+
+                <RelativeLayout
+                    android:id="@+id/bugView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:background="@drawable/button_rounded_shape_gray"
+                    android:layout_below="@+id/aboutCollegeView">
+
+                    <ImageView
+                        android:id="@+id/bugIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:padding="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_placements_new"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="15dp"
+                        android:layout_toRightOf="@+id/bugIcon">
+                        <TextView
+                            android:id="@+id/bugTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bugReportTitle"
+                            android:textAppearance="@android:style/TextAppearance.Medium"
+
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/writeToUs"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:padding="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_right"/>
+
+                </RelativeLayout>
+
+
                 <RelativeLayout
                     android:id="@+id/aboutUsView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="4dp"
                     android:background="@drawable/button_rounded_shape_gray"
-                    android:layout_below="@+id/aboutCollegeView">
+                    android:layout_below="@+id/bugView">
 
                     <ImageView
                         android:id="@+id/aboutUsIcon"

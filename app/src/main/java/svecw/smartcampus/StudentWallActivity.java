@@ -255,7 +255,7 @@ public class StudentWallActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        if(smartCampusDB.getUser().get(Constants.role).toString().contains(Constants.student))
+        if(smartCampusDB.getUser().get(Constants.role).toString().contains(Constants.student) || smartCampusDB.getUser().get(Constants.role).toString().contains(Constants.admin))
             getMenuInflater().inflate(R.menu.wall_menu, menu);
 
         return true;

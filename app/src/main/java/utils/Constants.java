@@ -15,7 +15,7 @@ public class Constants {
     public static final String appName = "SVECW";
     public static final String app_SharedPreferences = "Smart_SharedPreference";
 
-    public static final String fontName = "fonts/sans.ttf";
+    public static final String fontName = "fonts/roboto.ttf";
 
     public static final String role = "role";
     public static final String student = "Student";
@@ -82,6 +82,11 @@ public class Constants {
     public static final String mediaTable = "Media";
     public static final String mediaCount = "mediaCount";
     public static final String media = "media";
+    public static final String linkUrl = "linkUrl";
+    public static final String linkTitle = "linkTitle";
+    public static final String linkCaption = "linkCaption";
+    public static final String location = "location";
+    public static final String feeling = "feeling";
     public static final String isActive = "isActive";
     public static final String collegeWallTable = "CollegeWall";
     public static final String studentWallTable = "StudentWall";
@@ -104,6 +109,7 @@ public class Constants {
     public static final String fromUserObjectId = "fromUserObjectId";
     public static final String toUserObjectId = "toUserObjectId";
     public static final String feedbackId = "feedbackId";
+    public static final String reportId = "reportId";
     public static final String objectId = "objectId";
     public static final String fromuser = "fromuser";
     public static final String user = "user";

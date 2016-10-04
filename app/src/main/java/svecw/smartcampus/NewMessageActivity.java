@@ -28,6 +28,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
@@ -75,7 +77,7 @@ import utils.Snippets;
 public class NewMessageActivity extends AppCompatActivity {
 
     // views from layout
-    TextView selectBranch, cancel, send, sendStudent, sendFaculty;
+    TextView selectBranch, sendStudent, sendFaculty;
     EditText newMessage;
     Spinner messageBranch, messageYear, messageSemester;
     LinearLayout branchLayout;
@@ -122,7 +124,6 @@ public class NewMessageActivity extends AppCompatActivity {
 
     Intent backIntent;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -154,8 +155,6 @@ public class NewMessageActivity extends AppCompatActivity {
 
         selectBranch = (TextView) findViewById(R.id.selectBranch); selectBranch.setTypeface(sansFont);
         newMessage = (EditText) findViewById(R.id.writeMessage); newMessage.setTypeface(sansFont);
-        cancel = (TextView) findViewById(R.id.cancelMessage); cancel.setTypeface(sansFont);
-        send = (TextView) findViewById(R.id.sendMessage); send.setTypeface(sansFont);
         newMessageSelectImage = (ImageView) findViewById(R.id.newMessageSelectImage);
         messageBranch = (Spinner) findViewById(R.id.messageBranch);
         messageYear = (Spinner) findViewById(R.id.messageYear);
@@ -175,84 +174,7 @@ public class NewMessageActivity extends AppCompatActivity {
             }
         });
 
-        cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                // close the activity
-                setResult(0, backIntent);
-                finish();
-
-            }
-        });
-
-        send.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                try {
-
-                    // check if branch, semester, year are selected
-                    if (!messageBranch.getSelectedItem().toString().contentEquals("Select branch") || !messageSemester.getSelectedItem().toString().contentEquals("Select semester") || !messageYear.getSelectedItem().toString().contentEquals("Select year")) {
-
-                        // check if message is written
-                        if (newMessage.getText().toString().length() > 0) {
-
-                            selectedBranch = messageBranch.getSelectedItem().toString();
-                            message = newMessage.getText().toString();
-
-                            if (to.contentEquals(Constants.student)) {
-
-                                selectedSemester = Integer.valueOf(messageSemester.getSelectedItem().toString());
-                                selectedYear = Integer.valueOf(messageYear.getSelectedItem().toString());
-
-                            } else {
-
-                                selectedSemester = 0;
-                                selectedYear = 0;
-                            }
-
-                            // we have 2 classes to execute based on mediaTable
-                            // if mediaTable exists then 'CreateWallPostWithMedia' is executed
-                            // else 'CreateWallPostWithoutMedia' is executed
-
-                            // check if the mediaTable file is present
-                            // if so enter the randonObjectId
-                            if (Arrays.equals(b, Constants.null_indicator.getBytes())) {
-
-                                mediaCount = 0;
-
-
-                            } else {
-
-                                mediaCount = 1;
-                            }
-
-                            // new message url
-                            // as this is broadcast message
-                            // there will not be groupId and toUserObjectId
-                            String messageURL = Routes.createMessage + Constants.key + "/" + Snippets.getUniqueMessageId() + "/" +
-                                    Constants.Broadcast + "/" + Snippets.escapeURIPathParam(message) + "/" + smartCampusDB.getUser().get(Constants.userObjectId) + "/" +
-                                    "-" + "/" + "-" + "/" + selectedYear + "/" + selectedBranch + "/" + selectedSemester + "/" + mediaCount;
-
-                            // post new message
-                            new PostNewMessage().execute(Routes.createMessage, Snippets.getUniqueMessageId(), Constants.Broadcast, Snippets.escapeURIPathParam(message), smartCampusDB.getUser().get(Constants.userObjectId).toString());
-                        }
-                    }
-                    // if none of spinner is selected, show the error toast
-                    else {
-
-                        Toast.makeText(NewMessageActivity.this, "Select Branch & Semester & Year", Toast.LENGTH_SHORT).show();
-                    }
-                }
-                catch (Exception e){
-
-                    // do nothing
-                }
-            }
-
-        });
-
+        // toggle functionality
         sendStudent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -260,9 +182,9 @@ public class NewMessageActivity extends AppCompatActivity {
                 // change the color of name search factor to blue
                 // to show it active
                 sendStudent.setTextColor(Color.WHITE);
-                sendStudent.setBackgroundColor(getResources().getColor(R.color.lightBlue));
+                sendStudent.setBackgroundColor(getResources().getColor(R.color.globalThemeColor));
 
-                sendFaculty.setTextColor(getResources().getColor(R.color.lightBlue));
+                sendFaculty.setTextColor(getResources().getColor(R.color.globalThemeColor));
                 sendFaculty.setBackgroundResource(R.drawable.button_rounded_shape_blue); //BackgroundColor(Color.WHITE);
 
                 // set visible the year and semester views
@@ -280,9 +202,9 @@ public class NewMessageActivity extends AppCompatActivity {
                 // change the color of name search factor to blue
                 // to show it active
                 sendFaculty.setTextColor(Color.WHITE);
-                sendFaculty.setBackgroundColor(getResources().getColor(R.color.lightBlue));
+                sendFaculty.setBackgroundColor(getResources().getColor(R.color.globalThemeColor));
 
-                sendStudent.setTextColor(getResources().getColor(R.color.lightBlue));
+                sendStudent.setTextColor(getResources().getColor(R.color.globalThemeColor));
                 sendStudent.setBackgroundResource(R.drawable.button_rounded_shape_blue); //BackgroundColor(Color.WHITE);
 
                 // set visible the year and semester views
@@ -333,12 +255,112 @@ public class NewMessageActivity extends AppCompatActivity {
         });
     }
 
-    /**
-     * this will deal with the result depending on
-     * camera capture or gallery pick
-     * it will get data from the result and sets the image to the imageview
-     */
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.post_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.post) {
+
+            // create new post
+            createNewMessage();
+
+            return true;
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    // this method will fetch the user inputs and call out request
+    public void createNewMessage() {
+
+        try {
+
+            // check if branch, semester, year are selected
+            if (!messageBranch.getSelectedItem().toString().contentEquals("Select branch") || !messageSemester.getSelectedItem().toString().contentEquals("Select semester") || !messageYear.getSelectedItem().toString().contentEquals("Select year")) {
+
+                // check if message is written
+                if (newMessage.getText().toString().length() > 0) {
+
+                    selectedBranch = messageBranch.getSelectedItem().toString();
+                    message = newMessage.getText().toString();
+
+                    if (to.contentEquals(Constants.student)) {
+
+                        selectedSemester = Integer.valueOf(messageSemester.getSelectedItem().toString());
+                        selectedYear = Integer.valueOf(messageYear.getSelectedItem().toString());
+
+                    } else {
+
+                        selectedSemester = 0;
+                        selectedYear = 0;
+                    }
+
+                    // we have 2 classes to execute based on mediaTable
+                    // if mediaTable exists then 'CreateWallPostWithMedia' is executed
+                    // else 'CreateWallPostWithoutMedia' is executed
+
+                    // check if the mediaTable file is present
+                    // if so enter the randonObjectId
+                    if (Arrays.equals(b, Constants.null_indicator.getBytes())) {
+
+                        mediaCount = 0;
+
+
+                    } else {
+
+                        mediaCount = 1;
+                    }
+
+                    // new message url
+                    // as this is broadcast message
+                    // there will not be groupId and toUserObjectId
+                    String messageURL = Routes.createMessage + Constants.key + "/" + Snippets.getUniqueMessageId() + "/" +
+                            Constants.Broadcast + "/" + Snippets.escapeURIPathParam(message) + "/" + smartCampusDB.getUser().get(Constants.userObjectId) + "/" +
+                            "-" + "/" + "-" + "/" + selectedYear + "/" + selectedBranch + "/" + selectedSemester + "/" + mediaCount;
+
+                    // post new message
+                    new PostNewMessage().execute(Routes.createMessage, Snippets.getUniqueMessageId(), Constants.Broadcast, Snippets.escapeURIPathParam(message), smartCampusDB.getUser().get(Constants.userObjectId).toString());
+                }
+            }
+            // if none of spinner is selected, show the error toast
+            else {
+
+                Toast.makeText(NewMessageActivity.this, "Select Branch & Semester & Year", Toast.LENGTH_SHORT).show();
+            }
+        }
+        catch (Exception e){
+
+            // do nothing
+        }
+    }
+
+
+    @Override
+    public void onBackPressed() {
+
+        // close the activity
+        setResult(0, backIntent);
+        finish();
+    }
+
+
+        /**
+         * this will deal with the result depending on
+         * camera capture or gallery pick
+         * it will get data from the result and sets the image to the imageview
+         */
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // if the result is capturing Image
         if (requestCode == Constants.CAMERA_CAPTURE_IMAGE_REQUEST_CODE) {

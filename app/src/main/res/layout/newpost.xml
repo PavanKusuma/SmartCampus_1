@@ -18,7 +18,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#F9F9F9">
+            android:background="#FFFFFF">
 
             <ProgressBar
                 android:id="@+id/postingProgress"
@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                 android:layout_marginTop="-8dp"
-                android:progressTint="@color/justBlue"
+                android:progressTint="@color/globalThemeColor"
                 android:visibility="gone"/>
 
             <ScrollView
@@ -39,8 +39,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-
-
                     <EditText
                         android:id="@+id/description"
                         android:layout_width="match_parent"
@@ -49,23 +47,74 @@
                         android:hint="@string/newPostHint"
                         android:inputType="textMultiLine"
                         android:gravity="top"
-                        android:layout_margin="10dp"
-                        android:background="#F9F9F9"/>
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="#FFFFFF"
+                        android:textColor="@color/globalTextColor"
+                        android:textColorHint="@color/globalTextSecondaryColor"/>
 
                     <TextView
-                        android:id="@+id/place"
+                        android:id="@+id/feeling"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/description"
-                        android:layout_margin="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
                         android:padding="10dp"
-                        android:visibility="gone"/>
+                        android:text="@string/aboutApp"
+                        android:visibility="gone"
+                        android:textColor="@color/globalTextColor"/>
+
+                    <TextView
+                        android:id="@+id/location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/feeling"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="@string/aboutApp"
+                        android:visibility="gone"
+                        android:textColor="@color/globalTextColor"/>
+
+
+                    <LinearLayout
+                        android:id="@+id/linkPreview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/location"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/button_rounded_shape_gray"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/linkTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="@string/linkTitle"
+                            android:textStyle="bold"
+                            android:textColor="@color/globalTextColor"/>
+
+                        <TextView
+                            android:id="@+id/linkDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="@string/linkDescription"
+                            android:textColor="@color/globalTextSecondaryColor"/>
+
+                    </LinearLayout>
 
                     <RelativeLayout
                         android:id="@+id/imageLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/place"
+                        android:layout_below="@+id/linkPreview"
                         android:visibility="gone">
 
                         <ImageView
@@ -81,7 +130,8 @@
                             android:layout_height="32dp"
                             android:layout_margin="16dp"
                             android:src="@drawable/ic_clear"
-                            android:layout_alignParentRight="true"/>
+                            android:layout_alignParentRight="true"
+                            android:visibility="gone"/>
 
                     </RelativeLayout>
 
@@ -94,28 +144,41 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true">
+                android:layout_alignParentBottom="true"
+                android:weightSum="3">
 
                 <ImageView
                     android:id="@+id/imageIcon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_camera"
-                    android:padding="12dp"/>
+                    android:src="@drawable/ic_camera_disable"
+                    android:padding="12dp"
+                    android:layout_weight="1"/>
 
                 <ImageView
                     android:id="@+id/placeIcon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_place_disable"
-                    android:padding="12dp"/>
+                    android:padding="12dp"
+                    android:layout_weight="1"/>
 
                 <ImageView
                     android:id="@+id/linkIcon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_link_disable"
-                    android:padding="12dp"/>
+                    android:padding="12dp"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:id="@+id/feelingIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_feeling_disable"
+                    android:padding="12dp"
+                    android:layout_weight="1"
+                    android:visibility="gone"/>
 
             </LinearLayout>
 

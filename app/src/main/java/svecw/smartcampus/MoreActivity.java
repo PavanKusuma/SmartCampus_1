@@ -21,7 +21,7 @@ public class MoreActivity extends AppCompatActivity{
 
     // views of activity
     RelativeLayout userProfileView, groupsView, adminPanelView, messagesView, learnView, academicsView, examsView, complaintOrFeedbackView,
-    directoryView, studentDirectoryView, placementsView, collegeMapView, aboutUsView, aboutAppView;
+    directoryView, studentDirectoryView, placementsView, collegeMapView, aboutUsView, bugView, aboutAppView;
 
     TextView messagesTextView;
 
@@ -72,6 +72,7 @@ public class MoreActivity extends AppCompatActivity{
         placementsView = (RelativeLayout) findViewById(R.id.placementsView);
         collegeMapView = (RelativeLayout) findViewById(R.id.collegeMapView);
         aboutAppView = (RelativeLayout) findViewById(R.id.aboutUsView);
+        bugView = (RelativeLayout) findViewById(R.id.bugView);
         aboutUsView = (RelativeLayout) findViewById(R.id.aboutCollegeView);
 
         // based on user role show the views
@@ -277,6 +278,15 @@ public class MoreActivity extends AppCompatActivity{
             public void onClick(View v) {
 
                 Intent aboutUsIntent = new Intent(getApplicationContext(), GuestActivity.class);
+                startActivity(aboutUsIntent);
+            }
+        });
+
+        bugView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent aboutUsIntent = new Intent(getApplicationContext(), BugReportAndSuggestions.class);
                 startActivity(aboutUsIntent);
             }
         });

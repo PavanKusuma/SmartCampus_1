@@ -52,7 +52,7 @@ public class KnowledgeWallWebView extends AppCompatActivity {
         Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
-        title.setText(getResources().getString(R.string.knowledge));
+        title.setText(getIntent().getStringExtra(Constants.title));
         title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar

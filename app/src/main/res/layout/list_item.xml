@@ -5,12 +5,14 @@
     android:orientation="vertical"
     android:background="@color/white">
 
-    <TextView
+    <me.biubiubiu.justifytext.library.JustifyTextView
         android:id="@+id/listItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16dip"
-        android:padding="16dp"/>
+        android:padding="16dp"
+        android:layout_margin="8dp"
+        android:gravity="left"/>
 
     <TextView
         android:id="@+id/sublistItem"

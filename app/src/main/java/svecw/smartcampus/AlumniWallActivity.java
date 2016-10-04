@@ -272,6 +272,11 @@ public class AlumniWallActivity  extends AppCompatActivity {
                 wall.setUserName(data.getStringExtra(Constants.userName));
                 wall.setMedia(data.getStringExtra(Constants.media));
                 wall.setUserImage(session.getProfilePhoto());
+                wall.setLinkUrl(data.getStringExtra(Constants.linkUrl));
+                wall.setLinkTitle(data.getStringExtra(Constants.linkTitle));
+                wall.setLinkCaption(data.getStringExtra(Constants.linkCaption));
+                wall.setLocation(data.getStringExtra(Constants.location));
+                wall.setLocation(data.getStringExtra(Constants.feeling));
 
                 // add the object to list at top and notify adapter
                 studentWallPostsList.add(0, wall);
@@ -309,7 +314,7 @@ public class AlumniWallActivity  extends AppCompatActivity {
         if (id == R.id.createNewWallPost) {
 
             // navigate to selectNewPostActivity to show posting options based on privileges
-            Intent newPostIntent = new Intent(getApplicationContext(), StudentWallNewPostActivity.class);
+            Intent newPostIntent = new Intent(getApplicationContext(), StudentNewPost.class);
             newPostIntent.putExtra(Constants.alumniPost, true);
             startActivityForResult(newPostIntent, 200);
 
@@ -765,6 +770,11 @@ public class AlumniWallActivity  extends AppCompatActivity {
                                             wall.setMedia(jsonObject.getString(Constants.media));
                                             wall.setIsActive(jsonObject.getInt(Constants.isActive));
                                             wall.setUserName(jsonObject.getString(Constants.userName));
+                                            wall.setLinkUrl(jsonObject.getString(Constants.linkUrl));
+                                            wall.setLinkTitle(jsonObject.getString(Constants.linkTitle));
+                                            wall.setLinkCaption(jsonObject.getString(Constants.linkCaption));
+                                            wall.setLocation(jsonObject.getString(Constants.location));
+                                            wall.setFeeling(jsonObject.getString(Constants.feeling));
 
                                             Log.v(Constants.appName, "Comment count:" +jsonObject.getInt(Constants.comments));
 

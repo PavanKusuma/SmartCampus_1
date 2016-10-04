@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import me.biubiubiu.justifytext.library.JustifyTextView;
 import svecw.smartcampus.R;
 import utils.Constants;
 
@@ -52,7 +53,7 @@ public class LearnSubModuleAdapter extends BaseExpandableListAdapter {
 
         Typeface sansFont = Typeface.createFromAsset(context.getResources().getAssets(), Constants.fontName);
 
-        TextView txtListChild = (TextView) convertView.findViewById(R.id.listItem);
+        JustifyTextView txtListChild = (JustifyTextView) convertView.findViewById(R.id.listItem);
 
         txtListChild.setText(childText); txtListChild.setTypeface(sansFont);
         return convertView;

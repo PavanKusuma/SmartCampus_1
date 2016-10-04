@@ -264,6 +264,11 @@ public class CollegeWallActivity extends AppCompatActivity {
                 wall.setIsActive(data.getIntExtra(Constants.isActive, 0));
                 wall.setUserName(data.getStringExtra(Constants.userName));
                 wall.setMedia(data.getStringExtra(Constants.media));
+                wall.setLinkUrl(data.getStringExtra(Constants.linkUrl));
+                wall.setLinkTitle(data.getStringExtra(Constants.linkTitle));
+                wall.setLinkCaption(data.getStringExtra(Constants.linkCaption));
+                wall.setLocation(data.getStringExtra(Constants.location));
+                wall.setFeeling(data.getStringExtra(Constants.feeling));
                 wall.setUserImage(session.getProfilePhoto());
 
                 // add the object to list at top and notify adapter
@@ -274,6 +279,7 @@ public class CollegeWallActivity extends AppCompatActivity {
             // check if the post is not created
             else{
 
+                Toast.makeText(this, "Try posting", Toast.LENGTH_SHORT).show();
             }
         }
         else {
@@ -327,247 +333,9 @@ public class CollegeWallActivity extends AppCompatActivity {
     }
 
 
-  /*  class GetCollegeWallPosts extends AsyncTask<String, Float, String>{
-        @Override
-        protected void onProgressUpdate(Float... values) {
-            super.onProgressUpdate(values);
-        }
-
-        @Override
-        protected void onPreExecute() {
-            //super.onPreExecute();
-
-            progressBar.setVisibility(View.VISIBLE);
-        }
-
-        @Override
-        protected String doInBackground(String... params) {
-
-            try {
-                // create parse object for the "CollegeWall"
-                ParseQuery<ParseObject> collegePostsQuery = ParseQuery.getQuery(Constants.collegeWallTable);
-
-                // order by createdAt
-                collegePostsQuery.addDescendingOrder(Constants.createdAt);
-
-                // check if skipCounter is not '0'
-                // this indicates, request is received from 'load more' button click
-                // to fetch more posts from db
-                if(Integer.valueOf(params[0]) != 0){
-
-                    collegePostsQuery.setSkip(skipCounter);
-                }
-
-                // limit results to 10
-                collegePostsQuery.setLimit(10);
-
-                // get the list of shouts
-                collegePostsQuery.findInBackground(new FindCallback<ParseObject>() {
-                    @Override
-                    public void done(final List<ParseObject> parseObjects, ParseException e) {
-
-                        if (e == null) {
-
-                            if (parseObjects.size() > 0) {
-
-                                // navigate through the list of objects
-                                for (int i = 0; i < parseObjects.size(); i++) {
-
-                                    try {
-
-                                        // create object for collegeWallPost class
-                                        final CollegeWall collegeWall = new CollegeWall();
-
-                                        final ParseObject parseObject = parseObjects.get(i);
-
-                                        // set the values of the wall post into object
-                                        collegeWall.setPostDescription(parseObjects.get(i).getString(Constants.postDescription));
-                                        collegeWall.setCreatedAt(parseObjects.get(i).getCreatedAt());
-                                        collegeWall.setUpdatedAt(parseObjects.get(i).getUpdatedAt());
-                                        collegeWall.setObjectId(parseObjects.get(i).getObjectId());
-                                        collegeWall.setLikes(parseObjects.get(i).getInt(Constants.likes));
-                                        collegeWall.setDislikes(parseObjects.get(i).getInt(Constants.dislikes));
-                                        collegeWall.setComments(parseObjects.get(i).getInt(Constants.comments));
-                                        collegeWall.setUserName(parseObjects.get(i).getString(Constants.userName));
-                                        collegeWall.setUserObjectId(parseObjects.get(i).getString(Constants.userObjectId));
-
-
-                                        // check if the mediaId is not '0'
-                                        // if so get the mediaFile from 'Media' table
-                                        // else do nothing
-                                        if(!parseObjects.get(i).getString(Constants.mediaId).contentEquals("0")) {
-
-                                            ParseQuery<ParseObject> userDataObject = ParseQuery.getQuery(Constants.mediaTable);
-
-                                            // check if the objectId exists as 'relativeId' in mediaTable table
-                                            userDataObject.whereEqualTo(Constants.relativeId, parseObjects.get(i).getString(Constants.mediaId));
-
-                                            userDataObject.getFirstInBackground(new GetCallback<ParseObject>() {
-                                                @Override
-                                                public void done(ParseObject parseObject, ParseException e) {
-
-                                                    if(e==null) {
-                                                        // get the mediaFile of the wall post
-                                                        ParseFile mediaFile = (ParseFile) parseObject.get(Constants.mediaFile);
-
-                                                        if (mediaFile != null)
-                                                            mediaFile.getDataInBackground(new GetDataCallback() {
-                                                                @Override
-                                                                public void done(byte[] bytes, ParseException e) {
-
-                                                                    // check if the image is available
-                                                                    if (e == null) {
-
-                                                                        // check if the mediaTable file bytes are null indicator bytes
-                                                                        // if so assign the mediaTable file string to null indicator
-                                                                        // else fetch the mediaTable file bytes and assign
-                                                                        if (bytes == Constants.null_indicator.getBytes()) {
-
-                                                                            // set the mediaTable file string to null indicator
-                                                                            collegeWall.setMediaFile(Constants.null_indicator.getBytes());
-                                                                            //adapter.notifyDataSetChanged();
-                                                                        } else {
-
-                                                                            // set the mediaTable file string to image base 64 string
-                                                                            //studentWall.setMediaFile(Base64.encodeToString(bytes, Base64.DEFAULT).toString());
-                                                                            collegeWall.setMediaFile(bytes);
-
-                                                                        }
-
-                                                                    }
-                                                                }
-                                                            });
-                                                    }
-                                                }
-                                            });
-
-                                        }
-                                        else {
-
-                                            // set the mediaTable file string to null indicator
-                                            collegeWall.setMediaFile(Constants.null_indicator.getBytes());
-                                        }
-
-                                            // fetch user data using pointer
-                                            ParseQuery<ParseObject> userDataObject = ParseQuery.getQuery(Constants.mediaTable);
-
-                                            // check if the objectId exists as 'relativeId' in mediaTable table
-                                            userDataObject.whereEqualTo(Constants.relativeId, parseObjects.get(i).getString(Constants.userObjectId));
-
-                                            userDataObject.getFirstInBackground(new GetCallback<ParseObject>() {
-                                                @Override
-                                                public void done(ParseObject parseObject, ParseException e) {
-
-                                                    if (e == null) {
-System.out.print("its ok");
-                                                        // get the user image file
-                                                        ParseFile userImageFile = (ParseFile) parseObject.get(Constants.mediaFile);
-
-                                                        // check if the data is available
-                                                            userImageFile.getDataInBackground(new GetDataCallback() {
-                                                                @Override
-                                                                public void done(byte[] bytes, ParseException e) {
-
-                                                                    // check if the image is available
-                                                                    if (e == null) {
-
-                                                                        if (bytes == Constants.null_indicator.getBytes()) {
-
-                                                                            // set the user image file string to null indicator
-                                                                            collegeWall.setUserImage(Constants.null_indicator.getBytes());
-                                                                            collegeWallPostsList.add(collegeWall);
-
-                                                                            btnMore.setVisibility(View.VISIBLE);
-                                                                            adapter.notifyDataSetChanged();
-                                                                        } else {
-
-                                                                            // set the user image file string to image base 64 string
-                                                                            collegeWall.setUserImage(bytes);
-                                                                            collegeWallPostsList.add(collegeWall);
-
-                                                                            btnMore.setVisibility(View.VISIBLE);
-                                                                            adapter.notifyDataSetChanged();
-                                                                        }
-
-
-                                                                    }
-                                                                }
-                                                            });
-
-                                                    }
-                                                    // if there is no record found for the given user id
-                                                    // show the default image
-                                                    else {
-                                                        System.out.print("its ok5");
-                                                        // set the user image file string to null indicator
-                                                        collegeWall.setUserImage(Constants.null_indicator.getBytes());
-                                                        collegeWallPostsList.add(collegeWall);
-                                                        adapter.notifyDataSetChanged();
-                                                    }
-                                                }
-                                            });
-
-                                        adapter.updateItems(collegeWallPostsList);
-                                        adapter.notifyDataSetChanged();
-
-                                        progressBar.setVisibility(View.GONE);
-
-
-                                    } catch (Exception ex) {
-
-                                        Log.v(Constants.appName, ex.getMessage());
-                                        progressBar.setVisibility(View.GONE);
-                                    }
-                                }
-
-                            }
-
-                            // if there are no objects to display
-                            else {
-
-                                progressBar.setVisibility(View.GONE);
-                                Toast.makeText(getApplicationContext(), "No more to display", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    }
-                });
-
-            }
-
-            // all parse data not found exceptions are caught
-            catch(Exception e){
-                finish();
-            }
-
-            return null;
-        }
-
-
-        @Override
-        protected void onPostExecute(String s) {
-            //super.onPostExecute(s);
-
-            runOnUiThread(new Runnable() {
-                public void run() {
-
-                    *//**
-                     * Updating parsed JSON data into ListView
-                     * *//*
-
-                    adapter.updateItems(collegeWallPostsList);
-                    // notify the adapter
-                    adapter.notifyDataSetChanged();
-
-                    // save the data to shared preferences
-
-                }
-            });
-        }
-    }*/
-
     /*
      * This method will resume the activity after returning from other activity
-     * hence, adapter to the listview is set here
+     * hence, adapter to the listView is set here
      *
      * (non-Javadoc)
      * @see android.app.Activity#onResume()
@@ -770,6 +538,12 @@ System.out.print("its ok");
                                             wall.setMedia(jsonObject.getString(Constants.media));
                                             wall.setIsActive(jsonObject.getInt(Constants.isActive));
                                             wall.setUserName(jsonObject.getString(Constants.userName));
+                                            wall.setLinkUrl(jsonObject.getString(Constants.linkUrl));
+                                            wall.setLinkTitle(jsonObject.getString(Constants.linkTitle));
+                                            wall.setLinkCaption(jsonObject.getString(Constants.linkCaption));
+                                            wall.setLocation(jsonObject.getString(Constants.location));
+                                            wall.setFeeling(jsonObject.getString(Constants.feeling));
+
 
                                             //Log.v(Constants.appName, "Media:" +jsonObject.getString(Constants.media));
 

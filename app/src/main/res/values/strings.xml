@@ -32,8 +32,8 @@
 
     <string name="postDescriptionHint">Description</string>
     <string name="newPostHint">Whats on your mind?</string>
-    <string name="newLinkName">Copy link below</string>
-    <string name="newLinkHint">ex: http://www.infinitynext.com</string>
+    <string name="newLinkName">Type a link here for appearing it on the wall</string>
+    <string name="newLinkHint">ex: http://www.svecw.edu.in</string>
     <string name="postKnowledgeDescriptionHint">Description is mandatory</string>
     <string name="post">Post</string>
     <string name="verifying">Verifying..</string>
@@ -140,6 +140,9 @@
     <string name="messages">Messages</string>
     <string name="inbox">Inbox</string>
     <string name="groups">Groups</string>
+    <string name="feeling_1">\0x1F601 Smile</string>
+    <string name="linkTitle">Link title</string>
+    <string name="linkDescription">Link description</string>
 
     <string name="goKarting">Vishnu Karting</string>
     <string name="hods">HOD</string>
@@ -153,6 +156,7 @@
     <string name="Feedback">Feedback</string>
     <string name="assignment">Assignments</string>
     <string name="complaintOrFeedback">Complaint / Feedback</string>
+    <string name="bugReport">Bug report/Suggestions</string>
     <string name="hashSymbol">\#</string>
     <string name="exams">Exams</string>
     <string name="examResult">Exam Result</string>
@@ -175,6 +179,7 @@
     <string name="enterUserName">Enter student name and search</string>
     <string name="enterId">Enter id or name</string>
     <string name="selectBranch">Select Branch</string>
+    <string name="selectDepartment"> + Add</string>
     <string name="selectCategory">Select Category</string>
     <string name="selectType">Select Type</string>
     <string name="selectModule">Select Module</string>
@@ -191,6 +196,7 @@
     <string name="viewAttachments">View attachments</string>
     <string name="selectToPost">Select to Post</string>
     <string name="newGroup">New group</string>
+
 
     <string name="from">From</string>
     <string name="to">To</string>
@@ -221,6 +227,10 @@
     <string name="inboxText">Your messages</string>
     <string name="learnText">Explore knowledge</string>
     <string name="complaintOrFeedbackText">Write to us&#8230;</string>
+    <string name="bugReportTitle">Bug report/Suggestions</string>
+    <string name="writeToUs">Write to us!</string>
+    <string name="bugReportHint">We welcome your suggestions!</string>
+    <string name="bugReportText">Describe about your bug/suggestion</string>
     <string name="examsText">Compete on the go&#8230;</string>
     <string name="assignmentsText">Get updated stuff</string>
     <string name="directoryText">See contacts</string>

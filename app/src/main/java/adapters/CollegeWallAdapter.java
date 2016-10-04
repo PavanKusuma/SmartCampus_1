@@ -52,6 +52,7 @@ import java.util.List;
 import internaldb.SmartCampusDB;
 import model.Wall;
 import svecw.smartcampus.FullImageActivity;
+import svecw.smartcampus.KnowledgeWallWebView;
 import svecw.smartcampus.R;
 import utils.Constants;
 import utils.ImageManager;
@@ -142,7 +143,7 @@ public class CollegeWallAdapter extends BaseAdapter {
 
     public class ViewHolder {
 
-        TextView post, userName, likeTextView, likeView, shareView, createdAt;
+        TextView post, link, userName, likeTextView, likeView, shareView, createdAt;
         ImageView userImage, postImage, deleteView;
         LinearLayout likeViewLayout, shareViewLayout;
 
@@ -160,6 +161,7 @@ public class CollegeWallAdapter extends BaseAdapter {
 
             // get all views of single shouts list item
             holder.post = (TextView) itemView.findViewById(R.id.collegeWallPostDescription);
+            holder.link = (TextView) itemView.findViewById(R.id.collegeWallPostLink);
             holder.userName = (TextView) itemView.findViewById(R.id.collegeWallUserName);
             holder.userImage = (ImageView) itemView.findViewById(R.id.collegeWallUserImage);
             holder.postImage = (ImageView) itemView.findViewById(R.id.collegeWallPostImage);
@@ -189,6 +191,7 @@ public class CollegeWallAdapter extends BaseAdapter {
 
             Typeface sansFont = Typeface.createFromAsset(context.getResources().getAssets(), Constants.fontName);
             holder.post.setTypeface(sansFont);
+            holder.link.setTypeface(sansFont);
             holder.userName.setTypeface(sansFont);
             holder.likeTextView.setTypeface(sansFont);
             holder.likeView.setTypeface(sansFont);
@@ -224,7 +227,26 @@ public class CollegeWallAdapter extends BaseAdapter {
             simpleDateFormat = new SimpleDateFormat("MMM dd, yyyy, hh:mm aa");
 
             // set the username of the user
-            holder.post.setText(collegeWallPostsList.get(position).getPostDescription());
+                // build the description string
+                String description = collegeWallPostsList.get(position).getPostDescription();
+                if(!collegeWallPostsList.get(position).getFeeling().contentEquals(Constants.null_indicator)){
+                    description = description + " - feeling " + collegeWallPostsList.get(position).getFeeling();
+                }
+                if(!collegeWallPostsList.get(position).getLocation().contentEquals(Constants.null_indicator)){
+                    description = description + " - at " + collegeWallPostsList.get(position).getLocation();
+                }
+
+            holder.post.setText(description);
+
+                // check if any link is available for the current post
+                if(!collegeWallPostsList.get(position).getLinkUrl().contentEquals(Constants.null_indicator)){
+                    holder.link.setVisibility(View.VISIBLE);
+                    holder.link.setText(collegeWallPostsList.get(position).getLinkTitle());
+                }
+                else {
+                        holder.link.setVisibility(View.GONE);
+                }
+
             holder.userName.setText(collegeWallPostsList.get(position).getUserName());
             holder.likeTextView.setText(String.valueOf(collegeWallPostsList.get(position).getLikes()) + " likes");
             //disLikeTextView.setText(String.valueOf(collegeWallPostsList.get(position).getDislikes()) + " dislikes");
@@ -728,6 +750,20 @@ public class CollegeWallAdapter extends BaseAdapter {
                 }
             });
 
+            // open the link in the webView activity
+            holder.link.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    // pass the bundle for the the webView activity
+                    Intent webViewIntent = new Intent(context, KnowledgeWallWebView.class);
+                    webViewIntent.putExtra(Constants.title, collegeWallPostsList.get(position).getLinkTitle());
+                    webViewIntent.putExtra(Constants.description, collegeWallPostsList.get(position).getLinkTitle());
+                    webViewIntent.putExtra(Constants.link, collegeWallPostsList.get(position).getLinkUrl());
+                    webViewIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(webViewIntent);
+                }
+            });
 
             // insert into db
 

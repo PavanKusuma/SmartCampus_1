@@ -154,6 +154,7 @@ public class KnowledgeWallAdapter extends BaseAdapter {
 
                         // pass the bundle for the full screen activity
                         Intent webViewIntent = new Intent(context, KnowledgeWallWebView.class);
+                        webViewIntent.putExtra(Constants.title, context.getResources().getString(R.string.knowledge));
                         webViewIntent.putExtra(Constants.description, knowledgePostsList.get(position).getDescription());
                         webViewIntent.putExtra(Constants.link, knowledgePostsList.get(position).getLink());
                         webViewIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

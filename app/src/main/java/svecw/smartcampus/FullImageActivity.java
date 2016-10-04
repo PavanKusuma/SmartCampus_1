@@ -126,7 +126,8 @@ public class FullImageActivity extends Activity{
 
                 //Log.v(Constants.appName, mediaNames[i]);
                 // get the connection url for the media
-                URL url = new URL(Routes.getMedia + "large_" + (String)params[1]);
+                //URL url = new URL(Routes.getMedia + "large_" + (String)params[1]);
+                URL url = new URL(Routes.getMedia + (String)params[1]);
                 URLConnection urlConnection = url.openConnection();
                 urlConnection.setDoInput(true);
                 urlConnection.connect();
