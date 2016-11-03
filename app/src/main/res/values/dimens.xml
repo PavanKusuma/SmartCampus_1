@@ -19,6 +19,8 @@
     <color name="globalTextSecondaryLightColor">#D2D2D2</color>
     <color name="globalTextSecondaryLighterColor">#F8F8F8</color>
 
+    <color name="globalBackgroundLightBlue">#f3f7fa</color>
+
 
 
     <color name="bg">#f9f9f9</color>

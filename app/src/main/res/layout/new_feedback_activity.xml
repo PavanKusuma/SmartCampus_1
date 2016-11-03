@@ -21,8 +21,7 @@
 
         <RelativeLayout
             android:orientation="vertical" android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white">
+            android:layout_height="match_parent">
 
             <!--<TextView
                 android:id="@+id/selectCategoryComplaint"
@@ -74,22 +73,22 @@
                 android:id="@+id/newFeedbackTextLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp">
+                android:layout_marginTop="10dp">
 
-                <EditText
+                <android.support.design.widget.TextInputEditText
                     android:id="@+id/newFeedbackText"
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
-                    android:inputType="text"
-                    android:singleLine="false"
+                    android:padding="10dp"
                     android:hint="@string/write_something"
-                    android:textColorHint="@color/blackText"
-                    android:padding="12dp"
+                    android:inputType="textMultiLine"
                     android:gravity="bottom"
-                    android:textColor="@color/blackText">
-
-                </EditText>
-                    />
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/globalTextColor"
+                    android:textColorHint="@color/globalTextSecondaryColor"
+                    android:layout_below="@id/descriptionhHint"/>
 
             </android.support.design.widget.TextInputLayout>
 

@@ -31,6 +31,7 @@ import java.net.URLConnection;
 import java.net.URLEncoder;
 
 import internaldb.SmartCampusDB;
+import internaldb.SmartSessionManager;
 import model.Privilege;
 import model.User;
 import notify.GCMRegistrationIntentService;
@@ -56,6 +57,7 @@ public class GlobalLoginActivity extends AppCompatActivity {
 
     // internal db object
     SmartCampusDB smartCampusDB = new SmartCampusDB(this);
+    SmartSessionManager session;
 
     //Creating a broadcast receiver for gcm registration
     private BroadcastReceiver mRegistrationBroadcastReceiver;
@@ -383,6 +385,8 @@ public class GlobalLoginActivity extends AppCompatActivity {
         nextButton.setTypeface(typeface);
         errorText.setTypeface(typeface);
 
+        session = new SmartSessionManager(GlobalLoginActivity.this);
+
     }
 
     @Override
@@ -585,25 +589,26 @@ public class GlobalLoginActivity extends AppCompatActivity {
                                         // get the JSON object inside Array
                                         JSONObject jsonObject = (JSONObject) jsonArray.get(0);
 
-                                        // get the data and store in internal db
-                                        User user = new User();
+                                            // get the data and store in internal db
+                                            User user = new User();
 
-                                        user.setObjectId(jsonObject.getString(Constants.userObjectId)); // secretCode.getText().toString()
-                                        user.setCampusId(jsonObject.getString(Constants.campusId));
-                                        user.setUserName(jsonObject.getString(Constants.userName));
-                                        user.setEmail(jsonObject.getString(Constants.email));
-                                        user.setPhoneNumber(jsonObject.getString(Constants.phoneNumber));
-                                        user.setCollegeId(jsonObject.getString(Constants.collegeId));
-                                        user.setBranch(jsonObject.getString(Constants.branch));
-                                        user.setSemester(jsonObject.getInt(Constants.semester));
-                                        user.setYear(jsonObject.getInt(Constants.year));
-                                        user.setRole(jsonObject.getString(Constants.role));
+                                            user.setObjectId(jsonObject.getString(Constants.userObjectId)); // secretCode.getText().toString()
+                                            user.setCampusId(jsonObject.getString(Constants.campusId));
+                                            user.setUserName(jsonObject.getString(Constants.userName));
+                                            user.setEmail(jsonObject.getString(Constants.email));
+                                            user.setPhoneNumber(jsonObject.getString(Constants.phoneNumber));
+                                            user.setCollegeId(jsonObject.getString(Constants.collegeId));
+                                            user.setBranch(jsonObject.getString(Constants.branch));
+                                            user.setSemester(jsonObject.getInt(Constants.semester));
+                                            user.setYear(jsonObject.getInt(Constants.year));
+                                            user.setRole(jsonObject.getString(Constants.role));
+                                            user.setDepartment(jsonObject.getString(Constants.department));
 
-                                        user.setMediaCount(jsonObject.getInt(Constants.mediaCount));
-                                        user.setMedia(jsonObject.getString(Constants.media));
+                                            user.setMediaCount(jsonObject.getInt(Constants.mediaCount));
+                                            user.setMedia(jsonObject.getString(Constants.media));
 
-                                        // insert user details into internal db
-                                        smartCampusDB.insertUser(user);
+                                            // insert user details into internal db
+                                            smartCampusDB.insertUser(user);
 
                                         // get JSON Array of 'privileges'
                                         JSONArray privilegeArray = jsonResponse.getJSONArray(Constants.privileges);
@@ -627,9 +632,22 @@ public class GlobalLoginActivity extends AppCompatActivity {
                                             smartCampusDB.insertPrivilege(privilege);
 
 
-                                        }else {
+                                        }
 
-                                            // do not update privilege for the user
+                                        // get JSON Array of 'departments'
+                                        JSONArray departmentsArray = jsonResponse.getJSONArray(Constants.departments);
+
+                                        // check if there are departments for user
+                                        if(departmentsArray.length() > 0) {
+                                            // get the JSON object inside Array
+                                            JSONObject departmentObject = (JSONObject) departmentsArray.get(0);
+
+                                            // get the departments data
+                                            String departments = departmentObject.getString(Constants.departments);
+                                            String sub_departments = departmentObject.getString(Constants.sub_departments);
+
+                                            // save departments to session
+                                            session.saveDepartments(departments, sub_departments);
 
                                         }
 

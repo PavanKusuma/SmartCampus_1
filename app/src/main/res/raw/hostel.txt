@@ -64,27 +64,5 @@ R.Anantha L Devi 	:	II ECE-B
 P.Archana	:	II ECE-B
 T.Uthpreksha	:	II ECE-C
 A.Anusha	:	II ECE-C
-Vasanthi	:	SEC : A
-Kousalya	:	SEC : A
-G.Harika	:	SEC : B
-D.Sarvajna	:	SEC : B
-K.Pavani	:	SEC : C
-K.Sucharitha	:	SEC : C
-M.Akhila	:	SEC : D
-N.Priya	:	SEC : D
-P. Maneesha	:	SEC : E
-S.Mounika	:	SEC : E
-Prameela	:	SEC : F
-Asha	:	SEC : F
-A.Kalyani	:	SEC : G
-B.Deepthi Krishna	:	SEC : G
-G.Naga Mounika	:	SEC : H
-K.Jayasri	:	SEC : H
-K.Hima Harshitha	:	SEC : I
-K.V.R.Sai Lakshmi	:	SEC : I
-M.Anitha	:	SEC : J
-L.Rupa Dhanasri	:	SEC : J
-R.Likhitha	:	SEC : K
-V.Tulasi	:	SEC : k
-Y.Usha Kiranmai	:	SEC : L
-T.Sravani Sai Kiran	:	SEC : L
+Katakam Ammulu Gowthami	:	I MBA
+Pulavarthi Santoshi Padma Priya	:	II MBA

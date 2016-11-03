@@ -188,7 +188,7 @@ public class GlobalMessagesActivity extends AppCompatActivity {
         // based on user role
         // user is allowed to create a message
         // only 'faculty' user type are able to send messages
-        if(smartDB.getUserRole().contentEquals(Constants.student)){
+        if(smartDB.getUserRole().equalsIgnoreCase(Constants.student)){
 
             menu.clear();
             // student is not allowed to send message
@@ -221,7 +221,8 @@ public class GlobalMessagesActivity extends AppCompatActivity {
 
             // Navigate to new message screen
             // other users except student can send a new message to students
-            Intent newMessageIntent = new Intent(getApplicationContext(), NewMessageActivity.class);
+            //Intent newMessageIntent = new Intent(getApplicationContext(), NewMessageActivity.class);
+            Intent newMessageIntent = new Intent(getApplicationContext(), MessageNewComposeActivity.class);
 
             // start activity to get back result
             startActivityForResult(newMessageIntent, 200);
@@ -418,6 +419,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
             message.setYear(data.getIntExtra(Constants.year, 0));
             message.setBranch(data.getStringExtra(Constants.branch));
             message.setSemester(data.getIntExtra(Constants.semester, 0));
+            message.setDepartment(data.getStringExtra(Constants.department));
             message.setCreatedAt(data.getStringExtra(Constants.createdAt));
             message.setUpdatedAt(data.getStringExtra(Constants.updatedAt));
             message.setMediaCount(data.getIntExtra(Constants.mediaCount, 0));
@@ -474,9 +476,10 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
                 // Set Request parameter
                 data += "?&" + URLEncoder.encode(Constants.KEY, "UTF-8") + "=" + Constants.key
                         + "&" + URLEncoder.encode(Constants.fromUserObjectId, "UTF-8") + "=" + (urls[1])
-                        + "&" + URLEncoder.encode(Constants.year, "UTF-8") + "=" + year
-                        + "&" + URLEncoder.encode(Constants.branch, "UTF-8") + "=" + branch
-                        + "&" + URLEncoder.encode(Constants.semester, "UTF-8") + "=" + semester
+                        //+ "&" + URLEncoder.encode(Constants.year, "UTF-8") + "=" + year
+                        //+ "&" + URLEncoder.encode(Constants.branch, "UTF-8") + "=" + branch
+                        //+ "&" + URLEncoder.encode(Constants.semester, "UTF-8") + "=" + semester
+                        + "&" + URLEncoder.encode(Constants.department, "UTF-8") + "=" + smartDB.getUser().get(Constants.department)
                         + "&" + URLEncoder.encode(Constants.limit, "UTF-8") + "=" + urls[2];
 
                 Log.v(Constants.appName, urls[0]+data);
@@ -618,6 +621,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
                                             message.setYear(jsonObject.getInt(Constants.year));
                                             message.setBranch(jsonObject.getString(Constants.branch));
                                             message.setSemester(jsonObject.getInt(Constants.semester));
+                                            message.setDepartment(jsonObject.getString(Constants.department));
                                             message.setCreatedAt(jsonObject.getString(Constants.createdAt));
                                             message.setUpdatedAt(jsonObject.getString(Constants.updatedAt));
                                             message.setMediaCount(jsonObject.getInt(Constants.mediaCount));

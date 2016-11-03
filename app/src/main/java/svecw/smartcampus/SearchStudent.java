@@ -415,6 +415,7 @@ public class SearchStudent extends AppCompatActivity {
                                             userList.setPhoneNumber(jsonObject.getString(Constants.phoneNumber));
                                             userList.setMediaCount(jsonObject.getInt(Constants.mediaCount));
                                             userList.setMedia(jsonObject.getString(Constants.media));
+                                            userList.setDepartment(jsonObject.getString(Constants.department));
 
                                             usersList.add(userList);
                                             //userAdapter.notifyDataSetChanged();

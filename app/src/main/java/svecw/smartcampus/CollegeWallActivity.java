@@ -279,7 +279,7 @@ public class CollegeWallActivity extends AppCompatActivity {
             // check if the post is not created
             else{
 
-                Toast.makeText(this, "Try posting", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "Try posting", Toast.LENGTH_SHORT).show();
             }
         }
         else {

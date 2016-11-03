@@ -51,7 +51,7 @@ public class DirectoryAdapter extends BaseAdapter {
 
         RelativeLayout itemView;
         if (convertView == null) {
-            itemView = (RelativeLayout) layoutInflater.inflate(R.layout.directory_single_listitem, parent, false);
+            itemView = (RelativeLayout) layoutInflater.inflate(R.layout.directory_single_listitem_1, parent, false);
 
         } else {
             itemView = (RelativeLayout) convertView;

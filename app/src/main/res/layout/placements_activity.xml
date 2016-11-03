@@ -31,7 +31,7 @@
                     android:id="@+id/recruitersView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/appBlue"
+                    android:background="@color/globalThemeSecondaryColor"
                     android:padding="6dp"
                     >
 
@@ -52,7 +52,8 @@
                         android:text="@string/recruitersList"
                         android:textAppearance="@android:style/TextAppearance.Medium"
                         android:layout_centerVertical="true"
-                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textColor="@color/blackText"
                         android:layout_toRightOf="@+id/recruitersIcon"
                         android:layout_marginLeft="10dp"/>
 
@@ -71,6 +72,43 @@
 
 
 
+                <RelativeLayout
+                    android:id="@+id/p2017View"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_rounded_shape_gray"
+                    android:padding="6dp"
+                    android:layout_below="@+id/recruitersView">
+
+                    <ImageView
+                        android:id="@+id/p2017Icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:padding="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_year"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/p2017"
+                        android:textAppearance="@android:style/TextAppearance.Medium"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/p2017Icon"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:padding="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_right"/>
+
+                </RelativeLayout>
+
 
                 <RelativeLayout
                     android:id="@+id/p2016View"
@@ -78,7 +116,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_rounded_shape_gray"
                     android:padding="6dp"
-                    android:layout_below="@+id/recruitersView">
+                    android:layout_below="@+id/p2017View">
 
                     <ImageView
                         android:id="@+id/p2016Icon"

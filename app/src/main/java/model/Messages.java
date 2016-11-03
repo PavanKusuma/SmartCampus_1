@@ -16,6 +16,7 @@ public class Messages {
     private String branch;
     private int year;
     private int semester;
+    private String department;
     private String createdAt;
     private String updatedAt;
     private int mediaCount;
@@ -94,6 +95,14 @@ public class Messages {
 
     public void setSemester(int semester) {
         this.semester = semester;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
     }
 
     public String getCreatedAt() {

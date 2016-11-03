@@ -1131,6 +1131,7 @@ public class UserProfileActivity extends AppCompatActivity {
                                         user.setSemester(jsonObject.getInt(Constants.semester));
                                         user.setYear(jsonObject.getInt(Constants.year));
                                         user.setRole(jsonObject.getString(Constants.role));
+                                        user.setDepartment(jsonObject.getString(Constants.department));
 
                                         // insert user details into internal db
                                         smartCampusDB.updateUserDetails(user);

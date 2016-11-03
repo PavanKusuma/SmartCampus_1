@@ -89,7 +89,7 @@
     <string name="admin">Admin</string>
     <string name="moderator">Moderator</string>
     <string name="company">Company</string>
-    <string name="count">Count</string>
+    <string name="count">Selections</string>
     <string name="student">Student</string>
     <string name="college">College</string>
     <string name="faculty">Faculty</string>
@@ -118,6 +118,7 @@
     <string name="management">Management</string>
     <string name="courses">Courses</string>
     <string name="Placements">Placements</string>
+    <string name="recruitmentDetails">Recruitment Details</string>
     <string name="welcome">Welcome</string>
     <string name="collegeText">Shri Vishnu Engineering College for Women \n(Autonomous)</string>
     <string name="initiatives">Initiatives &amp; Achievements</string>
@@ -127,6 +128,7 @@
     <string name="gallery">Gallery</string>
     <string name="aboutApp">About App</string>
     <string name="aboutCollege">About College</string>
+    <string name="aboutCollegeText">Details about college</string>
     <string name="like">Like</string>
     <string name="likes">likes</string>
     <string name="dislike">Dislike</string>
@@ -155,7 +157,8 @@
     <string name="complaint">Complaint</string>
     <string name="Feedback">Feedback</string>
     <string name="assignment">Assignments</string>
-    <string name="complaintOrFeedback">Complaint / Feedback</string>
+    <string name="grievances">Grievances</string>
+    <string name="complaintOrFeedback">Complaints</string>
     <string name="bugReport">Bug report/Suggestions</string>
     <string name="hashSymbol">\#</string>
     <string name="exams">Exams</string>
@@ -196,6 +199,7 @@
     <string name="viewAttachments">View attachments</string>
     <string name="selectToPost">Select to Post</string>
     <string name="newGroup">New group</string>
+    <string name="driveTitle">Drive</string>
 
 
     <string name="from">From</string>
@@ -225,12 +229,13 @@
     <string name="adminPanelText">Manage user data</string>
     <string name="messagesText">Send/ Receive a message</string>
     <string name="inboxText">Your messages</string>
+    <string name="driveText">Upload and share you content here</string>
     <string name="learnText">Explore knowledge</string>
     <string name="complaintOrFeedbackText">Write to us&#8230;</string>
     <string name="bugReportTitle">Bug report/Suggestions</string>
     <string name="writeToUs">Write to us!</string>
     <string name="bugReportHint">We welcome your suggestions!</string>
-    <string name="bugReportText">Describe about your bug/suggestion</string>
+    <string name="bugReportText">Report a bug</string>
     <string name="examsText">Compete on the go&#8230;</string>
     <string name="assignmentsText">Get updated stuff</string>
     <string name="directoryText">See contacts</string>
@@ -267,6 +272,12 @@
     <string name="appInfo">
         We digitize your campus and put all your campus information at fingertips. Smart Campus App makes implementing new initiatives in your campus easy and enables collection of real time insights efficient. \n\n Provide your students with the most advanced tools to connect with campus through digital and social boards, organization directories, tutorials, online exams and class schedules. We make complete student to student and student to management experience more meaningful on the go.
     </string>
+
+    <string name="appInfo1">
+        Smart Campus App developed in association with Infinity Next to digitise SVECW campus and put  all campus information at fingertips of students and management.
+    </string>
+    <string name="applink1">www.infinitynext.com</string>
+    <string name="applink2">www.smartcampusapp.com</string>
 
     <string name="hashCse">\#CSE/IT</string>
     <string name="hashEce">\#ECE</string>
@@ -362,14 +373,16 @@
 
     <string-array name="branchesDirectory">
         <item>ALL</item>
+        <item>ME</item>
+        <item>BS</item>
+        <item>CE</item>
         <item>CSE</item>
-        <item>IT</item>
         <item>ECE</item>
         <item>EEE</item>
-        <item>MECHANICAL</item>
-        <item>CIVIL</item>
-        <item>BASIC SCIENCE</item>
+        <item>IT</item>
         <item>MBA</item>
+        <item>Exam_Cell</item>
+        <item>Office</item>
     </string-array>
 
     <string-array name="branches">
@@ -443,7 +456,7 @@
     </declare-styleable>
 
     <string name="recruitersList">Recruiters List</string>
-    
+    <string name="p2017">2017 - as on 17 oct 2016</string>
     <string name="p2016">2016</string>
     <string name="p2015">2015</string>
     <string name="p2014">2014</string>

@@ -348,6 +348,9 @@ public class StudentWallAdapter extends BaseAdapter {
             // if so, fetch and display the userImage
             if(!collegeWallPostsList.get(position).getUserImage().contentEquals(Constants.null_indicator)) {
 
+                // show the default user profile image
+                holder.userImage.setImageResource(R.drawable.ic_user_profile);
+
                 // check if the user image contains the image name
                 // if so fetch the image from url and display
                 // else fetch the image from local and display as it is just posted by current user

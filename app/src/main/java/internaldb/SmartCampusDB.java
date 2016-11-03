@@ -27,7 +27,7 @@ import utils.Constants;
 public class SmartCampusDB extends SQLiteOpenHelper {
 
     public SmartCampusDB(Context context){
-        super(context, "SVECW_DB.db", null, 1);
+        super(context, "SVECW_DB.db", null, 2);
     }
 
     public SmartCampusDB(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
@@ -38,7 +38,7 @@ public class SmartCampusDB extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         // create a user table for storing user details while registering
-        db.execSQL("CREATE TABLE "+Constants.userTable+" (id INTEGER PRIMARY KEY, campusId TEXT, userObjectId TEXT, username TEXT, email TEXT, phoneNumber TEXT, collegeId TEXT, year INTEGER, branch TEXT, semester INTEGER, role TEXT, mediaCount INTEGER, media TEXT)");//, messages INTEGER, knowledgeWall INTEGER, collegeWall INTEGER, studentWall INTEGER, moderating INTEGER, collegeDirectory INTEGER, cseDirectory INTEGER, eceDirectory INTEGER, eeeDirectory INTEGER, itDirectory INTEGER, mechDirectory INTEGER, civilDirectory INTEGER, mbaDirectory INTEGER, mcaDirectory INTEGER, basicScienceDirectory INTEGER, complaintOrFeedback INTEGER)");
+        db.execSQL("CREATE TABLE "+Constants.userTable+" (id INTEGER PRIMARY KEY, campusId TEXT, userObjectId TEXT, username TEXT, email TEXT, phoneNumber TEXT, collegeId TEXT, year INTEGER, branch TEXT, semester INTEGER, role TEXT, mediaCount INTEGER, media TEXT, department TEXT)");//, messages INTEGER, knowledgeWall INTEGER, collegeWall INTEGER, studentWall INTEGER, moderating INTEGER, collegeDirectory INTEGER, cseDirectory INTEGER, eceDirectory INTEGER, eeeDirectory INTEGER, itDirectory INTEGER, mechDirectory INTEGER, civilDirectory INTEGER, mbaDirectory INTEGER, mcaDirectory INTEGER, basicScienceDirectory INTEGER, complaintOrFeedback INTEGER)");
 
         // create a table to store privileges of user
         db.execSQL("CREATE TABLE "+Constants.privilegeTable+" (id TEXT PRIMARY KEY, privilegeId TEXT, userObjectId TEXT, moderating TEXT, directory TEXT, createdAt TEXT, updatedAt TEXT)");
@@ -69,11 +69,13 @@ public class SmartCampusDB extends SQLiteOpenHelper {
 
         // drop the table and create it again
         db.execSQL("DROP TABLE IF EXISTS "+Constants.userTable);
-        //db.execSQL("DROP TABLE IF EXISTS "+Constants.privilegeTable);
+        db.execSQL("DROP TABLE IF EXISTS "+Constants.privilegeTable);
         db.execSQL("DROP TABLE IF EXISTS "+Constants.userLikesTable);
         db.execSQL("DROP TABLE IF EXISTS "+Constants.commentsTable);
         db.execSQL("DROP TABLE IF EXISTS "+Constants.examsTable);
         db.execSQL("DROP TABLE IF EXISTS "+Constants.questionsTable);
+        db.execSQL("DROP TABLE IF EXISTS "+Constants.studentWall);
+        db.execSQL("DROP TABLE IF EXISTS "+Constants.collegeWall);
         onCreate(db);
     }
 
@@ -100,6 +102,7 @@ public class SmartCampusDB extends SQLiteOpenHelper {
         contentValues.put(Constants.year, user.getYear());
         contentValues.put(Constants.branch, user.getBranch());
         contentValues.put(Constants.semester, user.getSemester());
+        contentValues.put(Constants.department, user.getDepartment());
         contentValues.put(Constants.role, user.getRole());
 
         contentValues.put(Constants.mediaCount, user.getMediaCount());
@@ -375,6 +378,7 @@ public class SmartCampusDB extends SQLiteOpenHelper {
                 userMap.put(Constants.role, cursor.getString(10));
                 userMap.put(Constants.mediaCount, cursor.getString(11));
                 userMap.put(Constants.media, cursor.getString(12));
+                userMap.put(Constants.department, cursor.getString(13));
 /*                userMap.put(Constants.messages, cursor.getInt(10));
                 userMap.put(Constants.knowledgeWall, cursor.getInt(11));
                 userMap.put(Constants.collegeWall, cursor.getInt(12));
@@ -749,6 +753,7 @@ public class SmartCampusDB extends SQLiteOpenHelper {
         contentValues.put(Constants.branch, user.getBranch());
         contentValues.put(Constants.semester, user.getSemester());
         contentValues.put(Constants.role, user.getRole());
+        contentValues.put(Constants.department, user.getDepartment());
 
 /*
         contentValues.put(Constants.messages, user.getMessages());

@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -37,7 +38,7 @@ import utils.Snippets;
 public class BugReportAndSuggestions extends AppCompatActivity {
 
     // views of activity
-    EditText description;
+    TextInputEditText description;
     TextView descriptionHint;
 
     // default Type
@@ -81,7 +82,7 @@ public class BugReportAndSuggestions extends AppCompatActivity {
         layoutInflater = LayoutInflater.from(this);
 
         // get views from activity
-        description = (EditText) findViewById(R.id.description); description.setTypeface(sansFont);
+        description = (TextInputEditText) findViewById(R.id.description); description.setTypeface(sansFont);
         descriptionHint = (TextView) findViewById(R.id.descriptionhHint); descriptionHint.setTypeface(sansFont);
 
         /*complaintType.setOnClickListener(new View.OnClickListener() {

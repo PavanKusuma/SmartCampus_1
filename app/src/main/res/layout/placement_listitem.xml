@@ -19,8 +19,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/p2007"
-        android:textColor="@color/justBlue"
+        android:textColor="@color/globalThemeColor"
         android:textAppearance="@android:style/TextAppearance.Medium"
+        android:textStyle="bold"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
         android:padding="10dp"/>

@@ -28,6 +28,7 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -58,6 +59,10 @@ import internaldb.SmartCampusDB;
 import internaldb.SmartSessionManager;
 import model.Privilege;
 import model.User;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
+import rx.schedulers.Schedulers;
+import utils.Compressor;
 import utils.Constants;
 import utils.Routes;
 
@@ -69,6 +74,7 @@ public class ProfileActivity extends AppCompatActivity {
     // views from layout
     TextView profileUserName, profileEmail, profilePhone, profileCollegeId, profileYear, profileBranch, profileSemester, refreshView;
     ImageView profilePhoto, removeProfilePhoto, editProfilePhoto, editProfileDetails;
+    ProgressBar progressBarProfile;
 
     // instance for local db
     SmartCampusDB smartCampusDB = new SmartCampusDB(this);
@@ -99,6 +105,10 @@ public class ProfileActivity extends AppCompatActivity {
     InputStream is;
 
     int height, width;
+    int PLACE_PICKER_REQUEST = 10;
+    File image, compressedImage;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,6 +129,7 @@ public class ProfileActivity extends AppCompatActivity {
         removeProfilePhoto = (ImageView) findViewById(R.id.removeProfilePhoto);
         editProfileDetails = (ImageView) findViewById(R.id.editProfileDetails);
         refreshView = (TextView) findViewById(R.id.refreshView);
+        progressBarProfile = (ProgressBar) findViewById(R.id.progressBarProfile);
 
         profileUserName.setTypeface(sansFont);
         profileEmail.setTypeface(sansFont);
@@ -156,11 +167,11 @@ public class ProfileActivity extends AppCompatActivity {
 
             profileYear.setVisibility(View.VISIBLE);
             profileBranch.setVisibility(View.VISIBLE);
-            profileSemester.setVisibility(View.VISIBLE);
+            //profileSemester.setVisibility(View.VISIBLE);
 
             profileYear.append(String.valueOf(userMap.get(Constants.year)));
-            profileBranch.setText("Department : " + " " + String.valueOf( userMap.get(Constants.branch)));
-            profileSemester.append(String.valueOf(userMap.get(Constants.semester)));
+            profileBranch.setText("Department : " + " " + String.valueOf( userMap.get(Constants.department)));
+            //profileSemester.append(String.valueOf(userMap.get(Constants.semester)));
         }
         else {
 
@@ -168,7 +179,7 @@ public class ProfileActivity extends AppCompatActivity {
             profileBranch.setVisibility(View.VISIBLE);
             profileSemester.setVisibility(View.GONE);
 
-            profileBranch.append((String) userMap.get(Constants.branch));
+            profileBranch.append((String) userMap.get(Constants.department));
         }
 
         // get the profile pic from current shared preference
@@ -423,10 +434,15 @@ public class ProfileActivity extends AppCompatActivity {
                 // as the app is granted with camera access permission previously
                 try{
 
-                    Intent pickIntent = new Intent(Intent.ACTION_PICK);
-                    pickIntent.setType("image/*");
+                    /*Intent pickIntent = new Intent(Intent.ACTION_PICK);
+                    pickIntent.setType("image*//*");
                     //we will handle the returned data in onActivityResult
                     startActivityForResult(Intent.createChooser(pickIntent, "Select Picture"), Constants.IMG_PICK);
+*/
+
+                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                    intent.setType("image/*");
+                    startActivityForResult(intent, Constants.IMG_PICK);
 
                 } catch (ActivityNotFoundException anfe) {
                     //display an error message
@@ -441,10 +457,14 @@ public class ProfileActivity extends AppCompatActivity {
 
             try{
 
-                Intent pickIntent = new Intent(Intent.ACTION_PICK);
-                pickIntent.setType("image/*");
+                /*Intent pickIntent = new Intent(Intent.ACTION_PICK);
+                pickIntent.setType("image*//*");
                 //we will handle the returned data in onActivityResult
-                startActivityForResult(Intent.createChooser(pickIntent, "Select Picture"), Constants.IMG_PICK);
+                startActivityForResult(Intent.createChooser(pickIntent, "Select Picture"), Constants.IMG_PICK);*/
+
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("image/*");
+                startActivityForResult(intent, Constants.IMG_PICK);
 
             } catch (ActivityNotFoundException anfe) {
                 //display an error message
@@ -704,7 +724,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         // if the result is from picking image from gallery
         if (resultCode == RESULT_OK && requestCode == Constants.IMG_PICK){
-
+/*
             //get the Uri for the captured image
             Uri selectedImage = data.getData();
 
@@ -726,9 +746,9 @@ public class ProfileActivity extends AppCompatActivity {
                 imageStream = getContentResolver().openInputStream(selectedImage);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
-            }
+            }*/
 
-
+/*
 
             // bitmap options
             BitmapFactory.Options options = new BitmapFactory.Options();
@@ -755,11 +775,11 @@ public class ProfileActivity extends AppCompatActivity {
             BitmapDrawable bd = new BitmapDrawable(getResources(), yourSelectedImage);
 
             // assign to imageView
-            profilePhoto.setImageDrawable(bd);
+            profilePhoto.setImageDrawable(bd);*/
 
 
 
-            // assigning the image as circular image
+          /*  // assigning the image as circular image
             Bitmap bm;
             if (profilePhoto.getDrawable() instanceof BitmapDrawable) {
                 bm = ((BitmapDrawable) profilePhoto.getDrawable()).getBitmap();
@@ -768,12 +788,29 @@ public class ProfileActivity extends AppCompatActivity {
                 bm = Bitmap.createBitmap(d.getIntrinsicWidth(), d.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
                 Canvas canvas = new Canvas(bm);
                 d.draw(canvas);
+            }*/
+
+
+
+            try {
+
+                // get the actual image data to the file
+                image = Compressor.from(getApplicationContext(), data.getData());
+                picturePath = image.getPath();
+
+                // compress Image
+                customCompressImage();
+            }
+            catch (Exception e){
+                e.printStackTrace();
             }
 
-            profilePhoto.setImageBitmap(bitmap);
+
+
+            //profilePhoto.setImageBitmap(bitmap);
 
             // save into the local shared preferences
-            session.saveProfilePhoto(base64String);
+            //session.saveProfilePhoto(base64String);
 
 
             /**
@@ -785,12 +822,106 @@ public class ProfileActivity extends AppCompatActivity {
             String profilePictureURL = Routes.uploadProfilePicture + Constants.key + "/" + smartCampusDB.getUser().get(Constants.userObjectId);
 
             // set the remove visible
-            removeProfilePhoto.setVisibility(View.VISIBLE);
+            //removeProfilePhoto.setVisibility(View.VISIBLE);
 
             // post the profile picture
-            new UpdateProfilePicture().execute(Routes.uploadProfilePicture, smartCampusDB.getUser().get(Constants.userObjectId).toString(), 1);
+            //new UpdateProfilePicture().execute(Routes.uploadProfilePicture, smartCampusDB.getUser().get(Constants.userObjectId).toString(), 1);
         }
 
+    }
+
+
+
+    // this method is called after fetching the data of the actual image
+    // this method will compress the image file to WebP
+    public void customCompressImage() {
+        if (image == null) {
+
+            Toast.makeText(ProfileActivity.this, "Please choose an image!", Toast.LENGTH_SHORT).show();
+
+        } else {
+            // Compress image in main thread using custom Compressor
+            /*compressedImage = new Compressor.Builder(HomeActivity.this)
+                    .setMaxWidth(640)
+                    .setMaxHeight(480)
+                    .setQuality(75)
+                    .setCompressFormat(Bitmap.CompressFormat.WEBP)
+                    .setDestinationDirectoryPath(Environment.getExternalStoragePublicDirectory(
+                            Environment.DIRECTORY_PICTURES).getAbsolutePath())
+                    .build()
+                    .compressToFile(actualImage);
+            setCompressedImage();*/
+
+            // Compress image using RxJava in background thread with custom Compressor
+            new Compressor.Builder(this)
+                    .setMaxWidth(640)
+                    .setMaxHeight(480)
+                    .setQuality(75)
+                    .setCompressFormat(Bitmap.CompressFormat.PNG)
+                    .setDestinationDirectoryPath(Environment.getExternalStoragePublicDirectory(
+                            Environment.DIRECTORY_PICTURES).getAbsolutePath())
+                    .build()
+                    .compressToFileAsObservable(image)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(new Action1<File>() {
+                        @Override
+                        public void call(File file) {
+                            compressedImage = file;
+                            setCompressedImage(compressedImage);
+                        }
+                    }, new Action1<Throwable>() {
+                        @Override
+                        public void call(Throwable throwable) {
+
+                            Toast.makeText(ProfileActivity.this, "Error! Please try again", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        }
+    }
+
+    // this method will fetch the compressed image bitmap and display
+    private void setCompressedImage(File compressedImage1) {
+        Log.v(Constants.appName, "Here is the path " + compressedImage1.getAbsolutePath());
+        // fetch the compressed bitmap
+        bitmap = BitmapFactory.decodeFile(compressedImage1.getAbsolutePath());
+        ByteArrayOutputStream buffer = new ByteArrayOutputStream(bitmap.getWidth() * bitmap.getHeight());
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, buffer);
+        b = buffer.toByteArray();
+        Log.v(Constants.appName, "Here is the length " + b.length + " _ " + bitmap.getByteCount());
+
+        // here we will display the compressed image
+        profilePhoto.setImageBitmap(bitmap);
+
+        profilePhoto.setAdjustViewBounds(true);
+
+
+/*
+        int bytes = bitmap.getByteCount();
+        ByteBuffer buffer1 = ByteBuffer.allocate(bytes); //Create a new buffer
+
+        b = buffer1.array();
+        Log.v(Constants.appName, "Here is the length " + b.length + " _ " + bitmap.getByteCount());
+*/
+
+        // prepare the inputStream
+        is = new ByteArrayInputStream(b);
+        //Bitmap yourSelectedImage = BitmapFactory.decodeStream(is);
+
+        base64String = Base64.encodeToString(b, Base64.DEFAULT);
+        session.saveProfilePhoto(base64String); // save to internal storage
+
+        //compressedSizeTextView.setText(String.format("Size : %s", getReadableFileSize(compressedImage.length())));
+
+        //Toast.makeText(this, "Compressed image save in " + compressedImage.getPath(), Toast.LENGTH_LONG).show();
+        //Log.d("Compressor", "Compressed image save in " + compressedImage.getPath());
+
+
+        // set the remove visible
+        removeProfilePhoto.setVisibility(View.VISIBLE);
+
+        // post the profile picture
+        new UpdateProfilePicture().execute(Routes.uploadProfilePicture, smartCampusDB.getUser().get(Constants.userObjectId).toString(), 1);
     }
 
     /**
@@ -819,7 +950,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void previewCapturedImage() {
         try {
-            // bimatp factory
+            /*// bimatp factory
             BitmapFactory.Options options = new BitmapFactory.Options();
 
             // downsizing image as it throws OutOfMemory Exception for larger
@@ -869,7 +1000,7 @@ Log.v(Constants.appName, "Checking size before:" + b.length);
             profilePhoto.setImageBitmap(bitmap);
 
             // save into the local shared preferences
-            session.saveProfilePhoto(base64String);
+            session.saveProfilePhoto(base64String);*/
 
 
             /**
@@ -877,15 +1008,28 @@ Log.v(Constants.appName, "Checking size before:" + b.length);
              */
             //new UploadProfilePhoto().execute();
 
+            try {
+
+                // get the actual image data to the file
+                image = Compressor.from(getApplicationContext(), fileUri);
+
+                picturePath = image.getPath();
+
+                // compress Image
+                customCompressImage();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
             // profile picture url
             String profilePictureURL = Routes.uploadProfilePicture + Constants.key + "/" + smartCampusDB.getUser().get(Constants.userObjectId);
 
             // set the remove visible
-            removeProfilePhoto.setVisibility(View.VISIBLE);
+            //removeProfilePhoto.setVisibility(View.VISIBLE);
 
             // post the profile picture
-            new UpdateProfilePicture().execute(Routes.uploadProfilePicture, smartCampusDB.getUser().get(Constants.userObjectId).toString(), 1);
+            //new UpdateProfilePicture().execute(Routes.uploadProfilePicture, smartCampusDB.getUser().get(Constants.userObjectId).toString(), 1);
 
 
         } catch (NullPointerException e) {
@@ -1327,6 +1471,7 @@ Log.v(Constants.appName, "Checking size before:" + b.length);
                                         user.setSemester(jsonObject.getInt(Constants.semester));
                                         user.setYear(jsonObject.getInt(Constants.year));
                                         user.setRole(jsonObject.getString(Constants.role));
+                                        user.setDepartment(jsonObject.getString(Constants.department));
 
                                         // insert user details into internal db
                                         smartCampusDB.updateUserDetails(user);
@@ -1522,6 +1667,8 @@ Log.v(Constants.appName, "Checking size before:" + b.length);
                                 @Override
                                 public void run() {
 
+                                    // show the progress bar for upload
+                                    progressBarProfile.setVisibility(View.VISIBLE);
                                     Toast.makeText(getApplicationContext(), "Please wait! uploading profile picture", Toast.LENGTH_SHORT).show();
                                 }
                             });
@@ -1551,12 +1698,16 @@ Log.v(Constants.appName, "Checking size before:" + b.length);
                                 // exception occurred
                                 case -3:
 
+                                    // hide the progress bar for upload
+                                    progressBarProfile.setVisibility(View.GONE);
                                     Toast.makeText(getApplicationContext(), R.string.errorMsg, Toast.LENGTH_SHORT).show();
                                     break;
 
                                 // key mismatch
                                 case -2:
 
+                                    // hide the progress bar for upload
+                                    progressBarProfile.setVisibility(View.GONE);
                                     Toast.makeText(getApplicationContext(), R.string.errorMsg, Toast.LENGTH_SHORT).show();
                                     break;
 
@@ -1628,7 +1779,7 @@ Log.v(Constants.appName, "Checking size before:" + b.length);
             String boundary = "*****";
             int bytesRead, bytesAvailable, bufferSize;
             byte[] buffer;
-            int maxBufferSize = 1 * 1024 * 1024;
+            int maxBufferSize = 8 * 1024 * 1024;
             File sourceFile = new File(fileName);
             if (!sourceFile.isFile()) {
 
@@ -1673,8 +1824,8 @@ Log.v(Constants.appName, "Checking size before:" + b.length);
                 // read file and write it into form...
                 // coment below line and also while loop if any error
                 // bytesRead = is.read(b, 0, b.length);
-                Log.v(Constants.appName, "Size of bytes : " + b.length);
-                dos.write(b, 0, b.length);
+                //Log.v(Constants.appName, "Size of bytes : " + b.length);
+                /*dos.write(b, 0, b.length);
 
                 int count = 0;
 
@@ -1693,6 +1844,25 @@ Log.v(Constants.appName, "Checking size before:" + b.length);
                 //Log.v(Constants.appName, "check 1" + count);
 
                 // send multipart form data necessary after file data...
+                dos.writeBytes(lineEnd);
+                dos.writeBytes(twoHyphens + boundary + twoHyphens + lineEnd);*/
+
+                // read file and write it into form...
+                bytesRead = is.read(b, 0, b.length);
+                //Log.v(Constants.appName, "Size of bytes : " + b.length);
+                dos.write(b, 0, b.length);
+
+                while (bytesRead > 0) {
+                    dos.write(b, 0, b.length);
+                    bytesAvailable = is.available();
+                    bufferSize = Math.min(bytesAvailable, maxBufferSize);
+                    bytesRead = is.read(buffer, 0, bufferSize);
+
+                    Log.v(Constants.appName, "check 1");
+                }
+
+
+                // send multipart form data necesssary after file data...
                 dos.writeBytes(lineEnd);
                 dos.writeBytes(twoHyphens + boundary + twoHyphens + lineEnd);
 
@@ -1731,6 +1901,7 @@ Log.v(Constants.appName, "Checking size before:" + b.length);
 
 
 
+
             return null;
 
 
@@ -1749,12 +1920,16 @@ Log.v(Constants.appName, "Checking size before:" + b.length);
                         if(serverResponseCode == -1){
 
                             //Log.v(Constants.appName, "check -1");
+                            // hide the progress bar for upload
+                            progressBarProfile.setVisibility(View.GONE);
                             Toast.makeText(ProfileActivity.this, R.string.errorMsg, Toast.LENGTH_SHORT).show();
 
                         }
                         if(serverResponseCode == 200){
 
                             //Log.v(Constants.appName, "check 200");
+                            // hide the progress bar for upload
+                            progressBarProfile.setVisibility(View.GONE);
                             Toast.makeText(ProfileActivity.this, "Profile picture updated!", Toast.LENGTH_SHORT).show();
 
                         }
@@ -1766,6 +1941,8 @@ Log.v(Constants.appName, "Checking size before:" + b.length);
             else {
 
                 Log.v(Constants.appName, "check error"+Error);
+                // hide the progress bar for upload
+                progressBarProfile.setVisibility(View.GONE);
                 Toast.makeText(ProfileActivity.this, R.string.errorMsg, Toast.LENGTH_SHORT).show();
                 //finish();
             }
@@ -1775,7 +1952,7 @@ Log.v(Constants.appName, "Checking size before:" + b.length);
                 fileInputStream.close();
                 dos.flush();
                 dos.close();
-                Log.v(Constants.appName, "check 2");
+                Log.v(Constants.appName, "check 3");
             }
             catch (Exception e){
 

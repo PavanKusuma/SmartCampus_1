@@ -4,6 +4,7 @@ import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -36,7 +37,7 @@ import utils.Snippets;
 public class NewFeedbackActivity extends AppCompatActivity {
 
     // views of activity
-    EditText feedbackText;
+    TextInputEditText feedbackText;
 
     // default Type
     String selectionType = Constants.Complaint;
@@ -79,7 +80,7 @@ public class NewFeedbackActivity extends AppCompatActivity {
         layoutInflater = LayoutInflater.from(this);
 
         // get views from activity
-        feedbackText = (EditText) findViewById(R.id.newFeedbackText); feedbackText.setTypeface(sansFont);
+        feedbackText = (TextInputEditText) findViewById(R.id.newFeedbackText); feedbackText.setTypeface(sansFont);
 
         /*complaintType.setOnClickListener(new View.OnClickListener() {
             @Override

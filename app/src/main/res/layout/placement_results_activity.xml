@@ -39,7 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="6dp"
-                android:background="@color/justBlue">
+                android:background="@color/globalThemeSecondaryColor">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -47,7 +47,7 @@
                 android:textAppearance="@android:style/TextAppearance.Medium"
                 android:text="@string/company"
                 android:textStyle="bold"
-                android:textColor="@color/white"
+                android:textColor="@color/blackText"
                 android:layout_marginLeft="20dp"
                 android:padding="10sp"/>
 
@@ -58,7 +58,7 @@
                     android:textAppearance="@android:style/TextAppearance.Medium"
                     android:text="@string/company"
                     android:textStyle="bold"
-                    android:textColor="@color/white"
+                    android:textColor="@color/blackText"
                     android:layout_centerInParent="true"
                     android:padding="10sp"/>
 
@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="@android:style/TextAppearance.Medium"
                 android:text="@string/count"
-                android:textColor="@color/white"
+                android:textColor="@color/blackText"
                 android:textStyle="bold"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="20dp"

@@ -42,7 +42,7 @@
         android:layout_toRightOf="@+id/studentUserImageViewBG"
         android:paddingLeft="10dp"
         android:paddingTop="4dp"
-        android:textColor="@color/lightBlue"/>
+        android:textColor="@color/globalThemeColor"/>
 
     <TextView
         android:id="@+id/studentBranch"
@@ -73,7 +73,10 @@
         android:layout_height="24dp"
         android:id="@+id/ic_studentCall"
         android:src="@drawable/ic_no_call"
-        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="16dp"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/userName"
         android:layout_alignParentBottom="true"/>
@@ -86,7 +89,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginRight="24dp"
         android:layout_below="@+id/userName"
         android:layout_toLeftOf="@+id/ic_studentCall"
         android:layout_alignParentBottom="true"/>

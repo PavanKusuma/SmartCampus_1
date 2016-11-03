@@ -781,7 +781,6 @@ System.out.println("ok1");
                                             wall.setLocation(jsonObject.getString(Constants.location));
                                             wall.setFeeling(jsonObject.getString(Constants.feeling));
 
-
                                             //Log.v(Constants.appName, "Comment count:" +jsonObject.getInt(Constants.comments));
 
                                             // get the user image
@@ -789,7 +788,7 @@ System.out.println("ok1");
                                             int mediaCount = userObject.getInt(Constants.mediaCount);
                                             if(mediaCount > 0){
                                                 Log.v(Constants.appName, "userImage : "+userObject.getString(Constants.media));
-                                                wall.setUserImage(userObject.getString(Constants.media));
+                                                wall.setUserImage(userObject.getString(Constants.media));//.substring(0, (userObject.getString(Constants.media).length()-2)));
                                             }
                                             else{
                                                 Log.v(Constants.appName, "userImage : "+userObject.getString(Constants.media));
@@ -807,8 +806,6 @@ System.out.println("ok1");
                                         adapter.updateItems(studentWallPostsList);
                                         adapter.notifyDataSetChanged();
                                         progressBar.setVisibility(View.GONE);
-
-
 
                                        /* // detect the end of scrolling
                                         listView.setOnScrollListener(new AbsListView.OnScrollListener() {

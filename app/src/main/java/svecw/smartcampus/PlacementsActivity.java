@@ -18,7 +18,7 @@ import utils.Constants;
  */
 public class PlacementsActivity extends AppCompatActivity {
 
-    RelativeLayout recruitersView, p2016View, p2015View, p2014View, p2013View, p2012View, p2011View, p2010View, p2009View, p2008View, p2007View;
+    RelativeLayout recruitersView, p2017View, p2016View, p2015View, p2014View, p2013View, p2012View, p2011View, p2010View, p2009View, p2008View, p2007View;
 
     LayoutInflater layoutInflater;
 
@@ -51,6 +51,7 @@ public class PlacementsActivity extends AppCompatActivity {
 
 
         recruitersView = (RelativeLayout) findViewById(R.id.recruitersView);
+        p2017View = (RelativeLayout) findViewById(R.id.p2017View);
         p2016View = (RelativeLayout) findViewById(R.id.p2016View);
         p2015View = (RelativeLayout) findViewById(R.id.p2015View);
         p2014View = (RelativeLayout) findViewById(R.id.p2014View);
@@ -69,6 +70,16 @@ public class PlacementsActivity extends AppCompatActivity {
 
                 Intent placementIntent = new Intent(getApplicationContext(), RecruitersLIstActivity.class);
                 placementIntent.putExtra(Constants.year, "list");
+                startActivity(placementIntent);
+            }
+        });
+
+        p2017View.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent placementIntent = new Intent(getApplicationContext(), PlacementResultActivity.class);
+                placementIntent.putExtra(Constants.year, 2017);
                 startActivity(placementIntent);
             }
         });

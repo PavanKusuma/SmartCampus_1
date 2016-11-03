@@ -99,7 +99,7 @@ public class WelcomeActivity extends Activity {
         else{
 
             // hide user image layout
-            userImageLayout.setVisibility(View.GONE);
+            //userImageLayout.setVisibility(View.GONE);
         }
     }
 

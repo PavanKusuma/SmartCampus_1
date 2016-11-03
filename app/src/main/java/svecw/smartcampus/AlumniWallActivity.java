@@ -271,12 +271,12 @@ public class AlumniWallActivity  extends AppCompatActivity {
                 wall.setIsActive(data.getIntExtra(Constants.isActive, 0));
                 wall.setUserName(data.getStringExtra(Constants.userName));
                 wall.setMedia(data.getStringExtra(Constants.media));
-                wall.setUserImage(session.getProfilePhoto());
                 wall.setLinkUrl(data.getStringExtra(Constants.linkUrl));
                 wall.setLinkTitle(data.getStringExtra(Constants.linkTitle));
                 wall.setLinkCaption(data.getStringExtra(Constants.linkCaption));
                 wall.setLocation(data.getStringExtra(Constants.location));
-                wall.setLocation(data.getStringExtra(Constants.feeling));
+                wall.setFeeling(data.getStringExtra(Constants.feeling));
+                wall.setUserImage(session.getProfilePhoto());
 
                 // add the object to list at top and notify adapter
                 studentWallPostsList.add(0, wall);
@@ -776,14 +776,14 @@ public class AlumniWallActivity  extends AppCompatActivity {
                                             wall.setLocation(jsonObject.getString(Constants.location));
                                             wall.setFeeling(jsonObject.getString(Constants.feeling));
 
-                                            Log.v(Constants.appName, "Comment count:" +jsonObject.getInt(Constants.comments));
+                                            //Log.v(Constants.appName, "Comment count:" +jsonObject.getInt(Constants.comments));
 
                                             // get the user image
                                             JSONObject userObject = (JSONObject) jsonObject.get(Constants.user);
                                             int mediaCount = userObject.getInt(Constants.mediaCount);
                                             if(mediaCount > 0){
                                                 Log.v(Constants.appName, "userImage : "+userObject.getString(Constants.media));
-                                                wall.setUserImage(userObject.getString(Constants.media).substring(0, (userObject.getString(Constants.media).length()-2)));
+                                                wall.setUserImage(userObject.getString(Constants.media));//.substring(0, (userObject.getString(Constants.media).length()-2)));
                                             }
                                             else{
                                                 Log.v(Constants.appName, "userImage : "+userObject.getString(Constants.media));

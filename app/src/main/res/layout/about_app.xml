@@ -56,19 +56,41 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/company_logo"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@+id/appVersion"
-                android:paddingTop="20dp"/>
+                android:layout_below="@+id/appVersion"/>
 
-            <me.biubiubiu.justifytext.library.JustifyTextView
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/appInfo"
+                android:text="@string/appInfo1"
                 android:id="@+id/appInfo"
                 android:layout_below="@+id/companyLogo"
                 android:layout_centerHorizontal="true"
-                android:layout_margin="20dp"/>
+                android:layout_margin="20dp"
+                android:textAlignment="center"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/applink1"
+                android:id="@+id/applink1"
+                android:layout_below="@+id/appInfo"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="20dp"
+                android:textAlignment="center"
+                android:textColor="@color/globalThemeColor"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/applink2"
+                android:id="@+id/applink2"
+                android:layout_below="@+id/applink1"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:textColor="@color/globalThemeColor"/>
         </RelativeLayout>
 
         </ScrollView>

@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
@@ -150,53 +152,22 @@ public class ComplaintsFeedbacksAdapter extends BaseAdapter {
             // check if userImage exists for the post
             // if so, fetch and display the userImage
             if(!complaintsOrFeedbacksList.get(position).getUserImage().contentEquals(Constants.null_indicator)) {
-                //Log.v(Constants.appName, Routes.getMedia + collegeWallPostsList.get(position).getUserImage());
+
+                // show the default user profile image
+                holder.userImage.setImageResource(R.drawable.ic_user_profile);
 
                 // check if the user image contains the image name
                 // if so fetch the image from url and display
                 // else fetch the image from local and display as it is just posted by current user
                 if (complaintsOrFeedbacksList.get(position).getUserImage().contains(".")) {
 
-                    // get the connection url for the media
-                    URL url = new URL(Routes.getMedia + complaintsOrFeedbacksList.get(position).getUserImage());
-                    URLConnection urlConnection = url.openConnection();
-                    urlConnection.setDoInput(true);
-                    urlConnection.connect();
+                    // load using picasso lib
+                    Picasso.with(context).load(Routes.getMedia+complaintsOrFeedbacksList.get(position).getUserImage()).placeholder(R.drawable.ic_user_profile).into(holder.userImage);
 
-                    if (urlConnection.getContentLength() > 0) {
-
-                        // getInputStream
-                        InputStream is = urlConnection.getInputStream();
-
-                        // bitmap options
-                        BitmapFactory.Options options = new BitmapFactory.Options();
-/*
-                        //Bitmap bitmap = BitmapFactory.decodeStream(is, null, options);
-                        options.inJustDecodeBounds = true;
-                        //BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);
-                        BitmapFactory.decodeStream(is, null, options);
-
-                        // Calculate inSampleSize
-                        options.inSampleSize = calculateInSampleSize(options, 200, 200);
-
-                        // Decode bitmap with inSampleSize set
-                        options.inJustDecodeBounds = false;
-                        //return BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);*/
-                        Bitmap bitmap = BitmapFactory.decodeStream(is);
-
-                        holder.userImage.setImageBitmap(bitmap);
-                    }
-                    else{
-
-                        // hide user image layout
-                        holder.userImage.setImageResource(R.drawable.ic_user_profile);
-                    }
-
-                }
-                else {
+                } else {
 
 
-                    if(!complaintsOrFeedbacksList.get(position).getUserImage().equals("-")){
+                    if (!complaintsOrFeedbacksList.get(position).getUserImage().equals("-")) {
 
                         byte[] b = Base64.decode(complaintsOrFeedbacksList.get(position).getUserImage(), Base64.DEFAULT);
                         Bitmap bitmap = BitmapFactory.decodeByteArray(b, 0, b.length);
@@ -209,14 +180,12 @@ public class ComplaintsFeedbacksAdapter extends BaseAdapter {
                         holder.userImage.setImageBitmap(bitmap);
 
                     }
-                    else{
+                    else {
 
                         // hide user image layout
                         holder.userImage.setImageResource(R.drawable.ic_user_profile);
                     }
                 }
-
-
 
             }
             else {
@@ -225,6 +194,9 @@ public class ComplaintsFeedbacksAdapter extends BaseAdapter {
                 holder.userImage.setImageResource(R.drawable.ic_user_profile);
 
             }
+
+
+
         }
         catch (Exception e){
 

@@ -24,6 +24,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -297,13 +298,14 @@ public class NewPost extends AppCompatActivity {
                                                 try {
 
                                                     // validate if the provided url is correct
-                                                    if(URLUtil.isValidUrl(userInputLink.getText().toString())) {
+                                                    if(Patterns.WEB_URL.matcher(userInputLink.getText().toString()).matches()){
+                                                    //if(URLUtil.isValidUrl(userInputLink.getText().toString())) {
 
                                                         // get the link address
                                                         Document document = Jsoup.connect(userInputLink.getText().toString()).get();
                                                         String title = document.title(); // get the title of the link
 
-                                                        String caption = title;
+                                                        String caption = userInputLink.getText().toString();
                                                         // get the description of the link
                                                         /*Element content = document.getElementById("content");
 
@@ -324,6 +326,13 @@ public class NewPost extends AppCompatActivity {
                                                     else{
 
                                                         Toast.makeText(NewPost.this, "Invalid link", Toast.LENGTH_SHORT).show();
+
+                                                        linkPreview.setVisibility(View.VISIBLE);
+                                                        // get the link details
+                                                        linkTitle.setText(userInputLink.getText().toString()); linkTitleText = userInputLink.getText().toString();
+                                                        linkCaption.setText(userInputLink.getText().toString()); linkCaptionText = userInputLink.getText().toString();
+                                                        linkURL = userInputLink.getText().toString();
+                                                        linkIcon.setImageResource(R.drawable.ic_link);
                                                     }
 
                                                 }

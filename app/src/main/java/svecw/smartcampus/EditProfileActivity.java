@@ -77,7 +77,7 @@ public class EditProfileActivity extends AppCompatActivity {
         if(!str_emailId.contentEquals("-"))
             emailId.setText(str_emailId);
 
-        if(!str_emailId.contentEquals("-"))
+        if(!str_phone.contentEquals("-"))
             phone.setText(str_phone);
 
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/sans.ttf");

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
-    android:background="@color/green">
+    android:background="@color/thickGreen1">
 
     <TextView
         android:id="@+id/listHeader"
@@ -14,7 +14,7 @@
         android:paddingBottom="10dp"
         android:paddingRight="10dp"
         android:paddingLeft="24dp"
-        android:textSize="16dip"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:text="@string/aboutApp"
         android:textColor="@color/white"/>

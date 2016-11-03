@@ -42,6 +42,7 @@ public class Constants {
     public static final String branch = "branch";
     public static final String semester = "semester";
     public static final String year = "year";
+    public static final String department = "department";
     public static final String phoneNumber = "phoneNumber";
     public static final String id = "id";
     public static final String to = "to";
@@ -67,6 +68,8 @@ public class Constants {
     public static final String details = "details";
     public static final String post = "post";
     public static final String privileges = "privileges";
+    public static final String departments = "departments";
+    public static final String sub_departments = "sub_departments";
 
     // intetnal DB tables
     public static final String userTable = "user";
@@ -301,6 +304,10 @@ public class Constants {
     public static final String news = "News";
     public static final String events = "Events";
     public static final String newsandevents = "News and Events";
+
+    public static final String driveInfo = "driveInfo";
+    public static final String uploads = "My uploads";
+    public static final String shared = "Shared";
 
 
 }

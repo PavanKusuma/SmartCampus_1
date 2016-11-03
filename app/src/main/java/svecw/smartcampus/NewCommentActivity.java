@@ -28,6 +28,7 @@ import java.util.ArrayList;
 
 import adapters.CommentAdapter;
 import internaldb.SmartCampusDB;
+import internaldb.SmartSessionManager;
 import model.Comment;
 import utils.Constants;
 import utils.Routes;
@@ -55,6 +56,7 @@ public class NewCommentActivity extends Activity {
 
     // object for internal db
     SmartCampusDB smartCampusDB = new SmartCampusDB(this);
+    SmartSessionManager session;
 
     // adapter for comments view
     CommentAdapter commentsAdapter;
@@ -86,6 +88,7 @@ public class NewCommentActivity extends Activity {
 
         // list of comments
         commentsList = new ArrayList<Comment>();
+        session = new SmartSessionManager(NewCommentActivity.this);
 
         // fetch the intent
         commentIntent = getIntent();
@@ -160,7 +163,6 @@ public class NewCommentActivity extends Activity {
 
     @Override
     public void onBackPressed() {
-
 
         Log.v(Constants.appName, commentCount+" comment sending");
 
@@ -344,7 +346,7 @@ public class NewCommentActivity extends Activity {
                                             comment1.setMedia(Constants.null_indicator);
                                             comment1.setCreatedAt("now");
                                             comment1.setUpdatedAt("now");
-                                            comment1.setUserImage((String)smartCampusDB.getUser().get(Constants.userImage));
+                                            comment1.setUserImage(session.getProfilePhoto());
 
                                             // add the object to list
                                             commentsList.add(comment1);
@@ -532,6 +534,7 @@ public class NewCommentActivity extends Activity {
 
 
                                         Log.v(Constants.appName, "length: "+jsonArray.length());
+                                        Log.v(Constants.appName, "array: "+jsonArray);
                                         for(int i=0; i<jsonArray.length(); i++){
 
                                             // get the JSON object inside Array
@@ -549,7 +552,19 @@ public class NewCommentActivity extends Activity {
                                             comment.setMedia(jsonObject.getString(Constants.media));
                                             comment.setCreatedAt(jsonObject.getString(Constants.createdAt));
                                             comment.setUpdatedAt(jsonObject.getString(Constants.updatedAt));
-                                            comment.setUserImage(jsonObject.getString(Constants.userImage));
+                                            //comment.setUserImage(jsonObject.getString(Constants.userImage));
+
+                                            // get the user image
+                                            JSONObject userObject = (JSONObject) jsonObject.get(Constants.user);
+                                            int mediaCount = userObject.getInt(Constants.mediaCount);
+                                            if(mediaCount > 0){
+                                                //Log.v(Constants.appName, "userImage : "+userObject.getString(Constants.media));
+                                                comment.setUserImage(userObject.getString(Constants.media));//.substring(0, (userObject.getString(Constants.media).length()-2)));
+                                            }
+                                            else{
+                                                //Log.v(Constants.appName, "userImage : "+userObject.getString(Constants.media));
+                                                comment.setUserImage(Constants.null_indicator);
+                                            }
 
                                             // add the object to list
                                             commentsList.add(comment);

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -20,7 +21,7 @@ import utils.Constants;
 public class MoreActivity extends AppCompatActivity{
 
     // views of activity
-    RelativeLayout userProfileView, groupsView, adminPanelView, messagesView, learnView, academicsView, examsView, complaintOrFeedbackView,
+    RelativeLayout userProfileView, groupsView, adminPanelView, messagesView, driveView, learnView, academicsView, examsView, complaintOrFeedbackView,
     directoryView, studentDirectoryView, placementsView, collegeMapView, aboutUsView, bugView, aboutAppView;
 
     TextView messagesTextView;
@@ -62,6 +63,7 @@ public class MoreActivity extends AppCompatActivity{
         groupsView = (RelativeLayout) findViewById(R.id.groupsView);
         adminPanelView = (RelativeLayout) findViewById(R.id.adminPanelView);
         messagesView = (RelativeLayout) findViewById(R.id.messagesView);
+        driveView = (RelativeLayout) findViewById(R.id.driveView);
         messagesTextView = (TextView) findViewById(R.id.messagesTextView); messagesTextView.setTypeface(sansFont);
         learnView = (RelativeLayout) findViewById(R.id.learnView);
         academicsView = (RelativeLayout) findViewById(R.id.acadamicsView);
@@ -77,11 +79,11 @@ public class MoreActivity extends AppCompatActivity{
 
         // based on user role show the views
         // admin panel is only visible if user is "admin"
-        if(!smartCampusDB.getUserRole().contentEquals(Constants.admin)){
+        if(!smartCampusDB.getUserRole().equalsIgnoreCase(Constants.admin)){
             adminPanelView.setVisibility(View.GONE);
         }
 
-        if(!smartCampusDB.getUserRole().contentEquals(Constants.student)){
+        if(!smartCampusDB.getUserRole().equalsIgnoreCase(Constants.student)){
             messagesTextView.setText(R.string.messages);
         }
 
@@ -111,7 +113,7 @@ public class MoreActivity extends AppCompatActivity{
         // if so display the Student directory option
         // else hide it
 
-        if(smartCampusDB.getUserRole().contentEquals(Constants.admin)){
+        if(smartCampusDB.getUserRole().equalsIgnoreCase(Constants.admin)){
             studentDirectoryView.setVisibility(View.VISIBLE);
         }
         else if(smartCampusDB.isUserPrivileged()) {
@@ -172,6 +174,16 @@ public class MoreActivity extends AppCompatActivity{
             }
         });
 
+        driveView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // user navigates to drive to upload and share content
+                Intent driveIntent = new Intent(getApplicationContext(), DriveActivity.class);
+                startActivity(driveIntent);
+            }
+        });
+
         learnView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -226,9 +238,14 @@ public class MoreActivity extends AppCompatActivity{
 
                     }
                 }
-                else {
+                else if(smartCampusDB.getUserRole().equalsIgnoreCase(Constants.admin)){
 
                     // its a normal user flow as user has no privileges assigned
+                    Intent complaintFeedbackIntent = new Intent(getApplicationContext(), FeedbackActivity.class);
+                    startActivity(complaintFeedbackIntent);
+                }
+                else {
+
                     Intent complaintFeedbackIntent = new Intent(getApplicationContext(), NewFeedbackActivity.class);
                     startActivity(complaintFeedbackIntent);
                 }

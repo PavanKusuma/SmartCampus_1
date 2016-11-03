@@ -27,14 +27,15 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:src="@drawable/ic_user_profile"
-        android:padding="4sp"/>
+        android:scaleType="centerCrop"
+        android:layout_margin="8dp"/>
 
     <ImageView
         android:id="@+id/commentUserImageBG"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:src="@drawable/user_image_bg"
-        android:padding="4sp"
+        android:layout_margin="8dp"
         android:contentDescription="@string/app_name"/>
 
     <TextView

@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
+import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.widget.TextView;
 
@@ -20,7 +23,8 @@ public class AboutAppActivity extends AppCompatActivity {
     // toolbar for actionbar
     Toolbar toolbar;
 
-    TextView appName, appVersion;
+    TextView appInfo, appName, appVersion, applink1, applink2;
+    Spanned text;
 
     LayoutInflater layoutInflater;
 
@@ -54,10 +58,27 @@ public class AboutAppActivity extends AppCompatActivity {
 
         appName = (TextView) findViewById(R.id.appName);
         appVersion = (TextView) findViewById(R.id.appVersion);
+        appInfo = (TextView) findViewById(R.id.appInfo);
+        applink1 = (TextView) findViewById(R.id.applink1);
+        applink2 = (TextView) findViewById(R.id.applink2);
 
 
         appName.setTypeface(sansFont);
         appVersion.setTypeface(sansFont);
+        appInfo.setTypeface(sansFont);
+        applink1.setTypeface(sansFont);
+        applink2.setTypeface(sansFont);
+
+        text = Html.fromHtml("<a href='http://www.infinitynext.com//'>www.infinitynext.com</a>");
+
+        applink1.setMovementMethod(LinkMovementMethod.getInstance());
+        applink1.setText(text);
+
+        text = Html.fromHtml("<a href='http://www.smartcampusapp.com//'>www.smartcampusapp.com</a>");
+
+        applink2.setMovementMethod(LinkMovementMethod.getInstance());
+        applink2.setText(text);
+    }
 
         // get the Action bar
        /* actionBar = getSupportActionBar();
@@ -73,5 +94,5 @@ public class AboutAppActivity extends AppCompatActivity {
         actionBar.setDisplayShowCustomEnabled(true);
 
         actionBar.setElevation(0.7f);*/
-    }
+
 }

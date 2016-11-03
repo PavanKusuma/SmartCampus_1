@@ -25,8 +25,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:layout_marginTop="-8dp"
-                android:progressTint="@color/globalThemeColor"
+                android:layout_marginTop="-6dp"
+                android:progressTint="@color/globalTextColor"
                 android:visibility="gone"/>
 
             <ScrollView
@@ -145,7 +145,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:weightSum="3">
+                android:weightSum="1">
 
                 <ImageView
                     android:id="@+id/imageIcon"
@@ -161,7 +161,8 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_place_disable"
                     android:padding="12dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:visibility="gone"/>
 
                 <ImageView
                     android:id="@+id/linkIcon"
@@ -169,7 +170,8 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_link_disable"
                     android:padding="12dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:visibility="gone"/>
 
                 <ImageView
                     android:id="@+id/feelingIcon"

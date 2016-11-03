@@ -20,6 +20,7 @@ public class User {
     private int semester;
     private int year;
     private String role;
+    private String department;
 
     private int mediaCount;
     private String media;
@@ -102,6 +103,14 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
     }
 
     public int getMediaCount() {

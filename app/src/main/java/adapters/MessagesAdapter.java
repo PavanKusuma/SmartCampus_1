@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -91,18 +92,21 @@ public class MessagesAdapter extends BaseAdapter {
             // differentiate layout to left and right
             // if current user object id is equal to fromUserObjectId, then its sent message
             if(messagesList.get(position).getFromUserObjectId().contentEquals(smartCampusDB.getUser().get(Constants.userObjectId).toString())) {
-                Log.v(Constants.appName, "Sent message");
+
+                //Log.v(Constants.appName, "Sent message");
                 itemView = (RelativeLayout) layoutInflater.inflate(R.layout.messages_single_listitem_right, parent, false);
 
-                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                AbsListView.LayoutParams params = new AbsListView.LayoutParams(AbsListView.LayoutParams.WRAP_CONTENT, AbsListView.LayoutParams.WRAP_CONTENT);
                // params.setMargins(50, 0, 0, 0);
                 itemView.setLayoutParams(params);
                 //itemView1.setLayoutParams(params);
-            }else if(!messagesList.get(position).getFromUserObjectId().contentEquals(smartCampusDB.getUser().get(Constants.userObjectId).toString())) {
-                Log.v(Constants.appName, "received message");
+            }
+            else if(!messagesList.get(position).getFromUserObjectId().contentEquals(smartCampusDB.getUser().get(Constants.userObjectId).toString())) {
+
+                //Log.v(Constants.appName, "received message");
                 itemView = (RelativeLayout) layoutInflater.inflate(R.layout.messages_single_listitem_left, parent, false);
 
-                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                AbsListView.LayoutParams params = new AbsListView.LayoutParams(AbsListView.LayoutParams.WRAP_CONTENT, AbsListView.LayoutParams.WRAP_CONTENT);
                 //params.setMargins(0, 0, 50, 0);
                 itemView.setLayoutParams(params);
                 //itemView1.setLayoutParams(params);
@@ -138,16 +142,17 @@ public class MessagesAdapter extends BaseAdapter {
             // set the username of the user
             if (smartCampusDB.getUser().get(Constants.role).toString().contentEquals(Constants.student)) {
 
-                userName.setText(messagesList.get(position).getUsername());
+                userName.setText(messagesList.get(position).getUsername() + " (" + messagesList.get(position).getDepartment() + " " + Constants.faculty + ")");
+
             } else {
 
                 if (messagesList.get(position).getYear() == 0) {
 
-                    userName.setText(messagesList.get(position).getUsername() + " (" + messagesList.get(position).getBranch() + " " + Constants.faculty + ")");
+                    userName.setText(messagesList.get(position).getUsername() + " (" + messagesList.get(position).getDepartment() + " " + Constants.faculty + ")");
                 }
                 if (messagesList.get(position).getYear() != 0) {
 
-                    userName.setText(messagesList.get(position).getUsername() + " : " + messagesList.get(position).getBranch() + " " + messagesList.get(position).getYear() + " - " + messagesList.get(position).getSemester());
+                    userName.setText(messagesList.get(position).getUsername() + " : " + messagesList.get(position).getDepartment());
                 }
             }
 

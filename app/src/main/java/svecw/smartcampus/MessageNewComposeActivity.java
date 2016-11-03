@@ -70,6 +70,11 @@ import java.util.Date;
 import java.util.Locale;
 
 import internaldb.SmartCampusDB;
+import internaldb.SmartSessionManager;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
+import rx.schedulers.Schedulers;
+import utils.Compressor;
 import utils.Constants;
 import utils.Routes;
 import utils.Snippets;
@@ -83,8 +88,8 @@ public class MessageNewComposeActivity extends AppCompatActivity {
     // views from layout
     TextView selectUser, sendStudent, sendFaculty;
     EditText newMessage;
-    Spinner messageBranch, messageYear, messageSemester;
-    LinearLayout branchLayout, selectedDepartItems;
+    //Spinner messageBranch, messageYear, messageSemester;
+    LinearLayout selectedDepartItems;
     ImageView newMessageSelectImage, selectDept;
 
     // progress dialog
@@ -104,7 +109,7 @@ public class MessageNewComposeActivity extends AppCompatActivity {
 
     // to message
     String to = Constants.student;
-    String selectedBranch="";
+    String department="";
     int selectedYear=0;
     int selectedSemester=0;
     String message="";
@@ -125,11 +130,19 @@ public class MessageNewComposeActivity extends AppCompatActivity {
     //SmartDB smartDB = new SmartDB(this);
     byte[] b = Constants.null_indicator.getBytes();
     int height, width;
+    int PLACE_PICKER_REQUEST = 10;
+    File image, compressedImage;
+
 
     Intent backIntent;
-    ArrayList<Object> selectedDepartments = new ArrayList<Object>();
-    final String[] collegeDepartments = {"1CSE", "2CSE", "1ECE", "2ECE", "1IT", "2IT"};
-    final boolean[] collegeDepartmentsSelected = {false, false, false, false, false, false};
+    ArrayList<Integer> selectedDepartments = new ArrayList<Integer>();
+    String[] collegeDepartments;
+    boolean[] collegeDepartmentsSelected = new boolean[50];
+
+    ArrayList<String> colDepts = new ArrayList<String>();
+    ArrayList<Boolean> colDeptsSelected = new ArrayList<Boolean>();
+
+    SmartSessionManager session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -157,6 +170,7 @@ public class MessageNewComposeActivity extends AppCompatActivity {
 
         // object for LayoutInflater
         layoutInflater = LayoutInflater.from(this);
+        session = new SmartSessionManager(MessageNewComposeActivity.this);
 
         backIntent = getIntent();
 
@@ -164,13 +178,26 @@ public class MessageNewComposeActivity extends AppCompatActivity {
         selectDept = (ImageView) findViewById(R.id.selectDept);
         newMessage = (EditText) findViewById(R.id.writeMessage); newMessage.setTypeface(sansFont);
         newMessageSelectImage = (ImageView) findViewById(R.id.newMessageSelectImage);
-        messageBranch = (Spinner) findViewById(R.id.messageBranch);
-        messageYear = (Spinner) findViewById(R.id.messageYear);
-        messageSemester = (Spinner) findViewById(R.id.messageSemester);
         sendStudent = (TextView) findViewById(R.id.sendStudent); sendStudent.setTypeface(sansFont);
         sendFaculty = (TextView) findViewById(R.id.sendFaculty); sendFaculty.setTypeface(sansFont);
-        branchLayout = (LinearLayout) findViewById(R.id.branchLayout);
         selectedDepartItems = (LinearLayout) findViewById(R.id.selectedDepartItems);
+
+        // get departments list and display it for selection
+        /*colDepts.add("Select all");
+        String[] prependedArray = new ArrayList<String>() {
+            {
+                add("newElement");
+                addAll(Arrays.asList(originalArray));
+            }
+        }.toArray(new String[0]);*/
+
+        collegeDepartments = session.getSubDepartments().split(",");
+        // set the pre selection for the list
+        for(int i=0; i<collegeDepartments.length; i++){
+
+            collegeDepartmentsSelected[i] = false;
+        }
+
 
         // set the focusable to true programmatically
         newMessage.setOnTouchListener(new View.OnTouchListener() {
@@ -196,11 +223,19 @@ public class MessageNewComposeActivity extends AppCompatActivity {
                 sendFaculty.setTextColor(getResources().getColor(R.color.globalThemeColor));
                 sendFaculty.setBackgroundResource(R.drawable.button_rounded_shape_blue); //BackgroundColor(Color.WHITE);
 
-                // set visible the year and semester views
-                branchLayout.setVisibility(View.VISIBLE);
-
                 // message will be send to student
                 to = Constants.student;
+
+                // clear the selected departments
+                selectedDepartItems.removeAllViews();
+                selectedDepartments.clear();
+
+                collegeDepartments = session.getSubDepartments().split(",");
+                // set the pre selection for the list
+                for(int i=0; i<collegeDepartments.length; i++){
+
+                    collegeDepartmentsSelected[i] = false;
+                }
             }
         });
 
@@ -216,11 +251,20 @@ public class MessageNewComposeActivity extends AppCompatActivity {
                 sendStudent.setTextColor(getResources().getColor(R.color.globalThemeColor));
                 sendStudent.setBackgroundResource(R.drawable.button_rounded_shape_blue); //BackgroundColor(Color.WHITE);
 
-                // set visible the year and semester views
-                branchLayout.setVisibility(View.GONE);
-
                 // message will be send to faculty
                 to = Constants.faculty;
+
+                // clear the selected departments
+                selectedDepartItems.removeAllViews();
+                selectedDepartments.clear();
+
+                collegeDepartments = session.getDepartments().split(",");
+                // set the pre selection for the list
+                for(int i=0; i<collegeDepartments.length; i++){
+
+                    collegeDepartmentsSelected[i] = false;
+                }
+
 
             }
         });
@@ -229,45 +273,63 @@ public class MessageNewComposeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                // show the dialog to choose camera or gallery
-                // custom dialog
-                final AlertDialog.Builder menuAlert = new AlertDialog.Builder(MessageNewComposeActivity.this);
-                final String[] menuList = {"Camera", "Gallery"};
-                menuAlert.setTitle("Select from");
-                menuAlert.setItems(menuList, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int item) {
-                        switch (item) {
-                            // camera selected
-                            case 0:
-                                // post from camera
-                                // clear bytes if any
-                                b = Constants.null_indicator.getBytes();
-                                postingFromCamera();
-                                break;
+            // show the dialog to choose camera or gallery
+            // custom dialog
+            final AlertDialog.Builder menuAlert = new AlertDialog.Builder(MessageNewComposeActivity.this);
+            final String[] menuList = { "Camera", "Gallery" };
+            menuAlert.setTitle("Select from");
+            menuAlert.setItems(menuList, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int item) {
+                    switch (item) {
+                        // camera selected
+                        case 0:
+                            // posting from camera
+                            postingFromCamera();
+                            break;
 
-                            // gallery selected
-                            case 1:
+                        // gallery selected
+                        case 1:
 
-                                // post from gallery
-                                // clear bytes if any
-                                b = Constants.null_indicator.getBytes();
-                                postingFromGallery();
-                                break;
-                        }
+                            // posting from gallery
+                            postingFromGallery();
+                            break;
                     }
+                }
 
 
-                });
-                AlertDialog menuDrop = menuAlert.create();
-                menuDrop.show();
+            });
+            AlertDialog menuDrop = menuAlert.create();
+            menuDrop.show();
+
+
             }
         });
 
 
+        // select the departments from the list displayed
         selectDept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+          /*      // when faculty selected, get the global departments list
+                // else get the sub departments list
+                if(to.contentEquals(Constants.faculty)){
+
+                    collegeDepartments = session.getDepartments().split(",");
+                }
+                else {
+
+                    collegeDepartments = session.getSubDepartments().split(",");
+                }
+
+                    // set the pre selection for the list
+                    for(int i=0; i<collegeDepartments.length; i++){
+
+                        collegeDepartmentsSelected[i] = false;
+                    }
+*/
+
+                // dialog to display the list of departments
                 Dialog dialog;
                 AlertDialog.Builder builder = new AlertDialog.Builder(MessageNewComposeActivity.this);
                 builder.setTitle("Select Departments: ");
@@ -275,11 +337,14 @@ public class MessageNewComposeActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which, boolean isChecked) {
 
+                        // check if list item is already checked/selected
                         if (isChecked) {
 
-                            selectedDepartments.add(which);
-                            collegeDepartmentsSelected[which] = true;
-                        } else if (selectedDepartments.contains(which)) {
+                            selectedDepartments.add(which); // list of selected/checked list items
+                            collegeDepartmentsSelected[which] = true; // this is to keep track of the selected/checked list items
+                        }
+                        else if (selectedDepartments.contains(which)) {
+
                             selectedDepartments.remove(Integer.valueOf(which));
                             collegeDepartmentsSelected[which] = false;
                         }
@@ -288,11 +353,13 @@ public class MessageNewComposeActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        Log.v(Constants.appName, "Check count : "+ selectedDepartments.size());
+                        //Log.v(Constants.appName, "Check count : "+ selectedDepartments.size());
 
+                        // on selection of list items, clear the previous displayed items and show the new list of selected items
                         // clear all previous views
                         selectedDepartItems.removeAllViews();
 
+                        // fetch selected/checked list items and display them
                         for(int i=0; i<selectedDepartments.size(); i++) {
 
                             // create a text view
@@ -315,6 +382,8 @@ public class MessageNewComposeActivity extends AppCompatActivity {
 
                     }
                 });
+
+
 
                 dialog = builder.create();
                 dialog.show();
@@ -355,32 +424,40 @@ public class MessageNewComposeActivity extends AppCompatActivity {
 
         try {
 
-            // check if branch, semester, year are selected
-            if (!messageBranch.getSelectedItem().toString().contentEquals("Select branch") || !messageSemester.getSelectedItem().toString().contentEquals("Select semester") || !messageYear.getSelectedItem().toString().contentEquals("Select year")) {
+            // check if atLeast one department is selected
+            if (selectedDepartments.size() > 0) {
 
                 // check if message is written
                 if (newMessage.getText().toString().length() > 0) {
 
-                    selectedBranch = messageBranch.getSelectedItem().toString();
-                    message = newMessage.getText().toString();
+                    message = newMessage.getText().toString(); // fetch the message
 
+                    // fetch the selected departments and build a string of departments
+                    for(int i=0; i< selectedDepartments.size(); i++){
+
+                        if(department.length() != 0)
+                            department = department + "," + collegeDepartments[ selectedDepartments.get(i)];
+                        else
+                            department = collegeDepartments[ selectedDepartments.get(i)];
+                    }
+
+                    // for year and semester provide the values to compare while displaying
                     if (to.contentEquals(Constants.student)) {
 
-                        selectedSemester = Integer.valueOf(messageSemester.getSelectedItem().toString());
-                        selectedYear = Integer.valueOf(messageYear.getSelectedItem().toString());
+                        // here we are including non-zero integer to indicate that this is student
+                        selectedSemester = 1;
+                        selectedYear = 1;
 
                     } else {
 
+                        // to indicate this is faculty we provide zero
                         selectedSemester = 0;
                         selectedYear = 0;
                     }
 
-                    // we have 2 classes to execute based on mediaTable
-                    // if mediaTable exists then 'CreateWallPostWithMedia' is executed
-                    // else 'CreateWallPostWithoutMedia' is executed
 
                     // check if the mediaTable file is present
-                    // if so enter the randonObjectId
+                    // if so enter the randomObjectId
                     if (Arrays.equals(b, Constants.null_indicator.getBytes())) {
 
                         mediaCount = 0;
@@ -394,9 +471,9 @@ public class MessageNewComposeActivity extends AppCompatActivity {
                     // new message url
                     // as this is broadcast message
                     // there will not be groupId and toUserObjectId
-                    String messageURL = Routes.createMessage + Constants.key + "/" + Snippets.getUniqueMessageId() + "/" +
+/*                    String messageURL = Routes.createMessage + Constants.key + "/" + Snippets.getUniqueMessageId() + "/" +
                             Constants.Broadcast + "/" + Snippets.escapeURIPathParam(message) + "/" + smartCampusDB.getUser().get(Constants.userObjectId) + "/" +
-                            "-" + "/" + "-" + "/" + selectedYear + "/" + selectedBranch + "/" + selectedSemester + "/" + mediaCount;
+                            "-" + "/" + "-" + "/" + selectedYear + "/" + selectedBranch + "/" + selectedSemester + "/" + mediaCount;*/
 
                     // post new message
                     new PostNewMessage().execute(Routes.createMessage, Snippets.getUniqueMessageId(), Constants.Broadcast, Snippets.escapeURIPathParam(message), smartCampusDB.getUser().get(Constants.userObjectId).toString());
@@ -451,7 +528,7 @@ public class MessageNewComposeActivity extends AppCompatActivity {
         // if the result is ok
         if (resultCode == RESULT_OK && requestCode == Constants.IMG_PICK){
 
-            //get the Uri for the captured image
+            /*//get the Uri for the captured image
             Uri selectedImage = data.getData();
 
             String[] filePathColumn = { MediaStore.MediaColumns.DATA };
@@ -479,13 +556,108 @@ public class MessageNewComposeActivity extends AppCompatActivity {
             // call imageCompression method to compress the image
             // assign bitmap to ImageView
             BitmapDrawable bd = imageCompression(bitmap, options);
-            newMessageSelectImage.setImageDrawable(bd);
+            newMessageSelectImage.setImageDrawable(bd);*/
+
+            try {
+
+                // get the actual image data to the file
+                image = Compressor.from(getApplicationContext(), data.getData());
+                picturePath = image.getPath();
+
+                // compress Image
+                customCompressImage();
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
 
         }
 
     }
 
 
+    // this method is called after fetching the data of the actual image
+    // this method will compress the image file to WebP
+    public void customCompressImage() {
+        if (image == null) {
+
+            Toast.makeText(MessageNewComposeActivity.this, "Please choose an image!", Toast.LENGTH_SHORT).show();
+
+        } else {
+            // Compress image in main thread using custom Compressor
+            /*compressedImage = new Compressor.Builder(HomeActivity.this)
+                    .setMaxWidth(640)
+                    .setMaxHeight(480)
+                    .setQuality(75)
+                    .setCompressFormat(Bitmap.CompressFormat.WEBP)
+                    .setDestinationDirectoryPath(Environment.getExternalStoragePublicDirectory(
+                            Environment.DIRECTORY_PICTURES).getAbsolutePath())
+                    .build()
+                    .compressToFile(actualImage);
+            setCompressedImage();*/
+
+            // Compress image using RxJava in background thread with custom Compressor
+            new Compressor.Builder(this)
+                    .setMaxWidth(640)
+                    .setMaxHeight(480)
+                    .setQuality(75)
+                    .setCompressFormat(Bitmap.CompressFormat.PNG)
+                    .setDestinationDirectoryPath(Environment.getExternalStoragePublicDirectory(
+                            Environment.DIRECTORY_PICTURES).getAbsolutePath())
+                    .build()
+                    .compressToFileAsObservable(image)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(new Action1<File>() {
+                        @Override
+                        public void call(File file) {
+                            compressedImage = file;
+                            setCompressedImage(compressedImage);
+                        }
+                    }, new Action1<Throwable>() {
+                        @Override
+                        public void call(Throwable throwable) {
+
+                            Toast.makeText(MessageNewComposeActivity.this, "Error! Please try again", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        }
+    }
+
+    // this method will fetch the compressed image bitmap and display
+    private void setCompressedImage(File compressedImage1) {
+        Log.v(Constants.appName, "Here is the path " + compressedImage1.getAbsolutePath());
+        // fetch the compressed bitmap
+        bitmap = BitmapFactory.decodeFile(compressedImage1.getAbsolutePath());
+        ByteArrayOutputStream buffer = new ByteArrayOutputStream(bitmap.getWidth() * bitmap.getHeight());
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, buffer);
+        b = buffer.toByteArray();
+        Log.v(Constants.appName, "Here is the length " + b.length + " _ " + bitmap.getByteCount());
+
+        // here we will display the compressed image
+        newMessageSelectImage.setImageBitmap(bitmap);
+
+        newMessageSelectImage.setAdjustViewBounds(true);
+
+/*
+        int bytes = bitmap.getByteCount();
+        ByteBuffer buffer1 = ByteBuffer.allocate(bytes); //Create a new buffer
+
+        b = buffer1.array();
+        Log.v(Constants.appName, "Here is the length " + b.length + " _ " + bitmap.getByteCount());
+*/
+
+        // prepare the inputStream
+        is = new ByteArrayInputStream(b);
+        //Bitmap yourSelectedImage = BitmapFactory.decodeStream(is);
+
+
+
+        //compressedSizeTextView.setText(String.format("Size : %s", getReadableFileSize(compressedImage.length())));
+
+        //Toast.makeText(this, "Compressed image save in " + compressedImage.getPath(), Toast.LENGTH_LONG).show();
+        //Log.d("Compressor", "Compressed image save in " + compressedImage.getPath());
+    }
 
     /**
      * This method will take care of camera functionality in current post
@@ -592,10 +764,14 @@ public class MessageNewComposeActivity extends AppCompatActivity {
                 // as the app is granted with camera access permission previously
                 try{
 
-                    Intent pickIntent = new Intent(Intent.ACTION_PICK);
-                    pickIntent.setType("image/*");
+                    /*Intent pickIntent = new Intent(Intent.ACTION_PICK);
+                    pickIntent.setType("image*//*");
                     //we will handle the returned data in onActivityResult
                     startActivityForResult(Intent.createChooser(pickIntent, "Select Picture"), Constants.IMG_PICK);
+*/
+                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                    intent.setType("image/*");
+                    startActivityForResult(intent, Constants.IMG_PICK);
 
                 } catch (ActivityNotFoundException ante) {
                     //display an error message
@@ -610,10 +786,14 @@ public class MessageNewComposeActivity extends AppCompatActivity {
 
             try{
 
-                Intent pickIntent = new Intent(Intent.ACTION_PICK);
-                pickIntent.setType("image/*");
+                /*Intent pickIntent = new Intent(Intent.ACTION_PICK);
+                pickIntent.setType("image*//*");
                 //we will handle the returned data in onActivityResult
-                startActivityForResult(Intent.createChooser(pickIntent, "Select Picture"), Constants.IMG_PICK);
+                startActivityForResult(Intent.createChooser(pickIntent, "Select Picture"), Constants.IMG_PICK);*/
+
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("image/*");
+                startActivityForResult(intent, Constants.IMG_PICK);
 
             } catch (ActivityNotFoundException anfe) {
                 //display an error message
@@ -659,10 +839,14 @@ public class MessageNewComposeActivity extends AppCompatActivity {
 
                 try{
 
-                    Intent pickIntent = new Intent(Intent.ACTION_PICK);
-                    pickIntent.setType("image/*");
+                    /*Intent pickIntent = new Intent(Intent.ACTION_PICK);
+                    pickIntent.setType("image*//*");
                     //we will handle the returned data in onActivityResult
-                    startActivityForResult(Intent.createChooser(pickIntent, "Select Picture"), Constants.IMG_PICK);
+                    startActivityForResult(Intent.createChooser(pickIntent, "Select Picture"), Constants.IMG_PICK);*/
+
+                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                    intent.setType("image/*");
+                    startActivityForResult(intent, Constants.IMG_PICK);
 
                 } catch (ActivityNotFoundException anfe) {
 
@@ -685,9 +869,12 @@ public class MessageNewComposeActivity extends AppCompatActivity {
 
 
 
-    /**
+/*
+    */
+/**
      * Send message
-     */
+     *//*
+
     class NewMessageBG extends AsyncTask<String, Float, String> {
 
         @Override
@@ -778,6 +965,7 @@ public class MessageNewComposeActivity extends AppCompatActivity {
             finish();
         }
     }
+*/
 
     /**
      * this method will check for device camera
@@ -805,7 +993,7 @@ public class MessageNewComposeActivity extends AppCompatActivity {
 
     private void previewCapturedImage() {
         try {
-            // bimatp factory
+            /*// bimatp factory
             BitmapFactory.Options options = new BitmapFactory.Options();
 
             // set the picturePath
@@ -817,10 +1005,17 @@ public class MessageNewComposeActivity extends AppCompatActivity {
             // call imageCompression method to compress the image
             // assign bitmap to ImageView
             BitmapDrawable bd = imageCompression(bitmap, options);
-            newMessageSelectImage.setImageDrawable(bd);
+            newMessageSelectImage.setImageDrawable(bd);*/
 
+            // get the actual image data to the file
+            image = Compressor.from(getApplicationContext(), fileUri);
 
-        } catch (NullPointerException e) {
+            picturePath = image.getPath();
+
+            // compress Image
+            customCompressImage();
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -1041,8 +1236,9 @@ public class MessageNewComposeActivity extends AppCompatActivity {
                         + "&" + URLEncoder.encode(Constants.toUserObjectId, "UTF-8") + "=" + "-"
                         + "&" + URLEncoder.encode(Constants.groupId, "UTF-8") + "=" + "-"
                         + "&" + URLEncoder.encode(Constants.year, "UTF-8") + "=" + selectedYear
-                        + "&" + URLEncoder.encode(Constants.branch, "UTF-8") + "=" + selectedBranch
+                        + "&" + URLEncoder.encode(Constants.branch, "UTF-8") + "=" + department
                         + "&" + URLEncoder.encode(Constants.semester, "UTF-8") + "=" + selectedSemester
+                        + "&" + URLEncoder.encode(Constants.department, "UTF-8") + "=" + department
                         + "&" + URLEncoder.encode(Constants.mediaCount, "UTF-8") + "=" + mediaCount;
 
                 Log.v(Constants.appName, urls[0]+data);
@@ -1187,6 +1383,7 @@ public class MessageNewComposeActivity extends AppCompatActivity {
                                             backIntent.putExtra(Constants.year, jsonObject.getInt(Constants.year));
                                             backIntent.putExtra(Constants.branch, jsonObject.getString(Constants.branch));
                                             backIntent.putExtra(Constants.semester, jsonObject.getInt(Constants.semester));
+                                            backIntent.putExtra(Constants.department, jsonObject.getString(Constants.department));
                                             backIntent.putExtra(Constants.createdAt, jsonObject.getString(Constants.createdAt));
                                             backIntent.putExtra(Constants.updatedAt, jsonObject.getString(Constants.updatedAt));
                                             backIntent.putExtra(Constants.mediaCount, jsonObject.getInt(Constants.mediaCount));
@@ -1293,7 +1490,6 @@ public class MessageNewComposeActivity extends AppCompatActivity {
             }
             try {
 
-
                 // Set Request parameter
                 data += "?&" + URLEncoder.encode(Constants.name, "UTF-8") + "=" + (strings[1]);
 
@@ -1323,14 +1519,14 @@ public class MessageNewComposeActivity extends AppCompatActivity {
 
                 // read file and write it into form...
                 bytesRead = is.read(b, 0, b.length);
-                Log.v(Constants.appName, "Size of bytes : " + b.length);
+                //Log.v(Constants.appName, "Size of bytes : " + b.length);
                 dos.write(b, 0, b.length);
+
                 while (bytesRead > 0) {
                     dos.write(b, 0, b.length);
                     bytesAvailable = is.available();
                     bufferSize = Math.min(bytesAvailable, maxBufferSize);
                     bytesRead = is.read(buffer, 0, bufferSize);
-
 
                     Log.v(Constants.appName, "check 1");
                 }

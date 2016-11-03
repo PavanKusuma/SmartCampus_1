@@ -58,6 +58,34 @@ public class SmartSessionManager {
         return sharedPreferences.getString(Constants.userImage, Constants.null_indicator);
     }
 
+
+    // save departments and sub_departments
+    public void saveDepartments(String departments, String sub_departments){
+
+        editor.putString(Constants.departments, departments);
+        editor.putString(Constants.sub_departments, sub_departments);
+        editor.commit();
+    }
+
+    // remove departments and sub_departments
+    public void removeDepartments(){
+
+        editor.putString(Constants.departments, Constants.null_indicator);
+        editor.putString(Constants.sub_departments, Constants.null_indicator);
+        editor.commit();
+    }
+
+    // get the saved departments
+    public String getDepartments(){
+
+        return sharedPreferences.getString(Constants.departments, Constants.null_indicator);
+    }
+    // get the saved sub_departments
+    public String getSubDepartments(){
+
+        return sharedPreferences.getString(Constants.sub_departments, Constants.null_indicator);
+    }
+
     // save the wall posts
     public void saveWallPosts(ArrayList<StudentWallPost> studentWallPostArrayList){
 

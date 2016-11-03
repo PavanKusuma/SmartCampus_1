@@ -23,7 +23,7 @@
             android:id="@+id/searchLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/appBlue">
+            android:background="#e9ebee">
 
             <LinearLayout
                 android:id="@+id/searchBy"
@@ -54,7 +54,7 @@
                         android:text="@string/collegeIdLogin"
                         android:checked="true"
                         android:tag="@string/idselected"
-                        android:buttonTint="@color/justBlue"/>
+                        android:buttonTint="@color/globalThemeColor"/>
 
                     <RadioButton
                         android:id="@+id/radioName"
@@ -62,7 +62,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/name"
                         android:tag="@string/nameselected"
-                        android:buttonTint="@color/justBlue"/>
+                        android:buttonTint="@color/globalThemeColor"/>
 
                 </RadioGroup>
 

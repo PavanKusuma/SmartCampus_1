@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.io.InputStream;
 import java.net.URL;
@@ -37,6 +40,8 @@ public class CommentAdapter extends BaseAdapter {
 
     // inflater for Layout
     LayoutInflater layoutInflater;
+
+    ViewHolder holder;
 
     // constructor
     public CommentAdapter(Context context) {
@@ -65,15 +70,40 @@ public class CommentAdapter extends BaseAdapter {
         return position;
     }
 
+    public class ViewHolder{
+
+        ImageView commentUserImage;
+        TextView commentUserName, commentId, userObjectId, commentText;
+    }
+
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
 
         RelativeLayout itemView;
         if (convertView == null) {
-            itemView = (RelativeLayout) layoutInflater.inflate(R.layout.college_wallpost_single_listitem, parent, false);
+            //itemView = (RelativeLayout) layoutInflater.inflate(R.layout.college_wallpost_single_listitem, parent, false);
+
+            // inflate single list item for each row
+            itemView = (RelativeLayout) layoutInflater.inflate(R.layout.comment_single_layout, parent, false);
+
+            // object for viewHolder
+            holder = new ViewHolder();
+
+            // view holder object to contain xml file elements
+            holder.commentUserImage = (ImageView) itemView.findViewById(R.id.commentUserImage);
+            holder.commentUserName = (TextView) itemView.findViewById(R.id.commentUserName);
+            holder.commentId = (TextView) itemView.findViewById(R.id.postObjectId);
+            holder.userObjectId = (TextView) itemView.findViewById(R.id.userObjectId);
+            holder.commentText = (TextView) itemView.findViewById(R.id.commentText);
+
+            itemView.setTag(holder);
+
 
         } else {
+
             itemView = (RelativeLayout) convertView;
+
+            holder = (ViewHolder) itemView.getTag();
         }
 
         try {
@@ -81,22 +111,15 @@ public class CommentAdapter extends BaseAdapter {
             Typeface sansFont = Typeface.createFromAsset(context.getResources().getAssets(), Constants.fontName);
 
             // inflate single list item for each row
-            itemView = (RelativeLayout) layoutInflater.inflate(R.layout.comment_single_layout, parent, false);
-
-            // view holder object to contain xml file elements
-            ImageView commentUserImage = (ImageView) itemView.findViewById(R.id.commentUserImage);
-            TextView commentUserName = (TextView) itemView.findViewById(R.id.commentUserName);
-            TextView commentId = (TextView) itemView.findViewById(R.id.postObjectId);
-            TextView userObjectId = (TextView) itemView.findViewById(R.id.userObjectId);
-            TextView commentText = (TextView) itemView.findViewById(R.id.commentText);
+            //itemView = (RelativeLayout) layoutInflater.inflate(R.layout.comment_single_layout, parent, false);
 
 
-            commentUserName.setText(commentsList.get(position).getUsername()); commentUserName.setTypeface(sansFont);
-            commentId.setText(commentsList.get(position).getCommentId()); commentId.setTypeface(sansFont);
-            commentText.setText(commentsList.get(position).getComment()); commentText.setTypeface(sansFont);
-            userObjectId.setText(commentsList.get(position).getUserObjectId()); userObjectId.setTypeface(sansFont);
+            holder.commentUserName.setText(commentsList.get(position).getUsername()); holder.commentUserName.setTypeface(sansFont);
+            holder.commentId.setText(commentsList.get(position).getCommentId()); holder.commentId.setTypeface(sansFont);
+            holder.commentText.setText(commentsList.get(position).getComment()); holder.commentText.setTypeface(sansFont);
+            holder.userObjectId.setText(commentsList.get(position).getUserObjectId()); holder.userObjectId.setTypeface(sansFont);
 
-            // set user image
+            /*// set user image
             if (commentsList.get(position).getUserImage().contentEquals(Constants.null_indicator)) {
 
                 commentUserImage.setImageResource(R.drawable.ic_user_profile);
@@ -118,7 +141,7 @@ public class CommentAdapter extends BaseAdapter {
 
                     // bitmap options
                     BitmapFactory.Options options = new BitmapFactory.Options();
-    /*
+    *//*
                             //Bitmap bitmap = BitmapFactory.decodeStream(is, null, options);
                             options.inJustDecodeBounds = true;
                             //BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);
@@ -129,13 +152,100 @@ public class CommentAdapter extends BaseAdapter {
 
                             // Decode bitmap with inSampleSize set
                             options.inJustDecodeBounds = false;
-                            //return BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);*/
+                            //return BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);*//*
                     Bitmap bitmap = BitmapFactory.decodeStream(is);
 
 
                     commentUserImage.setImageBitmap(bitmap);
 
                 }
+            }
+
+
+*/
+
+
+
+
+            // userImage
+            // check if userImage exists for the post
+            // if so, fetch and display the userImage
+            if(!commentsList.get(position).getUserImage().contentEquals(Constants.null_indicator)) {
+
+                // show the default user profile image
+                holder.commentUserImage.setImageResource(R.drawable.ic_user_profile);
+
+                // check if the user image contains the image name
+                // if so fetch the image from url and display
+                // else fetch the image from local and display as it is just posted by current user
+                if (commentsList.get(position).getUserImage().contains(".")) {
+
+                    // load using picasso lib
+                    Picasso.with(context).load(Routes.getMedia+commentsList.get(position).getUserImage()).placeholder(R.drawable.ic_user_profile).into(holder.commentUserImage);
+
+/*                    // get the connection url for the media
+                    URL url = new URL(Routes.getMedia + collegeWallPostsList.get(position).getUserImage());
+                    URLConnection urlConnection = url.openConnection();
+                    urlConnection.setDoInput(true);
+                    urlConnection.connect();
+
+                    if (urlConnection.getContentLength() > 0) {
+
+                        // getInputStream
+                        InputStream is = urlConnection.getInputStream();
+
+                        // bitmap options
+                        BitmapFactory.Options options = new BitmapFactory.Options();
+*//*
+                        //Bitmap bitmap = BitmapFactory.decodeStream(is, null, options);
+                        options.inJustDecodeBounds = true;
+                        //BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);
+                        BitmapFactory.decodeStream(is, null, options);
+
+                        // Calculate inSampleSize
+                        options.inSampleSize = calculateInSampleSize(options, 200, 200);
+
+                        // Decode bitmap with inSampleSize set
+                        options.inJustDecodeBounds = false;
+                        //return BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);*//*
+                        Bitmap bitmap = BitmapFactory.decodeStream(is);
+
+                        holder.userImage.setImageBitmap(bitmap);
+                    }
+                    else {
+
+                        // hide user image layout
+                        holder.userImage.setImageResource(R.drawable.ic_user_profile);
+                    }*/
+                } else {
+
+
+                    if (!commentsList.get(position).getUserImage().equals("-")) {
+
+                        byte[] b = Base64.decode(commentsList.get(position).getUserImage(), Base64.DEFAULT);
+                        Bitmap bitmap = BitmapFactory.decodeByteArray(b, 0, b.length);
+
+                        //RoundImage roundedImage = new RoundImage(bitmap, 220, 220);
+                        //RoundImage roundedImage1 = new RoundImage(roundedImage.getBitmap(), bitmap.getWidth(), bitmap.getHeight());
+                        //holder.userImage.setImageDrawable(roundedImage1);
+
+                        //userImageLayout.setVisibility(View.VISIBLE);
+                        holder.commentUserImage.setImageBitmap(bitmap);
+
+                    }
+                    else {
+
+                        // hide user image layout
+                        holder.commentUserImage.setImageResource(R.drawable.ic_user_profile);
+                    }
+                }
+
+            }
+            else {
+
+                // set the userImage
+                holder.commentUserImage.setImageResource(R.drawable.ic_user_profile);
+
             }
 
 
