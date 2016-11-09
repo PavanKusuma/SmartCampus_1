@@ -137,7 +137,7 @@ public class MessageNewComposeActivity extends AppCompatActivity {
     Intent backIntent;
     ArrayList<Integer> selectedDepartments = new ArrayList<Integer>();
     String[] collegeDepartments;
-    boolean[] collegeDepartmentsSelected = new boolean[50];
+    boolean[] collegeDepartmentsSelected = new boolean[60];
 
     ArrayList<String> colDepts = new ArrayList<String>();
     ArrayList<Boolean> colDeptsSelected = new ArrayList<Boolean>();
