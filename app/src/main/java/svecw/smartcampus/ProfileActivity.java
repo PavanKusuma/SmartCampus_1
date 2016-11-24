@@ -73,7 +73,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     // views from layout
     TextView profileUserName, profileEmail, profilePhone, profileCollegeId, profileYear, profileBranch, profileSemester, refreshView;
-    ImageView profilePhoto, removeProfilePhoto, editProfilePhoto, editProfileDetails;
+    ImageView profilePhoto, removeProfilePhoto, editProfilePhoto, editProfileDetails, progressBarProfileImage;
     ProgressBar progressBarProfile;
 
     // instance for local db
@@ -128,6 +128,7 @@ public class ProfileActivity extends AppCompatActivity {
         editProfilePhoto = (ImageView) findViewById(R.id.editProfilePhoto);
         removeProfilePhoto = (ImageView) findViewById(R.id.removeProfilePhoto);
         editProfileDetails = (ImageView) findViewById(R.id.editProfileDetails);
+        progressBarProfileImage = (ImageView) findViewById(R.id.progressBarProfileImage);
         refreshView = (TextView) findViewById(R.id.refreshView);
         progressBarProfile = (ProgressBar) findViewById(R.id.progressBarProfile);
 
@@ -1669,6 +1670,7 @@ Log.v(Constants.appName, "Checking size before:" + b.length);
 
                                     // show the progress bar for upload
                                     progressBarProfile.setVisibility(View.VISIBLE);
+                                    progressBarProfileImage.setVisibility(View.VISIBLE);
                                     Toast.makeText(getApplicationContext(), "Please wait! uploading profile picture", Toast.LENGTH_SHORT).show();
                                 }
                             });
@@ -1700,6 +1702,7 @@ Log.v(Constants.appName, "Checking size before:" + b.length);
 
                                     // hide the progress bar for upload
                                     progressBarProfile.setVisibility(View.GONE);
+                                    progressBarProfileImage.setVisibility(View.GONE);
                                     Toast.makeText(getApplicationContext(), R.string.errorMsg, Toast.LENGTH_SHORT).show();
                                     break;
 
@@ -1708,6 +1711,7 @@ Log.v(Constants.appName, "Checking size before:" + b.length);
 
                                     // hide the progress bar for upload
                                     progressBarProfile.setVisibility(View.GONE);
+                                    progressBarProfileImage.setVisibility(View.GONE);
                                     Toast.makeText(getApplicationContext(), R.string.errorMsg, Toast.LENGTH_SHORT).show();
                                     break;
 
@@ -1922,6 +1926,7 @@ Log.v(Constants.appName, "Checking size before:" + b.length);
                             //Log.v(Constants.appName, "check -1");
                             // hide the progress bar for upload
                             progressBarProfile.setVisibility(View.GONE);
+                            progressBarProfileImage.setVisibility(View.GONE);
                             Toast.makeText(ProfileActivity.this, R.string.errorMsg, Toast.LENGTH_SHORT).show();
 
                         }
@@ -1930,6 +1935,7 @@ Log.v(Constants.appName, "Checking size before:" + b.length);
                             //Log.v(Constants.appName, "check 200");
                             // hide the progress bar for upload
                             progressBarProfile.setVisibility(View.GONE);
+                            progressBarProfileImage.setVisibility(View.GONE);
                             Toast.makeText(ProfileActivity.this, "Profile picture updated!", Toast.LENGTH_SHORT).show();
 
                         }
@@ -1943,6 +1949,7 @@ Log.v(Constants.appName, "Checking size before:" + b.length);
                 Log.v(Constants.appName, "check error"+Error);
                 // hide the progress bar for upload
                 progressBarProfile.setVisibility(View.GONE);
+                progressBarProfileImage.setVisibility(View.GONE);
                 Toast.makeText(ProfileActivity.this, R.string.errorMsg, Toast.LENGTH_SHORT).show();
                 //finish();
             }
@@ -1960,6 +1967,4 @@ Log.v(Constants.appName, "Checking size before:" + b.length);
             }
         }
     }
-
-
 }

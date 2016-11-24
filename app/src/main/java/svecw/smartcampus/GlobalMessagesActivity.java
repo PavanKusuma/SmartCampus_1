@@ -427,6 +427,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
             message.setGroupId(data.getStringExtra(Constants.groupId));
 
             message.setUsername(data.getStringExtra(Constants.userName));
+            message.setFacultyBranch(data.getStringExtra(Constants.facultyBranch)); // get branch of faculty
 
 
             // add the object to list at top and notify adapter
@@ -638,6 +639,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
                                             else{
                                                 message.setUserimage(Constants.null_indicator);
                                             }
+                                            message.setFacultyBranch(userObject.getString(Constants.branch)); // get branch of faculty
 
 
                                             // add the object to list

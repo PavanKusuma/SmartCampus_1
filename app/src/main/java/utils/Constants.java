@@ -40,6 +40,7 @@ public class Constants {
     public static final String collegeId = "collegeId";
     public static final String gcm_regId = "gcm_regId";
     public static final String branch = "branch";
+    public static final String facultyBranch = "facultyBranch";
     public static final String semester = "semester";
     public static final String year = "year";
     public static final String department = "department";

@@ -49,6 +49,11 @@
             android:name="svecw.smartcampus.GlobalLoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppFullScreenTheme" />
+
+        <activity
+            android:name="svecw.smartcampus.CheckAppVersionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullScreenTheme" />
         <activity
             android:name="svecw.smartcampus.GlobalLoginActivity2"
             android:screenOrientation="portrait"
@@ -399,6 +404,10 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
         <!--
             GCM Receiver

@@ -100,7 +100,7 @@ public class AlumniWallActivity  extends AppCompatActivity {
         Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
-        title.setText(getResources().getString(R.string.alumni));
+        title.setText(getResources().getString(R.string.alumni_new));
         title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar
@@ -297,9 +297,9 @@ public class AlumniWallActivity  extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        if(smartCampusDB.getUser().get(Constants.role).toString().contains(Constants.alumni) ||
-                smartCampusDB.getUser().get(Constants.role).toString().contains(Constants.admin) ||
-                smartCampusDB.getUser().get(Constants.role).toString().contains(Constants.student))
+        if(smartCampusDB.getUser().get(Constants.role).toString().equalsIgnoreCase(Constants.alumni) ||
+                smartCampusDB.getUser().get(Constants.role).toString().equalsIgnoreCase(Constants.admin) ||
+                smartCampusDB.getUser().get(Constants.role).toString().equalsIgnoreCase(Constants.student))
             getMenuInflater().inflate(R.menu.wall_menu, menu);
 
         return true;

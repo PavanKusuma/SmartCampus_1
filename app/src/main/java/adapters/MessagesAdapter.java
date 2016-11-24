@@ -142,7 +142,7 @@ public class MessagesAdapter extends BaseAdapter {
             // set the username of the user
             if (smartCampusDB.getUser().get(Constants.role).toString().contentEquals(Constants.student)) {
 
-                userName.setText(messagesList.get(position).getUsername() + " (" + messagesList.get(position).getDepartment() + " " + Constants.faculty + ")");
+                userName.setText(messagesList.get(position).getUsername() + " (" + messagesList.get(position).getFacultyBranch() + " " + Constants.faculty + ")");
 
             } else {
 

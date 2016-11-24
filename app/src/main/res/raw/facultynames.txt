@@ -4,7 +4,6 @@ Dr. Ch.Hari Krishna
 Mr. Sk.Madhar Pasha
 Mr. K.Ashok Kumar
 Mr.J.V.Narasimha Raju
-Mr. G. V. Subhash
 Mr.N.Srinivasa Rao
 Mr. B. N. Malleswara Rao
 Mr. J. Teja Venkata Satish
@@ -17,12 +16,13 @@ Mr. K.V.S.S.S.N..L.Varma
 Mr. M.V.Naga Raju
 Mr. N.Kalayan Chakravarthi
 Mr. M.Priya Nandini Devi
-Mr. P.G.V.Krishnam Raju
 Mr. Manoneet Kumar
 Mr. Vikas Kumar
 Mr. Sagar Chikka
+Mr. P.G.V.Krishnam Raju
+Mr.D. Madhav
+Ms. Y. Mounika
 Dr. T Sree Rama Murthy [HOD]
-Dr. R Subba Rao
 Dr. D Ravi Kiran
 Dr. P.S. Brahmanandam
 Mr. P Srihari Raju
@@ -87,6 +87,7 @@ Mr. G. Mohan Ram
 Mr. M.S. Sudheer
 Mr. R. Anuj
 Mrs. T. Gayatri
+Mr.K.V.S.R. Raju
 Mr. M.V.V. Rama Rao
 Mr. M. Ramesh Babu
 Mr. T. Kesava
@@ -131,7 +132,6 @@ Mr. M.V.Ganeswara Rao
 Mr. D. Murali Krishna
 Mr. P. Ravi Kumar
 Mr.M.Padmanabha Raju
-Mrs.V.Nagavalli
 Mr.R.Viswanadham
 Dr. T. Sudheer Kumar
 Ms.M.Jyothi Poorna
@@ -141,7 +141,6 @@ Mr. K.S.N.Raju
 Mr. K.Priyanka
 Mr. K.Praveen Kumar
 Mr. Kiran Jagadam
-Ms. K Lakshmi Divya
 Mr. Venkata Subbarao Mandava
 Mr. Kalaiarasi Gurusamy
 Mr. T.Sairam Vamsi
@@ -153,7 +152,6 @@ Ms. G.Sirisha
 Mr. R.Ashok Chaitanya Varma
 Ms. Ravi Helen Jaya Sri
 Ms. Arva Hinduja
-Mr. Mr.V.Raviteja
 Ms. G Priyanka
 Ms. A Rukmini
 Ms. Bhogadi Srinidhi
@@ -161,9 +159,9 @@ Ms. V Yamini
 Mr. P. Chiranjeevi Varma
 Mr. P. Subrahmanyam
 Mr. P. Narsimha Rao
-Mr. J. Ganesh Raju
 Mr. K.Anjan Kumar
 Mr.Bh.Devendar Varma
+Ms.Ch.Jaya
 Dr.P.V.V.Rama Rao [HOD]
 Dr. S.M. Padmaja
 Mr. S.Dilip Kumar Varma
@@ -177,7 +175,6 @@ Ms.Y. T. R. Palleswari
 Mr. Sunkara Veerababu
 Mr. Pinjala Devikiran
 Mr. G. Durga Prasad
-Mr. Phani Kumar Ande
 Mr Lakshman Kumar Dangeti
 Mr.J.Venkatesh
 Mr. Praveen Kumar Nalli
@@ -209,7 +206,6 @@ Mr. G.Ratnakanth
 Mr. S. Ravi Kumar
 Mr. S. Ravi Chandra
 Mr. A.Mohan
-Mr. P.R.S.S.V.Venkatapathi Raju
 Mr. V.Pavan Kumar
 Mr. M.Gowtham
 Mr. K.Ramu
@@ -229,6 +225,7 @@ Mr. R.Srinath
 Mr. K.Venkata Naga Ravi
 Mr. V.S.R.K.Raju Dandu
 Ms. Bh.Radhika
+Ms. G. Jahnavi Deepika
 Dr.G.Subba Raju [HOD]
 Dr.M.Vijayakumar
 Mrs.J.Swarana Jyothi
@@ -236,6 +233,8 @@ Ms.A.Bharatha Lakshmi
 Mr.Ch.Anudeep
 Mr.M.Prudhvy Raju
 Mrs.RafiaNaz
+Ms.R.Mouika
+Mr.B.Roja Kiran
 Mr. P.Syamala Rao
 Mr. M.Pradeep
 Mr. P. Surya Prakash Varma

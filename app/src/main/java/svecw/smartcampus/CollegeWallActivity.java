@@ -40,6 +40,7 @@ import adapters.CollegeWallAdapter;
 import internaldb.SmartCampusDB;
 import internaldb.SmartSessionManager;
 import model.Wall;
+import notify.Notification_BGService;
 import utils.ConnectionDetector;
 import utils.Constants;
 import utils.Routes;
@@ -106,7 +107,7 @@ public class CollegeWallActivity extends AppCompatActivity {
         Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // change the title according to the activity
         TextView title = (TextView) toolbar.findViewById(R.id.appName);
-        title.setText(getResources().getString(R.string.college));
+        title.setText(getResources().getString(R.string.college_new));
         title.setTypeface(sansFont);
 
         // set the toolbar to the actionBar
@@ -247,6 +248,7 @@ public class CollegeWallActivity extends AppCompatActivity {
             // check if the post is created
             if(resultCode == 1){
 
+
                 // update the backIntent to display new post on wall
                 Wall wall = new Wall();
 
@@ -274,6 +276,10 @@ public class CollegeWallActivity extends AppCompatActivity {
                 // add the object to list at top and notify adapter
                 collegeWallPostsList.add(0, wall);
                 adapter.notifyDataSetChanged();
+
+                // send notification
+                new Notification_BGService().execute(Routes.createWallPost_Notify, wall.getUserObjectId());
+
 
             }
             // check if the post is not created

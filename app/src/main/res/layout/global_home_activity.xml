@@ -35,7 +35,7 @@
                 android:id="@+id/appName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/knowledge"
+                android:text="@string/knowledge_new"
                 android:layout_toRightOf="@+id/appLogo"
                 android:layout_centerInParent="true"
                 android:textColor="@color/white"

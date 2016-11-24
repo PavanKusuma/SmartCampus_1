@@ -24,6 +24,7 @@ public class Messages {
 
     private String username;
     private String userimage;
+    private String facultyBranch;
 
     public String getMessageId() {
         return messageId;
@@ -151,5 +152,13 @@ public class Messages {
 
     public void setUserimage(String userimage) {
         this.userimage = userimage;
+    }
+
+    public String getFacultyBranch() {
+        return facultyBranch;
+    }
+
+    public void setFacultyBranch(String facultyBranch) {
+        this.facultyBranch = facultyBranch;
     }
 }

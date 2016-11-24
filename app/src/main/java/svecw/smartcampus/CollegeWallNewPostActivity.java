@@ -1108,7 +1108,7 @@ Log.v(Constants.appName, "Byte length : " + b.length);
                                                 Toast.makeText(getApplicationContext(), "Posted to college wall! wait a while for loading", Toast.LENGTH_SHORT).show();
 
                                                 // send notification
-                                                new Notification_BGService().execute(Routes.createWallPost_Notify, jsonObject.getString(Constants.userObjectId));
+                                                //new Notification_BGService().execute(Routes.createWallPost_Notify, jsonObject.getString(Constants.userObjectId));
 
                                                 // set the result for backIntent
                                                 // send 1 as success message for post creation

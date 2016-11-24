@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"
-        android:visibility="invisible"
+        android:visibility="gone"
         />
 
     <TextView
@@ -19,8 +19,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"
-        android:visibility="invisible"
+        android:visibility="gone"
         />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/commentUserImage"
@@ -28,7 +32,8 @@
         android:layout_height="48dp"
         android:src="@drawable/ic_user_profile"
         android:scaleType="centerCrop"
-        android:layout_margin="8dp"/>
+        android:layout_margin="8dp"
+        android:layout_centerVertical="true"/>
 
     <ImageView
         android:id="@+id/commentUserImageBG"
@@ -36,24 +41,34 @@
         android:layout_height="48dp"
         android:src="@drawable/user_image_bg"
         android:layout_margin="8dp"
-        android:contentDescription="@string/app_name"/>
+        android:contentDescription="@string/app_name"
+        android:layout_centerVertical="true"/>
 
-    <TextView
-        android:id="@+id/commentUserName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        android:paddingLeft="6sp"
-        android:layout_toRightOf="@+id/commentUserImage"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_toRightOf="@+id/commentUserImage"
+            android:gravity="center">
 
-    <TextView
-        android:id="@+id/commentText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/commentUserName"
-        android:textSize="16sp"
-        android:paddingLeft="6sp"
-        android:layout_toRightOf="@+id/commentUserImage"/>
+            <TextView
+                android:id="@+id/commentUserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:paddingLeft="6sp"/>
+
+            <TextView
+                android:id="@+id/commentText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/commentUserName"
+                android:textSize="16sp"
+                android:paddingLeft="6sp"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
 </RelativeLayout>

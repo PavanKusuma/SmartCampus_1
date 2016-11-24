@@ -124,7 +124,7 @@ public class KnowledgeWallAdapter extends BaseAdapter {
 
             Typeface sansFont = Typeface.createFromAsset(context.getResources().getAssets(), Constants.fontName);
             globalWallPostTitle.setTypeface(sansFont);
-            globalWallPostCreatedAt.setTypeface(sansFont); globalWallPostCreatedAt.setVisibility(View.INVISIBLE);
+            globalWallPostCreatedAt.setTypeface(sansFont); //globalWallPostCreatedAt.setVisibility(View.INVISIBLE);
             globalWallPostDescription.setTypeface(sansFont);
 
 

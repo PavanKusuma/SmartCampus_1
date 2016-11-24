@@ -104,6 +104,19 @@
                 android:layout_centerHorizontal="true"
                 android:textAlignment="center"
                 android:textColor="@color/globalThemeColor"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/applink3"
+                android:id="@+id/applink3"
+                android:layout_below="@+id/applink2"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:textColor="@color/globalThemeColor"/>
+
         </RelativeLayout>
 
         </ScrollView>

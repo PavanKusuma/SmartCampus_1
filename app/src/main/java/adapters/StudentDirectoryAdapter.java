@@ -335,6 +335,7 @@ Log.v(Constants.appName, "image : " +usernamesList.get(position).getMedia());
                 /*TextView text = (TextView) dialog.findViewById(R.id.textDialog);
                 text.setText("Custom dialog Android example.");*/
                 ImageView image = (ImageView) dialog.findViewById(R.id.maxView);
+                TextView resText = (TextView) dialog.findViewById(R.id.resText);
                 //image.setImageResource(R.drawable.image0);
 
                 try{
@@ -379,6 +380,7 @@ Log.v(Constants.appName, "image : " +usernamesList.get(position).getMedia());
                 }
                 catch (Exception e){
 
+                    Picasso.with(context).load(Routes.getMedia+usernamesList.get(position).getMedia()).placeholder(R.drawable.ic_user_profile).into(image);
                 }
 
                 dialog.show();

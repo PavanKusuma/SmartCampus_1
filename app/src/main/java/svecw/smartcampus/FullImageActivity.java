@@ -6,15 +6,19 @@ import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
+import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
@@ -28,9 +32,11 @@ import utils.Routes;
 public class FullImageActivity extends Activity{
 
     // full image view
+    TextView save;
     ImageView fullImageView, close;
     ProgressBar progressBar;
     Bundle bundle;
+    Bitmap bitmap, highResBitmap;
 
     ScaleGestureDetector sgd;
     private float scale = 1f;
@@ -42,17 +48,18 @@ public class FullImageActivity extends Activity{
         setContentView(R.layout.full_image_activity);
 
         // get view from layout
+        save = (TextView) findViewById(R.id.save);
         fullImageView = (ImageView) findViewById(R.id.largeImage);
         close = (ImageView) findViewById(R.id.close);
         progressBar = (ProgressBar) findViewById(R.id.progressBarImage);
 
         // get image bytes bundle
         byte[] bytes = getIntent().getByteArrayExtra(Constants.fullImage);
-        String[] mediaNames = getIntent().getStringArrayExtra(Constants.media);
+        final String[] mediaNames = getIntent().getStringArrayExtra(Constants.media);
         //bundle.getByteArray(Constants.fullImage);
 
         // convert the bytes to bitmap and assign to image view
-        Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+        bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
         fullImageView.setImageBitmap(bitmap);
 
         // close the full image activity
@@ -90,6 +97,32 @@ public class FullImageActivity extends Activity{
             }
         });
 
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                try {
+                    /*output = new FileOutputStream(file);
+
+                    // Compress into png format image from 0% - 100%
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, output);
+                    output.flush();
+                    output.close();
+                    */
+                    MediaStore.Images.Media.insertImage(getContentResolver(), highResBitmap,
+                            mediaNames[0], null);
+
+
+                    Toast.makeText(FullImageActivity.this, "Image saved to device", Toast.LENGTH_SHORT).show();
+                }
+
+                catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        });
+
         // show the progress bar
         progressBar.setVisibility(View.VISIBLE);
         Log.v("Image", "Fetching 1");
@@ -113,7 +146,7 @@ public class FullImageActivity extends Activity{
 
         //ImageView imageView;
         byte[] bytes;
-        Bitmap bitmap = null;
+
 
         @Override
         protected Bitmap doInBackground(Object... params) {
@@ -154,7 +187,7 @@ public class FullImageActivity extends Activity{
                         options.inJustDecodeBounds = false;
 */
                     //return BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);
-                     bitmap = BitmapFactory.decodeStream(is);
+                     highResBitmap = BitmapFactory.decodeStream(is);
                     Log.v("Image", "Fetching 5");
                     //postImage.setVisibility(View.VISIBLE);
                     //postImage.setImageBitmap(bitmap);
@@ -167,7 +200,7 @@ public class FullImageActivity extends Activity{
             }
 
 
-            return bitmap;
+            return highResBitmap;
         }
 
         @Override

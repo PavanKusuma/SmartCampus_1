@@ -526,9 +526,12 @@ public class NewPost extends AppCompatActivity {
         // check for the place request code
         if (requestCode == PLACE_PICKER_REQUEST) {
             if (resultCode == RESULT_OK) {
+
                 Place place = PlacePicker.getPlace(data, this);
                 String placeText = place.getAddress().toString();
-                //Toast.makeText(this, toastMsg, Toast.LENGTH_LONG).show();
+                //Log.i(Constants.appName, placeText);
+                //Log.i(Constants.appName, place.getName().toString());
+                //Toast.makeText(this, placeText, Toast.LENGTH_LONG).show();
 
                 // exclude the remaining pincode and country
                 String[] placeTexts = placeText.split(",");
@@ -538,6 +541,9 @@ public class NewPost extends AppCompatActivity {
 
                 placeName = placeName + placeTexts[placeTexts.length-1]; // add country
 
+                if(place.getName()!=null){
+                    placeName = place.getName()+ " " + placeName;
+                }
                 placeIcon.setImageResource(R.drawable.ic_place);
                 locationTextView.setVisibility(View.VISIBLE);
                 locationTextView.setText("- " + placeName); location = placeName;
@@ -666,9 +672,12 @@ public class NewPost extends AppCompatActivity {
 
     // this method will fetch the compressed image bitmap and display
     private void setCompressedImage(File compressedImage1) {
+
         Log.v(Constants.appName, "Here is the path " + compressedImage1.getAbsolutePath());
+
         // fetch the compressed bitmap
         bitmap = BitmapFactory.decodeFile(compressedImage1.getAbsolutePath());
+
         ByteArrayOutputStream buffer = new ByteArrayOutputStream(bitmap.getWidth() * bitmap.getHeight());
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, buffer);
         b = buffer.toByteArray();
@@ -716,8 +725,7 @@ public class NewPost extends AppCompatActivity {
             if(Build.VERSION.SDK_INT >= 23){
 
                 // check if this app is granted with camera access permission
-                if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA)
-                        != PackageManager.PERMISSION_GRANTED) {
+                if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
 
                     // The permission is NOT already granted.
                     // Check if the user has been asked about this permission already and denied
@@ -1109,8 +1117,7 @@ public class NewPost extends AppCompatActivity {
     private static File getOutputMediaFile(int type) {
 
         // External sdcard location
-        File mediaStorageDir = new File(
-                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), Constants.appName);
+        File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), Constants.appName);
 
 
         // Create the storage directory if it does not exist
@@ -1349,7 +1356,6 @@ public class NewPost extends AppCompatActivity {
             progressDialog.show();
 */
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-
             StrictMode.setThreadPolicy(policy);
         }
 
@@ -1391,6 +1397,7 @@ public class NewPost extends AppCompatActivity {
                 //wr.flush();
                 Log.v(Constants.appName, "posting..30%");
                 // Get the server response
+
                 reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                 StringBuilder sb = new StringBuilder();
                 String line = null;

@@ -1,5 +1,6 @@
 package adapters;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -247,6 +248,79 @@ public class CommentAdapter extends BaseAdapter {
                 holder.commentUserImage.setImageResource(R.drawable.ic_user_profile);
 
             }
+
+
+
+            holder.commentUserImage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Dialog dialog = new Dialog(context);
+                    // Include dialog.xml file
+                    dialog.setContentView(R.layout.userimage_maxview);
+                    // Set dialog title
+                    dialog.setTitle(commentsList.get(position).getUsername());
+
+                    // set values for custom dialog components - text, image and button
+                /*TextView text = (TextView) dialog.findViewById(R.id.textDialog);
+                text.setText("Custom dialog Android example.");*/
+                    ImageView image = (ImageView) dialog.findViewById(R.id.maxView);
+                    TextView resText = (TextView) dialog.findViewById(R.id.resText);
+                    //image.setImageResource(R.drawable.image0);
+
+                    try{
+
+                        if (!commentsList.get(position).getUserImage().contentEquals(Constants.null_indicator)) {
+
+                            // get the connection url for the media
+
+                            URL url = new URL(Routes.getMedia + "profile_"+ commentsList.get(position).getUserImage());
+                            //URL url = new URL(Routes.getMedia + collegeWallPostsList.get(position).getUserImage());
+                            URLConnection urlConnection = url.openConnection();
+                            urlConnection.setDoInput(true);
+                            urlConnection.connect();
+
+                            if (urlConnection.getContentLength() > 0) {
+
+                                // getInputStream
+                                InputStream is = urlConnection.getInputStream();
+
+                                // bitmap options
+                                BitmapFactory.Options options = new BitmapFactory.Options();
+/*
+                        //Bitmap bitmap = BitmapFactory.decodeStream(is, null, options);
+                        options.inJustDecodeBounds = true;
+                        //BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);
+                        BitmapFactory.decodeStream(is, null, options);
+
+                        // Calculate inSampleSize
+                        options.inSampleSize = calculateInSampleSize(options, 200, 200);
+
+                        // Decode bitmap with inSampleSize set
+                        options.inJustDecodeBounds = false;
+                        //return BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);*/
+                                Bitmap bitmap = BitmapFactory.decodeStream(is);
+
+                                image.setImageBitmap(bitmap);
+                            }
+                        } else {
+
+                            // set the userImage
+                            image.setImageResource(R.drawable.ic_user_profile);
+
+                        }
+                    }
+                    catch (Exception e){
+
+                        Picasso.with(context).load(Routes.getMedia+commentsList.get(position).getUserImage()).placeholder(R.drawable.ic_user_profile).into(image);
+
+
+                    }
+
+                    dialog.show();
+                }
+            });
+
 
 
         }

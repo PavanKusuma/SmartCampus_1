@@ -1391,6 +1391,7 @@ public class MessageNewComposeActivity extends AppCompatActivity {
                                             backIntent.putExtra(Constants.groupId, jsonObject.getString(Constants.groupId));
 
                                             backIntent.putExtra(Constants.userName, smartCampusDB.getUser().get(Constants.userName).toString());
+                                            backIntent.putExtra(Constants.facultyBranch, smartCampusDB.getUser().get(Constants.branch).toString());
 
                                             Toast.makeText(getApplicationContext(), "Message sent! wait a while for loading", Toast.LENGTH_SHORT).show();
                                             setResult(1, backIntent);

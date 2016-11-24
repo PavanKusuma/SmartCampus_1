@@ -4,12 +4,15 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +28,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
@@ -609,6 +614,32 @@ public class GlobalLoginActivity extends AppCompatActivity {
 
                                             // insert user details into internal db
                                             smartCampusDB.insertUser(user);
+
+
+                                        // here we are fetching user image if it exists
+                                        if(!user.getMedia().contentEquals(Constants.null_indicator)){
+
+                                                // get the connection url for the media
+                                                URL url = new URL(Routes.getMedia + user.getMedia());
+                                                URLConnection urlConnection = url.openConnection();
+                                                urlConnection.setDoInput(true);
+                                                urlConnection.connect();
+
+                                                if (urlConnection.getContentLength() > 0) {
+
+                                                    // getInputStream
+                                                    InputStream is = urlConnection.getInputStream();
+
+                                                    Bitmap bitmap = BitmapFactory.decodeStream(is);
+                                                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                                                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos); //bm is the bitmap object
+
+                                                    // save the image as profilePhoto
+                                                    session.saveProfilePhoto(Base64.encodeToString(baos.toByteArray(), Base64.DEFAULT));
+
+                                                }
+
+                                        }
 
                                         // get JSON Array of 'privileges'
                                         JSONArray privilegeArray = jsonResponse.getJSONArray(Constants.privileges);

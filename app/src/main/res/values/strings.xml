@@ -91,7 +91,12 @@
     <string name="company">Company</string>
     <string name="count">Selections</string>
     <string name="student">Student</string>
+    <string name="student_new">Student corner</string>
+    <string name="alumni_new">Alumni corner</string>
+    <string name="appVersionCheck">Kindly delete the app and install it from PlayStore for using it. Do not share the app using other third party sharing apps</string>
+    <string name="knowledge_new">Explore</string>
     <string name="college">College</string>
+    <string name="college_new">Happening @ college</string>
     <string name="faculty">Faculty</string>
     <string name="profile">Profile</string>
     <string name="myProfile">My Profile</string>
@@ -127,6 +132,8 @@
     <string name="contactUs">Contact us</string>
     <string name="gallery">Gallery</string>
     <string name="aboutApp">About App</string>
+    <string name="saveToGallery">Save to gallery</string>
+    <string name="highResText">No high resolution image available!</string>
     <string name="aboutCollege">About College</string>
     <string name="aboutCollegeText">Details about college</string>
     <string name="like">Like</string>
@@ -278,6 +285,8 @@
     </string>
     <string name="applink1">www.infinitynext.com</string>
     <string name="applink2">www.smartcampusapp.com</string>
+    <string name="applink3">Mail us at svecwapp@gmail.com to get access for this app </string>
+    <string name="applink4">svecwapp@gmail.com</string>
 
     <string name="hashCse">\#CSE/IT</string>
     <string name="hashEce">\#ECE</string>
@@ -456,7 +465,7 @@
     </declare-styleable>
 
     <string name="recruitersList">Recruiters List</string>
-    <string name="p2017">2017 - as on 17 oct 2016</string>
+    <string name="p2017">2017 - as on Nov 2016</string>
     <string name="p2016">2016</string>
     <string name="p2015">2015</string>
     <string name="p2014">2014</string>

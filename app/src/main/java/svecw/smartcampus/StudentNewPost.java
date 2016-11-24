@@ -533,6 +533,7 @@ public class StudentNewPost extends AppCompatActivity {
         // check for the place request code
         if (requestCode == PLACE_PICKER_REQUEST) {
             if (resultCode == RESULT_OK) {
+
                 Place place = PlacePicker.getPlace(data, this);
                 String placeText = place.getAddress().toString();
                 //Toast.makeText(this, toastMsg, Toast.LENGTH_LONG).show();
@@ -544,6 +545,10 @@ public class StudentNewPost extends AppCompatActivity {
                     placeName = placeName + placeTexts[i];
 
                 placeName = placeName + placeTexts[placeTexts.length-1]; // add country
+
+                if(place.getName()!=null){
+                    placeName = place.getName()+ " " + placeName;
+                }
 
                 placeIcon.setImageResource(R.drawable.ic_place);
                 locationTextView.setVisibility(View.VISIBLE);

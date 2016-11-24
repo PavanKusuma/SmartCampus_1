@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.support.multidex.MultiDex;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -73,6 +75,13 @@ public class AppLaunchScreen extends AppCompatActivity {
         }
 
 */
+        // check if app is downloaded from PlayStore
+        if(isStoreVersion(AppLaunchScreen.this)){
+
+            Intent versionIntent = new Intent(getApplicationContext(), CheckAppVersionActivity.class);
+            startActivity(versionIntent);
+            finish();
+        }
 
 
         // navigate the user to home activity
@@ -139,5 +148,21 @@ public class AppLaunchScreen extends AppCompatActivity {
                 .setPositiveButton("Ok", dialogClickListener).show();
 
 
+    }
+
+
+    // check if app is downloaded from PlayStore
+    public static boolean isStoreVersion(Context context) {
+        boolean result = false;
+
+        try {
+            String installer = context.getPackageManager()
+                    .getInstallerPackageName(context.getPackageName());
+            result = TextUtils.isEmpty(installer);
+            Log.i(Constants.appName, "Check" +result);
+        } catch (Throwable e) {
+        }
+
+        return result;
     }
 }
