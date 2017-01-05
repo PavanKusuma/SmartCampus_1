@@ -12,6 +12,7 @@ import android.widget.RelativeLayout;
 import java.util.ArrayList;
 
 import adapters.KnowledgeWallAdapter;
+import model.Drive;
 import model.GlobalInfo;
 import utils.Constants;
 
@@ -23,9 +24,9 @@ public class DriveWallFragment extends Fragment {
 
     ProgressBar driveProgressBar;
     ListView driveList;
-    ArrayList<GlobalInfo> drivePosts = new ArrayList<GlobalInfo>();;
+    ArrayList<Drive> drivePosts = new ArrayList<Drive>();;
     String category;
-    ArrayList<GlobalInfo> driveCategoryPosts = new ArrayList<GlobalInfo>();
+    ArrayList<Drive> driveCategoryPosts = new ArrayList<Drive>();
 
     // adapter
     KnowledgeWallAdapter driveAdapter;
@@ -61,8 +62,9 @@ public class DriveWallFragment extends Fragment {
         // as onCreateView loads every time the fragment is clicked
         // add the empty arrayList to listView so that the list items will not be added again
         driveCategoryPosts.clear();
-        driveAdapter.updateItems(driveCategoryPosts);
+        //driveAdapter.updateItems(driveCategoryPosts);
         driveAdapter.notifyDataSetChanged();
+/*
 
         // navigate through the list to fetch the required category list items
         for(int i=0; i<drivePosts.size(); i++)
@@ -72,6 +74,7 @@ public class DriveWallFragment extends Fragment {
                 driveCategoryPosts.add(drivePosts.get(i));
 
             }
+*/
 
         // add the items to the adapter
         //knowledgeWallAdapter.updateItems(knowledgeWallCategoryPosts);
@@ -86,7 +89,7 @@ public class DriveWallFragment extends Fragment {
     @Override
     public void onResume() {
         // add the items to the adapter
-        driveAdapter.updateItems(driveCategoryPosts);
+        //driveAdapter.updateItems(driveCategoryPosts);
         driveAdapter.notifyDataSetChanged();
 
         super.onResume();

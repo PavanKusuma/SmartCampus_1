@@ -1655,7 +1655,7 @@ public class NewPost extends AppCompatActivity {
      * this background task will post media to server
      * with the given name and the mediaCount
      */
-    private class PostWallMedia extends AsyncTask<Object, Void, Void> {
+    private class PostWallMedia extends AsyncTask<Object, String, Void> {
 
         private String Content = "";
         private String Error = null;
@@ -1674,6 +1674,12 @@ public class NewPost extends AppCompatActivity {
 
             StrictMode.setThreadPolicy(policy);
 
+        }
+
+        @Override
+        protected void onProgressUpdate(String... values) {
+
+            Log.v(Constants.appName, "Debug 2"+ Integer.parseInt(values[0]));
         }
 
         @Override
@@ -1751,6 +1757,7 @@ public class NewPost extends AppCompatActivity {
                 //Log.v(Constants.appName, "Size of bytes : " + b.length);
                 dos.write(b, 0, b.length);
 
+
                 while (bytesRead > 0) {
                     dos.write(b, 0, b.length);
                     bytesAvailable = is.available();
@@ -1758,9 +1765,8 @@ public class NewPost extends AppCompatActivity {
                     bytesRead = is.read(buffer, 0, bufferSize);
 
                     Log.v(Constants.appName, "check 1");
-                }
-                Log.v(Constants.appName, "posting..75%");
 
+                }
 
                 runOnUiThread(new Runnable() {
                     @Override
@@ -1832,6 +1838,7 @@ public class NewPost extends AppCompatActivity {
 
 
         }
+
 
 
         @Override

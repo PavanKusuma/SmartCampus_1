@@ -62,7 +62,7 @@ public class WelcomeActivity extends Activity {
             @Override
             public void onClick(View v) {
 
-                Intent homeIntent = new Intent(getApplicationContext(), GlobalHomeActivity.class);
+                Intent homeIntent = new Intent(getApplicationContext(), Global_Activity.class);
                 startActivity(homeIntent);
                 finish();
 

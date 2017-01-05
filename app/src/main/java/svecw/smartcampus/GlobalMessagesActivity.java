@@ -33,6 +33,7 @@ import java.util.ArrayList;
 import adapters.MessagesAdapter;
 import internaldb.SmartCampusDB;
 import model.Messages;
+import notify.Notification_BGService;
 import utils.ConnectionDetector;
 import utils.Constants;
 import utils.Routes;
@@ -433,6 +434,9 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
             // add the object to list at top and notify adapter
             messagesList.add(0, message);
             adapter.notifyDataSetChanged();
+
+            // send notification
+            new Notification_BGService().execute(Routes.createNewMessage_Notify, message.getMessageId());
 
         }
         // check if the post is not created

@@ -6,17 +6,64 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/homecard_background"
-        android:layout_margin="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="8dp"
         android:weightSum="2"
-        android:elevation="2dp">
+        android:elevation="2dp"
+        android:orientation="vertical">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/globalCategoryName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/selectCategory"
+                android:background="@color/globalTextSecondaryLightColor"
+                android:textColor="@color/globalThemeBlue"
+                android:paddingLeft="8dp"
+                android:paddingBottom="4dp"
+                android:paddingRight="8dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginStart="0dp"/>
+
+            <ImageView
+                android:id="@+id/link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_link"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/app_name"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:padding="4dp"
+                android:visibility="visible"/>
+
+        </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp">
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp">
 <!--
         <ImageView
             android:id="@+id/globalPostShare"
@@ -39,6 +86,7 @@
 
 
 
+<!--
         <TextView
             android:id="@+id/globalPostDescription"
             android:layout_width="match_parent"
@@ -49,32 +97,68 @@
             android:paddingLeft="4dp"
             android:paddingBottom="8dp"
             android:layout_below="@+id/globalPostTitle"/>
-
-
+-->
 
         <TextView
             android:id="@+id/globalPostCreatedAt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="10sp"
+            android:textColor="@color/globalTextSecondaryColor"
+            android:paddingLeft="4dp"
+            android:paddingBottom="4dp"
+            android:paddingRight="4dp"
+            android:paddingTop="2dp"
+            android:layout_below="@+id/globalPostDescription"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+
+
+        <TextView
+            android:id="@+id/globalPostHits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="10sp"
+            android:textColor="@color/globalTextColor"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:paddingRight="4dp"
+            android:paddingLeft="4dp"
+            android:background="@color/globalThemeSecondaryLightColor"
+            android:layout_below="@+id/globalPostDescription"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/globalPostSeen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="10sp"
+            android:textColor="@color/globalTextColor"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:paddingRight="4dp"
+            android:paddingLeft="4dp"
+            android:background="@color/grayBg"
+            android:layout_below="@+id/globalPostDescription"
+            android:layout_toRightOf="@+id/globalPostHits"
+            android:visibility="gone"/>
+
+        <utils.ExpandableTextView
+            android:id="@+id/globalPostDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/app_name"
-            android:textSize="10dp"
-            android:textColor="@color/blackText"
+            android:textAppearance="@android:style/TextAppearance.Small"
+            android:textColor="@color/globalTextColor"
             android:paddingLeft="4dp"
-            android:paddingBottom="4dp"
-            android:layout_below="@+id/globalPostDescription"/>
+            android:paddingBottom="8dp"
+            android:layout_below="@+id/globalPostTitle"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
-
-
-        <ImageView
-            android:id="@+id/link"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_link"
-            android:scaleType="centerCrop"
-            android:contentDescription="@string/app_name"
-            android:layout_below="@+id/globalPostDescription"
-            android:layout_alignParentRight="true"
-            android:visibility="gone"/>
 
     </RelativeLayout>
 

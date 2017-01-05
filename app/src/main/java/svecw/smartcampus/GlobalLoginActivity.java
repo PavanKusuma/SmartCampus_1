@@ -1,5 +1,6 @@
 package svecw.smartcampus;
 
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -7,6 +8,7 @@ import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -19,8 +21,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 
 import org.json.JSONArray;
@@ -70,6 +74,7 @@ public class GlobalLoginActivity extends AppCompatActivity {
     // token
     String token = Constants.null_indicator;
     String gcm_error = "";
+    int REQUEST_GOOGLE_PLAY_SERVICES = 1972;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,17 +87,24 @@ public class GlobalLoginActivity extends AppCompatActivity {
 
             // This particular code will register this device to the gcm server for sending push notifications
             {
+
                 //Checking play service is available or not
-                int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getApplicationContext());
+                //int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getApplicationContext());
+                GoogleApiAvailability  googleAPI = GoogleApiAvailability.getInstance();
+
+                int resultCode = googleAPI.isGooglePlayServicesAvailable(getApplicationContext());
 
                 //if play service is not available
                 if (ConnectionResult.SUCCESS != resultCode) {
                     //If play service is supported but not installed
-                    if (GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
+                    if (googleAPI.isUserResolvableError(resultCode)) {
                         //Displaying message that play service is not installed
                         //Toast.makeText(getApplicationContext(), "To receive notifications install/enabled Google Play Service in this device!", Toast.LENGTH_LONG).show();
-                        GooglePlayServicesUtil.showErrorNotification(resultCode, getApplicationContext());
+                        //GooglePlayServicesUtil.showErrorNotification(resultCode, getApplicationContext());
 
+                        int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
+                        googleAPI.getErrorDialog(this, resultCode, PLAY_SERVICES_RESOLUTION_REQUEST).show();
+                        // wait for onActivityResult call (see below)
                         gcm_error = "To receive notifications install/enable Google Play Services in this device from Play Store!";
                         //If play service is not supported
                         //Displaying an error message
@@ -100,6 +112,7 @@ public class GlobalLoginActivity extends AppCompatActivity {
                         gcm_error = "This device does not support for Google Play Services!";
                         //Toast.makeText(getApplicationContext(), "This device does not support for Google Play Service!", Toast.LENGTH_LONG).show();
                     }
+
 
                     //If play service is available
                 } else {
@@ -370,6 +383,28 @@ public class GlobalLoginActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch(requestCode) {
+            case 1972:
+                if (resultCode == Activity.RESULT_OK) {
+                    Intent i = new Intent(this, GCMRegistrationIntentService.class);
+                    startService(i); // OK, init GCM
+                }
+                break;
+
+            case 9000:
+
+                String url = "market://details?id=com.google.android.gms&pcampaignid=gcore_10084000-d-svecw.smartcampus-8";
+                Intent storeintent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                //storeintent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
+                startActivity(storeintent);
+
+            default:
+                super.onActivityResult(requestCode, resultCode, data);
+        }
     }
 
     // this method will fetch views from layout

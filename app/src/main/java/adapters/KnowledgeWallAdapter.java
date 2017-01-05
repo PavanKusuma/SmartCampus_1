@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
+import android.os.AsyncTask;
+import android.os.StrictMode;
 import android.support.v4.util.LruCache;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,6 +17,11 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -24,6 +31,8 @@ import model.GlobalInfo;
 import svecw.smartcampus.KnowledgeWallWebView;
 import svecw.smartcampus.R;
 import utils.Constants;
+import utils.ExpandableTextView;
+import utils.Routes;
 
 /**
  * Created by Pavan on 12/27/15.
@@ -113,17 +122,23 @@ public class KnowledgeWallAdapter extends BaseAdapter {
 
             TextView globalWallPostTitle = (TextView) itemView.findViewById(R.id.globalPostTitle);
             TextView globalWallPostCreatedAt = (TextView) itemView.findViewById(R.id.globalPostCreatedAt);
-            final TextView globalWallPostDescription = (TextView) itemView.findViewById(R.id.globalPostDescription);
+            TextView globalWallPostHits = (TextView) itemView.findViewById(R.id.globalPostHits);
+            TextView globalWallPostSeen = (TextView) itemView.findViewById(R.id.globalPostSeen);
+            TextView globalCategoryName = (TextView) itemView.findViewById(R.id.globalCategoryName);
+            final ExpandableTextView globalWallPostDescription = (ExpandableTextView) itemView.findViewById(R.id.globalPostDescription);
             ImageView linkImage = (ImageView) itemView.findViewById(R.id.link);
             //ImageView globalPostImage = (ImageView) itemView.findViewById(R.id.globalPostImage);
             //ImageView globalPostShare = (ImageView) itemView.findViewById(R.id.globalPostShare);
 
             // get the date format and convert it into required format to display
             java.util.Date date = simpleDateFormat.parse(knowledgePostsList.get(position).getCreatedAt());
-            simpleDateFormat = new SimpleDateFormat("MMM dd, yyyy, hh:mm aa");
+            //simpleDateFormat = new SimpleDateFormat("MMM dd, yyyy, hh:mm aa");
+            simpleDateFormat = new SimpleDateFormat("MMM dd, yyyy");
 
             Typeface sansFont = Typeface.createFromAsset(context.getResources().getAssets(), Constants.fontName);
             globalWallPostTitle.setTypeface(sansFont);
+            globalWallPostHits.setTypeface(sansFont);
+            globalCategoryName.setTypeface(sansFont);
             globalWallPostCreatedAt.setTypeface(sansFont); //globalWallPostCreatedAt.setVisibility(View.INVISIBLE);
             globalWallPostDescription.setTypeface(sansFont);
 
@@ -132,6 +147,42 @@ public class KnowledgeWallAdapter extends BaseAdapter {
             globalWallPostTitle.setText(knowledgePostsList.get(position).getTitle());
             globalWallPostCreatedAt.setText(simpleDateFormat.format(date));
             globalWallPostDescription.setText(knowledgePostsList.get(position).getDescription());
+            globalCategoryName.setText(knowledgePostsList.get(position).getCategory());
+
+            // we are removing the "People talking about this"
+            // hence showing the seen count as view
+
+            /*if(knowledgePostsList.get(position).getHits() > 0){
+                globalWallPostHits.setVisibility(View.VISIBLE);
+                globalWallPostHits.setText(knowledgePostsList.get(position).getHits() + " views");
+            }
+            else {
+                globalWallPostHits.setVisibility(View.GONE);
+            }
+
+            if(knowledgePostsList.get(position).getSeen() > 0){
+                globalWallPostSeen.setVisibility(View.VISIBLE);
+                globalWallPostSeen.setText(knowledgePostsList.get(position).getSeen() + " people talking about this");
+            }
+            else {
+                globalWallPostSeen.setVisibility(View.GONE);
+            }*/
+
+            if(knowledgePostsList.get(position).getSeen() > 0){
+                globalWallPostHits.setVisibility(View.VISIBLE);
+                globalWallPostHits.setText(knowledgePostsList.get(position).getSeen() + " views");
+            }
+            else {
+                globalWallPostHits.setVisibility(View.GONE);
+            }
+
+/*            if(knowledgePostsList.get(position).getSeen() > 0){
+                globalWallPostSeen.setVisibility(View.VISIBLE);
+                globalWallPostSeen.setText(knowledgePostsList.get(position).getSeen() + " people talking about this");
+            }
+            else {
+                globalWallPostSeen.setVisibility(View.GONE);
+            }*/
 
             // check if link is present
             if(!knowledgePostsList.get(position).getLink().contentEquals(Constants.null_indicator)){
@@ -155,6 +206,7 @@ public class KnowledgeWallAdapter extends BaseAdapter {
                         // pass the bundle for the full screen activity
                         Intent webViewIntent = new Intent(context, KnowledgeWallWebView.class);
                         webViewIntent.putExtra(Constants.title, context.getResources().getString(R.string.knowledge));
+                        webViewIntent.putExtra(Constants.infoId, knowledgePostsList.get(position).getInfoId());
                         webViewIntent.putExtra(Constants.description, knowledgePostsList.get(position).getDescription());
                         webViewIntent.putExtra(Constants.link, knowledgePostsList.get(position).getLink());
                         webViewIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -162,7 +214,9 @@ public class KnowledgeWallAdapter extends BaseAdapter {
                     }
                     else{
 
-                        // do nothing
+                        // update hit globalInfo
+                        new UpdateHitGlobalInfo().execute(Routes.updateSeenGlobalInfo, knowledgePostsList.get(position).getInfoId());
+
                     }
 
                     Log.v(Constants.appName, knowledgePostsList.get(position).getLink());
@@ -311,5 +365,85 @@ public class KnowledgeWallAdapter extends BaseAdapter {
     public byte[] getBitmapFromMemCache(String key) {
         return mMemoryCache.get(key);
     }
+
+    private class UpdateHitGlobalInfo extends AsyncTask<String, Void, Void> {
+
+        private String Content = "";
+        private String Error = null;
+        String data = "";
+
+        @Override
+        protected void onPreExecute() {
+
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+
+            StrictMode.setThreadPolicy(policy);
+        }
+
+        @Override
+        protected Void doInBackground(String... urls) {
+
+            /************ Make Post Call To Web Server ***********/
+            BufferedReader reader = null;
+
+            // Send data
+            try {
+
+                // Set Request parameter
+                data += "?&" + URLEncoder.encode(Constants.KEY, "UTF-8") + "=" + Constants.key
+                        + "&" + URLEncoder.encode(Constants.infoId, "UTF-8") + "=" + (urls[1]);
+
+
+                Log.v(Constants.appName, urls[0]+data);
+
+                // Defined URL  where to send data
+                URL url = new URL(urls[0]+data);
+
+                // Send POST data request
+                URLConnection conn = url.openConnection();
+                conn.setDoOutput(true);
+                //conn.setDoInput(true);
+                //OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
+                //wr.write(data);
+                //wr.flush();
+
+                // Get the server response
+                reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                StringBuilder sb = new StringBuilder();
+                String line = null;
+
+                // Read Server Response
+                while ((line = reader.readLine()) != null) {
+                    // Append server response in string
+                    sb.append(line + " ");
+                }
+
+                // Append Server Response To Content String
+                Content = sb.toString();
+
+                // close the reader
+                //reader.close();
+
+            } catch (Exception ex) {
+
+                ex.printStackTrace();
+                Error = ex.getMessage();
+
+
+            } finally {
+
+                try {
+
+                    reader.close();
+
+                } catch (Exception ex) {
+                    Error = ex.getMessage();
+                }
+            }
+
+            return null;
+        }
+    }
+
 }
 

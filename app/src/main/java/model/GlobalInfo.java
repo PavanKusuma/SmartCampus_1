@@ -21,6 +21,8 @@ public class GlobalInfo implements Parcelable{
 
     private int mediaCount;
     private String media;
+    private int hits;
+    private int seen;
 
     public String getInfoId() {
         return infoId;
@@ -102,6 +104,22 @@ public class GlobalInfo implements Parcelable{
         this.media = media;
     }
 
+    public int getHits() {
+        return hits;
+    }
+
+    public void setHits(int hits) {
+        this.hits = hits;
+    }
+
+    public int getSeen() {
+        return seen;
+    }
+
+    public void setSeen(int seen) {
+        this.seen = seen;
+    }
+
     public static Creator<GlobalInfo> getCREATOR() {
         return CREATOR;
     }
@@ -123,6 +141,8 @@ public class GlobalInfo implements Parcelable{
         parcel.writeString(updatedAt);
         parcel.writeInt(mediaCount);
         parcel.writeString(media);
+        parcel.writeInt(hits);
+        parcel.writeInt(seen);
     }
 
     public static final Parcelable.Creator<GlobalInfo> CREATOR = new Creator<GlobalInfo>() {
@@ -138,6 +158,8 @@ public class GlobalInfo implements Parcelable{
             globalInfo.createdAt = source.readString();
             globalInfo.mediaCount = source.readInt();
             globalInfo.media = source.readString();
+            globalInfo.hits = source.readInt();
+            globalInfo.seen = source.readInt();
 
             return globalInfo;
         }

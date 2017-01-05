@@ -237,6 +237,9 @@
     <string name="messagesText">Send/ Receive a message</string>
     <string name="inboxText">Your messages</string>
     <string name="driveText">Upload and share you content here</string>
+    <string name="upload">Upload</string>
+    <string name="uploadPercentage">0%</string>
+    <string name="uploadText">Select file to upload</string>
     <string name="learnText">Explore knowledge</string>
     <string name="complaintOrFeedbackText">Write to us&#8230;</string>
     <string name="bugReportTitle">Bug report/Suggestions</string>

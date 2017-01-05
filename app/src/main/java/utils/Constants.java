@@ -86,6 +86,8 @@ public class Constants {
     public static final String mediaTable = "Media";
     public static final String mediaCount = "mediaCount";
     public static final String media = "media";
+    public static final String hits = "hits";
+    public static final String seen = "seen";
     public static final String linkUrl = "linkUrl";
     public static final String linkTitle = "linkTitle";
     public static final String linkCaption = "linkCaption";
@@ -210,7 +212,9 @@ public class Constants {
     public static final String COLLEGE = "College";
     public static final String KNOWLEDGE = "Knowledge";
     public static final String ALUMNI = "Alumni";
+    public static final String MORE = "More";
 
+    public static final int FILE_PICK = 11;
     public static final int IMG_PICK = 1;
     public static final int CAMERA_CAPTURE_IMAGE_REQUEST_CODE = 100; // activity request codes
     public static final int EDIT_PROFILE = 200;

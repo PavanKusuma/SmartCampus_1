@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:fitsSystemWindows="true">
+
+<android.support.design.widget.AppBarLayout
+    android:id="@+id/appBar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:theme="@style/AppTheme.AppBarOverlay"
+    android:background="@color/globalThemeColor">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        app:layout_collapseMode="parallax"
+        android:titleTextColor="@color/white"
+        android:background="@color/globalThemeColor"
+        android:layout_gravity="center">
+
+
+        <TextView
+            android:id="@+id/appName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/driveTitle"
+            android:layout_toRightOf="@+id/appLogo"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:textAppearance="@android:style/TextAppearance.Medium"/>
+
+    </android.support.v7.widget.Toolbar>
+    <!--
+
+            <include
+                android:id="@+id/tool_bar"
+                layout="@layout/toolbar_knowledge_wall">
+            </include>
+    -->
+
+
+    <!--<android.support.design.widget.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMode="scrollable"
+        app:tabTextColor="@color/title_color"
+        android:background="@color/white"
+        app:tabIndicatorColor="@color/justBlue"
+        app:tabIndicatorHeight="3dp"
+        />
+-->
+
+
+
+
+</android.support.design.widget.AppBarLayout>
+
+    <!-- Select file layout -->
+    <RelativeLayout
+        android:id="@+id/selectFileLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/uploadText"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="36dp"
+            android:layout_marginRight="90dp"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/selectFile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="16dp"
+            android:background="@color/globalThemeColor"
+            android:src="@drawable/ic_add"/>
+
+    </RelativeLayout>
+
+    <!-- Selected file layout -->
+    <RelativeLayout
+        android:id="@+id/selectedFileLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp"
+        android:padding="16dp"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/singleFileLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/filePreview"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/ic_attach"
+                android:scaleType="centerCrop"
+                android:padding="10dp"
+                android:adjustViewBounds="true"
+                android:background="@color/globalThemeSecondaryLightColor"/>
+
+            <ImageView
+                android:id="@+id/removeFile"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_remove"
+                android:layout_alignParentRight="true"/>
+
+            <TextView
+                android:id="@+id/fileName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/filePreview"
+                android:layout_toLeftOf="@+id/removeFile"
+                android:text="@string/aboutCollege"
+                android:padding="8dp"
+                android:textColor="@color/blackText"/>
+
+            <TextView
+                android:id="@+id/fileSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/filePreview"
+                android:layout_below="@+id/fileName"
+                android:text="@string/aboutCollege"
+                android:padding="8dp"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:textColor="@color/globalTextSecondaryColor"/>
+
+            <TextView
+                android:id="@+id/fileUploadPercentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fileName"
+                android:text="@string/uploadPercentage"
+                android:padding="8dp"
+                android:layout_alignParentRight="true"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:textColor="@color/justBlue"
+                android:textStyle="bold"
+                android:visibility="gone"/>
+
+            <ProgressBar
+                android:id="@+id/uploadProgressBar"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:progressTint="@color/globalTextColor"
+                android:layout_below="@+id/filePreview"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/uploadBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/button_round_green"
+            android:text="@string/upload"
+            android:textColor="@color/white"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

@@ -3,11 +3,18 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <dimen name="standard_55">65dp</dimen>
+    <dimen name="standard_105">125dp</dimen>
+    <dimen name="standard_155">185dp</dimen>
+    <dimen name="standard_205">245dp</dimen>
 
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="blackText">#3a3a40</color>
 
+    <color name="colorPrimary">#25B375</color>
+    <color name="colorPrimaryDark">#37b04b</color>
+    <color name="colorAccent">#37b04b</color>
 
 
     <color name="globalThemeColor">#25B375</color>
@@ -20,7 +27,7 @@
     <color name="globalTextSecondaryLighterColor">#F8F8F8</color>
 
     <color name="globalBackgroundLightBlue">#f3f7fa</color>
-
+    <color name="globalThemeBlue">#041425</color>
 
 
     <color name="bg">#f9f9f9</color>

@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/actionbar_background"
-    android:theme="@style/ThemeOverlay.AppCompat.Light">
+    android:theme="@style/ThemeOverlay.AppCompat.Light"
+    android:elevation="7dp">
     <ImageView
         android:id="@+id/appLogo"
         android:layout_width="36dp"
@@ -12,7 +13,7 @@
         android:src="@drawable/ic_launcher"
         android:layout_centerInParent="true"
         android:paddingRight="4dp"
-        android:visibility="gone"/>
+        android:visibility="visible"/>
     <TextView
         android:id="@+id/appName"
         android:layout_width="wrap_content"

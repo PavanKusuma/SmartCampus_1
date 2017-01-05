@@ -1,12 +1,11 @@
 package svecw.smartcampus;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-
+/*
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.BottomBarFragment;
-import com.roughike.bottombar.OnTabSelectedListener;
+import com.roughike.bottombar.OnTabSelectedListener;*/
 
 /**
  * Created by Pavan_Kusuma on 6/13/2016.
@@ -14,14 +13,14 @@ import com.roughike.bottombar.OnTabSelectedListener;
 public class GlobalHome extends AppCompatActivity {
 
    // bottom bar
-   private BottomBar bottomBar;
+   //private BottomBar bottomBar;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.global_home);
 
-        // attach the bottom bar
+      /*  // attach the bottom bar
         bottomBar = BottomBar.attach(this, savedInstanceState);
 
         bottomBar.setFragmentItems(getSupportFragmentManager(), R.id.fragmentContainer,
@@ -44,7 +43,7 @@ public class GlobalHome extends AppCompatActivity {
                         // Item 1 Selected
                 }
             }
-        });
+        });*/
 
     }
 }

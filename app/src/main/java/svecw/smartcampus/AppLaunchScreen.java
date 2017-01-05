@@ -76,12 +76,14 @@ public class AppLaunchScreen extends AppCompatActivity {
 
 */
         // check if app is downloaded from PlayStore
+/*
         if(isStoreVersion(AppLaunchScreen.this)){
 
             Intent versionIntent = new Intent(getApplicationContext(), CheckAppVersionActivity.class);
             startActivity(versionIntent);
             finish();
         }
+*/
 
 
         // navigate the user to home activity

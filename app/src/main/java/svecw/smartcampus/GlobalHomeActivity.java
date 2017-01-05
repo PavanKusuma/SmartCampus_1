@@ -265,6 +265,11 @@ public class GlobalHomeActivity extends AppCompatActivity {
                 wall.setCategory(data.getStringExtra(Constants.category));
                 wall.setCreatedAt(data.getStringExtra(Constants.createdAt));
 
+                wall.setMediaCount(0);
+                wall.setMedia(Constants.null_indicator);
+                wall.setHits(0);
+                wall.setSeen(0);
+
                 Log.v(Constants.appName, data.getStringExtra(Constants.infoId));
                 Log.v(Constants.appName, data.getStringExtra(Constants.title));
                 Log.v(Constants.appName, data.getStringExtra(Constants.postDescription));
@@ -636,7 +641,7 @@ public class GlobalHomeActivity extends AppCompatActivity {
 
                 // Append Server Response To Content String
                 Content = sb.toString();
-
+                //Log.i("Connection", Content);
                 // close the reader
                 //reader.close();
 
@@ -766,6 +771,8 @@ public class GlobalHomeActivity extends AppCompatActivity {
 
                                             knowledgeWallPost.setMediaCount(jsonObject.getInt(Constants.mediaCount));
                                             knowledgeWallPost.setMedia(jsonObject.getString(Constants.media));
+                                            knowledgeWallPost.setHits(jsonObject.getInt(Constants.hits));
+                                            knowledgeWallPost.setSeen(jsonObject.getInt(Constants.seen));
 
                                             //Log.v(Constants.appName, "Adding media"+knowledgeWallPost.getMediaCount() + " media" + knowledgeWallPost.getMedia());
 

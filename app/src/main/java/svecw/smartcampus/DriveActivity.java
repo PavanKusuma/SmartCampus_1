@@ -1,10 +1,12 @@
 package svecw.smartcampus;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -46,6 +48,7 @@ public class DriveActivity extends AppCompatActivity {
     public static ArrayList<Drive> drivePosts;
     ConnectionDetector connectionDetector;
     ProgressBar driveProgress;
+    FloatingActionButton uploadButton;
 
     ViewPager pager;
     TabLayout tabLayout;
@@ -68,6 +71,7 @@ public class DriveActivity extends AppCompatActivity {
         drivePosts = new ArrayList<Drive>();
         pager = (ViewPager) findViewById(R.id.driveViewPager);
         driveProgress = (ProgressBar) findViewById(R.id.driveProgress);
+        uploadButton = (FloatingActionButton) findViewById(R.id.uploadButton);
         //setupViewPager(pager);
 
         tabLayout = (TabLayout) findViewById(R.id.driveTabs);
@@ -90,6 +94,15 @@ public class DriveActivity extends AppCompatActivity {
             driveProgress.setVisibility(View.GONE);
             Toast.makeText(getApplicationContext(), "No internet", Toast.LENGTH_SHORT).show();
         }
+
+        uploadButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent uploadIntent = new Intent(getApplicationContext(), DriveUpload.class);
+                startActivity(uploadIntent);
+            }
+        });
 
     }
 
