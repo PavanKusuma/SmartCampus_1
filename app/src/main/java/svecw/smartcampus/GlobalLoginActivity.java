@@ -90,20 +90,21 @@ public class GlobalLoginActivity extends AppCompatActivity {
 
                 //Checking play service is available or not
                 //int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getApplicationContext());
-                GoogleApiAvailability  googleAPI = GoogleApiAvailability.getInstance();
+                //GoogleApiAvailability  googleAPI = GoogleApiAvailability.getInstance();
 
-                int resultCode = googleAPI.isGooglePlayServicesAvailable(getApplicationContext());
+                //int resultCode = googleAPI.isGooglePlayServicesAvailable(getApplicationContext());
+                int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getApplicationContext());
 
                 //if play service is not available
                 if (ConnectionResult.SUCCESS != resultCode) {
                     //If play service is supported but not installed
-                    if (googleAPI.isUserResolvableError(resultCode)) {
+                    if (GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
                         //Displaying message that play service is not installed
                         //Toast.makeText(getApplicationContext(), "To receive notifications install/enabled Google Play Service in this device!", Toast.LENGTH_LONG).show();
                         //GooglePlayServicesUtil.showErrorNotification(resultCode, getApplicationContext());
 
                         int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
-                        googleAPI.getErrorDialog(this, resultCode, PLAY_SERVICES_RESOLUTION_REQUEST).show();
+                        GooglePlayServicesUtil.getErrorDialog(resultCode, this, PLAY_SERVICES_RESOLUTION_REQUEST).show();
                         // wait for onActivityResult call (see below)
                         gcm_error = "To receive notifications install/enable Google Play Services in this device from Play Store!";
                         //If play service is not supported

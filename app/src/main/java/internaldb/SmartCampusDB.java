@@ -399,6 +399,7 @@ public class SmartCampusDB extends SQLiteOpenHelper {
             while(cursor.moveToNext());
         }
 
+        cursor.close();
         db.close();
 
         return userMap;
