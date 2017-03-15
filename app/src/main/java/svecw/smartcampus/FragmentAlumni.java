@@ -368,6 +368,7 @@ public class FragmentAlumni extends Fragment implements Global_Activity.Fragment
                 } catch (Exception ex) {
                     Error = ex.getMessage();
 
+                    if(getActivity()!=null)
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -404,6 +405,7 @@ public class FragmentAlumni extends Fragment implements Global_Activity.Fragment
                     /***** Returns the value mapped by name if it exists and is a JSONArray. ***/
                     status = jsonResponse.getInt(Constants.status);
 
+                    if(getActivity()!=null)
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {

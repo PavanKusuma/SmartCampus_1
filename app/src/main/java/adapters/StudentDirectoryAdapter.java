@@ -343,7 +343,7 @@ Log.v(Constants.appName, "image : " +usernamesList.get(position).getMedia());
                     if (usernamesList.get(position).getMediaCount() > 0) {
 
                         // get the connection url for the media
-                        URL url = new URL(Routes.getMedia + "profile_"+ usernamesList.get(position).getMedia());
+                        URL url = new URL(Routes.getMedia + "large_"+ usernamesList.get(position).getMedia());
                         URLConnection urlConnection = url.openConnection();
                         urlConnection.setDoInput(true);
                         urlConnection.connect();

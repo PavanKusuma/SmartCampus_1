@@ -101,8 +101,8 @@ public class MessagesAdapter extends BaseAdapter {
                 itemView.setLayoutParams(params);
                 //itemView1.setLayoutParams(params);
             }
-            else if(!messagesList.get(position).getFromUserObjectId().contentEquals(smartCampusDB.getUser().get(Constants.userObjectId).toString())) {
-
+            //else if(!messagesList.get(position).getFromUserObjectId().contentEquals(smartCampusDB.getUser().get(Constants.userObjectId).toString())) {
+            else {
                 //Log.v(Constants.appName, "received message");
                 itemView = (RelativeLayout) layoutInflater.inflate(R.layout.messages_single_listitem_left, parent, false);
 
@@ -142,6 +142,23 @@ public class MessagesAdapter extends BaseAdapter {
             // set the username of the user
             if (smartCampusDB.getUser().get(Constants.role).toString().contentEquals(Constants.student)) {
 
+                userName.setText(messagesList.get(position).getUsername() + " (" + messagesList.get(position).getFacultyBranch() + ")");// + Constants.faculty + ")");
+
+            } else {
+
+                if (messagesList.get(position).getYear() == 0) {
+
+                    userName.setText(messagesList.get(position).getUsername() + " (" + messagesList.get(position).getFacultyBranch() + ")");// + Constants.faculty + ")");
+                }
+                if (messagesList.get(position).getYear() != 0) {
+
+                    userName.setText(messagesList.get(position).getUsername() + " : " + messagesList.get(position).getFacultyBranch());
+                }
+            }
+
+            /*// set the username of the user
+            if (smartCampusDB.getUser().get(Constants.role).toString().contentEquals(Constants.student)) {
+
                 userName.setText(messagesList.get(position).getUsername() + " (" + messagesList.get(position).getFacultyBranch() + " " + Constants.faculty + ")");
 
             } else {
@@ -154,7 +171,7 @@ public class MessagesAdapter extends BaseAdapter {
 
                     userName.setText(messagesList.get(position).getUsername() + " : " + messagesList.get(position).getDepartment());
                 }
-            }
+            }*/
 
             // get the date format and convert it into required format to display
             java.util.Date date = simpleDateFormat.parse(messagesList.get(position).getCreatedAt());

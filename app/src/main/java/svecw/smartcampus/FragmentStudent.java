@@ -372,6 +372,7 @@ public class FragmentStudent extends Fragment implements Global_Activity.Fragmen
                 } catch (Exception ex) {
                     Error = ex.getMessage();
 
+                    if(getActivity()!=null)
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {

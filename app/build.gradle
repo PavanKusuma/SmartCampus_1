@@ -1,24 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    signingConfigs {
-        svecw_keypath {
-        }
-        svecw_release {
-            keyAlias 'svecwalias'
-            keyPassword 'android'
-            storeFile file('D:/Projects/Launches/SmartCampus/smartcampus.jks')
-            storePassword 'android'
-        }
-    }
+
     compileSdkVersion 25
-    buildToolsVersion '24.0.0'
+    buildToolsVersion '25.0.0'
     defaultConfig {
         applicationId 'svecw.smartcampus'
         minSdkVersion 14
         targetSdkVersion 25
-        versionCode 8
-        versionName "1.0.8"
+        versionCode 11
+        versionName "2.1.1"
         multiDexEnabled true
     }
     buildTypes {

@@ -4,123 +4,214 @@
     android:layout_margin="8dp"
     android:padding="10dp">
 
-
-    <LinearLayout
-        android:id="@+id/userImageHere"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <RelativeLayout
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:gravity="center">
-
-            <ImageView
-                android:id="@+id/facultyUserImageView"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@drawable/ic_user_profile"
-                android:scaleType="centerCrop"
-                android:contentDescription="@string/app_name"
-                android:layout_centerVertical="true" />
-
-            <ImageView
-                android:id="@+id/facultyUserImageViewBG"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@drawable/user_image_bg"
-                android:contentDescription="@string/app_name"
-                android:layout_centerVertical="true" />
-
-
-
-        </RelativeLayout>
-
-
-        <TextView
-            android:id="@+id/userName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textSize="18dp"
-            android:paddingLeft="10dp"
-            android:paddingTop="4dp"
-            android:textColor="@color/lightBlue"/>
-
-
-    </LinearLayout>
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/userImageHere"
-        android:paddingBottom="6dp">
-
-        <TextView
-            android:id="@+id/designation"
+    <!--
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textColor="@color/blackText"
-            android:layout_marginTop="12dp"
-            android:layout_marginLeft="8dp"/>
-
-
-        <TextView
-            android:id="@+id/department"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:layout_toRightOf="@+id/designation"
-            android:layout_toLeftOf="@+id/ic_msg"
-            android:layout_marginTop="12dp"
-            android:layout_marginLeft="4dp"/>
-
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:id="@+id/ic_call"
-            android:src="@drawable/ic_call"
-            android:layout_marginRight="12dp"
-            android:layout_marginTop="12dp"
-
-            android:layout_alignParentRight="true"/>
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:id="@+id/ic_msg"
-            android:src="@drawable/ic_message"
-            android:layout_marginRight="24dp"
-            android:layout_marginTop="12dp"
-            android:layout_toLeftOf="@+id/ic_call"/>
-
-    </RelativeLayout>
-
-
-
-
-<!--
-    <ImageView
+            android:id="@+id/facultyUserImageView"
+            android:src="@drawable/ic_user_profile"
+            android:padding="10dp"
+            android:layout_centerVertical="true"/>
+    -->
+    <TextView
+        android:id="@+id/studentPhoneNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <ImageView
         android:id="@+id/facultyUserImageView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:src="@drawable/ic_user_profile"
-        android:padding="10dp"
-        android:layout_centerVertical="true"/>
--->
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/app_name"
+        android:layout_centerVertical="true"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/facultyUserImageViewBG"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/user_image_bg"
+        android:contentDescription="@string/app_name"
+        android:layout_centerVertical="true"
+        android:visibility="gone"/>
 
 
 
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="16dp"
+        android:layout_toRightOf="@+id/facultyUserImageViewBG"
+        android:paddingLeft="10dp"
+        android:paddingTop="4dp"
+        android:textColor="@color/globalThemeColor"/>
+
+    <TextView
+        android:id="@+id/department"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:layout_below="@+id/userName"
+        android:layout_toRightOf="@+id/facultyUserImageViewBG"
+        android:paddingLeft="10dp"
+        android:paddingTop="2dp"
+        android:textColor="@color/blackText"
+        />
+
+    <TextView
+        android:id="@+id/designation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:layout_below="@+id/department"
+        android:layout_toRightOf="@+id/facultyUserImageViewBG"
+        android:paddingLeft="10dp"
+        android:paddingBottom="2dp"
+        />
 
 
-<!--
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:id="@+id/ic_call"
+        android:src="@drawable/ic_call"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/userName"
+        android:layout_alignParentBottom="true"/>
 
-
-    -->
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:id="@+id/ic_msg"
+        android:src="@drawable/ic_message"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="24dp"
+        android:layout_below="@+id/userName"
+        android:layout_toLeftOf="@+id/ic_call"
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>
+
+
+    <!-- <?xml version="1.0" encoding="utf-8"?>
+ <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"
+ android:background="@drawable/card_background">
+
+
+
+ <ImageView
+     android:id="@+id/facultyUserImageView"
+     android:layout_width="48dp"
+     android:layout_height="48dp"
+     android:src="@drawable/ic_user_profile"
+     android:scaleType="centerCrop"
+     android:contentDescription="@string/app_name"
+     android:layout_centerVertical="true"
+     android:layout_margin="10dp"/>
+
+ <ImageView
+     android:id="@+id/facultyUserImageViewBG"
+     android:layout_width="48dp"
+     android:layout_height="48dp"
+     android:src="@drawable/user_image_bg"
+     android:contentDescription="@string/app_name"
+     android:layout_centerVertical="true"
+     android:layout_margin="10dp"/>
+
+ <RelativeLayout
+     android:id="@+id/userNameLayout"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_centerVertical="true"
+     android:layout_toRightOf="@+id/facultyUserImageView">
+
+     <TextView
+         android:id="@+id/userName"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/selectUser"
+         android:layout_marginLeft="10dp"
+         android:layout_marginTop="2dp"
+         android:layout_marginBottom="4dp"
+         android:textStyle="bold"
+         android:textColor="@color/blackText"
+         android:textAppearance="@android:style/TextAppearance.Medium"/>
+
+     <TextView
+         android:id="@+id/designation"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/branchHeading"
+         android:layout_marginLeft="10dp"
+         android:layout_marginTop="2dp"
+         android:layout_below="@+id/userName"
+         android:textColor="@color/lightLightGray"/>
+
+     <TextView
+         android:id="@+id/department"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/collegeId"
+         android:layout_marginLeft="10dp"
+         android:layout_marginTop="2dp"
+         android:layout_marginBottom="10dp"
+         android:layout_below="@+id/userName"
+         android:layout_alignParentRight="true"/>
+
+     <View
+         android:id="@+id/line"
+         android:layout_width="match_parent"
+         android:layout_height="1dp"
+         android:layout_marginLeft="10dp"
+         android:background="@color/lightGray"
+         android:layout_below="@id/department"/>
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:weightSum="2"
+         android:layout_below="@id/line">
+
+         <ImageView
+             android:layout_width="24dp"
+             android:layout_height="24dp"
+             android:id="@+id/ic_msg"
+             android:src="@drawable/ic_messages"
+             android:layout_margin="6dp"
+             android:layout_weight="1"/>
+
+         <View
+             android:id="@+id/linee"
+             android:layout_width="1dp"
+             android:layout_height="30dp"
+             android:background="@color/lightGray"/>
+
+         <ImageView
+             android:layout_width="24dp"
+             android:layout_height="24dp"
+             android:id="@+id/ic_call"
+             android:src="@drawable/ic_action_call"
+             android:layout_margin="6dp"
+             android:layout_weight="1"/>
+
+     </LinearLayout>
+
+ </RelativeLayout>
+
+ </RelativeLayout>
+
+
+ -->

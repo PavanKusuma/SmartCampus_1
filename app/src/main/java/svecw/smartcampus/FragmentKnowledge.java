@@ -75,6 +75,7 @@ public class FragmentKnowledge extends Fragment implements Global_Activity.Fragm
         knowledgeWallProgressBar = (ProgressBar) itemView.findViewById(R.id.knowledgeWallProgressBar);
         knowledgeList = (ListView) itemView.findViewById(R.id.knowledgeList);
 
+        if(getActivity()!=null)
         knowledgeWallAdapter = new KnowledgeWallAdapter(getActivity().getApplicationContext());
         knowledgeList.setAdapter(knowledgeWallAdapter);
 //        knowledgeWallAdapter.notifyDataSetChanged();
@@ -280,6 +281,7 @@ public class FragmentKnowledge extends Fragment implements Global_Activity.Fragm
                 } catch (Exception ex) {
                     Error = ex.getMessage();
 
+                    if(getActivity()!=null)
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -315,6 +317,7 @@ public class FragmentKnowledge extends Fragment implements Global_Activity.Fragm
                     /***** Returns the value mapped by name if it exists and is a JSONArray. ***/
                     status = jsonResponse.getInt(Constants.status);
 
+                    if(getActivity()!=null)
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {

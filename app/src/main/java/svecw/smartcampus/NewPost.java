@@ -49,6 +49,7 @@ import org.jsoup.nodes.Document;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -77,9 +78,6 @@ import utils.Snippets;
 
 /**
  * Created by Pavan_Kusuma on 9/14/2016.
- */
-/**
- * Created by Pavan on 4/16/15.
  */
 
 public class NewPost extends AppCompatActivity {
@@ -1663,6 +1661,7 @@ public class NewPost extends AppCompatActivity {
         FileInputStream fileInputStream;
         HttpURLConnection conn = null;
         DataOutputStream dos = null;
+        DataInputStream dis = null;
 
         // return object
         Wall wall = new Wall();
@@ -1717,10 +1716,12 @@ public class NewPost extends AppCompatActivity {
 
                 // Set Request parameter
                 data += "?&" + URLEncoder.encode(Constants.name, "UTF-8") + "=" + (strings[1]);
+                       //+ "&" + URLEncoder.encode("file", "UTF-8") + "=" + fileName;
 
                 // open a URL connection to the Servlet
                 fileInputStream = new FileInputStream(sourceFile);
-                URL url = new URL(strings[0]+data);
+                //URL url = new URL(strings[0]+data);
+                URL url = new URL(String.valueOf(strings[0]) + data);
                 Log.v(Constants.appName, strings[0]+data);
                 conn = (HttpURLConnection) url.openConnection(); // Open a HTTP  connection to  the URL
                 conn.setDoInput(true); // Allow Inputs
@@ -1730,6 +1731,7 @@ public class NewPost extends AppCompatActivity {
                 conn.setRequestProperty("Connection", "Keep-Alive");
                 conn.setRequestProperty("ENCTYPE", "multipart/form-data");
                 conn.setRequestProperty("Content-Type", "multipart/form-data;boundary=" + boundary);
+                conn.setRequestProperty("name", String.valueOf(strings[1]));
                 conn.setRequestProperty("file", fileName);
                 dos = new DataOutputStream(conn.getOutputStream());
 
@@ -1754,11 +1756,11 @@ public class NewPost extends AppCompatActivity {
 
                 // read file and write it into form...
                 bytesRead = is.read(b, 0, b.length);
-                //Log.v(Constants.appName, "Size of bytes : " + b.length);
+                Log.v(Constants.appName, "Size of bytes : " + b.length);
                 dos.write(b, 0, b.length);
 
 
-                while (bytesRead > 0) {
+               while (bytesRead > 0) {
                     dos.write(b, 0, b.length);
                     bytesAvailable = is.available();
                     bufferSize = Math.min(bytesAvailable, maxBufferSize);
@@ -1797,11 +1799,48 @@ public class NewPost extends AppCompatActivity {
 
                 Log.v(Constants.appName, "posting..85%");
                 // Responses from the server (code and message)
+                //dis = new DataInputStream(conn.getErrorStream());
                 serverResponseCode = conn.getResponseCode();
                 String serverResponseMessage = conn.getResponseMessage();
 
+
+                   /* // count the available bytes form the input stream
+                    int count = dis.available();
+
+                    // create buffer
+                    byte[] bs = new byte[count];
+
+                    // read data into buffer
+                    dis.read(bs);
+
+                Log.i("Errooooor Stream", "Here is the error stream");
+                    // for each byte in the buffer
+                    for (byte b:bs)
+                    {
+                        // convert byte into character
+                        char c = (char)b;
+
+                        // print the character
+                        System.out.print(c+"");
+                    }
+*/
                 Log.i("uploadFile", "HTTP Response is : " + serverResponseMessage + ": " + serverResponseCode);
+
                 if(serverResponseCode == 200){
+                    runOnUiThread(new Runnable() {
+                        public void run() {
+                            Log.v(Constants.appName, "posting..90%");
+
+                            // set progress
+                            progressBar.setProgress(90);
+                            //Log.v(Constants.appName, "File Upload Completed.");
+
+                            //Toast.makeText(CollegeWallNewPostActivity.this, "File Upload Complete.", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+                else if(serverResponseCode == 500){
+
                     runOnUiThread(new Runnable() {
                         public void run() {
                             Log.v(Constants.appName, "posting..90%");
@@ -1855,6 +1894,13 @@ public class NewPost extends AppCompatActivity {
                             //Log.v(Constants.appName, "check -1");
                             Toast.makeText(NewPost.this, R.string.errorMsg, Toast.LENGTH_SHORT).show();
 
+                        }
+                        if(serverResponseCode == 500){
+
+                            // set progress
+                            progressBar.setProgress(100);
+
+                            Toast.makeText(NewPost.this, R.string.errorMsg, Toast.LENGTH_SHORT).show();
                         }
                         if(serverResponseCode == 200){
 

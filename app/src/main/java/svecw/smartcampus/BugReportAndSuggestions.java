@@ -203,7 +203,7 @@ public class BugReportAndSuggestions extends AppCompatActivity {
                 // Set Request parameter
                 data += "?&" + URLEncoder.encode(Constants.KEY, "UTF-8") + "=" + Constants.key
                         + "&" + URLEncoder.encode(Constants.userObjectId, "UTF-8") + "=" + (urls[1])
-                        + "&" + URLEncoder.encode(Constants.reportId, "UTF-8") + "=" + (urls[2])
+                        + "&" + URLEncoder.encode(Constants.feedbackId, "UTF-8") + "=" + (urls[2])
                         + "&" + URLEncoder.encode(Constants.description, "UTF-8") + "=" + (urls[3]);
 
                 Log.v(Constants.appName, urls[0]+data);

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/nav1"
+        android:title="@string/menuNewPost"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_academics"/>
+
+    <item android:id="@+id/nav2"
+        android:title="@string/menuNewPost"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_about_app"/>
+
+
+
+    <item android:id="@+id/nav3"
+        android:title="@string/menuNewPost"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_aboutus"/>
+</menu>

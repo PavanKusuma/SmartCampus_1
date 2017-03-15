@@ -432,7 +432,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 
             // add the object to list at top and notify adapter
-            messagesList.add(0, message);
+            messagesList.add(message);
             adapter.notifyDataSetChanged();
 
             // send notification
@@ -598,7 +598,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
                                     progressBar.setVisibility(View.GONE);
                                     emptyElementMessages.setVisibility(View.VISIBLE);
                                     emptyElementMessages.setText(R.string.noData);
-                                    Toast.makeText(getApplicationContext(), R.string.noData, Toast.LENGTH_SHORT).show();
+                                    //Toast.makeText(getApplicationContext(), R.string.noData, Toast.LENGTH_SHORT).show();
                                     break;
 
                                 // data found

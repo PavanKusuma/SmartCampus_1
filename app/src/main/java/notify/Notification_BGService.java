@@ -40,7 +40,8 @@ public class Notification_BGService extends AsyncTask<String, Void, Void>{
 
             // Set Request parameter
             data += "?&" + URLEncoder.encode(Constants.KEY, "UTF-8") + "=" + Constants.key
-                    + "&" + URLEncoder.encode(Constants.userObjectId, "UTF-8") + "=" + (urls[1]);
+                    + "&" + URLEncoder.encode(Constants.userObjectId, "UTF-8") + "=" + (urls[1])
+                    + "&" + URLEncoder.encode(Constants.wallId, "UTF-8") + "=" + "1";
 
 
             Log.v(Constants.appName, urls[0]+data);

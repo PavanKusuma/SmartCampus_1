@@ -118,10 +118,11 @@ public class FragmentCollege extends Fragment implements Global_Activity.Fragmen
         progressBar = (ProgressBar) itemView.findViewById(R.id.progressBarCollegeWall);
         fullImageLayout = (LinearLayout) itemView.findViewById(R.id.fullImageLayout);
 
+
         Typeface sansFont = Typeface.createFromAsset(getResources().getAssets(), Constants.fontName);
         // set emptyTextView for listView
         noData = (TextView) itemView.findViewById(R.id.emptyElement); noData.setTypeface(sansFont);
-
+//listView.addFooterView(noData);
         // clear the notification
         clearNotifications();
 
@@ -382,6 +383,7 @@ public class FragmentCollege extends Fragment implements Global_Activity.Fragmen
                 } catch (Exception ex) {
                     Error = ex.getMessage();
 
+                    if(getActivity()!=null)
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -418,6 +420,7 @@ public class FragmentCollege extends Fragment implements Global_Activity.Fragmen
                     /***** Returns the value mapped by name if it exists and is a JSONArray. ***/
                     status = jsonResponse.getInt(Constants.status);
 
+                    if(getActivity()!=null)
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -447,8 +450,9 @@ public class FragmentCollege extends Fragment implements Global_Activity.Fragmen
                                     // no more data to display
                                     // hide loading
                                     progressBar.setVisibility(View.GONE);
-                                    Toast.makeText(getContext(), R.string.noData, Toast.LENGTH_SHORT).show();
+                                    //Toast.makeText(getContext(), R.string.noData, Toast.LENGTH_SHORT).show();
                                     noData.setVisibility(View.VISIBLE);
+                                    //listView.addFooterView(noData);
 
                                     adapter.notifyDataSetChanged();
                                     break;

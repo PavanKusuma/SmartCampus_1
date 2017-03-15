@@ -885,7 +885,7 @@ public class CollegeWallAdapter extends BaseAdapter {
 
                             // get the connection url for the media
 
-                            URL url = new URL(Routes.getMedia + "profile_"+ collegeWallPostsList.get(position).getUserImage());
+                            URL url = new URL(Routes.getMedia + "large_"+ collegeWallPostsList.get(position).getUserImage());
                             //URL url = new URL(Routes.getMedia + collegeWallPostsList.get(position).getUserImage());
                             URLConnection urlConnection = url.openConnection();
                             urlConnection.setDoInput(true);

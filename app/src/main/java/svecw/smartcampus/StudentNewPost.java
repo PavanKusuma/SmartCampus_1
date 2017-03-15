@@ -93,7 +93,6 @@ public class StudentNewPost extends AppCompatActivity {
     String location = Constants.null_indicator;
     String feeling = Constants.null_indicator;
 
-
     // progress indicator
     ProgressDialog progressDialog;
 
@@ -1478,6 +1477,7 @@ public class StudentNewPost extends AppCompatActivity {
                 conn.setRequestProperty("Connection", "Keep-Alive");
                 conn.setRequestProperty("ENCTYPE", "multipart/form-data");
                 conn.setRequestProperty("Content-Type", "multipart/form-data;boundary=" + boundary);
+                conn.setRequestProperty("name", String.valueOf(strings[1]));
                 conn.setRequestProperty("file", fileName);
                 dos = new DataOutputStream(conn.getOutputStream());
 

@@ -275,6 +275,43 @@ public class Global_Activity extends AppCompatActivity{
 
             }
         });
+
+
+        /*if(getIntent().hasExtra(Constants.wallId)){
+
+            switch(getIntent().getIntExtra(Constants.wallId, 0)){
+
+                case 0:
+
+                    // set the pager and title
+                    viewPager.setCurrentItem(0);
+                    title.setText(getResources().getString(R.string.knowledge_new));
+                    break;
+
+                case 1:
+
+                    // set the pager and title
+                    viewPager.setCurrentItem(1);
+                    title.setText(getResources().getString(R.string.college_new));
+                    break;
+
+                case 2:
+
+                    // set the pager and title
+                    viewPager.setCurrentItem(2);
+                    title.setText(getResources().getString(R.string.student_new));
+                    break;
+
+                case 3:
+
+                    // set the pager and title
+                    viewPager.setCurrentItem(3);
+                    title.setText(getResources().getString(R.string.alumni_new));
+                    break;
+
+            }
+
+        }*/
     }
 
     private void showFABMenu(){
@@ -285,17 +322,17 @@ public class Global_Activity extends AppCompatActivity{
         // other than student, only privileged users can post to collegeWall
         if(smartCampusDB.getUserRole().contentEquals(Constants.admin)){
 
-            knowledgeLayout.setVisibility(View.VISIBLE);
-            knowledgeLayout.animate().translationY(-getResources().getDimension(R.dimen.standard_55));
-
             collegeLayout.setVisibility(View.VISIBLE);
-            collegeLayout.animate().translationY(-getResources().getDimension(R.dimen.standard_105));
+            collegeLayout.animate().translationY(-getResources().getDimension(R.dimen.standard_55));
 
             studentLayout.setVisibility(View.VISIBLE);
-            studentLayout.animate().translationY(-getResources().getDimension(R.dimen.standard_155));
+            studentLayout.animate().translationY(-getResources().getDimension(R.dimen.standard_105));
 
             alumniLayout.setVisibility(View.VISIBLE);
-            alumniLayout.animate().translationY(-getResources().getDimension(R.dimen.standard_205));
+            alumniLayout.animate().translationY(-getResources().getDimension(R.dimen.standard_155));
+
+            knowledgeLayout.setVisibility(View.VISIBLE);
+            knowledgeLayout.animate().translationY(-getResources().getDimension(R.dimen.standard_205));
 
         }
         else if(smartCampusDB.isUserPrivileged()) {

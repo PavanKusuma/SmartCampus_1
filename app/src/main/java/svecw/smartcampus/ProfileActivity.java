@@ -1675,7 +1675,7 @@ Log.v(Constants.appName, "Checking size before:" + b.length);
                                 }
                             });
 
-                            new PostMedia().execute(Routes.postMediaProfile, imageName);
+                            new PostMedia().execute(Routes.postMedia, imageName);
                         }
                         else {
 
@@ -1812,6 +1812,7 @@ Log.v(Constants.appName, "Checking size before:" + b.length);
                 conn.setRequestProperty("Connection", "Keep-Alive");
                 conn.setRequestProperty("ENCTYPE", "multipart/form-data");
                 conn.setRequestProperty("Content-Type", "multipart/form-data;boundary=" + boundary);
+                conn.setRequestProperty("name", String.valueOf(strings[1]));
                 conn.setRequestProperty("file", fileName);
                 dos = new DataOutputStream(conn.getOutputStream());
 

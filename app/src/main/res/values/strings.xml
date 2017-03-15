@@ -445,7 +445,7 @@
 
     <string name="title_activity_maps">CollegeMap</string>
 
-    <string name="appVersion">App Version : 5.0</string>
+    <string name="appVersion">App Version : 2.0.1</string>
     <string name="appBy">Infinity Next</string>
 
     <string name="selectSpinner">Select branch</string>
@@ -468,7 +468,7 @@
     </declare-styleable>
 
     <string name="recruitersList">Recruiters List</string>
-    <string name="p2017">2017 - as on Nov 2016</string>
+    <string name="p2017">2017 - Till date</string>
     <string name="p2016">2016</string>
     <string name="p2015">2015</string>
     <string name="p2014">2014</string>
